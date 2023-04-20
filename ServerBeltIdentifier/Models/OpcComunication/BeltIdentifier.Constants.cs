@@ -44,22 +44,16 @@ namespace BeltIdentifier
     public static partial class Methods
     {
         /// <remarks />
-        public const uint BeltIdentifierType_StartProcess = 220;
+        public const uint BeltType_StartProcess = 236;
 
         /// <remarks />
-        public const uint BeltIdentifierType_StopProcess = 221;
+        public const uint BeltType_StopProcess = 237;
 
         /// <remarks />
-        public const uint BeltIdentifierType_TypeOfObject = 222;
+        public const uint BeltServer_StartProcess = 324;
 
         /// <remarks />
-        public const uint BeltIdentifier1_StartProcess = 293;
-
-        /// <remarks />
-        public const uint BeltIdentifier1_StopProcess = 294;
-
-        /// <remarks />
-        public const uint BeltIdentifier1_TypeOfObject = 295;
+        public const uint BeltServer_StopProcess = 325;
     }
     #endregion
 
@@ -70,112 +64,160 @@ namespace BeltIdentifier
     public static partial class Objects
     {
         /// <remarks />
-        public const uint IdentifierBelt_IdentifierBeltOpticalBarrierStart = 82;
+        public const uint BeltIdentifierType_BeltIdentifierOpticalBarrierStart = 82;
 
         /// <remarks />
-        public const uint IdentifierBelt_IdentifierBeltOpticalBarrierMiddle = 90;
+        public const uint BeltIdentifierType_BeltIdentifierOpticalBarrierMiddle = 90;
 
         /// <remarks />
-        public const uint IdentifierBelt_IdentifierBeltOpticalBarrierEnd = 98;
+        public const uint BeltIdentifierType_BeltIdentifierOpticalBarrierEnd = 98;
 
         /// <remarks />
-        public const uint IdentifierBelt_IdentifierBeltElectricPhotoSensor = 106;
+        public const uint BeltIdentifierType_BeltIdentifierElectricPhotoSensor = 106;
 
         /// <remarks />
-        public const uint IdentifierBelt_IdentifierBeltCapacitiveSensor = 114;
+        public const uint BeltIdentifierType_BeltIdentifierCapacitiveSensor = 114;
 
         /// <remarks />
-        public const uint IdentifierBelt_IdentifierBeltInductiveSensor = 122;
+        public const uint BeltIdentifierType_BeltIdentifierInductiveSensor = 122;
 
         /// <remarks />
-        public const uint IdentifierBelt_IdentifierBeltErrorIlumination = 130;
+        public const uint BeltIdentifierType_BeltIdentifierErrorIlumination = 130;
 
         /// <remarks />
-        public const uint IdentifierBelt_IdentifierBeltMotor = 143;
+        public const uint BeltIdentifierType_BeltIdentifierMotor = 143;
 
         /// <remarks />
-        public const uint BeltIdentifierType_BeltIdentifier = 151;
+        public const uint BeltType_BeltIdentifier1 = 151;
 
         /// <remarks />
-        public const uint BeltIdentifierType_BeltIdentifier_IdentifierBeltOpticalBarrierStart = 152;
+        public const uint BeltType_BeltIdentifier1_BeltIdentifierOpticalBarrierStart = 152;
 
         /// <remarks />
-        public const uint BeltIdentifierType_BeltIdentifier_IdentifierBeltOpticalBarrierMiddle = 160;
+        public const uint BeltType_BeltIdentifier1_BeltIdentifierOpticalBarrierMiddle = 160;
 
         /// <remarks />
-        public const uint BeltIdentifierType_BeltIdentifier_IdentifierBeltOpticalBarrierEnd = 168;
+        public const uint BeltType_BeltIdentifier1_BeltIdentifierOpticalBarrierEnd = 168;
 
         /// <remarks />
-        public const uint BeltIdentifierType_BeltIdentifier_IdentifierBeltElectricPhotoSensor = 176;
+        public const uint BeltType_BeltIdentifier1_BeltIdentifierElectricPhotoSensor = 176;
 
         /// <remarks />
-        public const uint BeltIdentifierType_BeltIdentifier_IdentifierBeltCapacitiveSensor = 184;
+        public const uint BeltType_BeltIdentifier1_BeltIdentifierCapacitiveSensor = 184;
 
         /// <remarks />
-        public const uint BeltIdentifierType_BeltIdentifier_IdentifierBeltInductiveSensor = 192;
+        public const uint BeltType_BeltIdentifier1_BeltIdentifierInductiveSensor = 192;
 
         /// <remarks />
-        public const uint BeltIdentifierType_BeltIdentifier_IdentifierBeltErrorIlumination = 200;
+        public const uint BeltType_BeltIdentifier1_BeltIdentifierErrorIlumination = 200;
 
         /// <remarks />
-        public const uint BeltIdentifierType_BeltIdentifier_IdentifierBeltMotor = 213;
+        public const uint BeltType_BeltIdentifier1_BeltIdentifierMotor = 213;
 
         /// <remarks />
-        public const uint BeltIdentifier1 = 223;
+        public const uint BeltType_BeltIdentifier1_BeltIdentifier1OpticalBarrierStart = 220;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier = 224;
+        public const uint BeltType_BeltIdentifier1_BeltIdentifier1OpticalBarrierMiddle = 222;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier_IdentifierBeltOpticalBarrierStart = 225;
+        public const uint BeltType_BeltIdentifier1_BeltIdentifier1OpticalBarrierEnd = 224;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier_IdentifierBeltOpticalBarrierMiddle = 233;
+        public const uint BeltType_BeltIdentifier1_BeltIdentifier1ElectricPhotoSensor = 226;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier_IdentifierBeltOpticalBarrierEnd = 241;
+        public const uint BeltType_BeltIdentifier1_BeltIdentifier1CapacitiveSensor = 228;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier_IdentifierBeltElectricPhotoSensor = 249;
+        public const uint BeltType_BeltIdentifier1_BeltIdentifier1InductiveSensor = 230;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier_IdentifierBeltCapacitiveSensor = 257;
+        public const uint BeltType_BeltIdentifier1_BeltIdentifier1ErrorIlumination = 232;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier_IdentifierBeltInductiveSensor = 265;
+        public const uint BeltType_BeltIdentifier1_BeltIdentifier1Motor = 234;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier_IdentifierBeltErrorIlumination = 273;
+        public const uint BeltServer = 238;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier_IdentifierBeltMotor = 286;
+        public const uint BeltServer_BeltIdentifier1 = 239;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier001 = 296;
+        public const uint BeltServer_BeltIdentifier1_BeltIdentifierOpticalBarrierStart = 240;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier001_IdentifierBeltOpticalBarrierStart = 297;
+        public const uint BeltServer_BeltIdentifier1_BeltIdentifierOpticalBarrierMiddle = 248;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier001_IdentifierBeltOpticalBarrierMiddle = 305;
+        public const uint BeltServer_BeltIdentifier1_BeltIdentifierOpticalBarrierEnd = 256;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier001_IdentifierBeltOpticalBarrierEnd = 313;
+        public const uint BeltServer_BeltIdentifier1_BeltIdentifierElectricPhotoSensor = 264;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier001_IdentifierBeltElectricPhotoSensor = 321;
+        public const uint BeltServer_BeltIdentifier1_BeltIdentifierCapacitiveSensor = 272;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier001_IdentifierBeltCapacitiveSensor = 329;
+        public const uint BeltServer_BeltIdentifier1_BeltIdentifierInductiveSensor = 280;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier001_IdentifierBeltInductiveSensor = 337;
+        public const uint BeltServer_BeltIdentifier1_BeltIdentifierErrorIlumination = 288;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier001_IdentifierBeltErrorIlumination = 345;
+        public const uint BeltServer_BeltIdentifier1_BeltIdentifierMotor = 301;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier001_IdentifierBeltMotor = 358;
+        public const uint BeltServer_BeltIdentifier1_BeltIdentifier1OpticalBarrierStart = 308;
+
+        /// <remarks />
+        public const uint BeltServer_BeltIdentifier1_BeltIdentifier1OpticalBarrierMiddle = 310;
+
+        /// <remarks />
+        public const uint BeltServer_BeltIdentifier1_BeltIdentifier1OpticalBarrierEnd = 312;
+
+        /// <remarks />
+        public const uint BeltServer_BeltIdentifier1_BeltIdentifier1ElectricPhotoSensor = 314;
+
+        /// <remarks />
+        public const uint BeltServer_BeltIdentifier1_BeltIdentifier1CapacitiveSensor = 316;
+
+        /// <remarks />
+        public const uint BeltServer_BeltIdentifier1_BeltIdentifier1InductiveSensor = 318;
+
+        /// <remarks />
+        public const uint BeltServer_BeltIdentifier1_BeltIdentifier1ErrorIlumination = 320;
+
+        /// <remarks />
+        public const uint BeltServer_BeltIdentifier1_BeltIdentifier1Motor = 322;
+
+        /// <remarks />
+        public const uint BeltServer_BeltIdentifier001 = 326;
+
+        /// <remarks />
+        public const uint BeltServer_BeltIdentifier001_BeltIdentifierOpticalBarrierStart = 327;
+
+        /// <remarks />
+        public const uint BeltServer_BeltIdentifier001_BeltIdentifierOpticalBarrierMiddle = 335;
+
+        /// <remarks />
+        public const uint BeltServer_BeltIdentifier001_BeltIdentifierOpticalBarrierEnd = 343;
+
+        /// <remarks />
+        public const uint BeltServer_BeltIdentifier001_BeltIdentifierElectricPhotoSensor = 351;
+
+        /// <remarks />
+        public const uint BeltServer_BeltIdentifier001_BeltIdentifierCapacitiveSensor = 359;
+
+        /// <remarks />
+        public const uint BeltServer_BeltIdentifier001_BeltIdentifierInductiveSensor = 367;
+
+        /// <remarks />
+        public const uint BeltServer_BeltIdentifier001_BeltIdentifierErrorIlumination = 375;
+
+        /// <remarks />
+        public const uint BeltServer_BeltIdentifier001_BeltIdentifierMotor = 388;
     }
     #endregion
 
@@ -213,10 +255,10 @@ namespace BeltIdentifier
         public const uint BeltMotorType = 74;
 
         /// <remarks />
-        public const uint IdentifierBelt = 81;
+        public const uint BeltIdentifierType = 81;
 
         /// <remarks />
-        public const uint BeltIdentifierType = 150;
+        public const uint BeltType = 150;
     }
     #endregion
 
@@ -275,292 +317,340 @@ namespace BeltIdentifier
         public const uint BeltMotorType_Speed_EURange = 79;
 
         /// <remarks />
-        public const uint IdentifierBelt_IdentifierBeltOpticalBarrierStart_Output = 83;
+        public const uint BeltIdentifierType_BeltIdentifierOpticalBarrierStart_Output = 83;
 
         /// <remarks />
-        public const uint IdentifierBelt_IdentifierBeltOpticalBarrierStart_Output_EURange = 87;
+        public const uint BeltIdentifierType_BeltIdentifierOpticalBarrierStart_Output_EURange = 87;
 
         /// <remarks />
-        public const uint IdentifierBelt_IdentifierBeltOpticalBarrierStart_Units = 89;
+        public const uint BeltIdentifierType_BeltIdentifierOpticalBarrierStart_Units = 89;
 
         /// <remarks />
-        public const uint IdentifierBelt_IdentifierBeltOpticalBarrierMiddle_Output = 91;
+        public const uint BeltIdentifierType_BeltIdentifierOpticalBarrierMiddle_Output = 91;
 
         /// <remarks />
-        public const uint IdentifierBelt_IdentifierBeltOpticalBarrierMiddle_Output_EURange = 95;
+        public const uint BeltIdentifierType_BeltIdentifierOpticalBarrierMiddle_Output_EURange = 95;
 
         /// <remarks />
-        public const uint IdentifierBelt_IdentifierBeltOpticalBarrierMiddle_Units = 97;
+        public const uint BeltIdentifierType_BeltIdentifierOpticalBarrierMiddle_Units = 97;
 
         /// <remarks />
-        public const uint IdentifierBelt_IdentifierBeltOpticalBarrierEnd_Output = 99;
+        public const uint BeltIdentifierType_BeltIdentifierOpticalBarrierEnd_Output = 99;
 
         /// <remarks />
-        public const uint IdentifierBelt_IdentifierBeltOpticalBarrierEnd_Output_EURange = 103;
+        public const uint BeltIdentifierType_BeltIdentifierOpticalBarrierEnd_Output_EURange = 103;
 
         /// <remarks />
-        public const uint IdentifierBelt_IdentifierBeltOpticalBarrierEnd_Units = 105;
+        public const uint BeltIdentifierType_BeltIdentifierOpticalBarrierEnd_Units = 105;
 
         /// <remarks />
-        public const uint IdentifierBelt_IdentifierBeltElectricPhotoSensor_Output = 107;
+        public const uint BeltIdentifierType_BeltIdentifierElectricPhotoSensor_Output = 107;
 
         /// <remarks />
-        public const uint IdentifierBelt_IdentifierBeltElectricPhotoSensor_Output_EURange = 111;
+        public const uint BeltIdentifierType_BeltIdentifierElectricPhotoSensor_Output_EURange = 111;
 
         /// <remarks />
-        public const uint IdentifierBelt_IdentifierBeltElectricPhotoSensor_Units = 113;
+        public const uint BeltIdentifierType_BeltIdentifierElectricPhotoSensor_Units = 113;
 
         /// <remarks />
-        public const uint IdentifierBelt_IdentifierBeltCapacitiveSensor_Output = 115;
+        public const uint BeltIdentifierType_BeltIdentifierCapacitiveSensor_Output = 115;
 
         /// <remarks />
-        public const uint IdentifierBelt_IdentifierBeltCapacitiveSensor_Output_EURange = 119;
+        public const uint BeltIdentifierType_BeltIdentifierCapacitiveSensor_Output_EURange = 119;
 
         /// <remarks />
-        public const uint IdentifierBelt_IdentifierBeltCapacitiveSensor_Units = 121;
+        public const uint BeltIdentifierType_BeltIdentifierCapacitiveSensor_Units = 121;
 
         /// <remarks />
-        public const uint IdentifierBelt_IdentifierBeltInductiveSensor_Output = 123;
+        public const uint BeltIdentifierType_BeltIdentifierInductiveSensor_Output = 123;
 
         /// <remarks />
-        public const uint IdentifierBelt_IdentifierBeltInductiveSensor_Output_EURange = 127;
+        public const uint BeltIdentifierType_BeltIdentifierInductiveSensor_Output_EURange = 127;
 
         /// <remarks />
-        public const uint IdentifierBelt_IdentifierBeltInductiveSensor_Units = 129;
+        public const uint BeltIdentifierType_BeltIdentifierInductiveSensor_Units = 129;
 
         /// <remarks />
-        public const uint IdentifierBelt_IdentifierBeltErrorIlumination_Input = 131;
+        public const uint BeltIdentifierType_BeltIdentifierErrorIlumination_Input = 131;
 
         /// <remarks />
-        public const uint IdentifierBelt_IdentifierBeltErrorIlumination_Input_EURange = 135;
+        public const uint BeltIdentifierType_BeltIdentifierErrorIlumination_Input_EURange = 135;
 
         /// <remarks />
-        public const uint IdentifierBelt_IdentifierBeltErrorIlumination_Output = 137;
+        public const uint BeltIdentifierType_BeltIdentifierErrorIlumination_Output = 137;
 
         /// <remarks />
-        public const uint IdentifierBelt_IdentifierBeltErrorIlumination_Output_EURange = 141;
+        public const uint BeltIdentifierType_BeltIdentifierErrorIlumination_Output_EURange = 141;
 
         /// <remarks />
-        public const uint IdentifierBelt_IdentifierBeltMotor_Speed = 144;
+        public const uint BeltIdentifierType_BeltIdentifierMotor_Speed = 144;
 
         /// <remarks />
-        public const uint IdentifierBelt_IdentifierBeltMotor_Speed_EURange = 148;
+        public const uint BeltIdentifierType_BeltIdentifierMotor_Speed_EURange = 148;
 
         /// <remarks />
-        public const uint BeltIdentifierType_BeltIdentifier_IdentifierBeltOpticalBarrierStart_Output = 153;
+        public const uint BeltType_BeltIdentifier1_BeltIdentifierOpticalBarrierStart_Output = 153;
 
         /// <remarks />
-        public const uint BeltIdentifierType_BeltIdentifier_IdentifierBeltOpticalBarrierStart_Output_EURange = 157;
+        public const uint BeltType_BeltIdentifier1_BeltIdentifierOpticalBarrierStart_Output_EURange = 157;
 
         /// <remarks />
-        public const uint BeltIdentifierType_BeltIdentifier_IdentifierBeltOpticalBarrierStart_Units = 159;
+        public const uint BeltType_BeltIdentifier1_BeltIdentifierOpticalBarrierStart_Units = 159;
 
         /// <remarks />
-        public const uint BeltIdentifierType_BeltIdentifier_IdentifierBeltOpticalBarrierMiddle_Output = 161;
+        public const uint BeltType_BeltIdentifier1_BeltIdentifierOpticalBarrierMiddle_Output = 161;
 
         /// <remarks />
-        public const uint BeltIdentifierType_BeltIdentifier_IdentifierBeltOpticalBarrierMiddle_Output_EURange = 165;
+        public const uint BeltType_BeltIdentifier1_BeltIdentifierOpticalBarrierMiddle_Output_EURange = 165;
 
         /// <remarks />
-        public const uint BeltIdentifierType_BeltIdentifier_IdentifierBeltOpticalBarrierMiddle_Units = 167;
+        public const uint BeltType_BeltIdentifier1_BeltIdentifierOpticalBarrierMiddle_Units = 167;
 
         /// <remarks />
-        public const uint BeltIdentifierType_BeltIdentifier_IdentifierBeltOpticalBarrierEnd_Output = 169;
+        public const uint BeltType_BeltIdentifier1_BeltIdentifierOpticalBarrierEnd_Output = 169;
 
         /// <remarks />
-        public const uint BeltIdentifierType_BeltIdentifier_IdentifierBeltOpticalBarrierEnd_Output_EURange = 173;
+        public const uint BeltType_BeltIdentifier1_BeltIdentifierOpticalBarrierEnd_Output_EURange = 173;
 
         /// <remarks />
-        public const uint BeltIdentifierType_BeltIdentifier_IdentifierBeltOpticalBarrierEnd_Units = 175;
+        public const uint BeltType_BeltIdentifier1_BeltIdentifierOpticalBarrierEnd_Units = 175;
 
         /// <remarks />
-        public const uint BeltIdentifierType_BeltIdentifier_IdentifierBeltElectricPhotoSensor_Output = 177;
+        public const uint BeltType_BeltIdentifier1_BeltIdentifierElectricPhotoSensor_Output = 177;
 
         /// <remarks />
-        public const uint BeltIdentifierType_BeltIdentifier_IdentifierBeltElectricPhotoSensor_Output_EURange = 181;
+        public const uint BeltType_BeltIdentifier1_BeltIdentifierElectricPhotoSensor_Output_EURange = 181;
 
         /// <remarks />
-        public const uint BeltIdentifierType_BeltIdentifier_IdentifierBeltElectricPhotoSensor_Units = 183;
+        public const uint BeltType_BeltIdentifier1_BeltIdentifierElectricPhotoSensor_Units = 183;
 
         /// <remarks />
-        public const uint BeltIdentifierType_BeltIdentifier_IdentifierBeltCapacitiveSensor_Output = 185;
+        public const uint BeltType_BeltIdentifier1_BeltIdentifierCapacitiveSensor_Output = 185;
 
         /// <remarks />
-        public const uint BeltIdentifierType_BeltIdentifier_IdentifierBeltCapacitiveSensor_Output_EURange = 189;
+        public const uint BeltType_BeltIdentifier1_BeltIdentifierCapacitiveSensor_Output_EURange = 189;
 
         /// <remarks />
-        public const uint BeltIdentifierType_BeltIdentifier_IdentifierBeltCapacitiveSensor_Units = 191;
+        public const uint BeltType_BeltIdentifier1_BeltIdentifierCapacitiveSensor_Units = 191;
 
         /// <remarks />
-        public const uint BeltIdentifierType_BeltIdentifier_IdentifierBeltInductiveSensor_Output = 193;
+        public const uint BeltType_BeltIdentifier1_BeltIdentifierInductiveSensor_Output = 193;
 
         /// <remarks />
-        public const uint BeltIdentifierType_BeltIdentifier_IdentifierBeltInductiveSensor_Output_EURange = 197;
+        public const uint BeltType_BeltIdentifier1_BeltIdentifierInductiveSensor_Output_EURange = 197;
 
         /// <remarks />
-        public const uint BeltIdentifierType_BeltIdentifier_IdentifierBeltInductiveSensor_Units = 199;
+        public const uint BeltType_BeltIdentifier1_BeltIdentifierInductiveSensor_Units = 199;
 
         /// <remarks />
-        public const uint BeltIdentifierType_BeltIdentifier_IdentifierBeltErrorIlumination_Input = 201;
+        public const uint BeltType_BeltIdentifier1_BeltIdentifierErrorIlumination_Input = 201;
 
         /// <remarks />
-        public const uint BeltIdentifierType_BeltIdentifier_IdentifierBeltErrorIlumination_Input_EURange = 205;
+        public const uint BeltType_BeltIdentifier1_BeltIdentifierErrorIlumination_Input_EURange = 205;
 
         /// <remarks />
-        public const uint BeltIdentifierType_BeltIdentifier_IdentifierBeltErrorIlumination_Output = 207;
+        public const uint BeltType_BeltIdentifier1_BeltIdentifierErrorIlumination_Output = 207;
 
         /// <remarks />
-        public const uint BeltIdentifierType_BeltIdentifier_IdentifierBeltErrorIlumination_Output_EURange = 211;
+        public const uint BeltType_BeltIdentifier1_BeltIdentifierErrorIlumination_Output_EURange = 211;
 
         /// <remarks />
-        public const uint BeltIdentifierType_BeltIdentifier_IdentifierBeltMotor_Speed = 214;
+        public const uint BeltType_BeltIdentifier1_BeltIdentifierMotor_Speed = 214;
 
         /// <remarks />
-        public const uint BeltIdentifierType_BeltIdentifier_IdentifierBeltMotor_Speed_EURange = 218;
+        public const uint BeltType_BeltIdentifier1_BeltIdentifierMotor_Speed_EURange = 218;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier_IdentifierBeltOpticalBarrierStart_Output = 226;
+        public const uint BeltType_BeltIdentifier1_BeltIdentifier1OpticalBarrierStart_Output = 221;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier_IdentifierBeltOpticalBarrierStart_Output_EURange = 230;
+        public const uint BeltType_BeltIdentifier1_BeltIdentifier1OpticalBarrierMiddle_Output = 223;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier_IdentifierBeltOpticalBarrierStart_Units = 232;
+        public const uint BeltType_BeltIdentifier1_BeltIdentifier1OpticalBarrierEnd_Output = 225;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier_IdentifierBeltOpticalBarrierMiddle_Output = 234;
+        public const uint BeltType_BeltIdentifier1_BeltIdentifier1ElectricPhotoSensor_Output = 227;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier_IdentifierBeltOpticalBarrierMiddle_Output_EURange = 238;
+        public const uint BeltType_BeltIdentifier1_BeltIdentifier1CapacitiveSensor_Output = 229;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier_IdentifierBeltOpticalBarrierMiddle_Units = 240;
+        public const uint BeltType_BeltIdentifier1_BeltIdentifier1InductiveSensor_Output = 231;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier_IdentifierBeltOpticalBarrierEnd_Output = 242;
+        public const uint BeltType_BeltIdentifier1_BeltIdentifier1ErrorIlumination_Input = 233;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier_IdentifierBeltOpticalBarrierEnd_Output_EURange = 246;
+        public const uint BeltType_BeltIdentifier1_BeltIdentifier1Motor_Speed = 235;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier_IdentifierBeltOpticalBarrierEnd_Units = 248;
+        public const uint BeltServer_BeltIdentifier1_BeltIdentifierOpticalBarrierStart_Output = 241;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier_IdentifierBeltElectricPhotoSensor_Output = 250;
+        public const uint BeltServer_BeltIdentifier1_BeltIdentifierOpticalBarrierStart_Output_EURange = 245;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier_IdentifierBeltElectricPhotoSensor_Output_EURange = 254;
+        public const uint BeltServer_BeltIdentifier1_BeltIdentifierOpticalBarrierStart_Units = 247;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier_IdentifierBeltElectricPhotoSensor_Units = 256;
+        public const uint BeltServer_BeltIdentifier1_BeltIdentifierOpticalBarrierMiddle_Output = 249;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier_IdentifierBeltCapacitiveSensor_Output = 258;
+        public const uint BeltServer_BeltIdentifier1_BeltIdentifierOpticalBarrierMiddle_Output_EURange = 253;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier_IdentifierBeltCapacitiveSensor_Output_EURange = 262;
+        public const uint BeltServer_BeltIdentifier1_BeltIdentifierOpticalBarrierMiddle_Units = 255;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier_IdentifierBeltCapacitiveSensor_Units = 264;
+        public const uint BeltServer_BeltIdentifier1_BeltIdentifierOpticalBarrierEnd_Output = 257;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier_IdentifierBeltInductiveSensor_Output = 266;
+        public const uint BeltServer_BeltIdentifier1_BeltIdentifierOpticalBarrierEnd_Output_EURange = 261;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier_IdentifierBeltInductiveSensor_Output_EURange = 270;
+        public const uint BeltServer_BeltIdentifier1_BeltIdentifierOpticalBarrierEnd_Units = 263;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier_IdentifierBeltInductiveSensor_Units = 272;
+        public const uint BeltServer_BeltIdentifier1_BeltIdentifierElectricPhotoSensor_Output = 265;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier_IdentifierBeltErrorIlumination_Input = 274;
+        public const uint BeltServer_BeltIdentifier1_BeltIdentifierElectricPhotoSensor_Output_EURange = 269;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier_IdentifierBeltErrorIlumination_Input_EURange = 278;
+        public const uint BeltServer_BeltIdentifier1_BeltIdentifierElectricPhotoSensor_Units = 271;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier_IdentifierBeltErrorIlumination_Output = 280;
+        public const uint BeltServer_BeltIdentifier1_BeltIdentifierCapacitiveSensor_Output = 273;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier_IdentifierBeltErrorIlumination_Output_EURange = 284;
+        public const uint BeltServer_BeltIdentifier1_BeltIdentifierCapacitiveSensor_Output_EURange = 277;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier_IdentifierBeltMotor_Speed = 287;
+        public const uint BeltServer_BeltIdentifier1_BeltIdentifierCapacitiveSensor_Units = 279;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier_IdentifierBeltMotor_Speed_EURange = 291;
+        public const uint BeltServer_BeltIdentifier1_BeltIdentifierInductiveSensor_Output = 281;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier001_IdentifierBeltOpticalBarrierStart_Output = 298;
+        public const uint BeltServer_BeltIdentifier1_BeltIdentifierInductiveSensor_Output_EURange = 285;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier001_IdentifierBeltOpticalBarrierStart_Output_EURange = 302;
+        public const uint BeltServer_BeltIdentifier1_BeltIdentifierInductiveSensor_Units = 287;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier001_IdentifierBeltOpticalBarrierStart_Units = 304;
+        public const uint BeltServer_BeltIdentifier1_BeltIdentifierErrorIlumination_Input = 289;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier001_IdentifierBeltOpticalBarrierMiddle_Output = 306;
+        public const uint BeltServer_BeltIdentifier1_BeltIdentifierErrorIlumination_Input_EURange = 293;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier001_IdentifierBeltOpticalBarrierMiddle_Output_EURange = 310;
+        public const uint BeltServer_BeltIdentifier1_BeltIdentifierErrorIlumination_Output = 295;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier001_IdentifierBeltOpticalBarrierMiddle_Units = 312;
+        public const uint BeltServer_BeltIdentifier1_BeltIdentifierErrorIlumination_Output_EURange = 299;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier001_IdentifierBeltOpticalBarrierEnd_Output = 314;
+        public const uint BeltServer_BeltIdentifier1_BeltIdentifierMotor_Speed = 302;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier001_IdentifierBeltOpticalBarrierEnd_Output_EURange = 318;
+        public const uint BeltServer_BeltIdentifier1_BeltIdentifierMotor_Speed_EURange = 306;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier001_IdentifierBeltOpticalBarrierEnd_Units = 320;
+        public const uint BeltServer_BeltIdentifier1_BeltIdentifier1OpticalBarrierStart_Output = 309;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier001_IdentifierBeltElectricPhotoSensor_Output = 322;
+        public const uint BeltServer_BeltIdentifier1_BeltIdentifier1OpticalBarrierMiddle_Output = 311;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier001_IdentifierBeltElectricPhotoSensor_Output_EURange = 326;
+        public const uint BeltServer_BeltIdentifier1_BeltIdentifier1OpticalBarrierEnd_Output = 313;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier001_IdentifierBeltElectricPhotoSensor_Units = 328;
+        public const uint BeltServer_BeltIdentifier1_BeltIdentifier1ElectricPhotoSensor_Output = 315;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier001_IdentifierBeltCapacitiveSensor_Output = 330;
+        public const uint BeltServer_BeltIdentifier1_BeltIdentifier1CapacitiveSensor_Output = 317;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier001_IdentifierBeltCapacitiveSensor_Output_EURange = 334;
+        public const uint BeltServer_BeltIdentifier1_BeltIdentifier1InductiveSensor_Output = 319;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier001_IdentifierBeltCapacitiveSensor_Units = 336;
+        public const uint BeltServer_BeltIdentifier1_BeltIdentifier1ErrorIlumination_Input = 321;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier001_IdentifierBeltInductiveSensor_Output = 338;
+        public const uint BeltServer_BeltIdentifier1_BeltIdentifier1Motor_Speed = 323;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier001_IdentifierBeltInductiveSensor_Output_EURange = 342;
+        public const uint BeltServer_BeltIdentifier001_BeltIdentifierOpticalBarrierStart_Output = 328;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier001_IdentifierBeltInductiveSensor_Units = 344;
+        public const uint BeltServer_BeltIdentifier001_BeltIdentifierOpticalBarrierStart_Output_EURange = 332;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier001_IdentifierBeltErrorIlumination_Input = 346;
+        public const uint BeltServer_BeltIdentifier001_BeltIdentifierOpticalBarrierStart_Units = 334;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier001_IdentifierBeltErrorIlumination_Input_EURange = 350;
+        public const uint BeltServer_BeltIdentifier001_BeltIdentifierOpticalBarrierMiddle_Output = 336;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier001_IdentifierBeltErrorIlumination_Output = 352;
+        public const uint BeltServer_BeltIdentifier001_BeltIdentifierOpticalBarrierMiddle_Output_EURange = 340;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier001_IdentifierBeltErrorIlumination_Output_EURange = 356;
+        public const uint BeltServer_BeltIdentifier001_BeltIdentifierOpticalBarrierMiddle_Units = 342;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier001_IdentifierBeltMotor_Speed = 359;
+        public const uint BeltServer_BeltIdentifier001_BeltIdentifierOpticalBarrierEnd_Output = 344;
 
         /// <remarks />
-        public const uint BeltIdentifier1_BeltIdentifier001_IdentifierBeltMotor_Speed_EURange = 363;
+        public const uint BeltServer_BeltIdentifier001_BeltIdentifierOpticalBarrierEnd_Output_EURange = 348;
+
+        /// <remarks />
+        public const uint BeltServer_BeltIdentifier001_BeltIdentifierOpticalBarrierEnd_Units = 350;
+
+        /// <remarks />
+        public const uint BeltServer_BeltIdentifier001_BeltIdentifierElectricPhotoSensor_Output = 352;
+
+        /// <remarks />
+        public const uint BeltServer_BeltIdentifier001_BeltIdentifierElectricPhotoSensor_Output_EURange = 356;
+
+        /// <remarks />
+        public const uint BeltServer_BeltIdentifier001_BeltIdentifierElectricPhotoSensor_Units = 358;
+
+        /// <remarks />
+        public const uint BeltServer_BeltIdentifier001_BeltIdentifierCapacitiveSensor_Output = 360;
+
+        /// <remarks />
+        public const uint BeltServer_BeltIdentifier001_BeltIdentifierCapacitiveSensor_Output_EURange = 364;
+
+        /// <remarks />
+        public const uint BeltServer_BeltIdentifier001_BeltIdentifierCapacitiveSensor_Units = 366;
+
+        /// <remarks />
+        public const uint BeltServer_BeltIdentifier001_BeltIdentifierInductiveSensor_Output = 368;
+
+        /// <remarks />
+        public const uint BeltServer_BeltIdentifier001_BeltIdentifierInductiveSensor_Output_EURange = 372;
+
+        /// <remarks />
+        public const uint BeltServer_BeltIdentifier001_BeltIdentifierInductiveSensor_Units = 374;
+
+        /// <remarks />
+        public const uint BeltServer_BeltIdentifier001_BeltIdentifierErrorIlumination_Input = 376;
+
+        /// <remarks />
+        public const uint BeltServer_BeltIdentifier001_BeltIdentifierErrorIlumination_Input_EURange = 380;
+
+        /// <remarks />
+        public const uint BeltServer_BeltIdentifier001_BeltIdentifierErrorIlumination_Output = 382;
+
+        /// <remarks />
+        public const uint BeltServer_BeltIdentifier001_BeltIdentifierErrorIlumination_Output_EURange = 386;
+
+        /// <remarks />
+        public const uint BeltServer_BeltIdentifier001_BeltIdentifierMotor_Speed = 389;
+
+        /// <remarks />
+        public const uint BeltServer_BeltIdentifier001_BeltIdentifierMotor_Speed_EURange = 393;
     }
     #endregion
 
@@ -571,22 +661,16 @@ namespace BeltIdentifier
     public static partial class MethodIds
     {
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifierType_StartProcess = new ExpandedNodeId(BeltIdentifier.Methods.BeltIdentifierType_StartProcess, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltType_StartProcess = new ExpandedNodeId(BeltIdentifier.Methods.BeltType_StartProcess, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifierType_StopProcess = new ExpandedNodeId(BeltIdentifier.Methods.BeltIdentifierType_StopProcess, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltType_StopProcess = new ExpandedNodeId(BeltIdentifier.Methods.BeltType_StopProcess, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifierType_TypeOfObject = new ExpandedNodeId(BeltIdentifier.Methods.BeltIdentifierType_TypeOfObject, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltServer_StartProcess = new ExpandedNodeId(BeltIdentifier.Methods.BeltServer_StartProcess, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_StartProcess = new ExpandedNodeId(BeltIdentifier.Methods.BeltIdentifier1_StartProcess, BeltIdentifier.Namespaces.BeltIdentifier);
-
-        /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_StopProcess = new ExpandedNodeId(BeltIdentifier.Methods.BeltIdentifier1_StopProcess, BeltIdentifier.Namespaces.BeltIdentifier);
-
-        /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_TypeOfObject = new ExpandedNodeId(BeltIdentifier.Methods.BeltIdentifier1_TypeOfObject, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltServer_StopProcess = new ExpandedNodeId(BeltIdentifier.Methods.BeltServer_StopProcess, BeltIdentifier.Namespaces.BeltIdentifier);
     }
     #endregion
 
@@ -597,112 +681,160 @@ namespace BeltIdentifier
     public static partial class ObjectIds
     {
         /// <remarks />
-        public static readonly ExpandedNodeId IdentifierBelt_IdentifierBeltOpticalBarrierStart = new ExpandedNodeId(BeltIdentifier.Objects.IdentifierBelt_IdentifierBeltOpticalBarrierStart, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifierOpticalBarrierStart = new ExpandedNodeId(BeltIdentifier.Objects.BeltIdentifierType_BeltIdentifierOpticalBarrierStart, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId IdentifierBelt_IdentifierBeltOpticalBarrierMiddle = new ExpandedNodeId(BeltIdentifier.Objects.IdentifierBelt_IdentifierBeltOpticalBarrierMiddle, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifierOpticalBarrierMiddle = new ExpandedNodeId(BeltIdentifier.Objects.BeltIdentifierType_BeltIdentifierOpticalBarrierMiddle, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId IdentifierBelt_IdentifierBeltOpticalBarrierEnd = new ExpandedNodeId(BeltIdentifier.Objects.IdentifierBelt_IdentifierBeltOpticalBarrierEnd, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifierOpticalBarrierEnd = new ExpandedNodeId(BeltIdentifier.Objects.BeltIdentifierType_BeltIdentifierOpticalBarrierEnd, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId IdentifierBelt_IdentifierBeltElectricPhotoSensor = new ExpandedNodeId(BeltIdentifier.Objects.IdentifierBelt_IdentifierBeltElectricPhotoSensor, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifierElectricPhotoSensor = new ExpandedNodeId(BeltIdentifier.Objects.BeltIdentifierType_BeltIdentifierElectricPhotoSensor, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId IdentifierBelt_IdentifierBeltCapacitiveSensor = new ExpandedNodeId(BeltIdentifier.Objects.IdentifierBelt_IdentifierBeltCapacitiveSensor, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifierCapacitiveSensor = new ExpandedNodeId(BeltIdentifier.Objects.BeltIdentifierType_BeltIdentifierCapacitiveSensor, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId IdentifierBelt_IdentifierBeltInductiveSensor = new ExpandedNodeId(BeltIdentifier.Objects.IdentifierBelt_IdentifierBeltInductiveSensor, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifierInductiveSensor = new ExpandedNodeId(BeltIdentifier.Objects.BeltIdentifierType_BeltIdentifierInductiveSensor, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId IdentifierBelt_IdentifierBeltErrorIlumination = new ExpandedNodeId(BeltIdentifier.Objects.IdentifierBelt_IdentifierBeltErrorIlumination, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifierErrorIlumination = new ExpandedNodeId(BeltIdentifier.Objects.BeltIdentifierType_BeltIdentifierErrorIlumination, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId IdentifierBelt_IdentifierBeltMotor = new ExpandedNodeId(BeltIdentifier.Objects.IdentifierBelt_IdentifierBeltMotor, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifierMotor = new ExpandedNodeId(BeltIdentifier.Objects.BeltIdentifierType_BeltIdentifierMotor, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifier = new ExpandedNodeId(BeltIdentifier.Objects.BeltIdentifierType_BeltIdentifier, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltType_BeltIdentifier1 = new ExpandedNodeId(BeltIdentifier.Objects.BeltType_BeltIdentifier1, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifier_IdentifierBeltOpticalBarrierStart = new ExpandedNodeId(BeltIdentifier.Objects.BeltIdentifierType_BeltIdentifier_IdentifierBeltOpticalBarrierStart, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltType_BeltIdentifier1_BeltIdentifierOpticalBarrierStart = new ExpandedNodeId(BeltIdentifier.Objects.BeltType_BeltIdentifier1_BeltIdentifierOpticalBarrierStart, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifier_IdentifierBeltOpticalBarrierMiddle = new ExpandedNodeId(BeltIdentifier.Objects.BeltIdentifierType_BeltIdentifier_IdentifierBeltOpticalBarrierMiddle, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltType_BeltIdentifier1_BeltIdentifierOpticalBarrierMiddle = new ExpandedNodeId(BeltIdentifier.Objects.BeltType_BeltIdentifier1_BeltIdentifierOpticalBarrierMiddle, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifier_IdentifierBeltOpticalBarrierEnd = new ExpandedNodeId(BeltIdentifier.Objects.BeltIdentifierType_BeltIdentifier_IdentifierBeltOpticalBarrierEnd, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltType_BeltIdentifier1_BeltIdentifierOpticalBarrierEnd = new ExpandedNodeId(BeltIdentifier.Objects.BeltType_BeltIdentifier1_BeltIdentifierOpticalBarrierEnd, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifier_IdentifierBeltElectricPhotoSensor = new ExpandedNodeId(BeltIdentifier.Objects.BeltIdentifierType_BeltIdentifier_IdentifierBeltElectricPhotoSensor, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltType_BeltIdentifier1_BeltIdentifierElectricPhotoSensor = new ExpandedNodeId(BeltIdentifier.Objects.BeltType_BeltIdentifier1_BeltIdentifierElectricPhotoSensor, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifier_IdentifierBeltCapacitiveSensor = new ExpandedNodeId(BeltIdentifier.Objects.BeltIdentifierType_BeltIdentifier_IdentifierBeltCapacitiveSensor, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltType_BeltIdentifier1_BeltIdentifierCapacitiveSensor = new ExpandedNodeId(BeltIdentifier.Objects.BeltType_BeltIdentifier1_BeltIdentifierCapacitiveSensor, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifier_IdentifierBeltInductiveSensor = new ExpandedNodeId(BeltIdentifier.Objects.BeltIdentifierType_BeltIdentifier_IdentifierBeltInductiveSensor, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltType_BeltIdentifier1_BeltIdentifierInductiveSensor = new ExpandedNodeId(BeltIdentifier.Objects.BeltType_BeltIdentifier1_BeltIdentifierInductiveSensor, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifier_IdentifierBeltErrorIlumination = new ExpandedNodeId(BeltIdentifier.Objects.BeltIdentifierType_BeltIdentifier_IdentifierBeltErrorIlumination, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltType_BeltIdentifier1_BeltIdentifierErrorIlumination = new ExpandedNodeId(BeltIdentifier.Objects.BeltType_BeltIdentifier1_BeltIdentifierErrorIlumination, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifier_IdentifierBeltMotor = new ExpandedNodeId(BeltIdentifier.Objects.BeltIdentifierType_BeltIdentifier_IdentifierBeltMotor, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltType_BeltIdentifier1_BeltIdentifierMotor = new ExpandedNodeId(BeltIdentifier.Objects.BeltType_BeltIdentifier1_BeltIdentifierMotor, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1 = new ExpandedNodeId(BeltIdentifier.Objects.BeltIdentifier1, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltType_BeltIdentifier1_BeltIdentifier1OpticalBarrierStart = new ExpandedNodeId(BeltIdentifier.Objects.BeltType_BeltIdentifier1_BeltIdentifier1OpticalBarrierStart, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier = new ExpandedNodeId(BeltIdentifier.Objects.BeltIdentifier1_BeltIdentifier, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltType_BeltIdentifier1_BeltIdentifier1OpticalBarrierMiddle = new ExpandedNodeId(BeltIdentifier.Objects.BeltType_BeltIdentifier1_BeltIdentifier1OpticalBarrierMiddle, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier_IdentifierBeltOpticalBarrierStart = new ExpandedNodeId(BeltIdentifier.Objects.BeltIdentifier1_BeltIdentifier_IdentifierBeltOpticalBarrierStart, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltType_BeltIdentifier1_BeltIdentifier1OpticalBarrierEnd = new ExpandedNodeId(BeltIdentifier.Objects.BeltType_BeltIdentifier1_BeltIdentifier1OpticalBarrierEnd, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier_IdentifierBeltOpticalBarrierMiddle = new ExpandedNodeId(BeltIdentifier.Objects.BeltIdentifier1_BeltIdentifier_IdentifierBeltOpticalBarrierMiddle, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltType_BeltIdentifier1_BeltIdentifier1ElectricPhotoSensor = new ExpandedNodeId(BeltIdentifier.Objects.BeltType_BeltIdentifier1_BeltIdentifier1ElectricPhotoSensor, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier_IdentifierBeltOpticalBarrierEnd = new ExpandedNodeId(BeltIdentifier.Objects.BeltIdentifier1_BeltIdentifier_IdentifierBeltOpticalBarrierEnd, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltType_BeltIdentifier1_BeltIdentifier1CapacitiveSensor = new ExpandedNodeId(BeltIdentifier.Objects.BeltType_BeltIdentifier1_BeltIdentifier1CapacitiveSensor, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier_IdentifierBeltElectricPhotoSensor = new ExpandedNodeId(BeltIdentifier.Objects.BeltIdentifier1_BeltIdentifier_IdentifierBeltElectricPhotoSensor, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltType_BeltIdentifier1_BeltIdentifier1InductiveSensor = new ExpandedNodeId(BeltIdentifier.Objects.BeltType_BeltIdentifier1_BeltIdentifier1InductiveSensor, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier_IdentifierBeltCapacitiveSensor = new ExpandedNodeId(BeltIdentifier.Objects.BeltIdentifier1_BeltIdentifier_IdentifierBeltCapacitiveSensor, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltType_BeltIdentifier1_BeltIdentifier1ErrorIlumination = new ExpandedNodeId(BeltIdentifier.Objects.BeltType_BeltIdentifier1_BeltIdentifier1ErrorIlumination, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier_IdentifierBeltInductiveSensor = new ExpandedNodeId(BeltIdentifier.Objects.BeltIdentifier1_BeltIdentifier_IdentifierBeltInductiveSensor, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltType_BeltIdentifier1_BeltIdentifier1Motor = new ExpandedNodeId(BeltIdentifier.Objects.BeltType_BeltIdentifier1_BeltIdentifier1Motor, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier_IdentifierBeltErrorIlumination = new ExpandedNodeId(BeltIdentifier.Objects.BeltIdentifier1_BeltIdentifier_IdentifierBeltErrorIlumination, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltServer = new ExpandedNodeId(BeltIdentifier.Objects.BeltServer, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier_IdentifierBeltMotor = new ExpandedNodeId(BeltIdentifier.Objects.BeltIdentifier1_BeltIdentifier_IdentifierBeltMotor, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier1 = new ExpandedNodeId(BeltIdentifier.Objects.BeltServer_BeltIdentifier1, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier001 = new ExpandedNodeId(BeltIdentifier.Objects.BeltIdentifier1_BeltIdentifier001, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier1_BeltIdentifierOpticalBarrierStart = new ExpandedNodeId(BeltIdentifier.Objects.BeltServer_BeltIdentifier1_BeltIdentifierOpticalBarrierStart, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier001_IdentifierBeltOpticalBarrierStart = new ExpandedNodeId(BeltIdentifier.Objects.BeltIdentifier1_BeltIdentifier001_IdentifierBeltOpticalBarrierStart, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier1_BeltIdentifierOpticalBarrierMiddle = new ExpandedNodeId(BeltIdentifier.Objects.BeltServer_BeltIdentifier1_BeltIdentifierOpticalBarrierMiddle, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier001_IdentifierBeltOpticalBarrierMiddle = new ExpandedNodeId(BeltIdentifier.Objects.BeltIdentifier1_BeltIdentifier001_IdentifierBeltOpticalBarrierMiddle, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier1_BeltIdentifierOpticalBarrierEnd = new ExpandedNodeId(BeltIdentifier.Objects.BeltServer_BeltIdentifier1_BeltIdentifierOpticalBarrierEnd, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier001_IdentifierBeltOpticalBarrierEnd = new ExpandedNodeId(BeltIdentifier.Objects.BeltIdentifier1_BeltIdentifier001_IdentifierBeltOpticalBarrierEnd, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier1_BeltIdentifierElectricPhotoSensor = new ExpandedNodeId(BeltIdentifier.Objects.BeltServer_BeltIdentifier1_BeltIdentifierElectricPhotoSensor, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier001_IdentifierBeltElectricPhotoSensor = new ExpandedNodeId(BeltIdentifier.Objects.BeltIdentifier1_BeltIdentifier001_IdentifierBeltElectricPhotoSensor, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier1_BeltIdentifierCapacitiveSensor = new ExpandedNodeId(BeltIdentifier.Objects.BeltServer_BeltIdentifier1_BeltIdentifierCapacitiveSensor, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier001_IdentifierBeltCapacitiveSensor = new ExpandedNodeId(BeltIdentifier.Objects.BeltIdentifier1_BeltIdentifier001_IdentifierBeltCapacitiveSensor, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier1_BeltIdentifierInductiveSensor = new ExpandedNodeId(BeltIdentifier.Objects.BeltServer_BeltIdentifier1_BeltIdentifierInductiveSensor, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier001_IdentifierBeltInductiveSensor = new ExpandedNodeId(BeltIdentifier.Objects.BeltIdentifier1_BeltIdentifier001_IdentifierBeltInductiveSensor, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier1_BeltIdentifierErrorIlumination = new ExpandedNodeId(BeltIdentifier.Objects.BeltServer_BeltIdentifier1_BeltIdentifierErrorIlumination, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier001_IdentifierBeltErrorIlumination = new ExpandedNodeId(BeltIdentifier.Objects.BeltIdentifier1_BeltIdentifier001_IdentifierBeltErrorIlumination, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier1_BeltIdentifierMotor = new ExpandedNodeId(BeltIdentifier.Objects.BeltServer_BeltIdentifier1_BeltIdentifierMotor, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier001_IdentifierBeltMotor = new ExpandedNodeId(BeltIdentifier.Objects.BeltIdentifier1_BeltIdentifier001_IdentifierBeltMotor, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier1_BeltIdentifier1OpticalBarrierStart = new ExpandedNodeId(BeltIdentifier.Objects.BeltServer_BeltIdentifier1_BeltIdentifier1OpticalBarrierStart, BeltIdentifier.Namespaces.BeltIdentifier);
+
+        /// <remarks />
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier1_BeltIdentifier1OpticalBarrierMiddle = new ExpandedNodeId(BeltIdentifier.Objects.BeltServer_BeltIdentifier1_BeltIdentifier1OpticalBarrierMiddle, BeltIdentifier.Namespaces.BeltIdentifier);
+
+        /// <remarks />
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier1_BeltIdentifier1OpticalBarrierEnd = new ExpandedNodeId(BeltIdentifier.Objects.BeltServer_BeltIdentifier1_BeltIdentifier1OpticalBarrierEnd, BeltIdentifier.Namespaces.BeltIdentifier);
+
+        /// <remarks />
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier1_BeltIdentifier1ElectricPhotoSensor = new ExpandedNodeId(BeltIdentifier.Objects.BeltServer_BeltIdentifier1_BeltIdentifier1ElectricPhotoSensor, BeltIdentifier.Namespaces.BeltIdentifier);
+
+        /// <remarks />
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier1_BeltIdentifier1CapacitiveSensor = new ExpandedNodeId(BeltIdentifier.Objects.BeltServer_BeltIdentifier1_BeltIdentifier1CapacitiveSensor, BeltIdentifier.Namespaces.BeltIdentifier);
+
+        /// <remarks />
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier1_BeltIdentifier1InductiveSensor = new ExpandedNodeId(BeltIdentifier.Objects.BeltServer_BeltIdentifier1_BeltIdentifier1InductiveSensor, BeltIdentifier.Namespaces.BeltIdentifier);
+
+        /// <remarks />
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier1_BeltIdentifier1ErrorIlumination = new ExpandedNodeId(BeltIdentifier.Objects.BeltServer_BeltIdentifier1_BeltIdentifier1ErrorIlumination, BeltIdentifier.Namespaces.BeltIdentifier);
+
+        /// <remarks />
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier1_BeltIdentifier1Motor = new ExpandedNodeId(BeltIdentifier.Objects.BeltServer_BeltIdentifier1_BeltIdentifier1Motor, BeltIdentifier.Namespaces.BeltIdentifier);
+
+        /// <remarks />
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier001 = new ExpandedNodeId(BeltIdentifier.Objects.BeltServer_BeltIdentifier001, BeltIdentifier.Namespaces.BeltIdentifier);
+
+        /// <remarks />
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier001_BeltIdentifierOpticalBarrierStart = new ExpandedNodeId(BeltIdentifier.Objects.BeltServer_BeltIdentifier001_BeltIdentifierOpticalBarrierStart, BeltIdentifier.Namespaces.BeltIdentifier);
+
+        /// <remarks />
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier001_BeltIdentifierOpticalBarrierMiddle = new ExpandedNodeId(BeltIdentifier.Objects.BeltServer_BeltIdentifier001_BeltIdentifierOpticalBarrierMiddle, BeltIdentifier.Namespaces.BeltIdentifier);
+
+        /// <remarks />
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier001_BeltIdentifierOpticalBarrierEnd = new ExpandedNodeId(BeltIdentifier.Objects.BeltServer_BeltIdentifier001_BeltIdentifierOpticalBarrierEnd, BeltIdentifier.Namespaces.BeltIdentifier);
+
+        /// <remarks />
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier001_BeltIdentifierElectricPhotoSensor = new ExpandedNodeId(BeltIdentifier.Objects.BeltServer_BeltIdentifier001_BeltIdentifierElectricPhotoSensor, BeltIdentifier.Namespaces.BeltIdentifier);
+
+        /// <remarks />
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier001_BeltIdentifierCapacitiveSensor = new ExpandedNodeId(BeltIdentifier.Objects.BeltServer_BeltIdentifier001_BeltIdentifierCapacitiveSensor, BeltIdentifier.Namespaces.BeltIdentifier);
+
+        /// <remarks />
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier001_BeltIdentifierInductiveSensor = new ExpandedNodeId(BeltIdentifier.Objects.BeltServer_BeltIdentifier001_BeltIdentifierInductiveSensor, BeltIdentifier.Namespaces.BeltIdentifier);
+
+        /// <remarks />
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier001_BeltIdentifierErrorIlumination = new ExpandedNodeId(BeltIdentifier.Objects.BeltServer_BeltIdentifier001_BeltIdentifierErrorIlumination, BeltIdentifier.Namespaces.BeltIdentifier);
+
+        /// <remarks />
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier001_BeltIdentifierMotor = new ExpandedNodeId(BeltIdentifier.Objects.BeltServer_BeltIdentifier001_BeltIdentifierMotor, BeltIdentifier.Namespaces.BeltIdentifier);
     }
     #endregion
 
@@ -740,10 +872,10 @@ namespace BeltIdentifier
         public static readonly ExpandedNodeId BeltMotorType = new ExpandedNodeId(BeltIdentifier.ObjectTypes.BeltMotorType, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId IdentifierBelt = new ExpandedNodeId(BeltIdentifier.ObjectTypes.IdentifierBelt, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltIdentifierType = new ExpandedNodeId(BeltIdentifier.ObjectTypes.BeltIdentifierType, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifierType = new ExpandedNodeId(BeltIdentifier.ObjectTypes.BeltIdentifierType, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltType = new ExpandedNodeId(BeltIdentifier.ObjectTypes.BeltType, BeltIdentifier.Namespaces.BeltIdentifier);
     }
     #endregion
 
@@ -802,292 +934,340 @@ namespace BeltIdentifier
         public static readonly ExpandedNodeId BeltMotorType_Speed_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltMotorType_Speed_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId IdentifierBelt_IdentifierBeltOpticalBarrierStart_Output = new ExpandedNodeId(BeltIdentifier.Variables.IdentifierBelt_IdentifierBeltOpticalBarrierStart_Output, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifierOpticalBarrierStart_Output = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifierType_BeltIdentifierOpticalBarrierStart_Output, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId IdentifierBelt_IdentifierBeltOpticalBarrierStart_Output_EURange = new ExpandedNodeId(BeltIdentifier.Variables.IdentifierBelt_IdentifierBeltOpticalBarrierStart_Output_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifierOpticalBarrierStart_Output_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifierType_BeltIdentifierOpticalBarrierStart_Output_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId IdentifierBelt_IdentifierBeltOpticalBarrierStart_Units = new ExpandedNodeId(BeltIdentifier.Variables.IdentifierBelt_IdentifierBeltOpticalBarrierStart_Units, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifierOpticalBarrierStart_Units = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifierType_BeltIdentifierOpticalBarrierStart_Units, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId IdentifierBelt_IdentifierBeltOpticalBarrierMiddle_Output = new ExpandedNodeId(BeltIdentifier.Variables.IdentifierBelt_IdentifierBeltOpticalBarrierMiddle_Output, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifierOpticalBarrierMiddle_Output = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifierType_BeltIdentifierOpticalBarrierMiddle_Output, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId IdentifierBelt_IdentifierBeltOpticalBarrierMiddle_Output_EURange = new ExpandedNodeId(BeltIdentifier.Variables.IdentifierBelt_IdentifierBeltOpticalBarrierMiddle_Output_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifierOpticalBarrierMiddle_Output_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifierType_BeltIdentifierOpticalBarrierMiddle_Output_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId IdentifierBelt_IdentifierBeltOpticalBarrierMiddle_Units = new ExpandedNodeId(BeltIdentifier.Variables.IdentifierBelt_IdentifierBeltOpticalBarrierMiddle_Units, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifierOpticalBarrierMiddle_Units = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifierType_BeltIdentifierOpticalBarrierMiddle_Units, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId IdentifierBelt_IdentifierBeltOpticalBarrierEnd_Output = new ExpandedNodeId(BeltIdentifier.Variables.IdentifierBelt_IdentifierBeltOpticalBarrierEnd_Output, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifierOpticalBarrierEnd_Output = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifierType_BeltIdentifierOpticalBarrierEnd_Output, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId IdentifierBelt_IdentifierBeltOpticalBarrierEnd_Output_EURange = new ExpandedNodeId(BeltIdentifier.Variables.IdentifierBelt_IdentifierBeltOpticalBarrierEnd_Output_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifierOpticalBarrierEnd_Output_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifierType_BeltIdentifierOpticalBarrierEnd_Output_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId IdentifierBelt_IdentifierBeltOpticalBarrierEnd_Units = new ExpandedNodeId(BeltIdentifier.Variables.IdentifierBelt_IdentifierBeltOpticalBarrierEnd_Units, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifierOpticalBarrierEnd_Units = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifierType_BeltIdentifierOpticalBarrierEnd_Units, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId IdentifierBelt_IdentifierBeltElectricPhotoSensor_Output = new ExpandedNodeId(BeltIdentifier.Variables.IdentifierBelt_IdentifierBeltElectricPhotoSensor_Output, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifierElectricPhotoSensor_Output = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifierType_BeltIdentifierElectricPhotoSensor_Output, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId IdentifierBelt_IdentifierBeltElectricPhotoSensor_Output_EURange = new ExpandedNodeId(BeltIdentifier.Variables.IdentifierBelt_IdentifierBeltElectricPhotoSensor_Output_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifierElectricPhotoSensor_Output_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifierType_BeltIdentifierElectricPhotoSensor_Output_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId IdentifierBelt_IdentifierBeltElectricPhotoSensor_Units = new ExpandedNodeId(BeltIdentifier.Variables.IdentifierBelt_IdentifierBeltElectricPhotoSensor_Units, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifierElectricPhotoSensor_Units = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifierType_BeltIdentifierElectricPhotoSensor_Units, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId IdentifierBelt_IdentifierBeltCapacitiveSensor_Output = new ExpandedNodeId(BeltIdentifier.Variables.IdentifierBelt_IdentifierBeltCapacitiveSensor_Output, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifierCapacitiveSensor_Output = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifierType_BeltIdentifierCapacitiveSensor_Output, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId IdentifierBelt_IdentifierBeltCapacitiveSensor_Output_EURange = new ExpandedNodeId(BeltIdentifier.Variables.IdentifierBelt_IdentifierBeltCapacitiveSensor_Output_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifierCapacitiveSensor_Output_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifierType_BeltIdentifierCapacitiveSensor_Output_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId IdentifierBelt_IdentifierBeltCapacitiveSensor_Units = new ExpandedNodeId(BeltIdentifier.Variables.IdentifierBelt_IdentifierBeltCapacitiveSensor_Units, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifierCapacitiveSensor_Units = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifierType_BeltIdentifierCapacitiveSensor_Units, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId IdentifierBelt_IdentifierBeltInductiveSensor_Output = new ExpandedNodeId(BeltIdentifier.Variables.IdentifierBelt_IdentifierBeltInductiveSensor_Output, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifierInductiveSensor_Output = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifierType_BeltIdentifierInductiveSensor_Output, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId IdentifierBelt_IdentifierBeltInductiveSensor_Output_EURange = new ExpandedNodeId(BeltIdentifier.Variables.IdentifierBelt_IdentifierBeltInductiveSensor_Output_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifierInductiveSensor_Output_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifierType_BeltIdentifierInductiveSensor_Output_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId IdentifierBelt_IdentifierBeltInductiveSensor_Units = new ExpandedNodeId(BeltIdentifier.Variables.IdentifierBelt_IdentifierBeltInductiveSensor_Units, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifierInductiveSensor_Units = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifierType_BeltIdentifierInductiveSensor_Units, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId IdentifierBelt_IdentifierBeltErrorIlumination_Input = new ExpandedNodeId(BeltIdentifier.Variables.IdentifierBelt_IdentifierBeltErrorIlumination_Input, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifierErrorIlumination_Input = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifierType_BeltIdentifierErrorIlumination_Input, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId IdentifierBelt_IdentifierBeltErrorIlumination_Input_EURange = new ExpandedNodeId(BeltIdentifier.Variables.IdentifierBelt_IdentifierBeltErrorIlumination_Input_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifierErrorIlumination_Input_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifierType_BeltIdentifierErrorIlumination_Input_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId IdentifierBelt_IdentifierBeltErrorIlumination_Output = new ExpandedNodeId(BeltIdentifier.Variables.IdentifierBelt_IdentifierBeltErrorIlumination_Output, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifierErrorIlumination_Output = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifierType_BeltIdentifierErrorIlumination_Output, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId IdentifierBelt_IdentifierBeltErrorIlumination_Output_EURange = new ExpandedNodeId(BeltIdentifier.Variables.IdentifierBelt_IdentifierBeltErrorIlumination_Output_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifierErrorIlumination_Output_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifierType_BeltIdentifierErrorIlumination_Output_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId IdentifierBelt_IdentifierBeltMotor_Speed = new ExpandedNodeId(BeltIdentifier.Variables.IdentifierBelt_IdentifierBeltMotor_Speed, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifierMotor_Speed = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifierType_BeltIdentifierMotor_Speed, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId IdentifierBelt_IdentifierBeltMotor_Speed_EURange = new ExpandedNodeId(BeltIdentifier.Variables.IdentifierBelt_IdentifierBeltMotor_Speed_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifierMotor_Speed_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifierType_BeltIdentifierMotor_Speed_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifier_IdentifierBeltOpticalBarrierStart_Output = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifierType_BeltIdentifier_IdentifierBeltOpticalBarrierStart_Output, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltType_BeltIdentifier1_BeltIdentifierOpticalBarrierStart_Output = new ExpandedNodeId(BeltIdentifier.Variables.BeltType_BeltIdentifier1_BeltIdentifierOpticalBarrierStart_Output, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifier_IdentifierBeltOpticalBarrierStart_Output_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifierType_BeltIdentifier_IdentifierBeltOpticalBarrierStart_Output_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltType_BeltIdentifier1_BeltIdentifierOpticalBarrierStart_Output_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltType_BeltIdentifier1_BeltIdentifierOpticalBarrierStart_Output_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifier_IdentifierBeltOpticalBarrierStart_Units = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifierType_BeltIdentifier_IdentifierBeltOpticalBarrierStart_Units, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltType_BeltIdentifier1_BeltIdentifierOpticalBarrierStart_Units = new ExpandedNodeId(BeltIdentifier.Variables.BeltType_BeltIdentifier1_BeltIdentifierOpticalBarrierStart_Units, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifier_IdentifierBeltOpticalBarrierMiddle_Output = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifierType_BeltIdentifier_IdentifierBeltOpticalBarrierMiddle_Output, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltType_BeltIdentifier1_BeltIdentifierOpticalBarrierMiddle_Output = new ExpandedNodeId(BeltIdentifier.Variables.BeltType_BeltIdentifier1_BeltIdentifierOpticalBarrierMiddle_Output, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifier_IdentifierBeltOpticalBarrierMiddle_Output_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifierType_BeltIdentifier_IdentifierBeltOpticalBarrierMiddle_Output_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltType_BeltIdentifier1_BeltIdentifierOpticalBarrierMiddle_Output_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltType_BeltIdentifier1_BeltIdentifierOpticalBarrierMiddle_Output_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifier_IdentifierBeltOpticalBarrierMiddle_Units = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifierType_BeltIdentifier_IdentifierBeltOpticalBarrierMiddle_Units, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltType_BeltIdentifier1_BeltIdentifierOpticalBarrierMiddle_Units = new ExpandedNodeId(BeltIdentifier.Variables.BeltType_BeltIdentifier1_BeltIdentifierOpticalBarrierMiddle_Units, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifier_IdentifierBeltOpticalBarrierEnd_Output = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifierType_BeltIdentifier_IdentifierBeltOpticalBarrierEnd_Output, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltType_BeltIdentifier1_BeltIdentifierOpticalBarrierEnd_Output = new ExpandedNodeId(BeltIdentifier.Variables.BeltType_BeltIdentifier1_BeltIdentifierOpticalBarrierEnd_Output, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifier_IdentifierBeltOpticalBarrierEnd_Output_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifierType_BeltIdentifier_IdentifierBeltOpticalBarrierEnd_Output_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltType_BeltIdentifier1_BeltIdentifierOpticalBarrierEnd_Output_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltType_BeltIdentifier1_BeltIdentifierOpticalBarrierEnd_Output_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifier_IdentifierBeltOpticalBarrierEnd_Units = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifierType_BeltIdentifier_IdentifierBeltOpticalBarrierEnd_Units, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltType_BeltIdentifier1_BeltIdentifierOpticalBarrierEnd_Units = new ExpandedNodeId(BeltIdentifier.Variables.BeltType_BeltIdentifier1_BeltIdentifierOpticalBarrierEnd_Units, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifier_IdentifierBeltElectricPhotoSensor_Output = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifierType_BeltIdentifier_IdentifierBeltElectricPhotoSensor_Output, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltType_BeltIdentifier1_BeltIdentifierElectricPhotoSensor_Output = new ExpandedNodeId(BeltIdentifier.Variables.BeltType_BeltIdentifier1_BeltIdentifierElectricPhotoSensor_Output, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifier_IdentifierBeltElectricPhotoSensor_Output_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifierType_BeltIdentifier_IdentifierBeltElectricPhotoSensor_Output_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltType_BeltIdentifier1_BeltIdentifierElectricPhotoSensor_Output_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltType_BeltIdentifier1_BeltIdentifierElectricPhotoSensor_Output_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifier_IdentifierBeltElectricPhotoSensor_Units = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifierType_BeltIdentifier_IdentifierBeltElectricPhotoSensor_Units, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltType_BeltIdentifier1_BeltIdentifierElectricPhotoSensor_Units = new ExpandedNodeId(BeltIdentifier.Variables.BeltType_BeltIdentifier1_BeltIdentifierElectricPhotoSensor_Units, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifier_IdentifierBeltCapacitiveSensor_Output = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifierType_BeltIdentifier_IdentifierBeltCapacitiveSensor_Output, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltType_BeltIdentifier1_BeltIdentifierCapacitiveSensor_Output = new ExpandedNodeId(BeltIdentifier.Variables.BeltType_BeltIdentifier1_BeltIdentifierCapacitiveSensor_Output, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifier_IdentifierBeltCapacitiveSensor_Output_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifierType_BeltIdentifier_IdentifierBeltCapacitiveSensor_Output_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltType_BeltIdentifier1_BeltIdentifierCapacitiveSensor_Output_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltType_BeltIdentifier1_BeltIdentifierCapacitiveSensor_Output_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifier_IdentifierBeltCapacitiveSensor_Units = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifierType_BeltIdentifier_IdentifierBeltCapacitiveSensor_Units, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltType_BeltIdentifier1_BeltIdentifierCapacitiveSensor_Units = new ExpandedNodeId(BeltIdentifier.Variables.BeltType_BeltIdentifier1_BeltIdentifierCapacitiveSensor_Units, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifier_IdentifierBeltInductiveSensor_Output = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifierType_BeltIdentifier_IdentifierBeltInductiveSensor_Output, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltType_BeltIdentifier1_BeltIdentifierInductiveSensor_Output = new ExpandedNodeId(BeltIdentifier.Variables.BeltType_BeltIdentifier1_BeltIdentifierInductiveSensor_Output, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifier_IdentifierBeltInductiveSensor_Output_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifierType_BeltIdentifier_IdentifierBeltInductiveSensor_Output_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltType_BeltIdentifier1_BeltIdentifierInductiveSensor_Output_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltType_BeltIdentifier1_BeltIdentifierInductiveSensor_Output_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifier_IdentifierBeltInductiveSensor_Units = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifierType_BeltIdentifier_IdentifierBeltInductiveSensor_Units, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltType_BeltIdentifier1_BeltIdentifierInductiveSensor_Units = new ExpandedNodeId(BeltIdentifier.Variables.BeltType_BeltIdentifier1_BeltIdentifierInductiveSensor_Units, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifier_IdentifierBeltErrorIlumination_Input = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifierType_BeltIdentifier_IdentifierBeltErrorIlumination_Input, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltType_BeltIdentifier1_BeltIdentifierErrorIlumination_Input = new ExpandedNodeId(BeltIdentifier.Variables.BeltType_BeltIdentifier1_BeltIdentifierErrorIlumination_Input, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifier_IdentifierBeltErrorIlumination_Input_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifierType_BeltIdentifier_IdentifierBeltErrorIlumination_Input_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltType_BeltIdentifier1_BeltIdentifierErrorIlumination_Input_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltType_BeltIdentifier1_BeltIdentifierErrorIlumination_Input_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifier_IdentifierBeltErrorIlumination_Output = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifierType_BeltIdentifier_IdentifierBeltErrorIlumination_Output, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltType_BeltIdentifier1_BeltIdentifierErrorIlumination_Output = new ExpandedNodeId(BeltIdentifier.Variables.BeltType_BeltIdentifier1_BeltIdentifierErrorIlumination_Output, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifier_IdentifierBeltErrorIlumination_Output_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifierType_BeltIdentifier_IdentifierBeltErrorIlumination_Output_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltType_BeltIdentifier1_BeltIdentifierErrorIlumination_Output_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltType_BeltIdentifier1_BeltIdentifierErrorIlumination_Output_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifier_IdentifierBeltMotor_Speed = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifierType_BeltIdentifier_IdentifierBeltMotor_Speed, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltType_BeltIdentifier1_BeltIdentifierMotor_Speed = new ExpandedNodeId(BeltIdentifier.Variables.BeltType_BeltIdentifier1_BeltIdentifierMotor_Speed, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifierType_BeltIdentifier_IdentifierBeltMotor_Speed_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifierType_BeltIdentifier_IdentifierBeltMotor_Speed_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltType_BeltIdentifier1_BeltIdentifierMotor_Speed_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltType_BeltIdentifier1_BeltIdentifierMotor_Speed_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier_IdentifierBeltOpticalBarrierStart_Output = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifier1_BeltIdentifier_IdentifierBeltOpticalBarrierStart_Output, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltType_BeltIdentifier1_BeltIdentifier1OpticalBarrierStart_Output = new ExpandedNodeId(BeltIdentifier.Variables.BeltType_BeltIdentifier1_BeltIdentifier1OpticalBarrierStart_Output, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier_IdentifierBeltOpticalBarrierStart_Output_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifier1_BeltIdentifier_IdentifierBeltOpticalBarrierStart_Output_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltType_BeltIdentifier1_BeltIdentifier1OpticalBarrierMiddle_Output = new ExpandedNodeId(BeltIdentifier.Variables.BeltType_BeltIdentifier1_BeltIdentifier1OpticalBarrierMiddle_Output, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier_IdentifierBeltOpticalBarrierStart_Units = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifier1_BeltIdentifier_IdentifierBeltOpticalBarrierStart_Units, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltType_BeltIdentifier1_BeltIdentifier1OpticalBarrierEnd_Output = new ExpandedNodeId(BeltIdentifier.Variables.BeltType_BeltIdentifier1_BeltIdentifier1OpticalBarrierEnd_Output, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier_IdentifierBeltOpticalBarrierMiddle_Output = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifier1_BeltIdentifier_IdentifierBeltOpticalBarrierMiddle_Output, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltType_BeltIdentifier1_BeltIdentifier1ElectricPhotoSensor_Output = new ExpandedNodeId(BeltIdentifier.Variables.BeltType_BeltIdentifier1_BeltIdentifier1ElectricPhotoSensor_Output, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier_IdentifierBeltOpticalBarrierMiddle_Output_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifier1_BeltIdentifier_IdentifierBeltOpticalBarrierMiddle_Output_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltType_BeltIdentifier1_BeltIdentifier1CapacitiveSensor_Output = new ExpandedNodeId(BeltIdentifier.Variables.BeltType_BeltIdentifier1_BeltIdentifier1CapacitiveSensor_Output, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier_IdentifierBeltOpticalBarrierMiddle_Units = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifier1_BeltIdentifier_IdentifierBeltOpticalBarrierMiddle_Units, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltType_BeltIdentifier1_BeltIdentifier1InductiveSensor_Output = new ExpandedNodeId(BeltIdentifier.Variables.BeltType_BeltIdentifier1_BeltIdentifier1InductiveSensor_Output, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier_IdentifierBeltOpticalBarrierEnd_Output = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifier1_BeltIdentifier_IdentifierBeltOpticalBarrierEnd_Output, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltType_BeltIdentifier1_BeltIdentifier1ErrorIlumination_Input = new ExpandedNodeId(BeltIdentifier.Variables.BeltType_BeltIdentifier1_BeltIdentifier1ErrorIlumination_Input, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier_IdentifierBeltOpticalBarrierEnd_Output_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifier1_BeltIdentifier_IdentifierBeltOpticalBarrierEnd_Output_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltType_BeltIdentifier1_BeltIdentifier1Motor_Speed = new ExpandedNodeId(BeltIdentifier.Variables.BeltType_BeltIdentifier1_BeltIdentifier1Motor_Speed, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier_IdentifierBeltOpticalBarrierEnd_Units = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifier1_BeltIdentifier_IdentifierBeltOpticalBarrierEnd_Units, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier1_BeltIdentifierOpticalBarrierStart_Output = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_BeltIdentifier1_BeltIdentifierOpticalBarrierStart_Output, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier_IdentifierBeltElectricPhotoSensor_Output = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifier1_BeltIdentifier_IdentifierBeltElectricPhotoSensor_Output, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier1_BeltIdentifierOpticalBarrierStart_Output_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_BeltIdentifier1_BeltIdentifierOpticalBarrierStart_Output_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier_IdentifierBeltElectricPhotoSensor_Output_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifier1_BeltIdentifier_IdentifierBeltElectricPhotoSensor_Output_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier1_BeltIdentifierOpticalBarrierStart_Units = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_BeltIdentifier1_BeltIdentifierOpticalBarrierStart_Units, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier_IdentifierBeltElectricPhotoSensor_Units = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifier1_BeltIdentifier_IdentifierBeltElectricPhotoSensor_Units, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier1_BeltIdentifierOpticalBarrierMiddle_Output = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_BeltIdentifier1_BeltIdentifierOpticalBarrierMiddle_Output, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier_IdentifierBeltCapacitiveSensor_Output = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifier1_BeltIdentifier_IdentifierBeltCapacitiveSensor_Output, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier1_BeltIdentifierOpticalBarrierMiddle_Output_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_BeltIdentifier1_BeltIdentifierOpticalBarrierMiddle_Output_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier_IdentifierBeltCapacitiveSensor_Output_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifier1_BeltIdentifier_IdentifierBeltCapacitiveSensor_Output_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier1_BeltIdentifierOpticalBarrierMiddle_Units = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_BeltIdentifier1_BeltIdentifierOpticalBarrierMiddle_Units, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier_IdentifierBeltCapacitiveSensor_Units = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifier1_BeltIdentifier_IdentifierBeltCapacitiveSensor_Units, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier1_BeltIdentifierOpticalBarrierEnd_Output = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_BeltIdentifier1_BeltIdentifierOpticalBarrierEnd_Output, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier_IdentifierBeltInductiveSensor_Output = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifier1_BeltIdentifier_IdentifierBeltInductiveSensor_Output, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier1_BeltIdentifierOpticalBarrierEnd_Output_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_BeltIdentifier1_BeltIdentifierOpticalBarrierEnd_Output_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier_IdentifierBeltInductiveSensor_Output_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifier1_BeltIdentifier_IdentifierBeltInductiveSensor_Output_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier1_BeltIdentifierOpticalBarrierEnd_Units = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_BeltIdentifier1_BeltIdentifierOpticalBarrierEnd_Units, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier_IdentifierBeltInductiveSensor_Units = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifier1_BeltIdentifier_IdentifierBeltInductiveSensor_Units, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier1_BeltIdentifierElectricPhotoSensor_Output = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_BeltIdentifier1_BeltIdentifierElectricPhotoSensor_Output, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier_IdentifierBeltErrorIlumination_Input = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifier1_BeltIdentifier_IdentifierBeltErrorIlumination_Input, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier1_BeltIdentifierElectricPhotoSensor_Output_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_BeltIdentifier1_BeltIdentifierElectricPhotoSensor_Output_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier_IdentifierBeltErrorIlumination_Input_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifier1_BeltIdentifier_IdentifierBeltErrorIlumination_Input_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier1_BeltIdentifierElectricPhotoSensor_Units = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_BeltIdentifier1_BeltIdentifierElectricPhotoSensor_Units, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier_IdentifierBeltErrorIlumination_Output = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifier1_BeltIdentifier_IdentifierBeltErrorIlumination_Output, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier1_BeltIdentifierCapacitiveSensor_Output = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_BeltIdentifier1_BeltIdentifierCapacitiveSensor_Output, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier_IdentifierBeltErrorIlumination_Output_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifier1_BeltIdentifier_IdentifierBeltErrorIlumination_Output_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier1_BeltIdentifierCapacitiveSensor_Output_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_BeltIdentifier1_BeltIdentifierCapacitiveSensor_Output_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier_IdentifierBeltMotor_Speed = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifier1_BeltIdentifier_IdentifierBeltMotor_Speed, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier1_BeltIdentifierCapacitiveSensor_Units = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_BeltIdentifier1_BeltIdentifierCapacitiveSensor_Units, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier_IdentifierBeltMotor_Speed_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifier1_BeltIdentifier_IdentifierBeltMotor_Speed_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier1_BeltIdentifierInductiveSensor_Output = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_BeltIdentifier1_BeltIdentifierInductiveSensor_Output, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier001_IdentifierBeltOpticalBarrierStart_Output = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifier1_BeltIdentifier001_IdentifierBeltOpticalBarrierStart_Output, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier1_BeltIdentifierInductiveSensor_Output_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_BeltIdentifier1_BeltIdentifierInductiveSensor_Output_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier001_IdentifierBeltOpticalBarrierStart_Output_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifier1_BeltIdentifier001_IdentifierBeltOpticalBarrierStart_Output_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier1_BeltIdentifierInductiveSensor_Units = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_BeltIdentifier1_BeltIdentifierInductiveSensor_Units, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier001_IdentifierBeltOpticalBarrierStart_Units = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifier1_BeltIdentifier001_IdentifierBeltOpticalBarrierStart_Units, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier1_BeltIdentifierErrorIlumination_Input = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_BeltIdentifier1_BeltIdentifierErrorIlumination_Input, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier001_IdentifierBeltOpticalBarrierMiddle_Output = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifier1_BeltIdentifier001_IdentifierBeltOpticalBarrierMiddle_Output, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier1_BeltIdentifierErrorIlumination_Input_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_BeltIdentifier1_BeltIdentifierErrorIlumination_Input_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier001_IdentifierBeltOpticalBarrierMiddle_Output_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifier1_BeltIdentifier001_IdentifierBeltOpticalBarrierMiddle_Output_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier1_BeltIdentifierErrorIlumination_Output = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_BeltIdentifier1_BeltIdentifierErrorIlumination_Output, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier001_IdentifierBeltOpticalBarrierMiddle_Units = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifier1_BeltIdentifier001_IdentifierBeltOpticalBarrierMiddle_Units, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier1_BeltIdentifierErrorIlumination_Output_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_BeltIdentifier1_BeltIdentifierErrorIlumination_Output_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier001_IdentifierBeltOpticalBarrierEnd_Output = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifier1_BeltIdentifier001_IdentifierBeltOpticalBarrierEnd_Output, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier1_BeltIdentifierMotor_Speed = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_BeltIdentifier1_BeltIdentifierMotor_Speed, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier001_IdentifierBeltOpticalBarrierEnd_Output_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifier1_BeltIdentifier001_IdentifierBeltOpticalBarrierEnd_Output_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier1_BeltIdentifierMotor_Speed_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_BeltIdentifier1_BeltIdentifierMotor_Speed_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier001_IdentifierBeltOpticalBarrierEnd_Units = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifier1_BeltIdentifier001_IdentifierBeltOpticalBarrierEnd_Units, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier1_BeltIdentifier1OpticalBarrierStart_Output = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_BeltIdentifier1_BeltIdentifier1OpticalBarrierStart_Output, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier001_IdentifierBeltElectricPhotoSensor_Output = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifier1_BeltIdentifier001_IdentifierBeltElectricPhotoSensor_Output, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier1_BeltIdentifier1OpticalBarrierMiddle_Output = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_BeltIdentifier1_BeltIdentifier1OpticalBarrierMiddle_Output, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier001_IdentifierBeltElectricPhotoSensor_Output_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifier1_BeltIdentifier001_IdentifierBeltElectricPhotoSensor_Output_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier1_BeltIdentifier1OpticalBarrierEnd_Output = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_BeltIdentifier1_BeltIdentifier1OpticalBarrierEnd_Output, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier001_IdentifierBeltElectricPhotoSensor_Units = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifier1_BeltIdentifier001_IdentifierBeltElectricPhotoSensor_Units, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier1_BeltIdentifier1ElectricPhotoSensor_Output = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_BeltIdentifier1_BeltIdentifier1ElectricPhotoSensor_Output, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier001_IdentifierBeltCapacitiveSensor_Output = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifier1_BeltIdentifier001_IdentifierBeltCapacitiveSensor_Output, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier1_BeltIdentifier1CapacitiveSensor_Output = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_BeltIdentifier1_BeltIdentifier1CapacitiveSensor_Output, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier001_IdentifierBeltCapacitiveSensor_Output_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifier1_BeltIdentifier001_IdentifierBeltCapacitiveSensor_Output_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier1_BeltIdentifier1InductiveSensor_Output = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_BeltIdentifier1_BeltIdentifier1InductiveSensor_Output, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier001_IdentifierBeltCapacitiveSensor_Units = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifier1_BeltIdentifier001_IdentifierBeltCapacitiveSensor_Units, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier1_BeltIdentifier1ErrorIlumination_Input = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_BeltIdentifier1_BeltIdentifier1ErrorIlumination_Input, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier001_IdentifierBeltInductiveSensor_Output = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifier1_BeltIdentifier001_IdentifierBeltInductiveSensor_Output, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier1_BeltIdentifier1Motor_Speed = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_BeltIdentifier1_BeltIdentifier1Motor_Speed, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier001_IdentifierBeltInductiveSensor_Output_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifier1_BeltIdentifier001_IdentifierBeltInductiveSensor_Output_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier001_BeltIdentifierOpticalBarrierStart_Output = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_BeltIdentifier001_BeltIdentifierOpticalBarrierStart_Output, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier001_IdentifierBeltInductiveSensor_Units = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifier1_BeltIdentifier001_IdentifierBeltInductiveSensor_Units, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier001_BeltIdentifierOpticalBarrierStart_Output_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_BeltIdentifier001_BeltIdentifierOpticalBarrierStart_Output_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier001_IdentifierBeltErrorIlumination_Input = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifier1_BeltIdentifier001_IdentifierBeltErrorIlumination_Input, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier001_BeltIdentifierOpticalBarrierStart_Units = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_BeltIdentifier001_BeltIdentifierOpticalBarrierStart_Units, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier001_IdentifierBeltErrorIlumination_Input_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifier1_BeltIdentifier001_IdentifierBeltErrorIlumination_Input_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier001_BeltIdentifierOpticalBarrierMiddle_Output = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_BeltIdentifier001_BeltIdentifierOpticalBarrierMiddle_Output, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier001_IdentifierBeltErrorIlumination_Output = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifier1_BeltIdentifier001_IdentifierBeltErrorIlumination_Output, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier001_BeltIdentifierOpticalBarrierMiddle_Output_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_BeltIdentifier001_BeltIdentifierOpticalBarrierMiddle_Output_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier001_IdentifierBeltErrorIlumination_Output_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifier1_BeltIdentifier001_IdentifierBeltErrorIlumination_Output_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier001_BeltIdentifierOpticalBarrierMiddle_Units = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_BeltIdentifier001_BeltIdentifierOpticalBarrierMiddle_Units, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier001_IdentifierBeltMotor_Speed = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifier1_BeltIdentifier001_IdentifierBeltMotor_Speed, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier001_BeltIdentifierOpticalBarrierEnd_Output = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_BeltIdentifier001_BeltIdentifierOpticalBarrierEnd_Output, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltIdentifier1_BeltIdentifier001_IdentifierBeltMotor_Speed_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltIdentifier1_BeltIdentifier001_IdentifierBeltMotor_Speed_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier001_BeltIdentifierOpticalBarrierEnd_Output_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_BeltIdentifier001_BeltIdentifierOpticalBarrierEnd_Output_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
+
+        /// <remarks />
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier001_BeltIdentifierOpticalBarrierEnd_Units = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_BeltIdentifier001_BeltIdentifierOpticalBarrierEnd_Units, BeltIdentifier.Namespaces.BeltIdentifier);
+
+        /// <remarks />
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier001_BeltIdentifierElectricPhotoSensor_Output = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_BeltIdentifier001_BeltIdentifierElectricPhotoSensor_Output, BeltIdentifier.Namespaces.BeltIdentifier);
+
+        /// <remarks />
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier001_BeltIdentifierElectricPhotoSensor_Output_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_BeltIdentifier001_BeltIdentifierElectricPhotoSensor_Output_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
+
+        /// <remarks />
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier001_BeltIdentifierElectricPhotoSensor_Units = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_BeltIdentifier001_BeltIdentifierElectricPhotoSensor_Units, BeltIdentifier.Namespaces.BeltIdentifier);
+
+        /// <remarks />
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier001_BeltIdentifierCapacitiveSensor_Output = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_BeltIdentifier001_BeltIdentifierCapacitiveSensor_Output, BeltIdentifier.Namespaces.BeltIdentifier);
+
+        /// <remarks />
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier001_BeltIdentifierCapacitiveSensor_Output_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_BeltIdentifier001_BeltIdentifierCapacitiveSensor_Output_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
+
+        /// <remarks />
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier001_BeltIdentifierCapacitiveSensor_Units = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_BeltIdentifier001_BeltIdentifierCapacitiveSensor_Units, BeltIdentifier.Namespaces.BeltIdentifier);
+
+        /// <remarks />
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier001_BeltIdentifierInductiveSensor_Output = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_BeltIdentifier001_BeltIdentifierInductiveSensor_Output, BeltIdentifier.Namespaces.BeltIdentifier);
+
+        /// <remarks />
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier001_BeltIdentifierInductiveSensor_Output_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_BeltIdentifier001_BeltIdentifierInductiveSensor_Output_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
+
+        /// <remarks />
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier001_BeltIdentifierInductiveSensor_Units = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_BeltIdentifier001_BeltIdentifierInductiveSensor_Units, BeltIdentifier.Namespaces.BeltIdentifier);
+
+        /// <remarks />
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier001_BeltIdentifierErrorIlumination_Input = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_BeltIdentifier001_BeltIdentifierErrorIlumination_Input, BeltIdentifier.Namespaces.BeltIdentifier);
+
+        /// <remarks />
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier001_BeltIdentifierErrorIlumination_Input_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_BeltIdentifier001_BeltIdentifierErrorIlumination_Input_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
+
+        /// <remarks />
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier001_BeltIdentifierErrorIlumination_Output = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_BeltIdentifier001_BeltIdentifierErrorIlumination_Output, BeltIdentifier.Namespaces.BeltIdentifier);
+
+        /// <remarks />
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier001_BeltIdentifierErrorIlumination_Output_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_BeltIdentifier001_BeltIdentifierErrorIlumination_Output_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
+
+        /// <remarks />
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier001_BeltIdentifierMotor_Speed = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_BeltIdentifier001_BeltIdentifierMotor_Speed, BeltIdentifier.Namespaces.BeltIdentifier);
+
+        /// <remarks />
+        public static readonly ExpandedNodeId BeltServer_BeltIdentifier001_BeltIdentifierMotor_Speed_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_BeltIdentifier001_BeltIdentifierMotor_Speed_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
     }
     #endregion
 
@@ -1097,19 +1277,46 @@ namespace BeltIdentifier
     public static partial class BrowseNames
     {
         /// <remarks />
-        public const string BeltIdentifier = "BeltIdentifier001";
-
-        /// <remarks />
         public const string BeltIdentifier001 = "BeltIdentifier001";
 
         /// <remarks />
         public const string BeltIdentifier1 = "Belt Identifier #1";
 
         /// <remarks />
+        public const string BeltIdentifierCapacitiveSensor = "CS001";
+
+        /// <remarks />
+        public const string BeltIdentifierElectricPhotoSensor = "ES001";
+
+        /// <remarks />
+        public const string BeltIdentifierErrorIlumination = "EI001";
+
+        /// <remarks />
+        public const string BeltIdentifierInductiveSensor = "IS001";
+
+        /// <remarks />
+        public const string BeltIdentifierMotor = "Motor01";
+
+        /// <remarks />
+        public const string BeltIdentifierOpticalBarrierEnd = "OB003";
+
+        /// <remarks />
+        public const string BeltIdentifierOpticalBarrierMiddle = "OB002";
+
+        /// <remarks />
+        public const string BeltIdentifierOpticalBarrierStart = "OB001";
+
+        /// <remarks />
         public const string BeltIdentifierType = "BeltIdentifierType";
 
         /// <remarks />
         public const string BeltMotorType = "BeltMotorType";
+
+        /// <remarks />
+        public const string BeltServer = "Belt Server #1";
+
+        /// <remarks />
+        public const string BeltType = "BeltType";
 
         /// <remarks />
         public const string CapacitiveSensor = "CapacitiveSensor";
@@ -1128,33 +1335,6 @@ namespace BeltIdentifier
 
         /// <remarks />
         public const string GenericSensorType = "GenericSensorType";
-
-        /// <remarks />
-        public const string IdentifierBelt = "IdentifierBelt";
-
-        /// <remarks />
-        public const string IdentifierBeltCapacitiveSensor = "CS001";
-
-        /// <remarks />
-        public const string IdentifierBeltElectricPhotoSensor = "ES001";
-
-        /// <remarks />
-        public const string IdentifierBeltErrorIlumination = "EI001";
-
-        /// <remarks />
-        public const string IdentifierBeltInductiveSensor = "IS001";
-
-        /// <remarks />
-        public const string IdentifierBeltMotor = "Motor01";
-
-        /// <remarks />
-        public const string IdentifierBeltOpticalBarrierEnd = "OB003";
-
-        /// <remarks />
-        public const string IdentifierBeltOpticalBarrierMiddle = "OB002";
-
-        /// <remarks />
-        public const string IdentifierBeltOpticalBarrierStart = "OB001";
 
         /// <remarks />
         public const string InductiveSensor = "InductiveSensor";
@@ -1176,9 +1356,6 @@ namespace BeltIdentifier
 
         /// <remarks />
         public const string StopProcess = "StopProcess";
-
-        /// <remarks />
-        public const string TypeOfObject = "TypeOfObject";
 
         /// <remarks />
         public const string Units = "Units";

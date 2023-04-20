@@ -8,7 +8,8 @@ xmlns:uax="http://opcfoundation.org/UA/2008/02/Types.xsd"
 xmlns="http://opcfoundation.org/BeltIdentifier"
 TargetNamespace="http://opcfoundation.org/BeltIdentifier"
 >
-<!--
+
+	<!--
   Esse elemento define os mapeamentos entre os URIs usados para identificar namespaces e os símbolos usados no código.
   Os arquivos de design definidos pelo usuário podem incluir outros arquivos de design definidos pelo usuário.
   O local dos arquivos de design incluídos é especificado com o atributo FilePath (caminho absoluto ou relativo sem o sufixo .xml).
@@ -17,22 +18,22 @@ TargetNamespace="http://opcfoundation.org/BeltIdentifier"
   User defined design files can include other user defined design files.
   The location of included design files is specified with the FilePath attribute (absolute or relative path without the .xml suffix).
   -->
-  <opc:Namespaces>
-    <opc:Namespace Name="OpcUa" Prefix="Opc.Ua" XmlNamespace="http://opcfoundation.org/UA/2008/02/Types.xsd">http://opcfoundation.org/UA/</opc:Namespace>
-    <opc:Namespace Name="BeltIdentifier" Prefix="BeltIdentifier">http://opcfoundation.org/BeltIdentifier</opc:Namespace>
-  </opc:Namespaces>
+	<opc:Namespaces>
+		<opc:Namespace Name="OpcUa" Prefix="Opc.Ua" XmlNamespace="http://opcfoundation.org/UA/2008/02/Types.xsd">http://opcfoundation.org/UA/</opc:Namespace>
+		<opc:Namespace Name="BeltIdentifier" Prefix="BeltIdentifier">http://opcfoundation.org/BeltIdentifier</opc:Namespace>
+	</opc:Namespaces>
 
-  <!--
+	<!--
   Defina tipos de base genéricos para os vários controladores, sensores e atuadores utilizados no modelo.
   Define generic base types for the various controllers, sensors and actuators used in the model.
   -->
-    <opc:ObjectType SymbolicName="GenericSensorType" BaseType="ua:BaseObjectType">
-    <opc:Description>A generic sensor that read a process value.</opc:Description>
-    <opc:Children>
-      <opc:Variable SymbolicName="Output" DataType="ua:Double" ValueRank="Scalar" TypeDefinition="ua:AnalogItemType" />
-      <opc:Property SymbolicName="Units" DataType="ua:String" ValueRank="Scalar"  AccessLevel="ReadWrite" />
-    </opc:Children>
-    </opc:ObjectType>
+	<opc:ObjectType SymbolicName="GenericSensorType" BaseType="ua:BaseObjectType">
+		<opc:Description>A generic sensor that read a process value.</opc:Description>
+		<opc:Children>
+			<opc:Variable SymbolicName="Output" DataType="ua:Double" ValueRank="Scalar" TypeDefinition="ua:AnalogItemType" />
+			<opc:Property SymbolicName="Units" DataType="ua:String" ValueRank="Scalar"  AccessLevel="ReadWrite" />
+		</opc:Children>
+	</opc:ObjectType>
 	<opc:ObjectType SymbolicName="GenericActuatorType" BaseType="ua:BaseObjectType">
 		<opc:Description>Represents a piece of equipment that causes some action to occur.</opc:Description>
 		<opc:Children>
@@ -40,24 +41,24 @@ TargetNamespace="http://opcfoundation.org/BeltIdentifier"
 			<opc:Variable SymbolicName="Output" DataType="ua:Double" ValueRank="Scalar" TypeDefinition="ua:AnalogItemType" AccessLevel="ReadWrite"/>
 		</opc:Children>
 	</opc:ObjectType>
-    <opc:ObjectType SymbolicName="GenericMotorType" BaseType="ua:BaseObjectType">
+	<opc:ObjectType SymbolicName="GenericMotorType" BaseType="ua:BaseObjectType">
 		<opc:Description>A generic motor.</opc:Description>
 		<opc:Children>
 			<opc:Variable SymbolicName="Speed" DataType="ua:Double" ValueRank="Scalar" TypeDefinition="ua:AnalogItemType" AccessLevel="ReadWrite" />
 		</opc:Children>
 	</opc:ObjectType>
- 
-<!--
+
+	<!--
   Define os tipos de concreto para os vários controladores, sensores e atuadores utilizados no modelo.
   Define concrete types for the various controllers, sensors and actuators used in the model.
   -->
-  <opc:ObjectType SymbolicName="OpticalBarrier" BaseType="GenericSensorType">
-    <opc:Description>A sensor that reports the position of object in a belt.</opc:Description>
-  </opc:ObjectType>
+	<opc:ObjectType SymbolicName="OpticalBarrier" BaseType="GenericSensorType">
+		<opc:Description>A sensor that reports the position of object in a belt.</opc:Description>
+	</opc:ObjectType>
 
-  <opc:ObjectType SymbolicName="ElectricPhotoSensor" BaseType="GenericSensorType">
-    <opc:Description>A sensor that reports you if the object is transparent.</opc:Description>
-  </opc:ObjectType>
+	<opc:ObjectType SymbolicName="ElectricPhotoSensor" BaseType="GenericSensorType">
+		<opc:Description>A sensor that reports you if the object is transparent.</opc:Description>
+	</opc:ObjectType>
 
 	<opc:ObjectType SymbolicName="CapacitiveSensor" BaseType="GenericSensorType">
 		<opc:Description>A sensor that reports you if the object is not metallic.</opc:Description>
@@ -71,11 +72,11 @@ TargetNamespace="http://opcfoundation.org/BeltIdentifier"
 		<opc:Description>Error indication light.</opc:Description>
 	</opc:ObjectType>
 
-	  <opc:ObjectType SymbolicName="BeltMotorType" BaseType="GenericMotorType">
+	<opc:ObjectType SymbolicName="BeltMotorType" BaseType="GenericMotorType">
 		<opc:Description>An motor for moving object.</opc:Description>
-	  </opc:ObjectType>
+	</opc:ObjectType>
 
-  	<!--
+	<!--
 	Definir tipos de concreto para os componentes contidos na Planta de Lotes.
   Esses tipos de camada intermediária podem ser omitidos e declarados como pastas dentro do tipo de caldeira.
   No entanto, isso não produziria uma classe fortemente tipada.
@@ -85,35 +86,35 @@ TargetNamespace="http://opcfoundation.org/BeltIdentifier"
   However, doing so would not produce a strongly typed class.
   -->
 
-  	<opc:ObjectType SymbolicName="IdentifierBelt" BaseType="ua:FolderType">
+	<opc:ObjectType SymbolicName="BeltIdentifierType" BaseType="ua:FolderType">
 		<opc:Children>
-			
-			<opc:Object SymbolicName="IdentifierBeltOpticalBarrierStart" TypeDefinition="OpticalBarrier" SupportsEvents="true">
+
+			<opc:Object SymbolicName="BeltIdentifierOpticalBarrierStart" TypeDefinition="OpticalBarrier" SupportsEvents="true">
 				<opc:BrowseName>OB001</opc:BrowseName>
 			</opc:Object>
-			<opc:Object SymbolicName="IdentifierBeltOpticalBarrierMiddle" TypeDefinition="OpticalBarrier" SupportsEvents="true">
+			<opc:Object SymbolicName="BeltIdentifierOpticalBarrierMiddle" TypeDefinition="OpticalBarrier" SupportsEvents="true">
 				<opc:BrowseName>OB002</opc:BrowseName>
 			</opc:Object>
-			<opc:Object SymbolicName="IdentifierBeltOpticalBarrierEnd" TypeDefinition="OpticalBarrier" SupportsEvents="true">
+			<opc:Object SymbolicName="BeltIdentifierOpticalBarrierEnd" TypeDefinition="OpticalBarrier" SupportsEvents="true">
 				<opc:BrowseName>OB003</opc:BrowseName>
 			</opc:Object>
-			
-			<opc:Object SymbolicName="IdentifierBeltElectricPhotoSensor" TypeDefinition="ElectricPhotoSensor" SupportsEvents="true">
+
+			<opc:Object SymbolicName="BeltIdentifierElectricPhotoSensor" TypeDefinition="ElectricPhotoSensor" SupportsEvents="true">
 				<opc:BrowseName>ES001</opc:BrowseName>
 			</opc:Object>
-			<opc:Object SymbolicName="IdentifierBeltCapacitiveSensor" TypeDefinition="CapacitiveSensor" SupportsEvents="true">
+			<opc:Object SymbolicName="BeltIdentifierCapacitiveSensor" TypeDefinition="CapacitiveSensor" SupportsEvents="true">
 				<opc:BrowseName>CS001</opc:BrowseName>
 			</opc:Object>
-			<opc:Object SymbolicName="IdentifierBeltInductiveSensor" TypeDefinition="InductiveSensor" SupportsEvents="true">
+			<opc:Object SymbolicName="BeltIdentifierInductiveSensor" TypeDefinition="InductiveSensor" SupportsEvents="true">
 				<opc:BrowseName>IS001</opc:BrowseName>
 			</opc:Object>
 
-			<opc:Object SymbolicName="IdentifierBeltErrorIlumination" TypeDefinition="ErrorIlumination" SupportsEvents="true">
+			<opc:Object SymbolicName="BeltIdentifierErrorIlumination" TypeDefinition="ErrorIlumination" SupportsEvents="true">
 				<opc:BrowseName>EI001</opc:BrowseName>
 			</opc:Object>
 
 
-			<opc:Object SymbolicName="IdentifierBeltMotor" TypeDefinition="BeltMotorType" SupportsEvents="true">
+			<opc:Object SymbolicName="BeltIdentifierMotor" TypeDefinition="BeltMotorType" SupportsEvents="true">
 				<opc:BrowseName>Motor01</opc:BrowseName>
 			</opc:Object>
 
@@ -121,12 +122,12 @@ TargetNamespace="http://opcfoundation.org/BeltIdentifier"
 		<opc:References>
 			<opc:Reference>
 				<opc:ReferenceType>ua:HasNotifier</opc:ReferenceType>
-				<opc:TargetId>IdentifierBelt</opc:TargetId>
+				<opc:TargetId>BeltIdentifierType_BeltIdentifierOpticalBarrierStart</opc:TargetId>
 			</opc:Reference>
 		</opc:References>
 	</opc:ObjectType>
-    
-<!--
+
+	<!--
   Declare the batch plant type along with all of the references between the different components.
   Adding references between components requires that they be overriden. 
   Overridden nodes only need to delcare the correct NodeType and the SymbolicName; all other
@@ -137,22 +138,14 @@ TargetNamespace="http://opcfoundation.org/BeltIdentifier"
   References are specified by constructing the SymbolicIds for the components by inserting
   a '_' between each SymbolicName. This means that a '_' cannot be part of a SymbolicName.
   -->
-	<opc:ObjectType SymbolicName="BeltIdentifierType" BaseType="ua:BaseObjectType" SupportsEvents="true">
-		<opc:Description>A production belt identifier.</opc:Description>
+	<opc:ObjectType SymbolicName="BeltType" BaseType="ua:BaseObjectType" SupportsEvents="true">
+		<opc:Description>A production belt.</opc:Description>
 		<opc:Children>
 
-			<opc:Object SymbolicName="BeltIdentifier" TypeDefinition="IdentifierBelt" SupportsEvents="true">
-				<opc:BrowseName>BeltIdentifier001</opc:BrowseName>
+			<opc:Object SymbolicName="BeltIdentifier1" TypeDefinition="BeltIdentifierType" SupportsEvents="true">
+				<opc:BrowseName>Belt Identifier #1</opc:BrowseName>
 				<opc:Children>
-					<opc:Object SymbolicName="IdentifierBeltOpticalBarrierStart">
-						<opc:Children>
-							<opc:Variable SymbolicName="Output" />
-						</opc:Children>
-                        <opc:Children>
-							<opc:Variable SymbolicName="Units" />
-						</opc:Children>
-					</opc:Object>
-					<opc:Object SymbolicName="IdentifierBeltOpticalBarrierMiddle">
+					<opc:Object SymbolicName="BeltIdentifier1OpticalBarrierStart">
 						<opc:Children>
 							<opc:Variable SymbolicName="Output" />
 						</opc:Children>
@@ -160,7 +153,7 @@ TargetNamespace="http://opcfoundation.org/BeltIdentifier"
 							<opc:Variable SymbolicName="Units" />
 						</opc:Children>
 					</opc:Object>
-					<opc:Object SymbolicName="IdentifierBeltOpticalBarrierEnd">
+					<opc:Object SymbolicName="BeltIdentifier1OpticalBarrierMiddle">
 						<opc:Children>
 							<opc:Variable SymbolicName="Output" />
 						</opc:Children>
@@ -168,7 +161,7 @@ TargetNamespace="http://opcfoundation.org/BeltIdentifier"
 							<opc:Variable SymbolicName="Units" />
 						</opc:Children>
 					</opc:Object>
-					<opc:Object SymbolicName="IdentifierBeltElectricPhotoSensor">
+					<opc:Object SymbolicName="BeltIdentifier1OpticalBarrierEnd">
 						<opc:Children>
 							<opc:Variable SymbolicName="Output" />
 						</opc:Children>
@@ -176,7 +169,7 @@ TargetNamespace="http://opcfoundation.org/BeltIdentifier"
 							<opc:Variable SymbolicName="Units" />
 						</opc:Children>
 					</opc:Object>
-					<opc:Object SymbolicName="IdentifierBeltCapacitiveSensor">
+					<opc:Object SymbolicName="BeltIdentifier1ElectricPhotoSensor">
 						<opc:Children>
 							<opc:Variable SymbolicName="Output" />
 						</opc:Children>
@@ -184,16 +177,24 @@ TargetNamespace="http://opcfoundation.org/BeltIdentifier"
 							<opc:Variable SymbolicName="Units" />
 						</opc:Children>
 					</opc:Object>
-					<opc:Object SymbolicName="IdentifierBeltInductiveSensor">
+					<opc:Object SymbolicName="BeltIdentifier1CapacitiveSensor">
 						<opc:Children>
 							<opc:Variable SymbolicName="Output" />
 						</opc:Children>
-                        <opc:Children>
+						<opc:Children>
+							<opc:Variable SymbolicName="Units" />
+						</opc:Children>
+					</opc:Object>
+					<opc:Object SymbolicName="BeltIdentifier1InductiveSensor">
+						<opc:Children>
+							<opc:Variable SymbolicName="Output" />
+						</opc:Children>
+						<opc:Children>
 							<opc:Variable SymbolicName="Units" />
 						</opc:Children>
 					</opc:Object>
 
-					<opc:Object SymbolicName="IdentifierBeltErrorIlumination">
+					<opc:Object SymbolicName="BeltIdentifier1ErrorIlumination">
 						<opc:Children>
 							<opc:Variable SymbolicName="Input" />
 						</opc:Children>
@@ -202,24 +203,24 @@ TargetNamespace="http://opcfoundation.org/BeltIdentifier"
 						</opc:Children>
 					</opc:Object>
 
-                     <opc:Object SymbolicName="IdentifierBeltMotor">
+					<opc:Object SymbolicName="BeltIdentifier1Motor">
 						<opc:Children>
 							<opc:Variable SymbolicName="Speed" />
 						</opc:Children>
 					</opc:Object>
+					
 				</opc:Children>
 			</opc:Object>
-			
+
 			<opc:Method SymbolicName="StartProcess" ModellingRule="Mandatory"></opc:Method>
-            <opc:Method SymbolicName="StopProcess" ModellingRule="Mandatory"></opc:Method>
-			<opc:Method SymbolicName="TypeOfObject" ModellingRule="Mandatory"></opc:Method>
+			<opc:Method SymbolicName="StopProcess" ModellingRule="Mandatory"></opc:Method>
 
 		</opc:Children>
 
 		<opc:References>
 			<opc:Reference>
 				<opc:ReferenceType>ua:HasNotifier</opc:ReferenceType>
-				<opc:TargetId>BeltIdentifierType_BeltIdentifier</opc:TargetId>
+				<opc:TargetId>BeltType_BeltIdentifier1</opc:TargetId>
 			</opc:Reference>
 		</opc:References>
 
@@ -231,10 +232,10 @@ TargetNamespace="http://opcfoundation.org/BeltIdentifier"
   This is provided as an example of how to do it when there is a need for persistent instances.
   Note that the DisplayNames are overridden for the base level nodes.
   -->
-	<opc:Object SymbolicName="BeltIdentifier1" TypeDefinition="BeltIdentifierType" SupportsEvents="true">
-		<opc:BrowseName>Belt Identifier #1</opc:BrowseName>
+	<opc:Object SymbolicName="BeltServer" TypeDefinition="BeltType" SupportsEvents="true">
+		<opc:BrowseName>Belt Server #1</opc:BrowseName>
 		<opc:Children>
-			<opc:Object SymbolicName="BeltIdentifier001" TypeDefinition="IdentifierBelt" SupportsEvents="true">
+			<opc:Object SymbolicName="BeltIdentifier001" TypeDefinition="BeltIdentifierType" SupportsEvents="true">
 				<opc:DisplayName>BeltIdentifier001</opc:DisplayName>
 			</opc:Object>
 		</opc:Children>
@@ -250,5 +251,6 @@ TargetNamespace="http://opcfoundation.org/BeltIdentifier"
 		</opc:References>
 
 	</opc:Object>
+
 </opc:ModelDesign>
 

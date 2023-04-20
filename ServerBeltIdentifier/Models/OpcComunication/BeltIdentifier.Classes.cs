@@ -935,502 +935,12 @@ namespace BeltIdentifier
     #endif
     #endregion
 
-    #region IdentifierBeltState Class
-    #if (!OPCUA_EXCLUDE_IdentifierBeltState)
-    /// <remarks />
-    /// <exclude />
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    public partial class IdentifierBeltState : FolderState
-    {
-        #region Constructors
-        /// <remarks />
-        public IdentifierBeltState(NodeState parent) : base(parent)
-        {
-        }
-
-        /// <remarks />
-        protected override NodeId GetDefaultTypeDefinitionId(NamespaceTable namespaceUris)
-        {
-            return Opc.Ua.NodeId.Create(BeltIdentifier.ObjectTypes.IdentifierBelt, BeltIdentifier.Namespaces.BeltIdentifier, namespaceUris);
-        }
-
-        #if (!OPCUA_EXCLUDE_InitializationStrings)
-        /// <remarks />
-        protected override void Initialize(ISystemContext context)
-        {
-            base.Initialize(context);
-            Initialize(context, InitializationString);
-            InitializeOptionalChildren(context);
-        }
-
-        /// <remarks />
-        protected override void Initialize(ISystemContext context, NodeState source)
-        {
-            InitializeOptionalChildren(context);
-            base.Initialize(context, source);
-        }
-
-        /// <remarks />
-        protected override void InitializeOptionalChildren(ISystemContext context)
-        {
-            base.InitializeOptionalChildren(context);
-        }
-
-        #region Initialization String
-        private const string InitializationString =
-           "AQAAACcAAABodHRwOi8vb3BjZm91bmRhdGlvbi5vcmcvQmVsdElkZW50aWZpZXL/////BGCAAgEAAAAB" +
-           "ABYAAABJZGVudGlmaWVyQmVsdEluc3RhbmNlAQFRAAEBUQBRAAAAAQAAAAAwAAEBUQAIAAAAhGDACgEA" +
-           "AAAhAAAASWRlbnRpZmllckJlbHRPcHRpY2FsQmFycmllclN0YXJ0AQAFAAAAT0IwMDEBAVIAAC8BAR0A" +
-           "UgAAAAH/////AgAAABVgiQoCAAAAAQAGAAAAT3V0cHV0AQFTAAAvAQBACVMAAAAAC/////8BAf////8B" +
-           "AAAAFWCJCgIAAAAAAAcAAABFVVJhbmdlAQFXAAAuAERXAAAAAQB0A/////8BAf////8AAAAAFWCJCgIA" +
-           "AAABAAUAAABVbml0cwEBWQAALgBEWQAAAAAM/////wMD/////wAAAACEYMAKAQAAACIAAABJZGVudGlm" +
-           "aWVyQmVsdE9wdGljYWxCYXJyaWVyTWlkZGxlAQAFAAAAT0IwMDIBAVoAAC8BAR0AWgAAAAH/////AgAA" +
-           "ABVgiQoCAAAAAQAGAAAAT3V0cHV0AQFbAAAvAQBACVsAAAAAC/////8BAf////8BAAAAFWCJCgIAAAAA" +
-           "AAcAAABFVVJhbmdlAQFfAAAuAERfAAAAAQB0A/////8BAf////8AAAAAFWCJCgIAAAABAAUAAABVbml0" +
-           "cwEBYQAALgBEYQAAAAAM/////wMD/////wAAAACEYMAKAQAAAB8AAABJZGVudGlmaWVyQmVsdE9wdGlj" +
-           "YWxCYXJyaWVyRW5kAQAFAAAAT0IwMDMBAWIAAC8BAR0AYgAAAAH/////AgAAABVgiQoCAAAAAQAGAAAA" +
-           "T3V0cHV0AQFjAAAvAQBACWMAAAAAC/////8BAf////8BAAAAFWCJCgIAAAAAAAcAAABFVVJhbmdlAQFn" +
-           "AAAuAERnAAAAAQB0A/////8BAf////8AAAAAFWCJCgIAAAABAAUAAABVbml0cwEBaQAALgBEaQAAAAAM" +
-           "/////wMD/////wAAAACEYMAKAQAAACEAAABJZGVudGlmaWVyQmVsdEVsZWN0cmljUGhvdG9TZW5zb3IB" +
-           "AAUAAABFUzAwMQEBagAALwEBJQBqAAAAAf////8CAAAAFWCJCgIAAAABAAYAAABPdXRwdXQBAWsAAC8B" +
-           "AEAJawAAAAAL/////wEB/////wEAAAAVYIkKAgAAAAAABwAAAEVVUmFuZ2UBAW8AAC4ARG8AAAABAHQD" +
-           "/////wEB/////wAAAAAVYIkKAgAAAAEABQAAAFVuaXRzAQFxAAAuAERxAAAAAAz/////AwP/////AAAA" +
-           "AIRgwAoBAAAAHgAAAElkZW50aWZpZXJCZWx0Q2FwYWNpdGl2ZVNlbnNvcgEABQAAAENTMDAxAQFyAAAv" +
-           "AQEtAHIAAAAB/////wIAAAAVYIkKAgAAAAEABgAAAE91dHB1dAEBcwAALwEAQAlzAAAAAAv/////AQH/" +
-           "////AQAAABVgiQoCAAAAAAAHAAAARVVSYW5nZQEBdwAALgBEdwAAAAEAdAP/////AQH/////AAAAABVg" +
-           "iQoCAAAAAQAFAAAAVW5pdHMBAXkAAC4ARHkAAAAADP////8DA/////8AAAAAhGDACgEAAAAdAAAASWRl" +
-           "bnRpZmllckJlbHRJbmR1Y3RpdmVTZW5zb3IBAAUAAABJUzAwMQEBegAALwEBNQB6AAAAAf////8CAAAA" +
-           "FWCJCgIAAAABAAYAAABPdXRwdXQBAXsAAC8BAEAJewAAAAAL/////wEB/////wEAAAAVYIkKAgAAAAAA" +
-           "BwAAAEVVUmFuZ2UBAX8AAC4ARH8AAAABAHQD/////wEB/////wAAAAAVYIkKAgAAAAEABQAAAFVuaXRz" +
-           "AQGBAAAuAESBAAAAAAz/////AwP/////AAAAAIRgwAoBAAAAHgAAAElkZW50aWZpZXJCZWx0RXJyb3JJ" +
-           "bHVtaW5hdGlvbgEABQAAAEVJMDAxAQGCAAAvAQE9AIIAAAAB/////wIAAAAVYIkKAgAAAAEABQAAAElu" +
-           "cHV0AQGDAAAvAQBACYMAAAAAC/////8DA/////8BAAAAFWCJCgIAAAAAAAcAAABFVVJhbmdlAQGHAAAu" +
-           "AESHAAAAAQB0A/////8BAf////8AAAAAFWCJCgIAAAABAAYAAABPdXRwdXQBAYkAAC8BAEAJiQAAAAAL" +
-           "/////wMD/////wEAAAAVYIkKAgAAAAAABwAAAEVVUmFuZ2UBAY0AAC4ARI0AAAABAHQD/////wEB////" +
-           "/wAAAACEYMAKAQAAABMAAABJZGVudGlmaWVyQmVsdE1vdG9yAQAHAAAATW90b3IwMQEBjwAALwEBSgCP" +
-           "AAAAAf////8BAAAAFWCJCgIAAAABAAUAAABTcGVlZAEBkAAALwEAQAmQAAAAAAv/////AwP/////AQAA" +
-           "ABVgiQoCAAAAAAAHAAAARVVSYW5nZQEBlAAALgBElAAAAAEAdAP/////AQH/////AAAAAA==";
-        #endregion
-        #endif
-        #endregion
-
-        #region Public Properties
-        /// <remarks />
-        public OpticalBarrierState IdentifierBeltOpticalBarrierStart
-        {
-            get
-            {
-                return m_identifierBeltOpticalBarrierStart;
-            }
-
-            set
-            {
-                if (!Object.ReferenceEquals(m_identifierBeltOpticalBarrierStart, value))
-                {
-                    ChangeMasks |= NodeStateChangeMasks.Children;
-                }
-
-                m_identifierBeltOpticalBarrierStart = value;
-            }
-        }
-
-        /// <remarks />
-        public OpticalBarrierState IdentifierBeltOpticalBarrierMiddle
-        {
-            get
-            {
-                return m_identifierBeltOpticalBarrierMiddle;
-            }
-
-            set
-            {
-                if (!Object.ReferenceEquals(m_identifierBeltOpticalBarrierMiddle, value))
-                {
-                    ChangeMasks |= NodeStateChangeMasks.Children;
-                }
-
-                m_identifierBeltOpticalBarrierMiddle = value;
-            }
-        }
-
-        /// <remarks />
-        public OpticalBarrierState IdentifierBeltOpticalBarrierEnd
-        {
-            get
-            {
-                return m_identifierBeltOpticalBarrierEnd;
-            }
-
-            set
-            {
-                if (!Object.ReferenceEquals(m_identifierBeltOpticalBarrierEnd, value))
-                {
-                    ChangeMasks |= NodeStateChangeMasks.Children;
-                }
-
-                m_identifierBeltOpticalBarrierEnd = value;
-            }
-        }
-
-        /// <remarks />
-        public ElectricPhotoSensorState IdentifierBeltElectricPhotoSensor
-        {
-            get
-            {
-                return m_identifierBeltElectricPhotoSensor;
-            }
-
-            set
-            {
-                if (!Object.ReferenceEquals(m_identifierBeltElectricPhotoSensor, value))
-                {
-                    ChangeMasks |= NodeStateChangeMasks.Children;
-                }
-
-                m_identifierBeltElectricPhotoSensor = value;
-            }
-        }
-
-        /// <remarks />
-        public CapacitiveSensorState IdentifierBeltCapacitiveSensor
-        {
-            get
-            {
-                return m_identifierBeltCapacitiveSensor;
-            }
-
-            set
-            {
-                if (!Object.ReferenceEquals(m_identifierBeltCapacitiveSensor, value))
-                {
-                    ChangeMasks |= NodeStateChangeMasks.Children;
-                }
-
-                m_identifierBeltCapacitiveSensor = value;
-            }
-        }
-
-        /// <remarks />
-        public InductiveSensorState IdentifierBeltInductiveSensor
-        {
-            get
-            {
-                return m_identifierBeltInductiveSensor;
-            }
-
-            set
-            {
-                if (!Object.ReferenceEquals(m_identifierBeltInductiveSensor, value))
-                {
-                    ChangeMasks |= NodeStateChangeMasks.Children;
-                }
-
-                m_identifierBeltInductiveSensor = value;
-            }
-        }
-
-        /// <remarks />
-        public ErrorIluminationState IdentifierBeltErrorIlumination
-        {
-            get
-            {
-                return m_identifierBeltErrorIlumination;
-            }
-
-            set
-            {
-                if (!Object.ReferenceEquals(m_identifierBeltErrorIlumination, value))
-                {
-                    ChangeMasks |= NodeStateChangeMasks.Children;
-                }
-
-                m_identifierBeltErrorIlumination = value;
-            }
-        }
-
-        /// <remarks />
-        public BeltMotorState IdentifierBeltMotor
-        {
-            get
-            {
-                return m_identifierBeltMotor;
-            }
-
-            set
-            {
-                if (!Object.ReferenceEquals(m_identifierBeltMotor, value))
-                {
-                    ChangeMasks |= NodeStateChangeMasks.Children;
-                }
-
-                m_identifierBeltMotor = value;
-            }
-        }
-        #endregion
-
-        #region Overridden Methods
-        /// <remarks />
-        public override void GetChildren(
-            ISystemContext context,
-            IList<BaseInstanceState> children)
-        {
-            if (m_identifierBeltOpticalBarrierStart != null)
-            {
-                children.Add(m_identifierBeltOpticalBarrierStart);
-            }
-
-            if (m_identifierBeltOpticalBarrierMiddle != null)
-            {
-                children.Add(m_identifierBeltOpticalBarrierMiddle);
-            }
-
-            if (m_identifierBeltOpticalBarrierEnd != null)
-            {
-                children.Add(m_identifierBeltOpticalBarrierEnd);
-            }
-
-            if (m_identifierBeltElectricPhotoSensor != null)
-            {
-                children.Add(m_identifierBeltElectricPhotoSensor);
-            }
-
-            if (m_identifierBeltCapacitiveSensor != null)
-            {
-                children.Add(m_identifierBeltCapacitiveSensor);
-            }
-
-            if (m_identifierBeltInductiveSensor != null)
-            {
-                children.Add(m_identifierBeltInductiveSensor);
-            }
-
-            if (m_identifierBeltErrorIlumination != null)
-            {
-                children.Add(m_identifierBeltErrorIlumination);
-            }
-
-            if (m_identifierBeltMotor != null)
-            {
-                children.Add(m_identifierBeltMotor);
-            }
-
-            base.GetChildren(context, children);
-        }
-            
-        /// <remarks />
-        protected override BaseInstanceState FindChild(
-            ISystemContext context,
-            QualifiedName browseName,
-            bool createOrReplace,
-            BaseInstanceState replacement)
-        {
-            if (QualifiedName.IsNull(browseName))
-            {
-                return null;
-            }
-
-            BaseInstanceState instance = null;
-
-            switch (browseName.Name)
-            {
-                case BeltIdentifier.BrowseNames.IdentifierBeltOpticalBarrierStart:
-                {
-                    if (createOrReplace)
-                    {
-                        if (IdentifierBeltOpticalBarrierStart == null)
-                        {
-                            if (replacement == null)
-                            {
-                                IdentifierBeltOpticalBarrierStart = new OpticalBarrierState(this);
-                            }
-                            else
-                            {
-                                IdentifierBeltOpticalBarrierStart = (OpticalBarrierState)replacement;
-                            }
-                        }
-                    }
-
-                    instance = IdentifierBeltOpticalBarrierStart;
-                    break;
-                }
-
-                case BeltIdentifier.BrowseNames.IdentifierBeltOpticalBarrierMiddle:
-                {
-                    if (createOrReplace)
-                    {
-                        if (IdentifierBeltOpticalBarrierMiddle == null)
-                        {
-                            if (replacement == null)
-                            {
-                                IdentifierBeltOpticalBarrierMiddle = new OpticalBarrierState(this);
-                            }
-                            else
-                            {
-                                IdentifierBeltOpticalBarrierMiddle = (OpticalBarrierState)replacement;
-                            }
-                        }
-                    }
-
-                    instance = IdentifierBeltOpticalBarrierMiddle;
-                    break;
-                }
-
-                case BeltIdentifier.BrowseNames.IdentifierBeltOpticalBarrierEnd:
-                {
-                    if (createOrReplace)
-                    {
-                        if (IdentifierBeltOpticalBarrierEnd == null)
-                        {
-                            if (replacement == null)
-                            {
-                                IdentifierBeltOpticalBarrierEnd = new OpticalBarrierState(this);
-                            }
-                            else
-                            {
-                                IdentifierBeltOpticalBarrierEnd = (OpticalBarrierState)replacement;
-                            }
-                        }
-                    }
-
-                    instance = IdentifierBeltOpticalBarrierEnd;
-                    break;
-                }
-
-                case BeltIdentifier.BrowseNames.IdentifierBeltElectricPhotoSensor:
-                {
-                    if (createOrReplace)
-                    {
-                        if (IdentifierBeltElectricPhotoSensor == null)
-                        {
-                            if (replacement == null)
-                            {
-                                IdentifierBeltElectricPhotoSensor = new ElectricPhotoSensorState(this);
-                            }
-                            else
-                            {
-                                IdentifierBeltElectricPhotoSensor = (ElectricPhotoSensorState)replacement;
-                            }
-                        }
-                    }
-
-                    instance = IdentifierBeltElectricPhotoSensor;
-                    break;
-                }
-
-                case BeltIdentifier.BrowseNames.IdentifierBeltCapacitiveSensor:
-                {
-                    if (createOrReplace)
-                    {
-                        if (IdentifierBeltCapacitiveSensor == null)
-                        {
-                            if (replacement == null)
-                            {
-                                IdentifierBeltCapacitiveSensor = new CapacitiveSensorState(this);
-                            }
-                            else
-                            {
-                                IdentifierBeltCapacitiveSensor = (CapacitiveSensorState)replacement;
-                            }
-                        }
-                    }
-
-                    instance = IdentifierBeltCapacitiveSensor;
-                    break;
-                }
-
-                case BeltIdentifier.BrowseNames.IdentifierBeltInductiveSensor:
-                {
-                    if (createOrReplace)
-                    {
-                        if (IdentifierBeltInductiveSensor == null)
-                        {
-                            if (replacement == null)
-                            {
-                                IdentifierBeltInductiveSensor = new InductiveSensorState(this);
-                            }
-                            else
-                            {
-                                IdentifierBeltInductiveSensor = (InductiveSensorState)replacement;
-                            }
-                        }
-                    }
-
-                    instance = IdentifierBeltInductiveSensor;
-                    break;
-                }
-
-                case BeltIdentifier.BrowseNames.IdentifierBeltErrorIlumination:
-                {
-                    if (createOrReplace)
-                    {
-                        if (IdentifierBeltErrorIlumination == null)
-                        {
-                            if (replacement == null)
-                            {
-                                IdentifierBeltErrorIlumination = new ErrorIluminationState(this);
-                            }
-                            else
-                            {
-                                IdentifierBeltErrorIlumination = (ErrorIluminationState)replacement;
-                            }
-                        }
-                    }
-
-                    instance = IdentifierBeltErrorIlumination;
-                    break;
-                }
-
-                case BeltIdentifier.BrowseNames.IdentifierBeltMotor:
-                {
-                    if (createOrReplace)
-                    {
-                        if (IdentifierBeltMotor == null)
-                        {
-                            if (replacement == null)
-                            {
-                                IdentifierBeltMotor = new BeltMotorState(this);
-                            }
-                            else
-                            {
-                                IdentifierBeltMotor = (BeltMotorState)replacement;
-                            }
-                        }
-                    }
-
-                    instance = IdentifierBeltMotor;
-                    break;
-                }
-            }
-
-            if (instance != null)
-            {
-                return instance;
-            }
-
-            return base.FindChild(context, browseName, createOrReplace, replacement);
-        }
-        #endregion
-
-        #region Private Fields
-        private OpticalBarrierState m_identifierBeltOpticalBarrierStart;
-        private OpticalBarrierState m_identifierBeltOpticalBarrierMiddle;
-        private OpticalBarrierState m_identifierBeltOpticalBarrierEnd;
-        private ElectricPhotoSensorState m_identifierBeltElectricPhotoSensor;
-        private CapacitiveSensorState m_identifierBeltCapacitiveSensor;
-        private InductiveSensorState m_identifierBeltInductiveSensor;
-        private ErrorIluminationState m_identifierBeltErrorIlumination;
-        private BeltMotorState m_identifierBeltMotor;
-        #endregion
-    }
-    #endif
-    #endregion
-
     #region BeltIdentifierState Class
     #if (!OPCUA_EXCLUDE_BeltIdentifierState)
     /// <remarks />
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    public partial class BeltIdentifierState : BaseObjectState
+    public partial class BeltIdentifierState : FolderState
     {
         #region Constructors
         /// <remarks />
@@ -1468,63 +978,569 @@ namespace BeltIdentifier
 
         #region Initialization String
         private const string InitializationString =
-           "AQAAACcAAABodHRwOi8vb3BjZm91bmRhdGlvbi5vcmcvQmVsdElkZW50aWZpZXL/////hGCAAgEAAAAB" +
-           "ABoAAABCZWx0SWRlbnRpZmllclR5cGVJbnN0YW5jZQEBlgABAZYAlgAAAAEBAAAAADAAAQGXAAQAAACE" +
-           "YMAKAQAAAA4AAABCZWx0SWRlbnRpZmllcgEAEQAAAEJlbHRJZGVudGlmaWVyMDAxAQGXAAAvAQFRAJcA" +
-           "AAABAgAAAAAwAQEBlgAAMAABAZcACAAAAIRgwAoBAAAAIQAAAElkZW50aWZpZXJCZWx0T3B0aWNhbEJh" +
-           "cnJpZXJTdGFydAEABQAAAE9CMDAxAQGYAAAvAQEdAJgAAAAB/////wIAAAAVYIkKAgAAAAEABgAAAE91" +
-           "dHB1dAEBmQAALwEAQAmZAAAAAAv/////AQH/////AQAAABVgiQoCAAAAAAAHAAAARVVSYW5nZQEBnQAA" +
-           "LgBEnQAAAAEAdAP/////AQH/////AAAAABVgiQoCAAAAAQAFAAAAVW5pdHMBAZ8AAC4ARJ8AAAAADP//" +
-           "//8DA/////8AAAAAhGDACgEAAAAiAAAASWRlbnRpZmllckJlbHRPcHRpY2FsQmFycmllck1pZGRsZQEA" +
-           "BQAAAE9CMDAyAQGgAAAvAQEdAKAAAAAB/////wIAAAAVYIkKAgAAAAEABgAAAE91dHB1dAEBoQAALwEA" +
-           "QAmhAAAAAAv/////AQH/////AQAAABVgiQoCAAAAAAAHAAAARVVSYW5nZQEBpQAALgBEpQAAAAEAdAP/" +
-           "////AQH/////AAAAABVgiQoCAAAAAQAFAAAAVW5pdHMBAacAAC4ARKcAAAAADP////8DA/////8AAAAA" +
-           "hGDACgEAAAAfAAAASWRlbnRpZmllckJlbHRPcHRpY2FsQmFycmllckVuZAEABQAAAE9CMDAzAQGoAAAv" +
-           "AQEdAKgAAAAB/////wIAAAAVYIkKAgAAAAEABgAAAE91dHB1dAEBqQAALwEAQAmpAAAAAAv/////AQH/" +
-           "////AQAAABVgiQoCAAAAAAAHAAAARVVSYW5nZQEBrQAALgBErQAAAAEAdAP/////AQH/////AAAAABVg" +
-           "iQoCAAAAAQAFAAAAVW5pdHMBAa8AAC4ARK8AAAAADP////8DA/////8AAAAAhGDACgEAAAAhAAAASWRl" +
-           "bnRpZmllckJlbHRFbGVjdHJpY1Bob3RvU2Vuc29yAQAFAAAARVMwMDEBAbAAAC8BASUAsAAAAAH/////" +
-           "AgAAABVgiQoCAAAAAQAGAAAAT3V0cHV0AQGxAAAvAQBACbEAAAAAC/////8BAf////8BAAAAFWCJCgIA" +
-           "AAAAAAcAAABFVVJhbmdlAQG1AAAuAES1AAAAAQB0A/////8BAf////8AAAAAFWCJCgIAAAABAAUAAABV" +
-           "bml0cwEBtwAALgBEtwAAAAAM/////wMD/////wAAAACEYMAKAQAAAB4AAABJZGVudGlmaWVyQmVsdENh" +
-           "cGFjaXRpdmVTZW5zb3IBAAUAAABDUzAwMQEBuAAALwEBLQC4AAAAAf////8CAAAAFWCJCgIAAAABAAYA" +
-           "AABPdXRwdXQBAbkAAC8BAEAJuQAAAAAL/////wEB/////wEAAAAVYIkKAgAAAAAABwAAAEVVUmFuZ2UB" +
-           "Ab0AAC4ARL0AAAABAHQD/////wEB/////wAAAAAVYIkKAgAAAAEABQAAAFVuaXRzAQG/AAAuAES/AAAA" +
-           "AAz/////AwP/////AAAAAIRgwAoBAAAAHQAAAElkZW50aWZpZXJCZWx0SW5kdWN0aXZlU2Vuc29yAQAF" +
-           "AAAASVMwMDEBAcAAAC8BATUAwAAAAAH/////AgAAABVgiQoCAAAAAQAGAAAAT3V0cHV0AQHBAAAvAQBA" +
-           "CcEAAAAAC/////8BAf////8BAAAAFWCJCgIAAAAAAAcAAABFVVJhbmdlAQHFAAAuAETFAAAAAQB0A///" +
-           "//8BAf////8AAAAAFWCJCgIAAAABAAUAAABVbml0cwEBxwAALgBExwAAAAAM/////wMD/////wAAAACE" +
-           "YMAKAQAAAB4AAABJZGVudGlmaWVyQmVsdEVycm9ySWx1bWluYXRpb24BAAUAAABFSTAwMQEByAAALwEB" +
-           "PQDIAAAAAf////8CAAAAFWCJCgIAAAABAAUAAABJbnB1dAEByQAALwEAQAnJAAAAAAv/////AwP/////" +
-           "AQAAABVgiQoCAAAAAAAHAAAARVVSYW5nZQEBzQAALgBEzQAAAAEAdAP/////AQH/////AAAAABVgiQoC" +
-           "AAAAAQAGAAAAT3V0cHV0AQHPAAAvAQBACc8AAAAAC/////8DA/////8BAAAAFWCJCgIAAAAAAAcAAABF" +
-           "VVJhbmdlAQHTAAAuAETTAAAAAQB0A/////8BAf////8AAAAAhGDACgEAAAATAAAASWRlbnRpZmllckJl" +
-           "bHRNb3RvcgEABwAAAE1vdG9yMDEBAdUAAC8BAUoA1QAAAAH/////AQAAABVgiQoCAAAAAQAFAAAAU3Bl" +
-           "ZWQBAdYAAC8BAEAJ1gAAAAAL/////wMD/////wEAAAAVYIkKAgAAAAAABwAAAEVVUmFuZ2UBAdoAAC4A" +
-           "RNoAAAABAHQD/////wEB/////wAAAAAEYYIKBAAAAAEADAAAAFN0YXJ0UHJvY2VzcwEB3AAALwEB3ADc" +
-           "AAAAAQH/////AAAAAARhggoEAAAAAQALAAAAU3RvcFByb2Nlc3MBAd0AAC8BAd0A3QAAAAEB/////wAA" +
-           "AAAEYYIKBAAAAAEADAAAAFR5cGVPZk9iamVjdAEB3gAALwEB3gDeAAAAAQH/////AAAAAA==";
+           "AQAAACcAAABodHRwOi8vb3BjZm91bmRhdGlvbi5vcmcvQmVsdElkZW50aWZpZXL/////BGCAAgEAAAAB" +
+           "ABoAAABCZWx0SWRlbnRpZmllclR5cGVJbnN0YW5jZQEBUQABAVEAUQAAAAEAAAAAMAABAVIACAAAAIRg" +
+           "wAoBAAAAIQAAAEJlbHRJZGVudGlmaWVyT3B0aWNhbEJhcnJpZXJTdGFydAEABQAAAE9CMDAxAQFSAAAv" +
+           "AQEdAFIAAAABAQAAAAAwAQEBUQACAAAAFWCJCgIAAAABAAYAAABPdXRwdXQBAVMAAC8BAEAJUwAAAAAL" +
+           "/////wEB/////wEAAAAVYIkKAgAAAAAABwAAAEVVUmFuZ2UBAVcAAC4ARFcAAAABAHQD/////wEB////" +
+           "/wAAAAAVYIkKAgAAAAEABQAAAFVuaXRzAQFZAAAuAERZAAAAAAz/////AwP/////AAAAAIRgwAoBAAAA" +
+           "IgAAAEJlbHRJZGVudGlmaWVyT3B0aWNhbEJhcnJpZXJNaWRkbGUBAAUAAABPQjAwMgEBWgAALwEBHQBa" +
+           "AAAAAf////8CAAAAFWCJCgIAAAABAAYAAABPdXRwdXQBAVsAAC8BAEAJWwAAAAAL/////wEB/////wEA" +
+           "AAAVYIkKAgAAAAAABwAAAEVVUmFuZ2UBAV8AAC4ARF8AAAABAHQD/////wEB/////wAAAAAVYIkKAgAA" +
+           "AAEABQAAAFVuaXRzAQFhAAAuAERhAAAAAAz/////AwP/////AAAAAIRgwAoBAAAAHwAAAEJlbHRJZGVu" +
+           "dGlmaWVyT3B0aWNhbEJhcnJpZXJFbmQBAAUAAABPQjAwMwEBYgAALwEBHQBiAAAAAf////8CAAAAFWCJ" +
+           "CgIAAAABAAYAAABPdXRwdXQBAWMAAC8BAEAJYwAAAAAL/////wEB/////wEAAAAVYIkKAgAAAAAABwAA" +
+           "AEVVUmFuZ2UBAWcAAC4ARGcAAAABAHQD/////wEB/////wAAAAAVYIkKAgAAAAEABQAAAFVuaXRzAQFp" +
+           "AAAuAERpAAAAAAz/////AwP/////AAAAAIRgwAoBAAAAIQAAAEJlbHRJZGVudGlmaWVyRWxlY3RyaWNQ" +
+           "aG90b1NlbnNvcgEABQAAAEVTMDAxAQFqAAAvAQElAGoAAAAB/////wIAAAAVYIkKAgAAAAEABgAAAE91" +
+           "dHB1dAEBawAALwEAQAlrAAAAAAv/////AQH/////AQAAABVgiQoCAAAAAAAHAAAARVVSYW5nZQEBbwAA" +
+           "LgBEbwAAAAEAdAP/////AQH/////AAAAABVgiQoCAAAAAQAFAAAAVW5pdHMBAXEAAC4ARHEAAAAADP//" +
+           "//8DA/////8AAAAAhGDACgEAAAAeAAAAQmVsdElkZW50aWZpZXJDYXBhY2l0aXZlU2Vuc29yAQAFAAAA" +
+           "Q1MwMDEBAXIAAC8BAS0AcgAAAAH/////AgAAABVgiQoCAAAAAQAGAAAAT3V0cHV0AQFzAAAvAQBACXMA" +
+           "AAAAC/////8BAf////8BAAAAFWCJCgIAAAAAAAcAAABFVVJhbmdlAQF3AAAuAER3AAAAAQB0A/////8B" +
+           "Af////8AAAAAFWCJCgIAAAABAAUAAABVbml0cwEBeQAALgBEeQAAAAAM/////wMD/////wAAAACEYMAK" +
+           "AQAAAB0AAABCZWx0SWRlbnRpZmllckluZHVjdGl2ZVNlbnNvcgEABQAAAElTMDAxAQF6AAAvAQE1AHoA" +
+           "AAAB/////wIAAAAVYIkKAgAAAAEABgAAAE91dHB1dAEBewAALwEAQAl7AAAAAAv/////AQH/////AQAA" +
+           "ABVgiQoCAAAAAAAHAAAARVVSYW5nZQEBfwAALgBEfwAAAAEAdAP/////AQH/////AAAAABVgiQoCAAAA" +
+           "AQAFAAAAVW5pdHMBAYEAAC4ARIEAAAAADP////8DA/////8AAAAAhGDACgEAAAAeAAAAQmVsdElkZW50" +
+           "aWZpZXJFcnJvcklsdW1pbmF0aW9uAQAFAAAARUkwMDEBAYIAAC8BAT0AggAAAAH/////AgAAABVgiQoC" +
+           "AAAAAQAFAAAASW5wdXQBAYMAAC8BAEAJgwAAAAAL/////wMD/////wEAAAAVYIkKAgAAAAAABwAAAEVV" +
+           "UmFuZ2UBAYcAAC4ARIcAAAABAHQD/////wEB/////wAAAAAVYIkKAgAAAAEABgAAAE91dHB1dAEBiQAA" +
+           "LwEAQAmJAAAAAAv/////AwP/////AQAAABVgiQoCAAAAAAAHAAAARVVSYW5nZQEBjQAALgBEjQAAAAEA" +
+           "dAP/////AQH/////AAAAAIRgwAoBAAAAEwAAAEJlbHRJZGVudGlmaWVyTW90b3IBAAcAAABNb3RvcjAx" +
+           "AQGPAAAvAQFKAI8AAAAB/////wEAAAAVYIkKAgAAAAEABQAAAFNwZWVkAQGQAAAvAQBACZAAAAAAC///" +
+           "//8DA/////8BAAAAFWCJCgIAAAAAAAcAAABFVVJhbmdlAQGUAAAuAESUAAAAAQB0A/////8BAf////8A" +
+           "AAAA";
         #endregion
         #endif
         #endregion
 
         #region Public Properties
         /// <remarks />
-        public IdentifierBeltState BeltIdentifier
+        public OpticalBarrierState BeltIdentifierOpticalBarrierStart
         {
             get
             {
-                return m_beltIdentifier;
+                return m_beltIdentifierOpticalBarrierStart;
             }
 
             set
             {
-                if (!Object.ReferenceEquals(m_beltIdentifier, value))
+                if (!Object.ReferenceEquals(m_beltIdentifierOpticalBarrierStart, value))
                 {
                     ChangeMasks |= NodeStateChangeMasks.Children;
                 }
 
-                m_beltIdentifier = value;
+                m_beltIdentifierOpticalBarrierStart = value;
+            }
+        }
+
+        /// <remarks />
+        public OpticalBarrierState BeltIdentifierOpticalBarrierMiddle
+        {
+            get
+            {
+                return m_beltIdentifierOpticalBarrierMiddle;
+            }
+
+            set
+            {
+                if (!Object.ReferenceEquals(m_beltIdentifierOpticalBarrierMiddle, value))
+                {
+                    ChangeMasks |= NodeStateChangeMasks.Children;
+                }
+
+                m_beltIdentifierOpticalBarrierMiddle = value;
+            }
+        }
+
+        /// <remarks />
+        public OpticalBarrierState BeltIdentifierOpticalBarrierEnd
+        {
+            get
+            {
+                return m_beltIdentifierOpticalBarrierEnd;
+            }
+
+            set
+            {
+                if (!Object.ReferenceEquals(m_beltIdentifierOpticalBarrierEnd, value))
+                {
+                    ChangeMasks |= NodeStateChangeMasks.Children;
+                }
+
+                m_beltIdentifierOpticalBarrierEnd = value;
+            }
+        }
+
+        /// <remarks />
+        public ElectricPhotoSensorState BeltIdentifierElectricPhotoSensor
+        {
+            get
+            {
+                return m_beltIdentifierElectricPhotoSensor;
+            }
+
+            set
+            {
+                if (!Object.ReferenceEquals(m_beltIdentifierElectricPhotoSensor, value))
+                {
+                    ChangeMasks |= NodeStateChangeMasks.Children;
+                }
+
+                m_beltIdentifierElectricPhotoSensor = value;
+            }
+        }
+
+        /// <remarks />
+        public CapacitiveSensorState BeltIdentifierCapacitiveSensor
+        {
+            get
+            {
+                return m_beltIdentifierCapacitiveSensor;
+            }
+
+            set
+            {
+                if (!Object.ReferenceEquals(m_beltIdentifierCapacitiveSensor, value))
+                {
+                    ChangeMasks |= NodeStateChangeMasks.Children;
+                }
+
+                m_beltIdentifierCapacitiveSensor = value;
+            }
+        }
+
+        /// <remarks />
+        public InductiveSensorState BeltIdentifierInductiveSensor
+        {
+            get
+            {
+                return m_beltIdentifierInductiveSensor;
+            }
+
+            set
+            {
+                if (!Object.ReferenceEquals(m_beltIdentifierInductiveSensor, value))
+                {
+                    ChangeMasks |= NodeStateChangeMasks.Children;
+                }
+
+                m_beltIdentifierInductiveSensor = value;
+            }
+        }
+
+        /// <remarks />
+        public ErrorIluminationState BeltIdentifierErrorIlumination
+        {
+            get
+            {
+                return m_beltIdentifierErrorIlumination;
+            }
+
+            set
+            {
+                if (!Object.ReferenceEquals(m_beltIdentifierErrorIlumination, value))
+                {
+                    ChangeMasks |= NodeStateChangeMasks.Children;
+                }
+
+                m_beltIdentifierErrorIlumination = value;
+            }
+        }
+
+        /// <remarks />
+        public BeltMotorState BeltIdentifierMotor
+        {
+            get
+            {
+                return m_beltIdentifierMotor;
+            }
+
+            set
+            {
+                if (!Object.ReferenceEquals(m_beltIdentifierMotor, value))
+                {
+                    ChangeMasks |= NodeStateChangeMasks.Children;
+                }
+
+                m_beltIdentifierMotor = value;
+            }
+        }
+        #endregion
+
+        #region Overridden Methods
+        /// <remarks />
+        public override void GetChildren(
+            ISystemContext context,
+            IList<BaseInstanceState> children)
+        {
+            if (m_beltIdentifierOpticalBarrierStart != null)
+            {
+                children.Add(m_beltIdentifierOpticalBarrierStart);
+            }
+
+            if (m_beltIdentifierOpticalBarrierMiddle != null)
+            {
+                children.Add(m_beltIdentifierOpticalBarrierMiddle);
+            }
+
+            if (m_beltIdentifierOpticalBarrierEnd != null)
+            {
+                children.Add(m_beltIdentifierOpticalBarrierEnd);
+            }
+
+            if (m_beltIdentifierElectricPhotoSensor != null)
+            {
+                children.Add(m_beltIdentifierElectricPhotoSensor);
+            }
+
+            if (m_beltIdentifierCapacitiveSensor != null)
+            {
+                children.Add(m_beltIdentifierCapacitiveSensor);
+            }
+
+            if (m_beltIdentifierInductiveSensor != null)
+            {
+                children.Add(m_beltIdentifierInductiveSensor);
+            }
+
+            if (m_beltIdentifierErrorIlumination != null)
+            {
+                children.Add(m_beltIdentifierErrorIlumination);
+            }
+
+            if (m_beltIdentifierMotor != null)
+            {
+                children.Add(m_beltIdentifierMotor);
+            }
+
+            base.GetChildren(context, children);
+        }
+            
+        /// <remarks />
+        protected override BaseInstanceState FindChild(
+            ISystemContext context,
+            QualifiedName browseName,
+            bool createOrReplace,
+            BaseInstanceState replacement)
+        {
+            if (QualifiedName.IsNull(browseName))
+            {
+                return null;
+            }
+
+            BaseInstanceState instance = null;
+
+            switch (browseName.Name)
+            {
+                case BeltIdentifier.BrowseNames.BeltIdentifierOpticalBarrierStart:
+                {
+                    if (createOrReplace)
+                    {
+                        if (BeltIdentifierOpticalBarrierStart == null)
+                        {
+                            if (replacement == null)
+                            {
+                                BeltIdentifierOpticalBarrierStart = new OpticalBarrierState(this);
+                            }
+                            else
+                            {
+                                BeltIdentifierOpticalBarrierStart = (OpticalBarrierState)replacement;
+                            }
+                        }
+                    }
+
+                    instance = BeltIdentifierOpticalBarrierStart;
+                    break;
+                }
+
+                case BeltIdentifier.BrowseNames.BeltIdentifierOpticalBarrierMiddle:
+                {
+                    if (createOrReplace)
+                    {
+                        if (BeltIdentifierOpticalBarrierMiddle == null)
+                        {
+                            if (replacement == null)
+                            {
+                                BeltIdentifierOpticalBarrierMiddle = new OpticalBarrierState(this);
+                            }
+                            else
+                            {
+                                BeltIdentifierOpticalBarrierMiddle = (OpticalBarrierState)replacement;
+                            }
+                        }
+                    }
+
+                    instance = BeltIdentifierOpticalBarrierMiddle;
+                    break;
+                }
+
+                case BeltIdentifier.BrowseNames.BeltIdentifierOpticalBarrierEnd:
+                {
+                    if (createOrReplace)
+                    {
+                        if (BeltIdentifierOpticalBarrierEnd == null)
+                        {
+                            if (replacement == null)
+                            {
+                                BeltIdentifierOpticalBarrierEnd = new OpticalBarrierState(this);
+                            }
+                            else
+                            {
+                                BeltIdentifierOpticalBarrierEnd = (OpticalBarrierState)replacement;
+                            }
+                        }
+                    }
+
+                    instance = BeltIdentifierOpticalBarrierEnd;
+                    break;
+                }
+
+                case BeltIdentifier.BrowseNames.BeltIdentifierElectricPhotoSensor:
+                {
+                    if (createOrReplace)
+                    {
+                        if (BeltIdentifierElectricPhotoSensor == null)
+                        {
+                            if (replacement == null)
+                            {
+                                BeltIdentifierElectricPhotoSensor = new ElectricPhotoSensorState(this);
+                            }
+                            else
+                            {
+                                BeltIdentifierElectricPhotoSensor = (ElectricPhotoSensorState)replacement;
+                            }
+                        }
+                    }
+
+                    instance = BeltIdentifierElectricPhotoSensor;
+                    break;
+                }
+
+                case BeltIdentifier.BrowseNames.BeltIdentifierCapacitiveSensor:
+                {
+                    if (createOrReplace)
+                    {
+                        if (BeltIdentifierCapacitiveSensor == null)
+                        {
+                            if (replacement == null)
+                            {
+                                BeltIdentifierCapacitiveSensor = new CapacitiveSensorState(this);
+                            }
+                            else
+                            {
+                                BeltIdentifierCapacitiveSensor = (CapacitiveSensorState)replacement;
+                            }
+                        }
+                    }
+
+                    instance = BeltIdentifierCapacitiveSensor;
+                    break;
+                }
+
+                case BeltIdentifier.BrowseNames.BeltIdentifierInductiveSensor:
+                {
+                    if (createOrReplace)
+                    {
+                        if (BeltIdentifierInductiveSensor == null)
+                        {
+                            if (replacement == null)
+                            {
+                                BeltIdentifierInductiveSensor = new InductiveSensorState(this);
+                            }
+                            else
+                            {
+                                BeltIdentifierInductiveSensor = (InductiveSensorState)replacement;
+                            }
+                        }
+                    }
+
+                    instance = BeltIdentifierInductiveSensor;
+                    break;
+                }
+
+                case BeltIdentifier.BrowseNames.BeltIdentifierErrorIlumination:
+                {
+                    if (createOrReplace)
+                    {
+                        if (BeltIdentifierErrorIlumination == null)
+                        {
+                            if (replacement == null)
+                            {
+                                BeltIdentifierErrorIlumination = new ErrorIluminationState(this);
+                            }
+                            else
+                            {
+                                BeltIdentifierErrorIlumination = (ErrorIluminationState)replacement;
+                            }
+                        }
+                    }
+
+                    instance = BeltIdentifierErrorIlumination;
+                    break;
+                }
+
+                case BeltIdentifier.BrowseNames.BeltIdentifierMotor:
+                {
+                    if (createOrReplace)
+                    {
+                        if (BeltIdentifierMotor == null)
+                        {
+                            if (replacement == null)
+                            {
+                                BeltIdentifierMotor = new BeltMotorState(this);
+                            }
+                            else
+                            {
+                                BeltIdentifierMotor = (BeltMotorState)replacement;
+                            }
+                        }
+                    }
+
+                    instance = BeltIdentifierMotor;
+                    break;
+                }
+            }
+
+            if (instance != null)
+            {
+                return instance;
+            }
+
+            return base.FindChild(context, browseName, createOrReplace, replacement);
+        }
+        #endregion
+
+        #region Private Fields
+        private OpticalBarrierState m_beltIdentifierOpticalBarrierStart;
+        private OpticalBarrierState m_beltIdentifierOpticalBarrierMiddle;
+        private OpticalBarrierState m_beltIdentifierOpticalBarrierEnd;
+        private ElectricPhotoSensorState m_beltIdentifierElectricPhotoSensor;
+        private CapacitiveSensorState m_beltIdentifierCapacitiveSensor;
+        private InductiveSensorState m_beltIdentifierInductiveSensor;
+        private ErrorIluminationState m_beltIdentifierErrorIlumination;
+        private BeltMotorState m_beltIdentifierMotor;
+        #endregion
+    }
+    #endif
+    #endregion
+
+    #region BeltState Class
+    #if (!OPCUA_EXCLUDE_BeltState)
+    /// <remarks />
+    /// <exclude />
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
+    public partial class BeltState : BaseObjectState
+    {
+        #region Constructors
+        /// <remarks />
+        public BeltState(NodeState parent) : base(parent)
+        {
+        }
+
+        /// <remarks />
+        protected override NodeId GetDefaultTypeDefinitionId(NamespaceTable namespaceUris)
+        {
+            return Opc.Ua.NodeId.Create(BeltIdentifier.ObjectTypes.BeltType, BeltIdentifier.Namespaces.BeltIdentifier, namespaceUris);
+        }
+
+        #if (!OPCUA_EXCLUDE_InitializationStrings)
+        /// <remarks />
+        protected override void Initialize(ISystemContext context)
+        {
+            base.Initialize(context);
+            Initialize(context, InitializationString);
+            InitializeOptionalChildren(context);
+        }
+
+        /// <remarks />
+        protected override void Initialize(ISystemContext context, NodeState source)
+        {
+            InitializeOptionalChildren(context);
+            base.Initialize(context, source);
+        }
+
+        /// <remarks />
+        protected override void InitializeOptionalChildren(ISystemContext context)
+        {
+            base.InitializeOptionalChildren(context);
+        }
+
+        #region Initialization String
+        private const string InitializationString =
+           "AQAAACcAAABodHRwOi8vb3BjZm91bmRhdGlvbi5vcmcvQmVsdElkZW50aWZpZXL/////hGCAAgEAAAAB" +
+           "ABAAAABCZWx0VHlwZUluc3RhbmNlAQGWAAEBlgCWAAAAAQEAAAAAMAABAZcAAwAAAIRgwAoBAAAADwAA" +
+           "AEJlbHRJZGVudGlmaWVyMQEAEgAAAEJlbHQgSWRlbnRpZmllciAjMQEBlwAALwEBUQCXAAAAAQIAAAAA" +
+           "MAEBAZYAADAAAQGYABAAAACEYMAKAQAAACEAAABCZWx0SWRlbnRpZmllck9wdGljYWxCYXJyaWVyU3Rh" +
+           "cnQBAAUAAABPQjAwMQEBmAAALwEBHQCYAAAAAQEAAAAAMAEBAZcAAgAAABVgiQoCAAAAAQAGAAAAT3V0" +
+           "cHV0AQGZAAAvAQBACZkAAAAAC/////8BAf////8BAAAAFWCJCgIAAAAAAAcAAABFVVJhbmdlAQGdAAAu" +
+           "AESdAAAAAQB0A/////8BAf////8AAAAAFWCJCgIAAAABAAUAAABVbml0cwEBnwAALgBEnwAAAAAM////" +
+           "/wMD/////wAAAACEYMAKAQAAACIAAABCZWx0SWRlbnRpZmllck9wdGljYWxCYXJyaWVyTWlkZGxlAQAF" +
+           "AAAAT0IwMDIBAaAAAC8BAR0AoAAAAAH/////AgAAABVgiQoCAAAAAQAGAAAAT3V0cHV0AQGhAAAvAQBA" +
+           "CaEAAAAAC/////8BAf////8BAAAAFWCJCgIAAAAAAAcAAABFVVJhbmdlAQGlAAAuAESlAAAAAQB0A///" +
+           "//8BAf////8AAAAAFWCJCgIAAAABAAUAAABVbml0cwEBpwAALgBEpwAAAAAM/////wMD/////wAAAACE" +
+           "YMAKAQAAAB8AAABCZWx0SWRlbnRpZmllck9wdGljYWxCYXJyaWVyRW5kAQAFAAAAT0IwMDMBAagAAC8B" +
+           "AR0AqAAAAAH/////AgAAABVgiQoCAAAAAQAGAAAAT3V0cHV0AQGpAAAvAQBACakAAAAAC/////8BAf//" +
+           "//8BAAAAFWCJCgIAAAAAAAcAAABFVVJhbmdlAQGtAAAuAEStAAAAAQB0A/////8BAf////8AAAAAFWCJ" +
+           "CgIAAAABAAUAAABVbml0cwEBrwAALgBErwAAAAAM/////wMD/////wAAAACEYMAKAQAAACEAAABCZWx0" +
+           "SWRlbnRpZmllckVsZWN0cmljUGhvdG9TZW5zb3IBAAUAAABFUzAwMQEBsAAALwEBJQCwAAAAAf////8C" +
+           "AAAAFWCJCgIAAAABAAYAAABPdXRwdXQBAbEAAC8BAEAJsQAAAAAL/////wEB/////wEAAAAVYIkKAgAA" +
+           "AAAABwAAAEVVUmFuZ2UBAbUAAC4ARLUAAAABAHQD/////wEB/////wAAAAAVYIkKAgAAAAEABQAAAFVu" +
+           "aXRzAQG3AAAuAES3AAAAAAz/////AwP/////AAAAAIRgwAoBAAAAHgAAAEJlbHRJZGVudGlmaWVyQ2Fw" +
+           "YWNpdGl2ZVNlbnNvcgEABQAAAENTMDAxAQG4AAAvAQEtALgAAAAB/////wIAAAAVYIkKAgAAAAEABgAA" +
+           "AE91dHB1dAEBuQAALwEAQAm5AAAAAAv/////AQH/////AQAAABVgiQoCAAAAAAAHAAAARVVSYW5nZQEB" +
+           "vQAALgBEvQAAAAEAdAP/////AQH/////AAAAABVgiQoCAAAAAQAFAAAAVW5pdHMBAb8AAC4ARL8AAAAA" +
+           "DP////8DA/////8AAAAAhGDACgEAAAAdAAAAQmVsdElkZW50aWZpZXJJbmR1Y3RpdmVTZW5zb3IBAAUA" +
+           "AABJUzAwMQEBwAAALwEBNQDAAAAAAf////8CAAAAFWCJCgIAAAABAAYAAABPdXRwdXQBAcEAAC8BAEAJ" +
+           "wQAAAAAL/////wEB/////wEAAAAVYIkKAgAAAAAABwAAAEVVUmFuZ2UBAcUAAC4ARMUAAAABAHQD////" +
+           "/wEB/////wAAAAAVYIkKAgAAAAEABQAAAFVuaXRzAQHHAAAuAETHAAAAAAz/////AwP/////AAAAAIRg" +
+           "wAoBAAAAHgAAAEJlbHRJZGVudGlmaWVyRXJyb3JJbHVtaW5hdGlvbgEABQAAAEVJMDAxAQHIAAAvAQE9" +
+           "AMgAAAAB/////wIAAAAVYIkKAgAAAAEABQAAAElucHV0AQHJAAAvAQBACckAAAAAC/////8DA/////8B" +
+           "AAAAFWCJCgIAAAAAAAcAAABFVVJhbmdlAQHNAAAuAETNAAAAAQB0A/////8BAf////8AAAAAFWCJCgIA" +
+           "AAABAAYAAABPdXRwdXQBAc8AAC8BAEAJzwAAAAAL/////wMD/////wEAAAAVYIkKAgAAAAAABwAAAEVV" +
+           "UmFuZ2UBAdMAAC4ARNMAAAABAHQD/////wEB/////wAAAACEYMAKAQAAABMAAABCZWx0SWRlbnRpZmll" +
+           "ck1vdG9yAQAHAAAATW90b3IwMQEB1QAALwEBSgDVAAAAAf////8BAAAAFWCJCgIAAAABAAUAAABTcGVl" +
+           "ZAEB1gAALwEAQAnWAAAAAAv/////AwP/////AQAAABVgiQoCAAAAAAAHAAAARVVSYW5nZQEB2gAALgBE" +
+           "2gAAAAEAdAP/////AQH/////AAAAAARggAoBAAAAAQAiAAAAQmVsdElkZW50aWZpZXIxT3B0aWNhbEJh" +
+           "cnJpZXJTdGFydAEB3AAALwA63AAAAP////8BAAAAFWCJCgIAAAABAAYAAABPdXRwdXQBAd0AAC8AP90A" +
+           "AAAAGP////8BAf////8AAAAABGCACgEAAAABACMAAABCZWx0SWRlbnRpZmllcjFPcHRpY2FsQmFycmll" +
+           "ck1pZGRsZQEB3gAALwA63gAAAP////8BAAAAFWCJCgIAAAABAAYAAABPdXRwdXQBAd8AAC8AP98AAAAA" +
+           "GP////8BAf////8AAAAABGCACgEAAAABACAAAABCZWx0SWRlbnRpZmllcjFPcHRpY2FsQmFycmllckVu" +
+           "ZAEB4AAALwA64AAAAP////8BAAAAFWCJCgIAAAABAAYAAABPdXRwdXQBAeEAAC8AP+EAAAAAGP////8B" +
+           "Af////8AAAAABGCACgEAAAABACIAAABCZWx0SWRlbnRpZmllcjFFbGVjdHJpY1Bob3RvU2Vuc29yAQHi" +
+           "AAAvADriAAAA/////wEAAAAVYIkKAgAAAAEABgAAAE91dHB1dAEB4wAALwA/4wAAAAAY/////wEB////" +
+           "/wAAAAAEYIAKAQAAAAEAHwAAAEJlbHRJZGVudGlmaWVyMUNhcGFjaXRpdmVTZW5zb3IBAeQAAC8AOuQA" +
+           "AAD/////AQAAABVgiQoCAAAAAQAGAAAAT3V0cHV0AQHlAAAvAD/lAAAAABj/////AQH/////AAAAAARg" +
+           "gAoBAAAAAQAeAAAAQmVsdElkZW50aWZpZXIxSW5kdWN0aXZlU2Vuc29yAQHmAAAvADrmAAAA/////wEA" +
+           "AAAVYIkKAgAAAAEABgAAAE91dHB1dAEB5wAALwA/5wAAAAAY/////wEB/////wAAAAAEYIAKAQAAAAEA" +
+           "HwAAAEJlbHRJZGVudGlmaWVyMUVycm9ySWx1bWluYXRpb24BAegAAC8AOugAAAD/////AQAAABVgiQoC" +
+           "AAAAAQAFAAAASW5wdXQBAekAAC8AP+kAAAAAGP////8BAf////8AAAAABGCACgEAAAABABQAAABCZWx0" +
+           "SWRlbnRpZmllcjFNb3RvcgEB6gAALwA66gAAAP////8BAAAAFWCJCgIAAAABAAUAAABTcGVlZAEB6wAA" +
+           "LwA/6wAAAAAY/////wEB/////wAAAAAEYYIKBAAAAAEADAAAAFN0YXJ0UHJvY2VzcwEB7AAALwEB7ADs" +
+           "AAAAAQH/////AAAAAARhggoEAAAAAQALAAAAU3RvcFByb2Nlc3MBAe0AAC8BAe0A7QAAAAEB/////wAA" +
+           "AAA=";
+        #endregion
+        #endif
+        #endregion
+
+        #region Public Properties
+        /// <remarks />
+        public BeltIdentifierState BeltIdentifier1
+        {
+            get
+            {
+                return m_beltIdentifier1;
+            }
+
+            set
+            {
+                if (!Object.ReferenceEquals(m_beltIdentifier1, value))
+                {
+                    ChangeMasks |= NodeStateChangeMasks.Children;
+                }
+
+                m_beltIdentifier1 = value;
             }
         }
 
@@ -1565,25 +1581,6 @@ namespace BeltIdentifier
                 m_stopProcessMethod = value;
             }
         }
-
-        /// <remarks />
-        public MethodState TypeOfObject
-        {
-            get
-            {
-                return m_typeOfObjectMethod;
-            }
-
-            set
-            {
-                if (!Object.ReferenceEquals(m_typeOfObjectMethod, value))
-                {
-                    ChangeMasks |= NodeStateChangeMasks.Children;
-                }
-
-                m_typeOfObjectMethod = value;
-            }
-        }
         #endregion
 
         #region Overridden Methods
@@ -1592,9 +1589,9 @@ namespace BeltIdentifier
             ISystemContext context,
             IList<BaseInstanceState> children)
         {
-            if (m_beltIdentifier != null)
+            if (m_beltIdentifier1 != null)
             {
-                children.Add(m_beltIdentifier);
+                children.Add(m_beltIdentifier1);
             }
 
             if (m_startProcessMethod != null)
@@ -1605,11 +1602,6 @@ namespace BeltIdentifier
             if (m_stopProcessMethod != null)
             {
                 children.Add(m_stopProcessMethod);
-            }
-
-            if (m_typeOfObjectMethod != null)
-            {
-                children.Add(m_typeOfObjectMethod);
             }
 
             base.GetChildren(context, children);
@@ -1631,24 +1623,24 @@ namespace BeltIdentifier
 
             switch (browseName.Name)
             {
-                case BeltIdentifier.BrowseNames.BeltIdentifier:
+                case BeltIdentifier.BrowseNames.BeltIdentifier1:
                 {
                     if (createOrReplace)
                     {
-                        if (BeltIdentifier == null)
+                        if (BeltIdentifier1 == null)
                         {
                             if (replacement == null)
                             {
-                                BeltIdentifier = new IdentifierBeltState(this);
+                                BeltIdentifier1 = new BeltIdentifierState(this);
                             }
                             else
                             {
-                                BeltIdentifier = (IdentifierBeltState)replacement;
+                                BeltIdentifier1 = (BeltIdentifierState)replacement;
                             }
                         }
                     }
 
-                    instance = BeltIdentifier;
+                    instance = BeltIdentifier1;
                     break;
                 }
 
@@ -1693,27 +1685,6 @@ namespace BeltIdentifier
                     instance = StopProcess;
                     break;
                 }
-
-                case BeltIdentifier.BrowseNames.TypeOfObject:
-                {
-                    if (createOrReplace)
-                    {
-                        if (TypeOfObject == null)
-                        {
-                            if (replacement == null)
-                            {
-                                TypeOfObject = new MethodState(this);
-                            }
-                            else
-                            {
-                                TypeOfObject = (MethodState)replacement;
-                            }
-                        }
-                    }
-
-                    instance = TypeOfObject;
-                    break;
-                }
             }
 
             if (instance != null)
@@ -1726,10 +1697,9 @@ namespace BeltIdentifier
         #endregion
 
         #region Private Fields
-        private IdentifierBeltState m_beltIdentifier;
+        private BeltIdentifierState m_beltIdentifier1;
         private MethodState m_startProcessMethod;
         private MethodState m_stopProcessMethod;
-        private MethodState m_typeOfObjectMethod;
         #endregion
     }
     #endif
