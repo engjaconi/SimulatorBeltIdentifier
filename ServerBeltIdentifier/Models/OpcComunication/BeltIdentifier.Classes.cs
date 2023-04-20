@@ -1530,17 +1530,17 @@ namespace BeltIdentifier
         {
             get
             {
-                return m_beltIdentifier1;
+                return _beltIdentifier1;
             }
 
             set
             {
-                if (!Object.ReferenceEquals(m_beltIdentifier1, value))
+                if (!Object.ReferenceEquals(_beltIdentifier1, value))
                 {
                     ChangeMasks |= NodeStateChangeMasks.Children;
                 }
 
-                m_beltIdentifier1 = value;
+                _beltIdentifier1 = value;
             }
         }
 
@@ -1589,9 +1589,9 @@ namespace BeltIdentifier
             ISystemContext context,
             IList<BaseInstanceState> children)
         {
-            if (m_beltIdentifier1 != null)
+            if (_beltIdentifier1 != null)
             {
-                children.Add(m_beltIdentifier1);
+                children.Add(_beltIdentifier1);
             }
 
             if (m_startProcessMethod != null)
@@ -1697,7 +1697,7 @@ namespace BeltIdentifier
         #endregion
 
         #region Private Fields
-        private BeltIdentifierState m_beltIdentifier1;
+        private BeltIdentifierState _beltIdentifier1;
         private MethodState m_startProcessMethod;
         private MethodState m_stopProcessMethod;
         #endregion

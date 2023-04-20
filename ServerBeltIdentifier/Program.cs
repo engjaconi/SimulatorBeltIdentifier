@@ -6,29 +6,20 @@ namespace BeltIdentifierServer
 {
     internal static class Program
     {
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            
-            ApplicationInstance application = new ApplicationInstance();
-            application.ApplicationType = ApplicationType.Server;
-            application.ConfigSectionName = "ServerBeltIdentifier";
+
+            ApplicationInstance application = new()
+            {
+                ApplicationType = ApplicationType.Server,
+                ConfigSectionName = "ServerBeltIdentifier"
+            };
 
             try
             {
-                // process and command line arguments.
-                if (application.ProcessCommandLine())
-                {
-                    return;
-                }
-
-                // check if running as a service.
+                // Checa se o serviço está executando.
                 if (!Environment.UserInteractive)
                 {
                     application.StartAsService(new Server());
@@ -45,19 +36,19 @@ namespace BeltIdentifierServer
                 application.Start(new Server()).Wait();
 
                 // Rodando o aplicativo.
-                Application.Run(new Form1(application));
+                Application.Run(new ServerForm(application));
 
-            }catch (Exception ex) 
+            }
+            catch (Exception ex)
             {
                 string text = "Exception: " + ex.Message;
-                if (ex.InnerException != null) 
+                if (ex.InnerException != null)
                 {
                     text += "\r\nInner exception: ";
                     text += ex.InnerException.Message;
                 }
                 MessageBox.Show(text, application.ApplicationName);
             }
-
         }
     }
 }

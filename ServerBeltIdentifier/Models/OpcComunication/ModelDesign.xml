@@ -13,10 +13,6 @@ TargetNamespace="http://opcfoundation.org/BeltIdentifier"
   Esse elemento define os mapeamentos entre os URIs usados para identificar namespaces e os símbolos usados no código.
   Os arquivos de design definidos pelo usuário podem incluir outros arquivos de design definidos pelo usuário.
   O local dos arquivos de design incluídos é especificado com o atributo FilePath (caminho absoluto ou relativo sem o sufixo .xml).
-  
-  This element defines the mappings between the URIs used to identify namespaces and the symbols used in code.
-  User defined design files can include other user defined design files.
-  The location of included design files is specified with the FilePath attribute (absolute or relative path without the .xml suffix).
   -->
 	<opc:Namespaces>
 		<opc:Namespace Name="OpcUa" Prefix="Opc.Ua" XmlNamespace="http://opcfoundation.org/UA/2008/02/Types.xsd">http://opcfoundation.org/UA/</opc:Namespace>
@@ -25,7 +21,6 @@ TargetNamespace="http://opcfoundation.org/BeltIdentifier"
 
 	<!--
   Defina tipos de base genéricos para os vários controladores, sensores e atuadores utilizados no modelo.
-  Define generic base types for the various controllers, sensors and actuators used in the model.
   -->
 	<opc:ObjectType SymbolicName="GenericSensorType" BaseType="ua:BaseObjectType">
 		<opc:Description>A generic sensor that read a process value.</opc:Description>
@@ -50,7 +45,6 @@ TargetNamespace="http://opcfoundation.org/BeltIdentifier"
 
 	<!--
   Define os tipos de concreto para os vários controladores, sensores e atuadores utilizados no modelo.
-  Define concrete types for the various controllers, sensors and actuators used in the model.
   -->
 	<opc:ObjectType SymbolicName="OpticalBarrier" BaseType="GenericSensorType">
 		<opc:Description>A sensor that reports the position of object in a belt.</opc:Description>
@@ -80,10 +74,6 @@ TargetNamespace="http://opcfoundation.org/BeltIdentifier"
 	Definir tipos de concreto para os componentes contidos na Planta de Lotes.
   Esses tipos de camada intermediária podem ser omitidos e declarados como pastas dentro do tipo de caldeira.
   No entanto, isso não produziria uma classe fortemente tipada.
-  
-  Define concrete types for the components contained in the Batch Plant.
-  These middle tier types could be omitted and declared as folders within the boiler type.
-  However, doing so would not produce a strongly typed class.
   -->
 
 	<opc:ObjectType SymbolicName="BeltIdentifierType" BaseType="ua:FolderType">
@@ -128,15 +118,14 @@ TargetNamespace="http://opcfoundation.org/BeltIdentifier"
 	</opc:ObjectType>
 
 	<!--
-  Declare the batch plant type along with all of the references between the different components.
-  Adding references between components requires that they be overriden. 
-  Overridden nodes only need to delcare the correct NodeType and the SymbolicName; all other
-  parameters are initialized from the original declaration. Any parameters that are explicitly
-  specified replace the original declaration and are used even if the original declaration
-  is changed.
-  
-  References are specified by constructing the SymbolicIds for the components by inserting
-  a '_' between each SymbolicName. This means that a '_' cannot be part of a SymbolicName.
+  Declare o tipo de planta em lote junto com todas as referências entre os diferentes componentes.
+  Adicionar referências entre componentes requer que eles sejam substituídos. 
+  Os nós substituídos só precisam se importar com o NodeType correto e o SymbolicName; todos os outros
+  parâmetros são inicializados a partir da declaração original. Quaisquer parâmetros que sejam explicitamente
+  especificados substituem a declaração original e são utilizados mesmo que a declaração original
+  é alterado.
+  As referências são especificadas construindo os SymbolicIds para os componentes inserindo
+  um '_' entre cada SymbolicName. Isso significa que um '_' não pode fazer parte de um SymbolicName.
   -->
 	<opc:ObjectType SymbolicName="BeltType" BaseType="ua:BaseObjectType" SupportsEvents="true">
 		<opc:Description>A production belt.</opc:Description>
@@ -208,7 +197,7 @@ TargetNamespace="http://opcfoundation.org/BeltIdentifier"
 							<opc:Variable SymbolicName="Speed" />
 						</opc:Children>
 					</opc:Object>
-					
+
 				</opc:Children>
 			</opc:Object>
 
@@ -227,10 +216,9 @@ TargetNamespace="http://opcfoundation.org/BeltIdentifier"
 	</opc:ObjectType>
 
 	<!--
-  Declare an instance of a Hydrogen Machine.
-  Normally instances are created by program logic instead of being part of the model.
-  This is provided as an example of how to do it when there is a need for persistent instances.
-  Note that the DisplayNames are overridden for the base level nodes.
+  Normalmente, as instâncias são criadas pela lógica do programa em vez de fazer parte do modelo.
+  Isso é fornecido como um exemplo de como fazê-lo quando há necessidade de instâncias persistentes.
+  Observe que os DisplayNames são substituídos para os nós de nível básico.
   -->
 	<opc:Object SymbolicName="BeltServer" TypeDefinition="BeltType" SupportsEvents="true">
 		<opc:BrowseName>Belt Server #1</opc:BrowseName>
@@ -241,7 +229,7 @@ TargetNamespace="http://opcfoundation.org/BeltIdentifier"
 		</opc:Children>
 
 		<!--
-    Link the instance back to the ObjectsFolder
+   Vincular a instância de volta ao ObjectsFolder
     -->
 		<opc:References>
 			<opc:Reference IsInverse="true">
