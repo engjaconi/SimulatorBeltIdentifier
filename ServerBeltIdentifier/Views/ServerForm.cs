@@ -1,6 +1,7 @@
 using Opc.Ua;
 using Opc.Ua.Configuration;
 using Opc.Ua.Server;
+using ServerBeltIdentifier.Models;
 
 namespace BeltIdentifierServer
 {
@@ -37,6 +38,28 @@ namespace BeltIdentifierServer
             {
                 ServerUrlComboBox.SelectedIndex = 0;
             }
+
+        }
+
+        private void StartButton_Click(object sender, EventArgs e)
+        {
+            this.textBox1.Text = NodeManager._Belt.Module1.Motor.Speed.Value.ToString();
+        }
+
+        private void StopButton_Click(object sender, EventArgs e)
+        {
+            NodeManager._Belt.Module2.Motor.Speed.Value = 4;
+            MessageBox.Show("ok");
+        }
+
+        private void ServerUrlComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            this.textBox1.Text = NodeManager._Belt.Module2.Motor.Speed.Value.ToString();
         }
     }
 }
