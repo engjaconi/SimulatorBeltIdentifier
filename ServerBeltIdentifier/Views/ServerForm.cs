@@ -24,32 +24,32 @@ namespace BeltIdentifierServer
             _configuration = application.ApplicationConfiguration;
 
             // Insere a URL na caixa de texto.
-            ServerUrlComboBox.Items.Clear();
+            cbServerUrl.Items.Clear();
 
             foreach (EndpointDescription endpoint in _server.GetEndpoints())
             {
-                if (ServerUrlComboBox.FindStringExact(endpoint.EndpointUrl) == -1)
+                if (cbServerUrl.FindStringExact(endpoint.EndpointUrl) == -1)
                 {
-                    ServerUrlComboBox.Items.Add(endpoint.EndpointUrl);
+                    cbServerUrl.Items.Add(endpoint.EndpointUrl);
                 }
             }
 
-            if (ServerUrlComboBox.Items.Count > 0)
+            if (cbServerUrl.Items.Count > 0)
             {
-                ServerUrlComboBox.SelectedIndex = 0;
+                cbServerUrl.SelectedIndex = 0;
             }
 
         }
 
         private void StartButton_Click(object sender, EventArgs e)
         {
-            this.textBox1.Text = NodeManager._Belt.Module1.Motor.Speed.Value.ToString();
+            //this.textBox1.Text = NodeManager._Belt.Module1.Motor.Speed.Value.ToString();
+            this.pMotorStatus.BackgroundImage = ServerBeltIdentifier.Properties.Resources.green_led_on;
         }
 
         private void StopButton_Click(object sender, EventArgs e)
         {
-            NodeManager._Belt.Module2.Motor.Speed.Value = 4;
-            MessageBox.Show("ok");
+            this.pMotorStatus.BackgroundImage = ServerBeltIdentifier.Properties.Resources.green_led_off;
         }
 
         private void ServerUrlComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -59,7 +59,27 @@ namespace BeltIdentifierServer
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            this.textBox1.Text = NodeManager._Belt.Module2.Motor.Speed.Value.ToString();
+            //this.textBox1.Text = NodeManager._Belt.Module2.Motor.Speed.Value.ToString();
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tpModule1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
