@@ -70,8 +70,8 @@ TargetNamespace="http://opcfoundation.org/BeltIdentifier"
 		<opc:Description>A sensor that reports you if the piece is metallic.</opc:Description>
 	</opc:ObjectType>
 
-	<opc:ObjectType SymbolicName="OpaquePiece" BaseType="GenericActuatorType">
-		<opc:Description>Opaque piece indication.</opc:Description>
+	<opc:ObjectType SymbolicName="TransparentPiece" BaseType="GenericActuatorType">
+		<opc:Description>Transparent piece indication.</opc:Description>
 	</opc:ObjectType>
 
 	<opc:ObjectType SymbolicName="MetallicPiece" BaseType="GenericActuatorType">
@@ -90,7 +90,7 @@ TargetNamespace="http://opcfoundation.org/BeltIdentifier"
 		<opc:Description>Busy indication light.</opc:Description>
 	</opc:ObjectType>
 
-	<opc:ObjectType SymbolicName="QuantityOpaquePiece" BaseType="GenericDisplayType">
+	<opc:ObjectType SymbolicName="QuantityTransparentPiece" BaseType="GenericDisplayType">
 		<opc:Description>Reports the number of objects.</opc:Description>
 	</opc:ObjectType>
 
@@ -123,8 +123,8 @@ TargetNamespace="http://opcfoundation.org/BeltIdentifier"
 				<opc:BrowseName>Busy</opc:BrowseName>
 			</opc:Object>
 
-			<opc:Object SymbolicName="Opaque" TypeDefinition="OpaquePiece" SupportsEvents="true">
-				<opc:BrowseName>Opaque</opc:BrowseName>
+			<opc:Object SymbolicName="Transparent" TypeDefinition="TransparentPiece" SupportsEvents="true">
+				<opc:BrowseName>Transparent</opc:BrowseName>
 			</opc:Object>
 
 			<opc:Object SymbolicName="Metallic" TypeDefinition="MetallicPiece" SupportsEvents="true">
@@ -135,8 +135,8 @@ TargetNamespace="http://opcfoundation.org/BeltIdentifier"
 				<opc:BrowseName>NonMetallic</opc:BrowseName>
 			</opc:Object>
 
-			<opc:Object SymbolicName="QuantityOpaque" TypeDefinition="QuantityOpaquePiece" SupportsEvents="true">
-				<opc:BrowseName>QuantityOpaque</opc:BrowseName>
+			<opc:Object SymbolicName="QuantityTransparent" TypeDefinition="QuantityTransparentPiece" SupportsEvents="true">
+				<opc:BrowseName>QuantityTransparent</opc:BrowseName>
 			</opc:Object>
 			
 			<opc:Object SymbolicName="QuantityMetallic" TypeDefinition="QuantityMetallicPiece" SupportsEvents="true">

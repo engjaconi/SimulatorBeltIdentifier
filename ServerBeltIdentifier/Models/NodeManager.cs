@@ -65,47 +65,47 @@ namespace ServerBeltIdentifier.Models
 
         private ServiceResult OnStartModule1Process(ISystemContext context, MethodState method, IList<object> inputArguments, IList<object> outputArguments)
         {
-            ServerForm._beltModule1.Start();
+            ServerForm.beltModule1.Start();
             return ServiceResult.Good;
         }
 
         private ServiceResult OnStopModule1Process(ISystemContext context, MethodState method, IList<object> inputArguments, IList<object> outputArguments)
         {
-            ServerForm._beltModule1.Stop();
+            ServerForm.beltModule1.Stop();
             return ServiceResult.Good;
         }
 
         private ServiceResult OnResetModule1Process(ISystemContext context, MethodState method, IList<object> inputArguments, IList<object> outputArguments)
         {
-            ServerForm._beltModule1.Reset();
+            ServerForm.beltModule1.Reset();
             return ServiceResult.Good;
         }
 
         private ServiceResult OnStartModule2Process(ISystemContext context, MethodState method, IList<object> inputArguments, IList<object> outputArguments)
         {
-            ServerForm._beltModule2.Start();
+            ServerForm.beltModule2.Start();
             return ServiceResult.Good;
         }
 
         private ServiceResult OnStopModule2Process(ISystemContext context, MethodState method, IList<object> inputArguments, IList<object> outputArguments)
         {
-            ServerForm._beltModule2.Stop();
+            ServerForm.beltModule2.Stop();
             return ServiceResult.Good;
         }
 
         private ServiceResult OnResetModule2Process(ISystemContext context, MethodState method, IList<object> inputArguments, IList<object> outputArguments)
         {
-            ServerForm._beltModule2.Reset();
+            ServerForm.beltModule2.Reset();
             return ServiceResult.Good;
         }
 
         private void InitializeVariableValues()
         {
-            _Belt.Module1.Opaque.Input.Value = false;
+            _Belt.Module1.Transparent.Input.Value = false;
             _Belt.Module1.Metallic.Input.Value = false;
             _Belt.Module1.NonMetallic.Input.Value = false;
             _Belt.Module1.Error.Input.Value = false;
-            _Belt.Module1.QuantityOpaque.Input.Value = 0;
+            _Belt.Module1.QuantityTransparent.Input.Value = 0;
             _Belt.Module1.QuantityMetallic.Input.Value = 0;
             _Belt.Module1.QuantityNonMetallic.Input.Value = 0;
             _Belt.Module1.Motor.Speed.Value = 1;

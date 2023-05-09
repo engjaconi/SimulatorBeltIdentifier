@@ -391,22 +391,22 @@
       <uax:Identifier>ns=1;i=1</uax:Identifier>
     </uax:SuperTypeId>
   </InductiveSensor>
-  <OpaquePiece xmlns="http://opcfoundation.org/BeltIdentifier">
+  <TransparentPiece xmlns="http://opcfoundation.org/BeltIdentifier">
     <uax:NodeClass>ObjectType_8</uax:NodeClass>
     <uax:NodeId>
-      <uax:Identifier>ns=1;i=57</uax:Identifier>
+      <uax:Identifier>ns=1;i=915</uax:Identifier>
     </uax:NodeId>
     <uax:BrowseName>
       <uax:NamespaceIndex>1</uax:NamespaceIndex>
-      <uax:Name>OpaquePiece</uax:Name>
+      <uax:Name>TransparentPiece</uax:Name>
     </uax:BrowseName>
     <uax:Description>
-      <uax:Text>Opaque piece indication.</uax:Text>
+      <uax:Text>Transparent piece indication.</uax:Text>
     </uax:Description>
     <uax:SuperTypeId>
       <uax:Identifier>ns=1;i=8</uax:Identifier>
     </uax:SuperTypeId>
-  </OpaquePiece>
+  </TransparentPiece>
   <MetallicPiece xmlns="http://opcfoundation.org/BeltIdentifier">
     <uax:NodeClass>ObjectType_8</uax:NodeClass>
     <uax:NodeId>
@@ -471,14 +471,14 @@
       <uax:Identifier>ns=1;i=8</uax:Identifier>
     </uax:SuperTypeId>
   </BusyIlumination>
-  <QuantityOpaquePiece xmlns="http://opcfoundation.org/BeltIdentifier">
+  <QuantityTransparentPiece xmlns="http://opcfoundation.org/BeltIdentifier">
     <uax:NodeClass>ObjectType_8</uax:NodeClass>
     <uax:NodeId>
-      <uax:Identifier>ns=1;i=85</uax:Identifier>
+      <uax:Identifier>ns=1;i=922</uax:Identifier>
     </uax:NodeId>
     <uax:BrowseName>
       <uax:NamespaceIndex>1</uax:NamespaceIndex>
-      <uax:Name>QuantityOpaquePiece</uax:Name>
+      <uax:Name>QuantityTransparentPiece</uax:Name>
     </uax:BrowseName>
     <uax:Description>
       <uax:Text>Reports the number of objects.</uax:Text>
@@ -486,7 +486,7 @@
     <uax:SuperTypeId>
       <uax:Identifier>ns=1;i=15</uax:Identifier>
     </uax:SuperTypeId>
-  </QuantityOpaquePiece>
+  </QuantityTransparentPiece>
   <QuantityMetallicPiece xmlns="http://opcfoundation.org/BeltIdentifier">
     <uax:NodeClass>ObjectType_8</uax:NodeClass>
     <uax:NodeId>
@@ -703,30 +703,30 @@
         </EURange>
       </Input>
     </Busy>
-    <Opaque>
+    <Transparent>
       <uax:NodeClass>Object_1</uax:NodeClass>
       <uax:NodeId>
-        <uax:Identifier>ns=1;i=121</uax:Identifier>
+        <uax:Identifier>ns=1;i=929</uax:Identifier>
       </uax:NodeId>
       <uax:BrowseName>
         <uax:NamespaceIndex>1</uax:NamespaceIndex>
-        <uax:Name>Opaque</uax:Name>
+        <uax:Name>Transparent</uax:Name>
       </uax:BrowseName>
       <uax:ReferenceTypeId>
         <uax:Identifier>i=47</uax:Identifier>
       </uax:ReferenceTypeId>
       <uax:TypeDefinitionId>
-        <uax:Identifier>ns=1;i=57</uax:Identifier>
+        <uax:Identifier>ns=1;i=915</uax:Identifier>
       </uax:TypeDefinitionId>
       <uax:ModellingRuleId>
         <uax:Identifier>i=78</uax:Identifier>
       </uax:ModellingRuleId>
-      <uax:NumericId>121</uax:NumericId>
+      <uax:NumericId>929</uax:NumericId>
       <uax:EventNotifier>1</uax:EventNotifier>
       <Input>
         <uax:NodeClass>Variable_2</uax:NodeClass>
         <uax:NodeId>
-          <uax:Identifier>ns=1;i=122</uax:Identifier>
+          <uax:Identifier>ns=1;i=930</uax:Identifier>
         </uax:NodeId>
         <uax:BrowseName>
           <uax:NamespaceIndex>1</uax:NamespaceIndex>
@@ -741,7 +741,7 @@
         <uax:ModellingRuleId>
           <uax:Identifier>i=78</uax:Identifier>
         </uax:ModellingRuleId>
-        <uax:NumericId>122</uax:NumericId>
+        <uax:NumericId>930</uax:NumericId>
         <uax:DataType>
           <uax:Identifier>i=1</uax:Identifier>
         </uax:DataType>
@@ -751,7 +751,7 @@
         <EURange xmlns="http://opcfoundation.org/UA/">
           <uax:NodeClass>Variable_2</uax:NodeClass>
           <uax:NodeId>
-            <uax:Identifier>ns=1;i=126</uax:Identifier>
+            <uax:Identifier>ns=1;i=934</uax:Identifier>
           </uax:NodeId>
           <uax:BrowseName>
             <uax:NamespaceIndex>0</uax:NamespaceIndex>
@@ -766,7 +766,7 @@
           <uax:ModellingRuleId>
             <uax:Identifier>i=78</uax:Identifier>
           </uax:ModellingRuleId>
-          <uax:NumericId>126</uax:NumericId>
+          <uax:NumericId>934</uax:NumericId>
           <uax:DataType>
             <uax:Identifier>i=884</uax:Identifier>
           </uax:DataType>
@@ -775,7 +775,7 @@
           <uax:UserAccessLevel>1</uax:UserAccessLevel>
         </EURange>
       </Input>
-    </Opaque>
+    </Transparent>
     <Metallic>
       <uax:NodeClass>Object_1</uax:NodeClass>
       <uax:NodeId>
@@ -922,30 +922,30 @@
         </EURange>
       </Input>
     </NonMetallic>
-    <QuantityOpaque>
+    <QuantityTransparent>
       <uax:NodeClass>Object_1</uax:NodeClass>
       <uax:NodeId>
-        <uax:Identifier>ns=1;i=142</uax:Identifier>
+        <uax:Identifier>ns=1;i=936</uax:Identifier>
       </uax:NodeId>
       <uax:BrowseName>
         <uax:NamespaceIndex>1</uax:NamespaceIndex>
-        <uax:Name>QuantityOpaque</uax:Name>
+        <uax:Name>QuantityTransparent</uax:Name>
       </uax:BrowseName>
       <uax:ReferenceTypeId>
         <uax:Identifier>i=47</uax:Identifier>
       </uax:ReferenceTypeId>
       <uax:TypeDefinitionId>
-        <uax:Identifier>ns=1;i=85</uax:Identifier>
+        <uax:Identifier>ns=1;i=922</uax:Identifier>
       </uax:TypeDefinitionId>
       <uax:ModellingRuleId>
         <uax:Identifier>i=78</uax:Identifier>
       </uax:ModellingRuleId>
-      <uax:NumericId>142</uax:NumericId>
+      <uax:NumericId>936</uax:NumericId>
       <uax:EventNotifier>1</uax:EventNotifier>
       <Input>
         <uax:NodeClass>Variable_2</uax:NodeClass>
         <uax:NodeId>
-          <uax:Identifier>ns=1;i=143</uax:Identifier>
+          <uax:Identifier>ns=1;i=937</uax:Identifier>
         </uax:NodeId>
         <uax:BrowseName>
           <uax:NamespaceIndex>1</uax:NamespaceIndex>
@@ -960,7 +960,7 @@
         <uax:ModellingRuleId>
           <uax:Identifier>i=78</uax:Identifier>
         </uax:ModellingRuleId>
-        <uax:NumericId>143</uax:NumericId>
+        <uax:NumericId>937</uax:NumericId>
         <uax:DataType>
           <uax:Identifier>i=6</uax:Identifier>
         </uax:DataType>
@@ -970,7 +970,7 @@
         <EURange xmlns="http://opcfoundation.org/UA/">
           <uax:NodeClass>Variable_2</uax:NodeClass>
           <uax:NodeId>
-            <uax:Identifier>ns=1;i=147</uax:Identifier>
+            <uax:Identifier>ns=1;i=941</uax:Identifier>
           </uax:NodeId>
           <uax:BrowseName>
             <uax:NamespaceIndex>0</uax:NamespaceIndex>
@@ -985,7 +985,7 @@
           <uax:ModellingRuleId>
             <uax:Identifier>i=78</uax:Identifier>
           </uax:ModellingRuleId>
-          <uax:NumericId>147</uax:NumericId>
+          <uax:NumericId>941</uax:NumericId>
           <uax:DataType>
             <uax:Identifier>i=884</uax:Identifier>
           </uax:DataType>
@@ -994,7 +994,7 @@
           <uax:UserAccessLevel>1</uax:UserAccessLevel>
         </EURange>
       </Input>
-    </QuantityOpaque>
+    </QuantityTransparent>
     <QuantityMetallic>
       <uax:NodeClass>Object_1</uax:NodeClass>
       <uax:NodeId>
@@ -2201,30 +2201,30 @@
           </EURange>
         </Input>
       </Busy>
-      <Opaque>
+      <Transparent>
         <uax:NodeClass>Object_1</uax:NodeClass>
         <uax:NodeId>
-          <uax:Identifier>ns=1;i=236</uax:Identifier>
+          <uax:Identifier>ns=1;i=943</uax:Identifier>
         </uax:NodeId>
         <uax:BrowseName>
           <uax:NamespaceIndex>1</uax:NamespaceIndex>
-          <uax:Name>Opaque</uax:Name>
+          <uax:Name>Transparent</uax:Name>
         </uax:BrowseName>
         <uax:ReferenceTypeId>
           <uax:Identifier>i=47</uax:Identifier>
         </uax:ReferenceTypeId>
         <uax:TypeDefinitionId>
-          <uax:Identifier>ns=1;i=57</uax:Identifier>
+          <uax:Identifier>ns=1;i=915</uax:Identifier>
         </uax:TypeDefinitionId>
         <uax:ModellingRuleId>
           <uax:Identifier>i=78</uax:Identifier>
         </uax:ModellingRuleId>
-        <uax:NumericId>236</uax:NumericId>
+        <uax:NumericId>943</uax:NumericId>
         <uax:EventNotifier>1</uax:EventNotifier>
         <Input>
           <uax:NodeClass>Variable_2</uax:NodeClass>
           <uax:NodeId>
-            <uax:Identifier>ns=1;i=237</uax:Identifier>
+            <uax:Identifier>ns=1;i=944</uax:Identifier>
           </uax:NodeId>
           <uax:BrowseName>
             <uax:NamespaceIndex>1</uax:NamespaceIndex>
@@ -2239,7 +2239,7 @@
           <uax:ModellingRuleId>
             <uax:Identifier>i=78</uax:Identifier>
           </uax:ModellingRuleId>
-          <uax:NumericId>237</uax:NumericId>
+          <uax:NumericId>944</uax:NumericId>
           <uax:DataType>
             <uax:Identifier>i=1</uax:Identifier>
           </uax:DataType>
@@ -2249,7 +2249,7 @@
           <EURange xmlns="http://opcfoundation.org/UA/">
             <uax:NodeClass>Variable_2</uax:NodeClass>
             <uax:NodeId>
-              <uax:Identifier>ns=1;i=241</uax:Identifier>
+              <uax:Identifier>ns=1;i=948</uax:Identifier>
             </uax:NodeId>
             <uax:BrowseName>
               <uax:NamespaceIndex>0</uax:NamespaceIndex>
@@ -2264,7 +2264,7 @@
             <uax:ModellingRuleId>
               <uax:Identifier>i=78</uax:Identifier>
             </uax:ModellingRuleId>
-            <uax:NumericId>241</uax:NumericId>
+            <uax:NumericId>948</uax:NumericId>
             <uax:DataType>
               <uax:Identifier>i=884</uax:Identifier>
             </uax:DataType>
@@ -2273,7 +2273,7 @@
             <uax:UserAccessLevel>1</uax:UserAccessLevel>
           </EURange>
         </Input>
-      </Opaque>
+      </Transparent>
       <Metallic>
         <uax:NodeClass>Object_1</uax:NodeClass>
         <uax:NodeId>
@@ -2420,30 +2420,30 @@
           </EURange>
         </Input>
       </NonMetallic>
-      <QuantityOpaque>
+      <QuantityTransparent>
         <uax:NodeClass>Object_1</uax:NodeClass>
         <uax:NodeId>
-          <uax:Identifier>ns=1;i=257</uax:Identifier>
+          <uax:Identifier>ns=1;i=950</uax:Identifier>
         </uax:NodeId>
         <uax:BrowseName>
           <uax:NamespaceIndex>1</uax:NamespaceIndex>
-          <uax:Name>QuantityOpaque</uax:Name>
+          <uax:Name>QuantityTransparent</uax:Name>
         </uax:BrowseName>
         <uax:ReferenceTypeId>
           <uax:Identifier>i=47</uax:Identifier>
         </uax:ReferenceTypeId>
         <uax:TypeDefinitionId>
-          <uax:Identifier>ns=1;i=85</uax:Identifier>
+          <uax:Identifier>ns=1;i=922</uax:Identifier>
         </uax:TypeDefinitionId>
         <uax:ModellingRuleId>
           <uax:Identifier>i=78</uax:Identifier>
         </uax:ModellingRuleId>
-        <uax:NumericId>257</uax:NumericId>
+        <uax:NumericId>950</uax:NumericId>
         <uax:EventNotifier>1</uax:EventNotifier>
         <Input>
           <uax:NodeClass>Variable_2</uax:NodeClass>
           <uax:NodeId>
-            <uax:Identifier>ns=1;i=258</uax:Identifier>
+            <uax:Identifier>ns=1;i=951</uax:Identifier>
           </uax:NodeId>
           <uax:BrowseName>
             <uax:NamespaceIndex>1</uax:NamespaceIndex>
@@ -2458,7 +2458,7 @@
           <uax:ModellingRuleId>
             <uax:Identifier>i=78</uax:Identifier>
           </uax:ModellingRuleId>
-          <uax:NumericId>258</uax:NumericId>
+          <uax:NumericId>951</uax:NumericId>
           <uax:DataType>
             <uax:Identifier>i=6</uax:Identifier>
           </uax:DataType>
@@ -2468,7 +2468,7 @@
           <EURange xmlns="http://opcfoundation.org/UA/">
             <uax:NodeClass>Variable_2</uax:NodeClass>
             <uax:NodeId>
-              <uax:Identifier>ns=1;i=262</uax:Identifier>
+              <uax:Identifier>ns=1;i=955</uax:Identifier>
             </uax:NodeId>
             <uax:BrowseName>
               <uax:NamespaceIndex>0</uax:NamespaceIndex>
@@ -2483,7 +2483,7 @@
             <uax:ModellingRuleId>
               <uax:Identifier>i=78</uax:Identifier>
             </uax:ModellingRuleId>
-            <uax:NumericId>262</uax:NumericId>
+            <uax:NumericId>955</uax:NumericId>
             <uax:DataType>
               <uax:Identifier>i=884</uax:Identifier>
             </uax:DataType>
@@ -2492,7 +2492,7 @@
             <uax:UserAccessLevel>1</uax:UserAccessLevel>
           </EURange>
         </Input>
-      </QuantityOpaque>
+      </QuantityTransparent>
       <QuantityMetallic>
         <uax:NodeClass>Object_1</uax:NodeClass>
         <uax:NodeId>
@@ -3850,27 +3850,27 @@
           </EURange>
         </Input>
       </Busy>
-      <Opaque>
+      <Transparent>
         <uax:NodeClass>Object_1</uax:NodeClass>
         <uax:NodeId>
-          <uax:Identifier>ns=1;i=354</uax:Identifier>
+          <uax:Identifier>ns=1;i=957</uax:Identifier>
         </uax:NodeId>
         <uax:BrowseName>
           <uax:NamespaceIndex>1</uax:NamespaceIndex>
-          <uax:Name>Opaque</uax:Name>
+          <uax:Name>Transparent</uax:Name>
         </uax:BrowseName>
         <uax:ReferenceTypeId>
           <uax:Identifier>i=47</uax:Identifier>
         </uax:ReferenceTypeId>
         <uax:TypeDefinitionId>
-          <uax:Identifier>ns=1;i=57</uax:Identifier>
+          <uax:Identifier>ns=1;i=915</uax:Identifier>
         </uax:TypeDefinitionId>
-        <uax:NumericId>354</uax:NumericId>
+        <uax:NumericId>957</uax:NumericId>
         <uax:EventNotifier>1</uax:EventNotifier>
         <Input>
           <uax:NodeClass>Variable_2</uax:NodeClass>
           <uax:NodeId>
-            <uax:Identifier>ns=1;i=355</uax:Identifier>
+            <uax:Identifier>ns=1;i=958</uax:Identifier>
           </uax:NodeId>
           <uax:BrowseName>
             <uax:NamespaceIndex>1</uax:NamespaceIndex>
@@ -3882,7 +3882,7 @@
           <uax:TypeDefinitionId>
             <uax:Identifier>i=2368</uax:Identifier>
           </uax:TypeDefinitionId>
-          <uax:NumericId>355</uax:NumericId>
+          <uax:NumericId>958</uax:NumericId>
           <uax:DataType>
             <uax:Identifier>i=1</uax:Identifier>
           </uax:DataType>
@@ -3892,7 +3892,7 @@
           <EURange xmlns="http://opcfoundation.org/UA/">
             <uax:NodeClass>Variable_2</uax:NodeClass>
             <uax:NodeId>
-              <uax:Identifier>ns=1;i=359</uax:Identifier>
+              <uax:Identifier>ns=1;i=962</uax:Identifier>
             </uax:NodeId>
             <uax:BrowseName>
               <uax:NamespaceIndex>0</uax:NamespaceIndex>
@@ -3904,7 +3904,7 @@
             <uax:TypeDefinitionId>
               <uax:Identifier>i=68</uax:Identifier>
             </uax:TypeDefinitionId>
-            <uax:NumericId>359</uax:NumericId>
+            <uax:NumericId>962</uax:NumericId>
             <uax:DataType>
               <uax:Identifier>i=884</uax:Identifier>
             </uax:DataType>
@@ -3913,7 +3913,7 @@
             <uax:UserAccessLevel>1</uax:UserAccessLevel>
           </EURange>
         </Input>
-      </Opaque>
+      </Transparent>
       <Metallic>
         <uax:NodeClass>Object_1</uax:NodeClass>
         <uax:NodeId>
@@ -4042,27 +4042,27 @@
           </EURange>
         </Input>
       </NonMetallic>
-      <QuantityOpaque>
+      <QuantityTransparent>
         <uax:NodeClass>Object_1</uax:NodeClass>
         <uax:NodeId>
-          <uax:Identifier>ns=1;i=375</uax:Identifier>
+          <uax:Identifier>ns=1;i=964</uax:Identifier>
         </uax:NodeId>
         <uax:BrowseName>
           <uax:NamespaceIndex>1</uax:NamespaceIndex>
-          <uax:Name>QuantityOpaque</uax:Name>
+          <uax:Name>QuantityTransparent</uax:Name>
         </uax:BrowseName>
         <uax:ReferenceTypeId>
           <uax:Identifier>i=47</uax:Identifier>
         </uax:ReferenceTypeId>
         <uax:TypeDefinitionId>
-          <uax:Identifier>ns=1;i=85</uax:Identifier>
+          <uax:Identifier>ns=1;i=922</uax:Identifier>
         </uax:TypeDefinitionId>
-        <uax:NumericId>375</uax:NumericId>
+        <uax:NumericId>964</uax:NumericId>
         <uax:EventNotifier>1</uax:EventNotifier>
         <Input>
           <uax:NodeClass>Variable_2</uax:NodeClass>
           <uax:NodeId>
-            <uax:Identifier>ns=1;i=376</uax:Identifier>
+            <uax:Identifier>ns=1;i=965</uax:Identifier>
           </uax:NodeId>
           <uax:BrowseName>
             <uax:NamespaceIndex>1</uax:NamespaceIndex>
@@ -4074,7 +4074,7 @@
           <uax:TypeDefinitionId>
             <uax:Identifier>i=2368</uax:Identifier>
           </uax:TypeDefinitionId>
-          <uax:NumericId>376</uax:NumericId>
+          <uax:NumericId>965</uax:NumericId>
           <uax:DataType>
             <uax:Identifier>i=6</uax:Identifier>
           </uax:DataType>
@@ -4084,7 +4084,7 @@
           <EURange xmlns="http://opcfoundation.org/UA/">
             <uax:NodeClass>Variable_2</uax:NodeClass>
             <uax:NodeId>
-              <uax:Identifier>ns=1;i=380</uax:Identifier>
+              <uax:Identifier>ns=1;i=969</uax:Identifier>
             </uax:NodeId>
             <uax:BrowseName>
               <uax:NamespaceIndex>0</uax:NamespaceIndex>
@@ -4096,7 +4096,7 @@
             <uax:TypeDefinitionId>
               <uax:Identifier>i=68</uax:Identifier>
             </uax:TypeDefinitionId>
-            <uax:NumericId>380</uax:NumericId>
+            <uax:NumericId>969</uax:NumericId>
             <uax:DataType>
               <uax:Identifier>i=884</uax:Identifier>
             </uax:DataType>
@@ -4105,7 +4105,7 @@
             <uax:UserAccessLevel>1</uax:UserAccessLevel>
           </EURange>
         </Input>
-      </QuantityOpaque>
+      </QuantityTransparent>
       <QuantityMetallic>
         <uax:NodeClass>Object_1</uax:NodeClass>
         <uax:NodeId>

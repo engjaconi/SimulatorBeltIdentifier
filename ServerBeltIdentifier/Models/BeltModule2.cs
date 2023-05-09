@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-
-namespace ServerBeltIdentifier.Models
+﻿namespace ServerBeltIdentifier.Models
 {
     public class BeltModule2 : Belt
     {
@@ -41,14 +34,17 @@ namespace ServerBeltIdentifier.Models
         {
             WriteOpc();
         }
+       
         public void AddPieceManual(string pieceType, int speedMotor)
         {
 
         }
+        
         public void AddPieceAuto(int speedMotor)
         {
 
         }
+        
         public void ReadOpc()
         {
             Barrier1 = NodeManager._Belt.Module2.Barrier1.Output.Value;

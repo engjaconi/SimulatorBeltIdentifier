@@ -27,12 +27,6 @@
  * http://opcfoundation.org/License/MIT/1.00/
  * ======================================================================*/
 
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Reflection;
-using System.Xml;
-using System.Runtime.Serialization;
 using Opc.Ua;
 
 namespace BeltIdentifier
@@ -94,7 +88,7 @@ namespace BeltIdentifier
         public const uint Module1Type_Busy = 813;
 
         /// <remarks />
-        public const uint Module1Type_Opaque = 121;
+        public const uint Module1Type_Transparent = 929;
 
         /// <remarks />
         public const uint Module1Type_Metallic = 128;
@@ -103,7 +97,7 @@ namespace BeltIdentifier
         public const uint Module1Type_NonMetallic = 135;
 
         /// <remarks />
-        public const uint Module1Type_QuantityOpaque = 142;
+        public const uint Module1Type_QuantityTransparent = 936;
 
         /// <remarks />
         public const uint Module1Type_QuantityMetallic = 149;
@@ -151,7 +145,7 @@ namespace BeltIdentifier
         public const uint BeltType_Module1_Busy = 827;
 
         /// <remarks />
-        public const uint BeltType_Module1_Opaque = 236;
+        public const uint BeltType_Module1_Transparent = 943;
 
         /// <remarks />
         public const uint BeltType_Module1_Metallic = 243;
@@ -160,7 +154,7 @@ namespace BeltIdentifier
         public const uint BeltType_Module1_NonMetallic = 250;
 
         /// <remarks />
-        public const uint BeltType_Module1_QuantityOpaque = 257;
+        public const uint BeltType_Module1_QuantityTransparent = 950;
 
         /// <remarks />
         public const uint BeltType_Module1_QuantityMetallic = 264;
@@ -214,7 +208,7 @@ namespace BeltIdentifier
         public const uint BeltServer_Module1_Busy = 841;
 
         /// <remarks />
-        public const uint BeltServer_Module1_Opaque = 354;
+        public const uint BeltServer_Module1_Transparent = 957;
 
         /// <remarks />
         public const uint BeltServer_Module1_Metallic = 361;
@@ -223,7 +217,7 @@ namespace BeltIdentifier
         public const uint BeltServer_Module1_NonMetallic = 368;
 
         /// <remarks />
-        public const uint BeltServer_Module1_QuantityOpaque = 375;
+        public const uint BeltServer_Module1_QuantityTransparent = 964;
 
         /// <remarks />
         public const uint BeltServer_Module1_QuantityMetallic = 382;
@@ -297,7 +291,7 @@ namespace BeltIdentifier
         public const uint InductiveSensor = 50;
 
         /// <remarks />
-        public const uint OpaquePiece = 57;
+        public const uint TransparentPiece = 915;
 
         /// <remarks />
         public const uint MetallicPiece = 64;
@@ -312,7 +306,7 @@ namespace BeltIdentifier
         public const uint BusyIlumination = 806;
 
         /// <remarks />
-        public const uint QuantityOpaquePiece = 85;
+        public const uint QuantityTransparentPiece = 922;
 
         /// <remarks />
         public const uint QuantityMetallicPiece = 92;
@@ -383,7 +377,7 @@ namespace BeltIdentifier
         public const uint InductiveSensor_Output_EURange = 55;
 
         /// <remarks />
-        public const uint OpaquePiece_Input_EURange = 62;
+        public const uint TransparentPiece_Input_EURange = 920;
 
         /// <remarks />
         public const uint MetallicPiece_Input_EURange = 69;
@@ -398,7 +392,7 @@ namespace BeltIdentifier
         public const uint BusyIlumination_Input_EURange = 811;
 
         /// <remarks />
-        public const uint QuantityOpaquePiece_Input_EURange = 90;
+        public const uint QuantityTransparentPiece_Input_EURange = 927;
 
         /// <remarks />
         public const uint QuantityMetallicPiece_Input_EURange = 97;
@@ -425,10 +419,10 @@ namespace BeltIdentifier
         public const uint Module1Type_Busy_Input_EURange = 818;
 
         /// <remarks />
-        public const uint Module1Type_Opaque_Input = 122;
+        public const uint Module1Type_Transparent_Input = 930;
 
         /// <remarks />
-        public const uint Module1Type_Opaque_Input_EURange = 126;
+        public const uint Module1Type_Transparent_Input_EURange = 934;
 
         /// <remarks />
         public const uint Module1Type_Metallic_Input = 129;
@@ -443,10 +437,10 @@ namespace BeltIdentifier
         public const uint Module1Type_NonMetallic_Input_EURange = 140;
 
         /// <remarks />
-        public const uint Module1Type_QuantityOpaque_Input = 143;
+        public const uint Module1Type_QuantityTransparent_Input = 937;
 
         /// <remarks />
-        public const uint Module1Type_QuantityOpaque_Input_EURange = 147;
+        public const uint Module1Type_QuantityTransparent_Input_EURange = 941;
 
         /// <remarks />
         public const uint Module1Type_QuantityMetallic_Input = 150;
@@ -545,10 +539,10 @@ namespace BeltIdentifier
         public const uint BeltType_Module1_Busy_Input_EURange = 832;
 
         /// <remarks />
-        public const uint BeltType_Module1_Opaque_Input = 237;
+        public const uint BeltType_Module1_Transparent_Input = 944;
 
         /// <remarks />
-        public const uint BeltType_Module1_Opaque_Input_EURange = 241;
+        public const uint BeltType_Module1_Transparent_Input_EURange = 948;
 
         /// <remarks />
         public const uint BeltType_Module1_Metallic_Input = 244;
@@ -563,10 +557,10 @@ namespace BeltIdentifier
         public const uint BeltType_Module1_NonMetallic_Input_EURange = 255;
 
         /// <remarks />
-        public const uint BeltType_Module1_QuantityOpaque_Input = 258;
+        public const uint BeltType_Module1_QuantityTransparent_Input = 951;
 
         /// <remarks />
-        public const uint BeltType_Module1_QuantityOpaque_Input_EURange = 262;
+        public const uint BeltType_Module1_QuantityTransparent_Input_EURange = 955;
 
         /// <remarks />
         public const uint BeltType_Module1_QuantityMetallic_Input = 265;
@@ -665,10 +659,10 @@ namespace BeltIdentifier
         public const uint BeltServer_Module1_Busy_Input_EURange = 846;
 
         /// <remarks />
-        public const uint BeltServer_Module1_Opaque_Input = 355;
+        public const uint BeltServer_Module1_Transparent_Input = 958;
 
         /// <remarks />
-        public const uint BeltServer_Module1_Opaque_Input_EURange = 359;
+        public const uint BeltServer_Module1_Transparent_Input_EURange = 962;
 
         /// <remarks />
         public const uint BeltServer_Module1_Metallic_Input = 362;
@@ -683,10 +677,10 @@ namespace BeltIdentifier
         public const uint BeltServer_Module1_NonMetallic_Input_EURange = 373;
 
         /// <remarks />
-        public const uint BeltServer_Module1_QuantityOpaque_Input = 376;
+        public const uint BeltServer_Module1_QuantityTransparent_Input = 965;
 
         /// <remarks />
-        public const uint BeltServer_Module1_QuantityOpaque_Input_EURange = 380;
+        public const uint BeltServer_Module1_QuantityTransparent_Input_EURange = 969;
 
         /// <remarks />
         public const uint BeltServer_Module1_QuantityMetallic_Input = 383;
@@ -831,7 +825,7 @@ namespace BeltIdentifier
         public static readonly ExpandedNodeId Module1Type_Busy = new ExpandedNodeId(BeltIdentifier.Objects.Module1Type_Busy, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId Module1Type_Opaque = new ExpandedNodeId(BeltIdentifier.Objects.Module1Type_Opaque, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId Module1Type_Transparent = new ExpandedNodeId(BeltIdentifier.Objects.Module1Type_Transparent, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
         public static readonly ExpandedNodeId Module1Type_Metallic = new ExpandedNodeId(BeltIdentifier.Objects.Module1Type_Metallic, BeltIdentifier.Namespaces.BeltIdentifier);
@@ -840,7 +834,7 @@ namespace BeltIdentifier
         public static readonly ExpandedNodeId Module1Type_NonMetallic = new ExpandedNodeId(BeltIdentifier.Objects.Module1Type_NonMetallic, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId Module1Type_QuantityOpaque = new ExpandedNodeId(BeltIdentifier.Objects.Module1Type_QuantityOpaque, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId Module1Type_QuantityTransparent = new ExpandedNodeId(BeltIdentifier.Objects.Module1Type_QuantityTransparent, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
         public static readonly ExpandedNodeId Module1Type_QuantityMetallic = new ExpandedNodeId(BeltIdentifier.Objects.Module1Type_QuantityMetallic, BeltIdentifier.Namespaces.BeltIdentifier);
@@ -888,7 +882,7 @@ namespace BeltIdentifier
         public static readonly ExpandedNodeId BeltType_Module1_Busy = new ExpandedNodeId(BeltIdentifier.Objects.BeltType_Module1_Busy, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltType_Module1_Opaque = new ExpandedNodeId(BeltIdentifier.Objects.BeltType_Module1_Opaque, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltType_Module1_Transparent = new ExpandedNodeId(BeltIdentifier.Objects.BeltType_Module1_Transparent, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
         public static readonly ExpandedNodeId BeltType_Module1_Metallic = new ExpandedNodeId(BeltIdentifier.Objects.BeltType_Module1_Metallic, BeltIdentifier.Namespaces.BeltIdentifier);
@@ -897,7 +891,7 @@ namespace BeltIdentifier
         public static readonly ExpandedNodeId BeltType_Module1_NonMetallic = new ExpandedNodeId(BeltIdentifier.Objects.BeltType_Module1_NonMetallic, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltType_Module1_QuantityOpaque = new ExpandedNodeId(BeltIdentifier.Objects.BeltType_Module1_QuantityOpaque, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltType_Module1_QuantityTransparent = new ExpandedNodeId(BeltIdentifier.Objects.BeltType_Module1_QuantityTransparent, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
         public static readonly ExpandedNodeId BeltType_Module1_QuantityMetallic = new ExpandedNodeId(BeltIdentifier.Objects.BeltType_Module1_QuantityMetallic, BeltIdentifier.Namespaces.BeltIdentifier);
@@ -951,7 +945,7 @@ namespace BeltIdentifier
         public static readonly ExpandedNodeId BeltServer_Module1_Busy = new ExpandedNodeId(BeltIdentifier.Objects.BeltServer_Module1_Busy, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltServer_Module1_Opaque = new ExpandedNodeId(BeltIdentifier.Objects.BeltServer_Module1_Opaque, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltServer_Module1_Transparent = new ExpandedNodeId(BeltIdentifier.Objects.BeltServer_Module1_Transparent, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
         public static readonly ExpandedNodeId BeltServer_Module1_Metallic = new ExpandedNodeId(BeltIdentifier.Objects.BeltServer_Module1_Metallic, BeltIdentifier.Namespaces.BeltIdentifier);
@@ -960,7 +954,7 @@ namespace BeltIdentifier
         public static readonly ExpandedNodeId BeltServer_Module1_NonMetallic = new ExpandedNodeId(BeltIdentifier.Objects.BeltServer_Module1_NonMetallic, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltServer_Module1_QuantityOpaque = new ExpandedNodeId(BeltIdentifier.Objects.BeltServer_Module1_QuantityOpaque, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltServer_Module1_QuantityTransparent = new ExpandedNodeId(BeltIdentifier.Objects.BeltServer_Module1_QuantityTransparent, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
         public static readonly ExpandedNodeId BeltServer_Module1_QuantityMetallic = new ExpandedNodeId(BeltIdentifier.Objects.BeltServer_Module1_QuantityMetallic, BeltIdentifier.Namespaces.BeltIdentifier);
@@ -1034,7 +1028,7 @@ namespace BeltIdentifier
         public static readonly ExpandedNodeId InductiveSensor = new ExpandedNodeId(BeltIdentifier.ObjectTypes.InductiveSensor, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId OpaquePiece = new ExpandedNodeId(BeltIdentifier.ObjectTypes.OpaquePiece, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId TransparentPiece = new ExpandedNodeId(BeltIdentifier.ObjectTypes.TransparentPiece, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
         public static readonly ExpandedNodeId MetallicPiece = new ExpandedNodeId(BeltIdentifier.ObjectTypes.MetallicPiece, BeltIdentifier.Namespaces.BeltIdentifier);
@@ -1049,7 +1043,7 @@ namespace BeltIdentifier
         public static readonly ExpandedNodeId BusyIlumination = new ExpandedNodeId(BeltIdentifier.ObjectTypes.BusyIlumination, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId QuantityOpaquePiece = new ExpandedNodeId(BeltIdentifier.ObjectTypes.QuantityOpaquePiece, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId QuantityTransparentPiece = new ExpandedNodeId(BeltIdentifier.ObjectTypes.QuantityTransparentPiece, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
         public static readonly ExpandedNodeId QuantityMetallicPiece = new ExpandedNodeId(BeltIdentifier.ObjectTypes.QuantityMetallicPiece, BeltIdentifier.Namespaces.BeltIdentifier);
@@ -1120,7 +1114,7 @@ namespace BeltIdentifier
         public static readonly ExpandedNodeId InductiveSensor_Output_EURange = new ExpandedNodeId(BeltIdentifier.Variables.InductiveSensor_Output_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId OpaquePiece_Input_EURange = new ExpandedNodeId(BeltIdentifier.Variables.OpaquePiece_Input_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId TransparentPiece_Input_EURange = new ExpandedNodeId(BeltIdentifier.Variables.TransparentPiece_Input_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
         public static readonly ExpandedNodeId MetallicPiece_Input_EURange = new ExpandedNodeId(BeltIdentifier.Variables.MetallicPiece_Input_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
@@ -1135,7 +1129,7 @@ namespace BeltIdentifier
         public static readonly ExpandedNodeId BusyIlumination_Input_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BusyIlumination_Input_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId QuantityOpaquePiece_Input_EURange = new ExpandedNodeId(BeltIdentifier.Variables.QuantityOpaquePiece_Input_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId QuantityTransparentPiece_Input_EURange = new ExpandedNodeId(BeltIdentifier.Variables.QuantityTransparentPiece_Input_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
         public static readonly ExpandedNodeId QuantityMetallicPiece_Input_EURange = new ExpandedNodeId(BeltIdentifier.Variables.QuantityMetallicPiece_Input_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
@@ -1162,10 +1156,10 @@ namespace BeltIdentifier
         public static readonly ExpandedNodeId Module1Type_Busy_Input_EURange = new ExpandedNodeId(BeltIdentifier.Variables.Module1Type_Busy_Input_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId Module1Type_Opaque_Input = new ExpandedNodeId(BeltIdentifier.Variables.Module1Type_Opaque_Input, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId Module1Type_Transparent_Input = new ExpandedNodeId(BeltIdentifier.Variables.Module1Type_Transparent_Input, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId Module1Type_Opaque_Input_EURange = new ExpandedNodeId(BeltIdentifier.Variables.Module1Type_Opaque_Input_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId Module1Type_Transparent_Input_EURange = new ExpandedNodeId(BeltIdentifier.Variables.Module1Type_Transparent_Input_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
         public static readonly ExpandedNodeId Module1Type_Metallic_Input = new ExpandedNodeId(BeltIdentifier.Variables.Module1Type_Metallic_Input, BeltIdentifier.Namespaces.BeltIdentifier);
@@ -1180,10 +1174,10 @@ namespace BeltIdentifier
         public static readonly ExpandedNodeId Module1Type_NonMetallic_Input_EURange = new ExpandedNodeId(BeltIdentifier.Variables.Module1Type_NonMetallic_Input_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId Module1Type_QuantityOpaque_Input = new ExpandedNodeId(BeltIdentifier.Variables.Module1Type_QuantityOpaque_Input, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId Module1Type_QuantityTransparent_Input = new ExpandedNodeId(BeltIdentifier.Variables.Module1Type_QuantityTransparent_Input, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId Module1Type_QuantityOpaque_Input_EURange = new ExpandedNodeId(BeltIdentifier.Variables.Module1Type_QuantityOpaque_Input_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId Module1Type_QuantityTransparent_Input_EURange = new ExpandedNodeId(BeltIdentifier.Variables.Module1Type_QuantityTransparent_Input_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
         public static readonly ExpandedNodeId Module1Type_QuantityMetallic_Input = new ExpandedNodeId(BeltIdentifier.Variables.Module1Type_QuantityMetallic_Input, BeltIdentifier.Namespaces.BeltIdentifier);
@@ -1282,10 +1276,10 @@ namespace BeltIdentifier
         public static readonly ExpandedNodeId BeltType_Module1_Busy_Input_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltType_Module1_Busy_Input_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltType_Module1_Opaque_Input = new ExpandedNodeId(BeltIdentifier.Variables.BeltType_Module1_Opaque_Input, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltType_Module1_Transparent_Input = new ExpandedNodeId(BeltIdentifier.Variables.BeltType_Module1_Transparent_Input, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltType_Module1_Opaque_Input_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltType_Module1_Opaque_Input_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltType_Module1_Transparent_Input_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltType_Module1_Transparent_Input_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
         public static readonly ExpandedNodeId BeltType_Module1_Metallic_Input = new ExpandedNodeId(BeltIdentifier.Variables.BeltType_Module1_Metallic_Input, BeltIdentifier.Namespaces.BeltIdentifier);
@@ -1300,10 +1294,10 @@ namespace BeltIdentifier
         public static readonly ExpandedNodeId BeltType_Module1_NonMetallic_Input_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltType_Module1_NonMetallic_Input_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltType_Module1_QuantityOpaque_Input = new ExpandedNodeId(BeltIdentifier.Variables.BeltType_Module1_QuantityOpaque_Input, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltType_Module1_QuantityTransparent_Input = new ExpandedNodeId(BeltIdentifier.Variables.BeltType_Module1_QuantityTransparent_Input, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltType_Module1_QuantityOpaque_Input_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltType_Module1_QuantityOpaque_Input_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltType_Module1_QuantityTransparent_Input_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltType_Module1_QuantityTransparent_Input_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
         public static readonly ExpandedNodeId BeltType_Module1_QuantityMetallic_Input = new ExpandedNodeId(BeltIdentifier.Variables.BeltType_Module1_QuantityMetallic_Input, BeltIdentifier.Namespaces.BeltIdentifier);
@@ -1402,10 +1396,10 @@ namespace BeltIdentifier
         public static readonly ExpandedNodeId BeltServer_Module1_Busy_Input_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_Module1_Busy_Input_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltServer_Module1_Opaque_Input = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_Module1_Opaque_Input, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltServer_Module1_Transparent_Input = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_Module1_Transparent_Input, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltServer_Module1_Opaque_Input_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_Module1_Opaque_Input_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltServer_Module1_Transparent_Input_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_Module1_Transparent_Input_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
         public static readonly ExpandedNodeId BeltServer_Module1_Metallic_Input = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_Module1_Metallic_Input, BeltIdentifier.Namespaces.BeltIdentifier);
@@ -1420,10 +1414,10 @@ namespace BeltIdentifier
         public static readonly ExpandedNodeId BeltServer_Module1_NonMetallic_Input_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_Module1_NonMetallic_Input_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltServer_Module1_QuantityOpaque_Input = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_Module1_QuantityOpaque_Input, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltServer_Module1_QuantityTransparent_Input = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_Module1_QuantityTransparent_Input, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltServer_Module1_QuantityOpaque_Input_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_Module1_QuantityOpaque_Input_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltServer_Module1_QuantityTransparent_Input_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_Module1_QuantityTransparent_Input_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
         public static readonly ExpandedNodeId BeltServer_Module1_QuantityMetallic_Input = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_Module1_QuantityMetallic_Input, BeltIdentifier.Namespaces.BeltIdentifier);
@@ -1604,12 +1598,6 @@ namespace BeltIdentifier
         public const string NonMetallicPiece = "NonMetallicPiece";
 
         /// <remarks />
-        public const string Opaque = "Opaque";
-
-        /// <remarks />
-        public const string OpaquePiece = "OpaquePiece";
-
-        /// <remarks />
         public const string OpticalBarrier = "OpticalBarrier";
 
         /// <remarks />
@@ -1631,10 +1619,10 @@ namespace BeltIdentifier
         public const string QuantityNonMetallicPiece = "QuantityNonMetallicPiece";
 
         /// <remarks />
-        public const string QuantityOpaque = "QuantityOpaque";
+        public const string QuantityTransparent = "QuantityTransparent";
 
         /// <remarks />
-        public const string QuantityOpaquePiece = "QuantityOpaquePiece";
+        public const string QuantityTransparentPiece = "QuantityTransparentPiece";
 
         /// <remarks />
         public const string ResetModule1Process = "ResetModule1Process";
@@ -1659,6 +1647,12 @@ namespace BeltIdentifier
 
         /// <remarks />
         public const string StopModule2Process = "StopModule2Process";
+
+        /// <remarks />
+        public const string Transparent = "Transparent";
+
+        /// <remarks />
+        public const string TransparentPiece = "TransparentPiece";
     }
     #endregion
 

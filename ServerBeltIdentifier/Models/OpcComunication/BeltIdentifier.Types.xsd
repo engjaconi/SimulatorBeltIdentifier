@@ -7,7 +7,7 @@
 >
   <xs:annotation>
     <xs:appinfo>
-      <ua:Model ModelUri="http://opcfoundation.org/BeltIdentifier" Version="v104" PublicationDate="2023-05-09T13:23:31.2763Z" />
+      <ua:Model ModelUri="http://opcfoundation.org/BeltIdentifier" Version="v104" PublicationDate="2023-05-09T21:17:05.8286087Z" />
     </xs:appinfo>
   </xs:annotation>
   

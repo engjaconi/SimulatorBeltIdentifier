@@ -1,18 +1,11 @@
-﻿using Opc.Ua;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ServerBeltIdentifier.Models
+﻿namespace ServerBeltIdentifier.Models
 {
     public class BeltModule1 : Belt
     {
-        public bool Opaque { get; private set;  }
+        public bool Transparent { get; private set;  }
         public bool Metallic { get; private set; }
         public bool NonMetallic { get; private set; }
-        public int QuantityOpaque { get; private set; }
+        public int QuantityTransparent { get; private set; }
         public int QuantityMetallic { get; private set; }
         public int QuantityNonMetallic { get; private set; }
 
@@ -28,6 +21,7 @@ namespace ServerBeltIdentifier.Models
             MotorOn = true;
             WriteOpc();
         }
+        
         public void Stop()
         {
             if (Error) return;
@@ -35,17 +29,18 @@ namespace ServerBeltIdentifier.Models
             MotorOn = false;
             WriteOpc();
         }
+        
         public void Reset()
         {
             if (!Error) return;
 
-            if (Opaque)
+            if (Transparent)
             {
-                Opaque = false;
-                QuantityOpaque--;
+                Transparent = false;
+                QuantityTransparent--;
                 if (!Metallic && !NonMetallic)
                 {
-                    QuantityOpaque--;
+                    QuantityTransparent--;
                 }
             }
             
@@ -53,7 +48,7 @@ namespace ServerBeltIdentifier.Models
             {
                 Metallic = false;
                 QuantityMetallic--;
-                if (!Opaque && !NonMetallic)
+                if (!Transparent && !NonMetallic)
                 {
                     QuantityMetallic--;
                 }
@@ -62,7 +57,7 @@ namespace ServerBeltIdentifier.Models
             if (NonMetallic){
                 NonMetallic = false;
                 QuantityNonMetallic--;
-                if (!Opaque && !Metallic)
+                if (!Transparent && !Metallic)
                 {
                     QuantityNonMetallic--;
                 }
@@ -74,9 +69,10 @@ namespace ServerBeltIdentifier.Models
 
             WriteOpc();
         }
+        
         public void AddPieceManual(string pieceType, int speedMotor)
         {
-            if(Opaque || Metallic || NonMetallic)
+            if(Transparent || Metallic || NonMetallic)
             {
                 Error = true;
                 MotorOn = false;
@@ -87,9 +83,9 @@ namespace ServerBeltIdentifier.Models
 
             switch(pieceType)
             {
-                case "Opaque":
-                    Opaque = true;
-                    QuantityOpaque++;
+                case "Transparent":
+                    Transparent = true;
+                    QuantityTransparent++;
                     TaskOpaque();
                     break;
                 case "Metallic":
@@ -107,6 +103,7 @@ namespace ServerBeltIdentifier.Models
             }
             WriteOpc();
         }
+        
         public void AddPieceAuto(int speedMotor) 
         {
             Task t = new (()=>
@@ -116,7 +113,7 @@ namespace ServerBeltIdentifier.Models
 
                 if (option > 0 && option < 3)
                 {
-                    AddPieceManual("Opaque", speedMotor);
+                    AddPieceManual("Transparent", speedMotor);
                 } else if (option >= 3 && option < 5)
                 {
                     AddPieceManual("Metallic", speedMotor);
@@ -132,17 +129,19 @@ namespace ServerBeltIdentifier.Models
             });
             t.Start();
         }
+        
         private void TaskOpaque()
         {
             Task tOpaque = new(() => {
                 Thread.Sleep(MotorSpeed * 1000);
                 if (Error) return;
-                Opaque = false;
+                Transparent = false;
                 Busy = false;
                 WriteOpc();
             });
             tOpaque.Start();
         }
+        
         private void TaskMetallic()
         {
             Task tMetallic = new(() => {
@@ -154,6 +153,7 @@ namespace ServerBeltIdentifier.Models
             });
             tMetallic.Start();
         }
+        
         private void TaskNonMetallic()
         {
             Task tNonMetallic = new(() => {
@@ -165,12 +165,13 @@ namespace ServerBeltIdentifier.Models
             });
             tNonMetallic.Start();
         }
+        
         public void ReadOpc()
         {
-            Opaque = NodeManager._Belt.Module1.Opaque.Input.Value;
+            Transparent = NodeManager._Belt.Module1.Transparent.Input.Value;
             Metallic = NodeManager._Belt.Module1.Metallic.Input.Value;
             NonMetallic = NodeManager._Belt.Module1.NonMetallic.Input.Value;
-            QuantityOpaque = NodeManager._Belt.Module1.QuantityOpaque.Input.Value;
+            QuantityTransparent = NodeManager._Belt.Module1.QuantityTransparent.Input.Value;
             QuantityMetallic = NodeManager._Belt.Module1.QuantityMetallic.Input.Value;
             QuantityNonMetallic = NodeManager._Belt.Module1.QuantityNonMetallic.Input.Value;
             MotorSpeed = NodeManager._Belt.Module1.Motor.Speed.Value;
@@ -178,12 +179,13 @@ namespace ServerBeltIdentifier.Models
             Error = NodeManager._Belt.Module1.Error.Input.Value;
             MotorOn = NodeManager._Belt.Module1.Motor.Status.Value;
         }
+        
         public void WriteOpc()
         {
-            NodeManager._Belt.Module1.Opaque.Input.Value = Opaque;
+            NodeManager._Belt.Module1.Transparent.Input.Value = Transparent;
             NodeManager._Belt.Module1.Metallic.Input.Value = Metallic;
             NodeManager._Belt.Module1.NonMetallic.Input.Value = NonMetallic;
-            NodeManager._Belt.Module1.QuantityOpaque.Input.Value = QuantityOpaque;
+            NodeManager._Belt.Module1.QuantityTransparent.Input.Value = QuantityTransparent;
             NodeManager._Belt.Module1.QuantityMetallic.Input.Value = QuantityMetallic;
             NodeManager._Belt.Module1.QuantityNonMetallic.Input.Value = QuantityNonMetallic;
             NodeManager._Belt.Module1.Motor.Speed.Value = MotorSpeed;
