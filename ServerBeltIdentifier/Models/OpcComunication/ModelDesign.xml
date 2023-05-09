@@ -47,6 +47,7 @@ TargetNamespace="http://opcfoundation.org/BeltIdentifier"
 		<opc:Description>A generic motor.</opc:Description>
 		<opc:Children>
 			<opc:Variable SymbolicName="Speed" DataType="ua:Int32"  ValueRank="Scalar" TypeDefinition="ua:AnalogItemType" AccessLevel="ReadWrite"/>
+			<opc:Variable SymbolicName="Status" DataType="ua:Boolean"  ValueRank="Scalar" TypeDefinition="ua:AnalogItemType" AccessLevel="ReadWrite"/>
 		</opc:Children>
 	</opc:ObjectType>
 
@@ -85,6 +86,10 @@ TargetNamespace="http://opcfoundation.org/BeltIdentifier"
 		<opc:Description>Error indication light.</opc:Description>
 	</opc:ObjectType>
 
+	<opc:ObjectType SymbolicName="BusyIlumination" BaseType="GenericActuatorType">
+		<opc:Description>Busy indication light.</opc:Description>
+	</opc:ObjectType>
+
 	<opc:ObjectType SymbolicName="QuantityOpaquePiece" BaseType="GenericDisplayType">
 		<opc:Description>Reports the number of objects.</opc:Description>
 	</opc:ObjectType>
@@ -112,6 +117,10 @@ TargetNamespace="http://opcfoundation.org/BeltIdentifier"
 
 			<opc:Object SymbolicName="Error" TypeDefinition="ErrorIlumination" SupportsEvents="true">
 				<opc:BrowseName>Error</opc:BrowseName>
+			</opc:Object>
+
+			<opc:Object SymbolicName="Busy" TypeDefinition="BusyIlumination" SupportsEvents="true">
+				<opc:BrowseName>Busy</opc:BrowseName>
 			</opc:Object>
 
 			<opc:Object SymbolicName="Opaque" TypeDefinition="OpaquePiece" SupportsEvents="true">
@@ -178,6 +187,10 @@ TargetNamespace="http://opcfoundation.org/BeltIdentifier"
 				<opc:BrowseName>Error</opc:BrowseName>
 			</opc:Object>
 
+			<opc:Object SymbolicName="Busy" TypeDefinition="BusyIlumination" SupportsEvents="true">
+				<opc:BrowseName>Busy</opc:BrowseName>
+			</opc:Object>
+
 			<opc:Object SymbolicName="Motor" TypeDefinition="MotorType" SupportsEvents="true">
 				<opc:BrowseName>Motor</opc:BrowseName>
 			</opc:Object>
@@ -213,9 +226,12 @@ TargetNamespace="http://opcfoundation.org/BeltIdentifier"
 				<opc:BrowseName>Belt Module 2</opc:BrowseName>
 			</opc:Object>
 
-			<opc:Method SymbolicName="StartProcess" ModellingRule="Mandatory"></opc:Method>
-			<opc:Method SymbolicName="StopProcess" ModellingRule="Mandatory"></opc:Method>
-			<opc:Method SymbolicName="ResetProcess" ModellingRule="Mandatory"></opc:Method>
+			<opc:Method SymbolicName="StartModule1Process" ModellingRule="Mandatory"></opc:Method>
+			<opc:Method SymbolicName="StopModule1Process" ModellingRule="Mandatory"></opc:Method>
+			<opc:Method SymbolicName="ResetModule1Process" ModellingRule="Mandatory"></opc:Method>
+			<opc:Method SymbolicName="StartModule2Process" ModellingRule="Mandatory"></opc:Method>
+			<opc:Method SymbolicName="StopModule2Process" ModellingRule="Mandatory"></opc:Method>
+			<opc:Method SymbolicName="ResetModule2Process" ModellingRule="Mandatory"></opc:Method>
 
 		</opc:Children>
 

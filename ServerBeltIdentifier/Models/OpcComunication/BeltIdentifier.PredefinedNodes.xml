@@ -274,6 +274,58 @@
         <uax:UserAccessLevel>1</uax:UserAccessLevel>
       </EURange>
     </Speed>
+    <Status>
+      <uax:NodeClass>Variable_2</uax:NodeClass>
+      <uax:NodeId>
+        <uax:Identifier>ns=1;i=855</uax:Identifier>
+      </uax:NodeId>
+      <uax:BrowseName>
+        <uax:NamespaceIndex>1</uax:NamespaceIndex>
+        <uax:Name>Status</uax:Name>
+      </uax:BrowseName>
+      <uax:ReferenceTypeId>
+        <uax:Identifier>i=47</uax:Identifier>
+      </uax:ReferenceTypeId>
+      <uax:TypeDefinitionId>
+        <uax:Identifier>i=2368</uax:Identifier>
+      </uax:TypeDefinitionId>
+      <uax:ModellingRuleId>
+        <uax:Identifier>i=78</uax:Identifier>
+      </uax:ModellingRuleId>
+      <uax:NumericId>855</uax:NumericId>
+      <uax:DataType>
+        <uax:Identifier>i=1</uax:Identifier>
+      </uax:DataType>
+      <uax:ValueRank>-1</uax:ValueRank>
+      <uax:AccessLevel>3</uax:AccessLevel>
+      <uax:UserAccessLevel>3</uax:UserAccessLevel>
+      <EURange xmlns="http://opcfoundation.org/UA/">
+        <uax:NodeClass>Variable_2</uax:NodeClass>
+        <uax:NodeId>
+          <uax:Identifier>ns=1;i=859</uax:Identifier>
+        </uax:NodeId>
+        <uax:BrowseName>
+          <uax:NamespaceIndex>0</uax:NamespaceIndex>
+          <uax:Name>EURange</uax:Name>
+        </uax:BrowseName>
+        <uax:ReferenceTypeId>
+          <uax:Identifier>i=46</uax:Identifier>
+        </uax:ReferenceTypeId>
+        <uax:TypeDefinitionId>
+          <uax:Identifier>i=68</uax:Identifier>
+        </uax:TypeDefinitionId>
+        <uax:ModellingRuleId>
+          <uax:Identifier>i=78</uax:Identifier>
+        </uax:ModellingRuleId>
+        <uax:NumericId>859</uax:NumericId>
+        <uax:DataType>
+          <uax:Identifier>i=884</uax:Identifier>
+        </uax:DataType>
+        <uax:ValueRank>-1</uax:ValueRank>
+        <uax:AccessLevel>1</uax:AccessLevel>
+        <uax:UserAccessLevel>1</uax:UserAccessLevel>
+      </EURange>
+    </Status>
   </GenericMotorType>
   <OpticalBarrier xmlns="http://opcfoundation.org/BeltIdentifier">
     <uax:NodeClass>ObjectType_8</uax:NodeClass>
@@ -403,6 +455,22 @@
       <uax:Identifier>ns=1;i=8</uax:Identifier>
     </uax:SuperTypeId>
   </ErrorIlumination>
+  <BusyIlumination xmlns="http://opcfoundation.org/BeltIdentifier">
+    <uax:NodeClass>ObjectType_8</uax:NodeClass>
+    <uax:NodeId>
+      <uax:Identifier>ns=1;i=806</uax:Identifier>
+    </uax:NodeId>
+    <uax:BrowseName>
+      <uax:NamespaceIndex>1</uax:NamespaceIndex>
+      <uax:Name>BusyIlumination</uax:Name>
+    </uax:BrowseName>
+    <uax:Description>
+      <uax:Text>Busy indication light.</uax:Text>
+    </uax:Description>
+    <uax:SuperTypeId>
+      <uax:Identifier>ns=1;i=8</uax:Identifier>
+    </uax:SuperTypeId>
+  </BusyIlumination>
   <QuantityOpaquePiece xmlns="http://opcfoundation.org/BeltIdentifier">
     <uax:NodeClass>ObjectType_8</uax:NodeClass>
     <uax:NodeId>
@@ -562,6 +630,79 @@
         </EURange>
       </Input>
     </Error>
+    <Busy>
+      <uax:NodeClass>Object_1</uax:NodeClass>
+      <uax:NodeId>
+        <uax:Identifier>ns=1;i=813</uax:Identifier>
+      </uax:NodeId>
+      <uax:BrowseName>
+        <uax:NamespaceIndex>1</uax:NamespaceIndex>
+        <uax:Name>Busy</uax:Name>
+      </uax:BrowseName>
+      <uax:ReferenceTypeId>
+        <uax:Identifier>i=47</uax:Identifier>
+      </uax:ReferenceTypeId>
+      <uax:TypeDefinitionId>
+        <uax:Identifier>ns=1;i=806</uax:Identifier>
+      </uax:TypeDefinitionId>
+      <uax:ModellingRuleId>
+        <uax:Identifier>i=78</uax:Identifier>
+      </uax:ModellingRuleId>
+      <uax:NumericId>813</uax:NumericId>
+      <uax:EventNotifier>1</uax:EventNotifier>
+      <Input>
+        <uax:NodeClass>Variable_2</uax:NodeClass>
+        <uax:NodeId>
+          <uax:Identifier>ns=1;i=814</uax:Identifier>
+        </uax:NodeId>
+        <uax:BrowseName>
+          <uax:NamespaceIndex>1</uax:NamespaceIndex>
+          <uax:Name>Input</uax:Name>
+        </uax:BrowseName>
+        <uax:ReferenceTypeId>
+          <uax:Identifier>i=47</uax:Identifier>
+        </uax:ReferenceTypeId>
+        <uax:TypeDefinitionId>
+          <uax:Identifier>i=2368</uax:Identifier>
+        </uax:TypeDefinitionId>
+        <uax:ModellingRuleId>
+          <uax:Identifier>i=78</uax:Identifier>
+        </uax:ModellingRuleId>
+        <uax:NumericId>814</uax:NumericId>
+        <uax:DataType>
+          <uax:Identifier>i=1</uax:Identifier>
+        </uax:DataType>
+        <uax:ValueRank>-1</uax:ValueRank>
+        <uax:AccessLevel>3</uax:AccessLevel>
+        <uax:UserAccessLevel>3</uax:UserAccessLevel>
+        <EURange xmlns="http://opcfoundation.org/UA/">
+          <uax:NodeClass>Variable_2</uax:NodeClass>
+          <uax:NodeId>
+            <uax:Identifier>ns=1;i=818</uax:Identifier>
+          </uax:NodeId>
+          <uax:BrowseName>
+            <uax:NamespaceIndex>0</uax:NamespaceIndex>
+            <uax:Name>EURange</uax:Name>
+          </uax:BrowseName>
+          <uax:ReferenceTypeId>
+            <uax:Identifier>i=46</uax:Identifier>
+          </uax:ReferenceTypeId>
+          <uax:TypeDefinitionId>
+            <uax:Identifier>i=68</uax:Identifier>
+          </uax:TypeDefinitionId>
+          <uax:ModellingRuleId>
+            <uax:Identifier>i=78</uax:Identifier>
+          </uax:ModellingRuleId>
+          <uax:NumericId>818</uax:NumericId>
+          <uax:DataType>
+            <uax:Identifier>i=884</uax:Identifier>
+          </uax:DataType>
+          <uax:ValueRank>-1</uax:ValueRank>
+          <uax:AccessLevel>1</uax:AccessLevel>
+          <uax:UserAccessLevel>1</uax:UserAccessLevel>
+        </EURange>
+      </Input>
+    </Busy>
     <Opaque>
       <uax:NodeClass>Object_1</uax:NodeClass>
       <uax:NodeId>
@@ -1072,6 +1213,58 @@
           <uax:UserAccessLevel>1</uax:UserAccessLevel>
         </EURange>
       </Speed>
+      <Status>
+        <uax:NodeClass>Variable_2</uax:NodeClass>
+        <uax:NodeId>
+          <uax:Identifier>ns=1;i=867</uax:Identifier>
+        </uax:NodeId>
+        <uax:BrowseName>
+          <uax:NamespaceIndex>1</uax:NamespaceIndex>
+          <uax:Name>Status</uax:Name>
+        </uax:BrowseName>
+        <uax:ReferenceTypeId>
+          <uax:Identifier>i=47</uax:Identifier>
+        </uax:ReferenceTypeId>
+        <uax:TypeDefinitionId>
+          <uax:Identifier>i=2368</uax:Identifier>
+        </uax:TypeDefinitionId>
+        <uax:ModellingRuleId>
+          <uax:Identifier>i=78</uax:Identifier>
+        </uax:ModellingRuleId>
+        <uax:NumericId>867</uax:NumericId>
+        <uax:DataType>
+          <uax:Identifier>i=1</uax:Identifier>
+        </uax:DataType>
+        <uax:ValueRank>-1</uax:ValueRank>
+        <uax:AccessLevel>3</uax:AccessLevel>
+        <uax:UserAccessLevel>3</uax:UserAccessLevel>
+        <EURange xmlns="http://opcfoundation.org/UA/">
+          <uax:NodeClass>Variable_2</uax:NodeClass>
+          <uax:NodeId>
+            <uax:Identifier>ns=1;i=871</uax:Identifier>
+          </uax:NodeId>
+          <uax:BrowseName>
+            <uax:NamespaceIndex>0</uax:NamespaceIndex>
+            <uax:Name>EURange</uax:Name>
+          </uax:BrowseName>
+          <uax:ReferenceTypeId>
+            <uax:Identifier>i=46</uax:Identifier>
+          </uax:ReferenceTypeId>
+          <uax:TypeDefinitionId>
+            <uax:Identifier>i=68</uax:Identifier>
+          </uax:TypeDefinitionId>
+          <uax:ModellingRuleId>
+            <uax:Identifier>i=78</uax:Identifier>
+          </uax:ModellingRuleId>
+          <uax:NumericId>871</uax:NumericId>
+          <uax:DataType>
+            <uax:Identifier>i=884</uax:Identifier>
+          </uax:DataType>
+          <uax:ValueRank>-1</uax:ValueRank>
+          <uax:AccessLevel>1</uax:AccessLevel>
+          <uax:UserAccessLevel>1</uax:UserAccessLevel>
+        </EURange>
+      </Status>
     </Motor>
   </Module1Type>
   <Module2Type xmlns="http://opcfoundation.org/BeltIdentifier">
@@ -1607,6 +1800,79 @@
         </EURange>
       </Input>
     </Error>
+    <Busy>
+      <uax:NodeClass>Object_1</uax:NodeClass>
+      <uax:NodeId>
+        <uax:Identifier>ns=1;i=820</uax:Identifier>
+      </uax:NodeId>
+      <uax:BrowseName>
+        <uax:NamespaceIndex>1</uax:NamespaceIndex>
+        <uax:Name>Busy</uax:Name>
+      </uax:BrowseName>
+      <uax:ReferenceTypeId>
+        <uax:Identifier>i=47</uax:Identifier>
+      </uax:ReferenceTypeId>
+      <uax:TypeDefinitionId>
+        <uax:Identifier>ns=1;i=806</uax:Identifier>
+      </uax:TypeDefinitionId>
+      <uax:ModellingRuleId>
+        <uax:Identifier>i=78</uax:Identifier>
+      </uax:ModellingRuleId>
+      <uax:NumericId>820</uax:NumericId>
+      <uax:EventNotifier>1</uax:EventNotifier>
+      <Input>
+        <uax:NodeClass>Variable_2</uax:NodeClass>
+        <uax:NodeId>
+          <uax:Identifier>ns=1;i=821</uax:Identifier>
+        </uax:NodeId>
+        <uax:BrowseName>
+          <uax:NamespaceIndex>1</uax:NamespaceIndex>
+          <uax:Name>Input</uax:Name>
+        </uax:BrowseName>
+        <uax:ReferenceTypeId>
+          <uax:Identifier>i=47</uax:Identifier>
+        </uax:ReferenceTypeId>
+        <uax:TypeDefinitionId>
+          <uax:Identifier>i=2368</uax:Identifier>
+        </uax:TypeDefinitionId>
+        <uax:ModellingRuleId>
+          <uax:Identifier>i=78</uax:Identifier>
+        </uax:ModellingRuleId>
+        <uax:NumericId>821</uax:NumericId>
+        <uax:DataType>
+          <uax:Identifier>i=1</uax:Identifier>
+        </uax:DataType>
+        <uax:ValueRank>-1</uax:ValueRank>
+        <uax:AccessLevel>3</uax:AccessLevel>
+        <uax:UserAccessLevel>3</uax:UserAccessLevel>
+        <EURange xmlns="http://opcfoundation.org/UA/">
+          <uax:NodeClass>Variable_2</uax:NodeClass>
+          <uax:NodeId>
+            <uax:Identifier>ns=1;i=825</uax:Identifier>
+          </uax:NodeId>
+          <uax:BrowseName>
+            <uax:NamespaceIndex>0</uax:NamespaceIndex>
+            <uax:Name>EURange</uax:Name>
+          </uax:BrowseName>
+          <uax:ReferenceTypeId>
+            <uax:Identifier>i=46</uax:Identifier>
+          </uax:ReferenceTypeId>
+          <uax:TypeDefinitionId>
+            <uax:Identifier>i=68</uax:Identifier>
+          </uax:TypeDefinitionId>
+          <uax:ModellingRuleId>
+            <uax:Identifier>i=78</uax:Identifier>
+          </uax:ModellingRuleId>
+          <uax:NumericId>825</uax:NumericId>
+          <uax:DataType>
+            <uax:Identifier>i=884</uax:Identifier>
+          </uax:DataType>
+          <uax:ValueRank>-1</uax:ValueRank>
+          <uax:AccessLevel>1</uax:AccessLevel>
+          <uax:UserAccessLevel>1</uax:UserAccessLevel>
+        </EURange>
+      </Input>
+    </Busy>
     <Motor>
       <uax:NodeClass>Object_1</uax:NodeClass>
       <uax:NodeId>
@@ -1679,6 +1945,58 @@
           <uax:UserAccessLevel>1</uax:UserAccessLevel>
         </EURange>
       </Speed>
+      <Status>
+        <uax:NodeClass>Variable_2</uax:NodeClass>
+        <uax:NodeId>
+          <uax:Identifier>ns=1;i=873</uax:Identifier>
+        </uax:NodeId>
+        <uax:BrowseName>
+          <uax:NamespaceIndex>1</uax:NamespaceIndex>
+          <uax:Name>Status</uax:Name>
+        </uax:BrowseName>
+        <uax:ReferenceTypeId>
+          <uax:Identifier>i=47</uax:Identifier>
+        </uax:ReferenceTypeId>
+        <uax:TypeDefinitionId>
+          <uax:Identifier>i=2368</uax:Identifier>
+        </uax:TypeDefinitionId>
+        <uax:ModellingRuleId>
+          <uax:Identifier>i=78</uax:Identifier>
+        </uax:ModellingRuleId>
+        <uax:NumericId>873</uax:NumericId>
+        <uax:DataType>
+          <uax:Identifier>i=1</uax:Identifier>
+        </uax:DataType>
+        <uax:ValueRank>-1</uax:ValueRank>
+        <uax:AccessLevel>3</uax:AccessLevel>
+        <uax:UserAccessLevel>3</uax:UserAccessLevel>
+        <EURange xmlns="http://opcfoundation.org/UA/">
+          <uax:NodeClass>Variable_2</uax:NodeClass>
+          <uax:NodeId>
+            <uax:Identifier>ns=1;i=877</uax:Identifier>
+          </uax:NodeId>
+          <uax:BrowseName>
+            <uax:NamespaceIndex>0</uax:NamespaceIndex>
+            <uax:Name>EURange</uax:Name>
+          </uax:BrowseName>
+          <uax:ReferenceTypeId>
+            <uax:Identifier>i=46</uax:Identifier>
+          </uax:ReferenceTypeId>
+          <uax:TypeDefinitionId>
+            <uax:Identifier>i=68</uax:Identifier>
+          </uax:TypeDefinitionId>
+          <uax:ModellingRuleId>
+            <uax:Identifier>i=78</uax:Identifier>
+          </uax:ModellingRuleId>
+          <uax:NumericId>877</uax:NumericId>
+          <uax:DataType>
+            <uax:Identifier>i=884</uax:Identifier>
+          </uax:DataType>
+          <uax:ValueRank>-1</uax:ValueRank>
+          <uax:AccessLevel>1</uax:AccessLevel>
+          <uax:UserAccessLevel>1</uax:UserAccessLevel>
+        </EURange>
+      </Status>
     </Motor>
   </Module2Type>
   <BeltType xmlns="http://opcfoundation.org/BeltIdentifier">
@@ -1810,6 +2128,79 @@
           </EURange>
         </Input>
       </Error>
+      <Busy>
+        <uax:NodeClass>Object_1</uax:NodeClass>
+        <uax:NodeId>
+          <uax:Identifier>ns=1;i=827</uax:Identifier>
+        </uax:NodeId>
+        <uax:BrowseName>
+          <uax:NamespaceIndex>1</uax:NamespaceIndex>
+          <uax:Name>Busy</uax:Name>
+        </uax:BrowseName>
+        <uax:ReferenceTypeId>
+          <uax:Identifier>i=47</uax:Identifier>
+        </uax:ReferenceTypeId>
+        <uax:TypeDefinitionId>
+          <uax:Identifier>ns=1;i=806</uax:Identifier>
+        </uax:TypeDefinitionId>
+        <uax:ModellingRuleId>
+          <uax:Identifier>i=78</uax:Identifier>
+        </uax:ModellingRuleId>
+        <uax:NumericId>827</uax:NumericId>
+        <uax:EventNotifier>1</uax:EventNotifier>
+        <Input>
+          <uax:NodeClass>Variable_2</uax:NodeClass>
+          <uax:NodeId>
+            <uax:Identifier>ns=1;i=828</uax:Identifier>
+          </uax:NodeId>
+          <uax:BrowseName>
+            <uax:NamespaceIndex>1</uax:NamespaceIndex>
+            <uax:Name>Input</uax:Name>
+          </uax:BrowseName>
+          <uax:ReferenceTypeId>
+            <uax:Identifier>i=47</uax:Identifier>
+          </uax:ReferenceTypeId>
+          <uax:TypeDefinitionId>
+            <uax:Identifier>i=2368</uax:Identifier>
+          </uax:TypeDefinitionId>
+          <uax:ModellingRuleId>
+            <uax:Identifier>i=78</uax:Identifier>
+          </uax:ModellingRuleId>
+          <uax:NumericId>828</uax:NumericId>
+          <uax:DataType>
+            <uax:Identifier>i=1</uax:Identifier>
+          </uax:DataType>
+          <uax:ValueRank>-1</uax:ValueRank>
+          <uax:AccessLevel>3</uax:AccessLevel>
+          <uax:UserAccessLevel>3</uax:UserAccessLevel>
+          <EURange xmlns="http://opcfoundation.org/UA/">
+            <uax:NodeClass>Variable_2</uax:NodeClass>
+            <uax:NodeId>
+              <uax:Identifier>ns=1;i=832</uax:Identifier>
+            </uax:NodeId>
+            <uax:BrowseName>
+              <uax:NamespaceIndex>0</uax:NamespaceIndex>
+              <uax:Name>EURange</uax:Name>
+            </uax:BrowseName>
+            <uax:ReferenceTypeId>
+              <uax:Identifier>i=46</uax:Identifier>
+            </uax:ReferenceTypeId>
+            <uax:TypeDefinitionId>
+              <uax:Identifier>i=68</uax:Identifier>
+            </uax:TypeDefinitionId>
+            <uax:ModellingRuleId>
+              <uax:Identifier>i=78</uax:Identifier>
+            </uax:ModellingRuleId>
+            <uax:NumericId>832</uax:NumericId>
+            <uax:DataType>
+              <uax:Identifier>i=884</uax:Identifier>
+            </uax:DataType>
+            <uax:ValueRank>-1</uax:ValueRank>
+            <uax:AccessLevel>1</uax:AccessLevel>
+            <uax:UserAccessLevel>1</uax:UserAccessLevel>
+          </EURange>
+        </Input>
+      </Busy>
       <Opaque>
         <uax:NodeClass>Object_1</uax:NodeClass>
         <uax:NodeId>
@@ -2320,6 +2711,58 @@
             <uax:UserAccessLevel>1</uax:UserAccessLevel>
           </EURange>
         </Speed>
+        <Status>
+          <uax:NodeClass>Variable_2</uax:NodeClass>
+          <uax:NodeId>
+            <uax:Identifier>ns=1;i=879</uax:Identifier>
+          </uax:NodeId>
+          <uax:BrowseName>
+            <uax:NamespaceIndex>1</uax:NamespaceIndex>
+            <uax:Name>Status</uax:Name>
+          </uax:BrowseName>
+          <uax:ReferenceTypeId>
+            <uax:Identifier>i=47</uax:Identifier>
+          </uax:ReferenceTypeId>
+          <uax:TypeDefinitionId>
+            <uax:Identifier>i=2368</uax:Identifier>
+          </uax:TypeDefinitionId>
+          <uax:ModellingRuleId>
+            <uax:Identifier>i=78</uax:Identifier>
+          </uax:ModellingRuleId>
+          <uax:NumericId>879</uax:NumericId>
+          <uax:DataType>
+            <uax:Identifier>i=1</uax:Identifier>
+          </uax:DataType>
+          <uax:ValueRank>-1</uax:ValueRank>
+          <uax:AccessLevel>3</uax:AccessLevel>
+          <uax:UserAccessLevel>3</uax:UserAccessLevel>
+          <EURange xmlns="http://opcfoundation.org/UA/">
+            <uax:NodeClass>Variable_2</uax:NodeClass>
+            <uax:NodeId>
+              <uax:Identifier>ns=1;i=883</uax:Identifier>
+            </uax:NodeId>
+            <uax:BrowseName>
+              <uax:NamespaceIndex>0</uax:NamespaceIndex>
+              <uax:Name>EURange</uax:Name>
+            </uax:BrowseName>
+            <uax:ReferenceTypeId>
+              <uax:Identifier>i=46</uax:Identifier>
+            </uax:ReferenceTypeId>
+            <uax:TypeDefinitionId>
+              <uax:Identifier>i=68</uax:Identifier>
+            </uax:TypeDefinitionId>
+            <uax:ModellingRuleId>
+              <uax:Identifier>i=78</uax:Identifier>
+            </uax:ModellingRuleId>
+            <uax:NumericId>883</uax:NumericId>
+            <uax:DataType>
+              <uax:Identifier>i=884</uax:Identifier>
+            </uax:DataType>
+            <uax:ValueRank>-1</uax:ValueRank>
+            <uax:AccessLevel>1</uax:AccessLevel>
+            <uax:UserAccessLevel>1</uax:UserAccessLevel>
+          </EURange>
+        </Status>
       </Motor>
     </Module1>
     <Module2>
@@ -2864,6 +3307,79 @@
           </EURange>
         </Input>
       </Error>
+      <Busy>
+        <uax:NodeClass>Object_1</uax:NodeClass>
+        <uax:NodeId>
+          <uax:Identifier>ns=1;i=834</uax:Identifier>
+        </uax:NodeId>
+        <uax:BrowseName>
+          <uax:NamespaceIndex>1</uax:NamespaceIndex>
+          <uax:Name>Busy</uax:Name>
+        </uax:BrowseName>
+        <uax:ReferenceTypeId>
+          <uax:Identifier>i=47</uax:Identifier>
+        </uax:ReferenceTypeId>
+        <uax:TypeDefinitionId>
+          <uax:Identifier>ns=1;i=806</uax:Identifier>
+        </uax:TypeDefinitionId>
+        <uax:ModellingRuleId>
+          <uax:Identifier>i=78</uax:Identifier>
+        </uax:ModellingRuleId>
+        <uax:NumericId>834</uax:NumericId>
+        <uax:EventNotifier>1</uax:EventNotifier>
+        <Input>
+          <uax:NodeClass>Variable_2</uax:NodeClass>
+          <uax:NodeId>
+            <uax:Identifier>ns=1;i=835</uax:Identifier>
+          </uax:NodeId>
+          <uax:BrowseName>
+            <uax:NamespaceIndex>1</uax:NamespaceIndex>
+            <uax:Name>Input</uax:Name>
+          </uax:BrowseName>
+          <uax:ReferenceTypeId>
+            <uax:Identifier>i=47</uax:Identifier>
+          </uax:ReferenceTypeId>
+          <uax:TypeDefinitionId>
+            <uax:Identifier>i=2368</uax:Identifier>
+          </uax:TypeDefinitionId>
+          <uax:ModellingRuleId>
+            <uax:Identifier>i=78</uax:Identifier>
+          </uax:ModellingRuleId>
+          <uax:NumericId>835</uax:NumericId>
+          <uax:DataType>
+            <uax:Identifier>i=1</uax:Identifier>
+          </uax:DataType>
+          <uax:ValueRank>-1</uax:ValueRank>
+          <uax:AccessLevel>3</uax:AccessLevel>
+          <uax:UserAccessLevel>3</uax:UserAccessLevel>
+          <EURange xmlns="http://opcfoundation.org/UA/">
+            <uax:NodeClass>Variable_2</uax:NodeClass>
+            <uax:NodeId>
+              <uax:Identifier>ns=1;i=839</uax:Identifier>
+            </uax:NodeId>
+            <uax:BrowseName>
+              <uax:NamespaceIndex>0</uax:NamespaceIndex>
+              <uax:Name>EURange</uax:Name>
+            </uax:BrowseName>
+            <uax:ReferenceTypeId>
+              <uax:Identifier>i=46</uax:Identifier>
+            </uax:ReferenceTypeId>
+            <uax:TypeDefinitionId>
+              <uax:Identifier>i=68</uax:Identifier>
+            </uax:TypeDefinitionId>
+            <uax:ModellingRuleId>
+              <uax:Identifier>i=78</uax:Identifier>
+            </uax:ModellingRuleId>
+            <uax:NumericId>839</uax:NumericId>
+            <uax:DataType>
+              <uax:Identifier>i=884</uax:Identifier>
+            </uax:DataType>
+            <uax:ValueRank>-1</uax:ValueRank>
+            <uax:AccessLevel>1</uax:AccessLevel>
+            <uax:UserAccessLevel>1</uax:UserAccessLevel>
+          </EURange>
+        </Input>
+      </Busy>
       <Motor>
         <uax:NodeClass>Object_1</uax:NodeClass>
         <uax:NodeId>
@@ -2936,74 +3452,192 @@
             <uax:UserAccessLevel>1</uax:UserAccessLevel>
           </EURange>
         </Speed>
+        <Status>
+          <uax:NodeClass>Variable_2</uax:NodeClass>
+          <uax:NodeId>
+            <uax:Identifier>ns=1;i=885</uax:Identifier>
+          </uax:NodeId>
+          <uax:BrowseName>
+            <uax:NamespaceIndex>1</uax:NamespaceIndex>
+            <uax:Name>Status</uax:Name>
+          </uax:BrowseName>
+          <uax:ReferenceTypeId>
+            <uax:Identifier>i=47</uax:Identifier>
+          </uax:ReferenceTypeId>
+          <uax:TypeDefinitionId>
+            <uax:Identifier>i=2368</uax:Identifier>
+          </uax:TypeDefinitionId>
+          <uax:ModellingRuleId>
+            <uax:Identifier>i=78</uax:Identifier>
+          </uax:ModellingRuleId>
+          <uax:NumericId>885</uax:NumericId>
+          <uax:DataType>
+            <uax:Identifier>i=1</uax:Identifier>
+          </uax:DataType>
+          <uax:ValueRank>-1</uax:ValueRank>
+          <uax:AccessLevel>3</uax:AccessLevel>
+          <uax:UserAccessLevel>3</uax:UserAccessLevel>
+          <EURange xmlns="http://opcfoundation.org/UA/">
+            <uax:NodeClass>Variable_2</uax:NodeClass>
+            <uax:NodeId>
+              <uax:Identifier>ns=1;i=889</uax:Identifier>
+            </uax:NodeId>
+            <uax:BrowseName>
+              <uax:NamespaceIndex>0</uax:NamespaceIndex>
+              <uax:Name>EURange</uax:Name>
+            </uax:BrowseName>
+            <uax:ReferenceTypeId>
+              <uax:Identifier>i=46</uax:Identifier>
+            </uax:ReferenceTypeId>
+            <uax:TypeDefinitionId>
+              <uax:Identifier>i=68</uax:Identifier>
+            </uax:TypeDefinitionId>
+            <uax:ModellingRuleId>
+              <uax:Identifier>i=78</uax:Identifier>
+            </uax:ModellingRuleId>
+            <uax:NumericId>889</uax:NumericId>
+            <uax:DataType>
+              <uax:Identifier>i=884</uax:Identifier>
+            </uax:DataType>
+            <uax:ValueRank>-1</uax:ValueRank>
+            <uax:AccessLevel>1</uax:AccessLevel>
+            <uax:UserAccessLevel>1</uax:UserAccessLevel>
+          </EURange>
+        </Status>
       </Motor>
     </Module2>
-    <StartProcess>
+    <StartModule1Process>
       <uax:NodeClass>Method_4</uax:NodeClass>
       <uax:NodeId>
-        <uax:Identifier>ns=1;i=342</uax:Identifier>
+        <uax:Identifier>ns=1;i=903</uax:Identifier>
       </uax:NodeId>
       <uax:BrowseName>
         <uax:NamespaceIndex>1</uax:NamespaceIndex>
-        <uax:Name>StartProcess</uax:Name>
+        <uax:Name>StartModule1Process</uax:Name>
       </uax:BrowseName>
       <uax:ReferenceTypeId>
         <uax:Identifier>i=47</uax:Identifier>
       </uax:ReferenceTypeId>
       <uax:TypeDefinitionId>
-        <uax:Identifier>ns=1;i=342</uax:Identifier>
+        <uax:Identifier>ns=1;i=903</uax:Identifier>
       </uax:TypeDefinitionId>
       <uax:ModellingRuleId>
         <uax:Identifier>i=78</uax:Identifier>
       </uax:ModellingRuleId>
-      <uax:NumericId>342</uax:NumericId>
+      <uax:NumericId>903</uax:NumericId>
       <uax:Executable>true</uax:Executable>
       <uax:UserExecutable>true</uax:UserExecutable>
-    </StartProcess>
-    <StopProcess>
+    </StartModule1Process>
+    <StopModule1Process>
       <uax:NodeClass>Method_4</uax:NodeClass>
       <uax:NodeId>
-        <uax:Identifier>ns=1;i=343</uax:Identifier>
+        <uax:Identifier>ns=1;i=904</uax:Identifier>
       </uax:NodeId>
       <uax:BrowseName>
         <uax:NamespaceIndex>1</uax:NamespaceIndex>
-        <uax:Name>StopProcess</uax:Name>
+        <uax:Name>StopModule1Process</uax:Name>
       </uax:BrowseName>
       <uax:ReferenceTypeId>
         <uax:Identifier>i=47</uax:Identifier>
       </uax:ReferenceTypeId>
       <uax:TypeDefinitionId>
-        <uax:Identifier>ns=1;i=343</uax:Identifier>
+        <uax:Identifier>ns=1;i=904</uax:Identifier>
       </uax:TypeDefinitionId>
       <uax:ModellingRuleId>
         <uax:Identifier>i=78</uax:Identifier>
       </uax:ModellingRuleId>
-      <uax:NumericId>343</uax:NumericId>
+      <uax:NumericId>904</uax:NumericId>
       <uax:Executable>true</uax:Executable>
       <uax:UserExecutable>true</uax:UserExecutable>
-    </StopProcess>
-    <ResetProcess>
+    </StopModule1Process>
+    <ResetModule1Process>
       <uax:NodeClass>Method_4</uax:NodeClass>
       <uax:NodeId>
-        <uax:Identifier>ns=1;i=344</uax:Identifier>
+        <uax:Identifier>ns=1;i=905</uax:Identifier>
       </uax:NodeId>
       <uax:BrowseName>
         <uax:NamespaceIndex>1</uax:NamespaceIndex>
-        <uax:Name>ResetProcess</uax:Name>
+        <uax:Name>ResetModule1Process</uax:Name>
       </uax:BrowseName>
       <uax:ReferenceTypeId>
         <uax:Identifier>i=47</uax:Identifier>
       </uax:ReferenceTypeId>
       <uax:TypeDefinitionId>
-        <uax:Identifier>ns=1;i=344</uax:Identifier>
+        <uax:Identifier>ns=1;i=905</uax:Identifier>
       </uax:TypeDefinitionId>
       <uax:ModellingRuleId>
         <uax:Identifier>i=78</uax:Identifier>
       </uax:ModellingRuleId>
-      <uax:NumericId>344</uax:NumericId>
+      <uax:NumericId>905</uax:NumericId>
       <uax:Executable>true</uax:Executable>
       <uax:UserExecutable>true</uax:UserExecutable>
-    </ResetProcess>
+    </ResetModule1Process>
+    <StartModule2Process>
+      <uax:NodeClass>Method_4</uax:NodeClass>
+      <uax:NodeId>
+        <uax:Identifier>ns=1;i=906</uax:Identifier>
+      </uax:NodeId>
+      <uax:BrowseName>
+        <uax:NamespaceIndex>1</uax:NamespaceIndex>
+        <uax:Name>StartModule2Process</uax:Name>
+      </uax:BrowseName>
+      <uax:ReferenceTypeId>
+        <uax:Identifier>i=47</uax:Identifier>
+      </uax:ReferenceTypeId>
+      <uax:TypeDefinitionId>
+        <uax:Identifier>ns=1;i=906</uax:Identifier>
+      </uax:TypeDefinitionId>
+      <uax:ModellingRuleId>
+        <uax:Identifier>i=78</uax:Identifier>
+      </uax:ModellingRuleId>
+      <uax:NumericId>906</uax:NumericId>
+      <uax:Executable>true</uax:Executable>
+      <uax:UserExecutable>true</uax:UserExecutable>
+    </StartModule2Process>
+    <StopModule2Process>
+      <uax:NodeClass>Method_4</uax:NodeClass>
+      <uax:NodeId>
+        <uax:Identifier>ns=1;i=907</uax:Identifier>
+      </uax:NodeId>
+      <uax:BrowseName>
+        <uax:NamespaceIndex>1</uax:NamespaceIndex>
+        <uax:Name>StopModule2Process</uax:Name>
+      </uax:BrowseName>
+      <uax:ReferenceTypeId>
+        <uax:Identifier>i=47</uax:Identifier>
+      </uax:ReferenceTypeId>
+      <uax:TypeDefinitionId>
+        <uax:Identifier>ns=1;i=907</uax:Identifier>
+      </uax:TypeDefinitionId>
+      <uax:ModellingRuleId>
+        <uax:Identifier>i=78</uax:Identifier>
+      </uax:ModellingRuleId>
+      <uax:NumericId>907</uax:NumericId>
+      <uax:Executable>true</uax:Executable>
+      <uax:UserExecutable>true</uax:UserExecutable>
+    </StopModule2Process>
+    <ResetModule2Process>
+      <uax:NodeClass>Method_4</uax:NodeClass>
+      <uax:NodeId>
+        <uax:Identifier>ns=1;i=908</uax:Identifier>
+      </uax:NodeId>
+      <uax:BrowseName>
+        <uax:NamespaceIndex>1</uax:NamespaceIndex>
+        <uax:Name>ResetModule2Process</uax:Name>
+      </uax:BrowseName>
+      <uax:ReferenceTypeId>
+        <uax:Identifier>i=47</uax:Identifier>
+      </uax:ReferenceTypeId>
+      <uax:TypeDefinitionId>
+        <uax:Identifier>ns=1;i=908</uax:Identifier>
+      </uax:TypeDefinitionId>
+      <uax:ModellingRuleId>
+        <uax:Identifier>i=78</uax:Identifier>
+      </uax:ModellingRuleId>
+      <uax:NumericId>908</uax:NumericId>
+      <uax:Executable>true</uax:Executable>
+      <uax:UserExecutable>true</uax:UserExecutable>
+    </ResetModule2Process>
   </BeltType>
   <BeltServer xmlns="http://opcfoundation.org/BeltIdentifier">
     <uax:NodeClass>Object_1</uax:NodeClass>
@@ -3152,6 +3786,70 @@
           </EURange>
         </Input>
       </Error>
+      <Busy>
+        <uax:NodeClass>Object_1</uax:NodeClass>
+        <uax:NodeId>
+          <uax:Identifier>ns=1;i=841</uax:Identifier>
+        </uax:NodeId>
+        <uax:BrowseName>
+          <uax:NamespaceIndex>1</uax:NamespaceIndex>
+          <uax:Name>Busy</uax:Name>
+        </uax:BrowseName>
+        <uax:ReferenceTypeId>
+          <uax:Identifier>i=47</uax:Identifier>
+        </uax:ReferenceTypeId>
+        <uax:TypeDefinitionId>
+          <uax:Identifier>ns=1;i=806</uax:Identifier>
+        </uax:TypeDefinitionId>
+        <uax:NumericId>841</uax:NumericId>
+        <uax:EventNotifier>1</uax:EventNotifier>
+        <Input>
+          <uax:NodeClass>Variable_2</uax:NodeClass>
+          <uax:NodeId>
+            <uax:Identifier>ns=1;i=842</uax:Identifier>
+          </uax:NodeId>
+          <uax:BrowseName>
+            <uax:NamespaceIndex>1</uax:NamespaceIndex>
+            <uax:Name>Input</uax:Name>
+          </uax:BrowseName>
+          <uax:ReferenceTypeId>
+            <uax:Identifier>i=47</uax:Identifier>
+          </uax:ReferenceTypeId>
+          <uax:TypeDefinitionId>
+            <uax:Identifier>i=2368</uax:Identifier>
+          </uax:TypeDefinitionId>
+          <uax:NumericId>842</uax:NumericId>
+          <uax:DataType>
+            <uax:Identifier>i=1</uax:Identifier>
+          </uax:DataType>
+          <uax:ValueRank>-1</uax:ValueRank>
+          <uax:AccessLevel>3</uax:AccessLevel>
+          <uax:UserAccessLevel>3</uax:UserAccessLevel>
+          <EURange xmlns="http://opcfoundation.org/UA/">
+            <uax:NodeClass>Variable_2</uax:NodeClass>
+            <uax:NodeId>
+              <uax:Identifier>ns=1;i=846</uax:Identifier>
+            </uax:NodeId>
+            <uax:BrowseName>
+              <uax:NamespaceIndex>0</uax:NamespaceIndex>
+              <uax:Name>EURange</uax:Name>
+            </uax:BrowseName>
+            <uax:ReferenceTypeId>
+              <uax:Identifier>i=46</uax:Identifier>
+            </uax:ReferenceTypeId>
+            <uax:TypeDefinitionId>
+              <uax:Identifier>i=68</uax:Identifier>
+            </uax:TypeDefinitionId>
+            <uax:NumericId>846</uax:NumericId>
+            <uax:DataType>
+              <uax:Identifier>i=884</uax:Identifier>
+            </uax:DataType>
+            <uax:ValueRank>-1</uax:ValueRank>
+            <uax:AccessLevel>1</uax:AccessLevel>
+            <uax:UserAccessLevel>1</uax:UserAccessLevel>
+          </EURange>
+        </Input>
+      </Busy>
       <Opaque>
         <uax:NodeClass>Object_1</uax:NodeClass>
         <uax:NodeId>
@@ -3599,6 +4297,52 @@
             <uax:UserAccessLevel>1</uax:UserAccessLevel>
           </EURange>
         </Speed>
+        <Status>
+          <uax:NodeClass>Variable_2</uax:NodeClass>
+          <uax:NodeId>
+            <uax:Identifier>ns=1;i=891</uax:Identifier>
+          </uax:NodeId>
+          <uax:BrowseName>
+            <uax:NamespaceIndex>1</uax:NamespaceIndex>
+            <uax:Name>Status</uax:Name>
+          </uax:BrowseName>
+          <uax:ReferenceTypeId>
+            <uax:Identifier>i=47</uax:Identifier>
+          </uax:ReferenceTypeId>
+          <uax:TypeDefinitionId>
+            <uax:Identifier>i=2368</uax:Identifier>
+          </uax:TypeDefinitionId>
+          <uax:NumericId>891</uax:NumericId>
+          <uax:DataType>
+            <uax:Identifier>i=1</uax:Identifier>
+          </uax:DataType>
+          <uax:ValueRank>-1</uax:ValueRank>
+          <uax:AccessLevel>3</uax:AccessLevel>
+          <uax:UserAccessLevel>3</uax:UserAccessLevel>
+          <EURange xmlns="http://opcfoundation.org/UA/">
+            <uax:NodeClass>Variable_2</uax:NodeClass>
+            <uax:NodeId>
+              <uax:Identifier>ns=1;i=895</uax:Identifier>
+            </uax:NodeId>
+            <uax:BrowseName>
+              <uax:NamespaceIndex>0</uax:NamespaceIndex>
+              <uax:Name>EURange</uax:Name>
+            </uax:BrowseName>
+            <uax:ReferenceTypeId>
+              <uax:Identifier>i=46</uax:Identifier>
+            </uax:ReferenceTypeId>
+            <uax:TypeDefinitionId>
+              <uax:Identifier>i=68</uax:Identifier>
+            </uax:TypeDefinitionId>
+            <uax:NumericId>895</uax:NumericId>
+            <uax:DataType>
+              <uax:Identifier>i=884</uax:Identifier>
+            </uax:DataType>
+            <uax:ValueRank>-1</uax:ValueRank>
+            <uax:AccessLevel>1</uax:AccessLevel>
+            <uax:UserAccessLevel>1</uax:UserAccessLevel>
+          </EURange>
+        </Status>
       </Motor>
     </Module1>
     <Module2>
@@ -4087,6 +4831,70 @@
           </EURange>
         </Input>
       </Error>
+      <Busy>
+        <uax:NodeClass>Object_1</uax:NodeClass>
+        <uax:NodeId>
+          <uax:Identifier>ns=1;i=848</uax:Identifier>
+        </uax:NodeId>
+        <uax:BrowseName>
+          <uax:NamespaceIndex>1</uax:NamespaceIndex>
+          <uax:Name>Busy</uax:Name>
+        </uax:BrowseName>
+        <uax:ReferenceTypeId>
+          <uax:Identifier>i=47</uax:Identifier>
+        </uax:ReferenceTypeId>
+        <uax:TypeDefinitionId>
+          <uax:Identifier>ns=1;i=806</uax:Identifier>
+        </uax:TypeDefinitionId>
+        <uax:NumericId>848</uax:NumericId>
+        <uax:EventNotifier>1</uax:EventNotifier>
+        <Input>
+          <uax:NodeClass>Variable_2</uax:NodeClass>
+          <uax:NodeId>
+            <uax:Identifier>ns=1;i=849</uax:Identifier>
+          </uax:NodeId>
+          <uax:BrowseName>
+            <uax:NamespaceIndex>1</uax:NamespaceIndex>
+            <uax:Name>Input</uax:Name>
+          </uax:BrowseName>
+          <uax:ReferenceTypeId>
+            <uax:Identifier>i=47</uax:Identifier>
+          </uax:ReferenceTypeId>
+          <uax:TypeDefinitionId>
+            <uax:Identifier>i=2368</uax:Identifier>
+          </uax:TypeDefinitionId>
+          <uax:NumericId>849</uax:NumericId>
+          <uax:DataType>
+            <uax:Identifier>i=1</uax:Identifier>
+          </uax:DataType>
+          <uax:ValueRank>-1</uax:ValueRank>
+          <uax:AccessLevel>3</uax:AccessLevel>
+          <uax:UserAccessLevel>3</uax:UserAccessLevel>
+          <EURange xmlns="http://opcfoundation.org/UA/">
+            <uax:NodeClass>Variable_2</uax:NodeClass>
+            <uax:NodeId>
+              <uax:Identifier>ns=1;i=853</uax:Identifier>
+            </uax:NodeId>
+            <uax:BrowseName>
+              <uax:NamespaceIndex>0</uax:NamespaceIndex>
+              <uax:Name>EURange</uax:Name>
+            </uax:BrowseName>
+            <uax:ReferenceTypeId>
+              <uax:Identifier>i=46</uax:Identifier>
+            </uax:ReferenceTypeId>
+            <uax:TypeDefinitionId>
+              <uax:Identifier>i=68</uax:Identifier>
+            </uax:TypeDefinitionId>
+            <uax:NumericId>853</uax:NumericId>
+            <uax:DataType>
+              <uax:Identifier>i=884</uax:Identifier>
+            </uax:DataType>
+            <uax:ValueRank>-1</uax:ValueRank>
+            <uax:AccessLevel>1</uax:AccessLevel>
+            <uax:UserAccessLevel>1</uax:UserAccessLevel>
+          </EURange>
+        </Input>
+      </Busy>
       <Motor>
         <uax:NodeClass>Object_1</uax:NodeClass>
         <uax:NodeId>
@@ -4150,64 +4958,167 @@
             <uax:UserAccessLevel>1</uax:UserAccessLevel>
           </EURange>
         </Speed>
+        <Status>
+          <uax:NodeClass>Variable_2</uax:NodeClass>
+          <uax:NodeId>
+            <uax:Identifier>ns=1;i=897</uax:Identifier>
+          </uax:NodeId>
+          <uax:BrowseName>
+            <uax:NamespaceIndex>1</uax:NamespaceIndex>
+            <uax:Name>Status</uax:Name>
+          </uax:BrowseName>
+          <uax:ReferenceTypeId>
+            <uax:Identifier>i=47</uax:Identifier>
+          </uax:ReferenceTypeId>
+          <uax:TypeDefinitionId>
+            <uax:Identifier>i=2368</uax:Identifier>
+          </uax:TypeDefinitionId>
+          <uax:NumericId>897</uax:NumericId>
+          <uax:DataType>
+            <uax:Identifier>i=1</uax:Identifier>
+          </uax:DataType>
+          <uax:ValueRank>-1</uax:ValueRank>
+          <uax:AccessLevel>3</uax:AccessLevel>
+          <uax:UserAccessLevel>3</uax:UserAccessLevel>
+          <EURange xmlns="http://opcfoundation.org/UA/">
+            <uax:NodeClass>Variable_2</uax:NodeClass>
+            <uax:NodeId>
+              <uax:Identifier>ns=1;i=901</uax:Identifier>
+            </uax:NodeId>
+            <uax:BrowseName>
+              <uax:NamespaceIndex>0</uax:NamespaceIndex>
+              <uax:Name>EURange</uax:Name>
+            </uax:BrowseName>
+            <uax:ReferenceTypeId>
+              <uax:Identifier>i=46</uax:Identifier>
+            </uax:ReferenceTypeId>
+            <uax:TypeDefinitionId>
+              <uax:Identifier>i=68</uax:Identifier>
+            </uax:TypeDefinitionId>
+            <uax:NumericId>901</uax:NumericId>
+            <uax:DataType>
+              <uax:Identifier>i=884</uax:Identifier>
+            </uax:DataType>
+            <uax:ValueRank>-1</uax:ValueRank>
+            <uax:AccessLevel>1</uax:AccessLevel>
+            <uax:UserAccessLevel>1</uax:UserAccessLevel>
+          </EURange>
+        </Status>
       </Motor>
     </Module2>
-    <StartProcess>
+    <StartModule1Process>
       <uax:NodeClass>Method_4</uax:NodeClass>
       <uax:NodeId>
-        <uax:Identifier>ns=1;i=460</uax:Identifier>
+        <uax:Identifier>ns=1;i=909</uax:Identifier>
       </uax:NodeId>
       <uax:BrowseName>
         <uax:NamespaceIndex>1</uax:NamespaceIndex>
-        <uax:Name>StartProcess</uax:Name>
+        <uax:Name>StartModule1Process</uax:Name>
       </uax:BrowseName>
       <uax:ReferenceTypeId>
         <uax:Identifier>i=47</uax:Identifier>
       </uax:ReferenceTypeId>
       <uax:TypeDefinitionId>
-        <uax:Identifier>ns=1;i=342</uax:Identifier>
+        <uax:Identifier>ns=1;i=903</uax:Identifier>
       </uax:TypeDefinitionId>
-      <uax:NumericId>460</uax:NumericId>
+      <uax:NumericId>909</uax:NumericId>
       <uax:Executable>true</uax:Executable>
       <uax:UserExecutable>true</uax:UserExecutable>
-    </StartProcess>
-    <StopProcess>
+    </StartModule1Process>
+    <StopModule1Process>
       <uax:NodeClass>Method_4</uax:NodeClass>
       <uax:NodeId>
-        <uax:Identifier>ns=1;i=461</uax:Identifier>
+        <uax:Identifier>ns=1;i=910</uax:Identifier>
       </uax:NodeId>
       <uax:BrowseName>
         <uax:NamespaceIndex>1</uax:NamespaceIndex>
-        <uax:Name>StopProcess</uax:Name>
+        <uax:Name>StopModule1Process</uax:Name>
       </uax:BrowseName>
       <uax:ReferenceTypeId>
         <uax:Identifier>i=47</uax:Identifier>
       </uax:ReferenceTypeId>
       <uax:TypeDefinitionId>
-        <uax:Identifier>ns=1;i=343</uax:Identifier>
+        <uax:Identifier>ns=1;i=904</uax:Identifier>
       </uax:TypeDefinitionId>
-      <uax:NumericId>461</uax:NumericId>
+      <uax:NumericId>910</uax:NumericId>
       <uax:Executable>true</uax:Executable>
       <uax:UserExecutable>true</uax:UserExecutable>
-    </StopProcess>
-    <ResetProcess>
+    </StopModule1Process>
+    <ResetModule1Process>
       <uax:NodeClass>Method_4</uax:NodeClass>
       <uax:NodeId>
-        <uax:Identifier>ns=1;i=462</uax:Identifier>
+        <uax:Identifier>ns=1;i=911</uax:Identifier>
       </uax:NodeId>
       <uax:BrowseName>
         <uax:NamespaceIndex>1</uax:NamespaceIndex>
-        <uax:Name>ResetProcess</uax:Name>
+        <uax:Name>ResetModule1Process</uax:Name>
       </uax:BrowseName>
       <uax:ReferenceTypeId>
         <uax:Identifier>i=47</uax:Identifier>
       </uax:ReferenceTypeId>
       <uax:TypeDefinitionId>
-        <uax:Identifier>ns=1;i=344</uax:Identifier>
+        <uax:Identifier>ns=1;i=905</uax:Identifier>
       </uax:TypeDefinitionId>
-      <uax:NumericId>462</uax:NumericId>
+      <uax:NumericId>911</uax:NumericId>
       <uax:Executable>true</uax:Executable>
       <uax:UserExecutable>true</uax:UserExecutable>
-    </ResetProcess>
+    </ResetModule1Process>
+    <StartModule2Process>
+      <uax:NodeClass>Method_4</uax:NodeClass>
+      <uax:NodeId>
+        <uax:Identifier>ns=1;i=912</uax:Identifier>
+      </uax:NodeId>
+      <uax:BrowseName>
+        <uax:NamespaceIndex>1</uax:NamespaceIndex>
+        <uax:Name>StartModule2Process</uax:Name>
+      </uax:BrowseName>
+      <uax:ReferenceTypeId>
+        <uax:Identifier>i=47</uax:Identifier>
+      </uax:ReferenceTypeId>
+      <uax:TypeDefinitionId>
+        <uax:Identifier>ns=1;i=906</uax:Identifier>
+      </uax:TypeDefinitionId>
+      <uax:NumericId>912</uax:NumericId>
+      <uax:Executable>true</uax:Executable>
+      <uax:UserExecutable>true</uax:UserExecutable>
+    </StartModule2Process>
+    <StopModule2Process>
+      <uax:NodeClass>Method_4</uax:NodeClass>
+      <uax:NodeId>
+        <uax:Identifier>ns=1;i=913</uax:Identifier>
+      </uax:NodeId>
+      <uax:BrowseName>
+        <uax:NamespaceIndex>1</uax:NamespaceIndex>
+        <uax:Name>StopModule2Process</uax:Name>
+      </uax:BrowseName>
+      <uax:ReferenceTypeId>
+        <uax:Identifier>i=47</uax:Identifier>
+      </uax:ReferenceTypeId>
+      <uax:TypeDefinitionId>
+        <uax:Identifier>ns=1;i=907</uax:Identifier>
+      </uax:TypeDefinitionId>
+      <uax:NumericId>913</uax:NumericId>
+      <uax:Executable>true</uax:Executable>
+      <uax:UserExecutable>true</uax:UserExecutable>
+    </StopModule2Process>
+    <ResetModule2Process>
+      <uax:NodeClass>Method_4</uax:NodeClass>
+      <uax:NodeId>
+        <uax:Identifier>ns=1;i=914</uax:Identifier>
+      </uax:NodeId>
+      <uax:BrowseName>
+        <uax:NamespaceIndex>1</uax:NamespaceIndex>
+        <uax:Name>ResetModule2Process</uax:Name>
+      </uax:BrowseName>
+      <uax:ReferenceTypeId>
+        <uax:Identifier>i=47</uax:Identifier>
+      </uax:ReferenceTypeId>
+      <uax:TypeDefinitionId>
+        <uax:Identifier>ns=1;i=908</uax:Identifier>
+      </uax:TypeDefinitionId>
+      <uax:NumericId>914</uax:NumericId>
+      <uax:Executable>true</uax:Executable>
+      <uax:UserExecutable>true</uax:UserExecutable>
+    </ResetModule2Process>
   </BeltServer>
 </uax:ListOfNodeState>

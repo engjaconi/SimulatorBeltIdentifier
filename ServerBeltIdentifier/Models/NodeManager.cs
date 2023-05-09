@@ -1,4 +1,5 @@
 ﻿using BeltIdentifier;
+using BeltIdentifierServer;
 using Opc.Ua;
 using Opc.Ua.Server;
 using System.Reflection;
@@ -50,26 +51,51 @@ namespace ServerBeltIdentifier.Models
                 // substitui os nós predefinidos sem tipo por suas versões fortemente tipadas.
                 AddPredefinedNode(SystemContext, _Belt);
 
-                _Belt.StartProcess.OnCallMethod = new GenericMethodCalledEventHandler(OnStartProcess);
-                _Belt.StopProcess.OnCallMethod = new GenericMethodCalledEventHandler(OnStopProcess);
-                _Belt.ResetProcess.OnCallMethod = new GenericMethodCalledEventHandler(OnResetProcess);
+                _Belt.StartModule1Process.OnCallMethod = new GenericMethodCalledEventHandler(OnStartModule1Process);
+                _Belt.StopModule1Process.OnCallMethod = new GenericMethodCalledEventHandler(OnStopModule1Process);
+                _Belt.ResetModule1Process.OnCallMethod = new GenericMethodCalledEventHandler(OnResetModule1Process);
+
+                _Belt.StartModule2Process.OnCallMethod = new GenericMethodCalledEventHandler(OnStartModule2Process);
+                _Belt.StopModule2Process.OnCallMethod = new GenericMethodCalledEventHandler(OnStopModule2Process);
+                _Belt.ResetModule2Process.OnCallMethod = new GenericMethodCalledEventHandler(OnResetModule2Process);
 
                 InitializeVariableValues();
             }
         }
 
-        private ServiceResult OnStartProcess(ISystemContext context, MethodState method, IList<object> inputArguments, IList<object> outputArguments)
+        private ServiceResult OnStartModule1Process(ISystemContext context, MethodState method, IList<object> inputArguments, IList<object> outputArguments)
         {
+            ServerForm._beltModule1.Start();
             return ServiceResult.Good;
         }
 
-        private ServiceResult OnStopProcess(ISystemContext context, MethodState method, IList<object> inputArguments, IList<object> outputArguments)
+        private ServiceResult OnStopModule1Process(ISystemContext context, MethodState method, IList<object> inputArguments, IList<object> outputArguments)
         {
+            ServerForm._beltModule1.Stop();
             return ServiceResult.Good;
         }
 
-        private ServiceResult OnResetProcess(ISystemContext context, MethodState method, IList<object> inputArguments, IList<object> outputArguments)
+        private ServiceResult OnResetModule1Process(ISystemContext context, MethodState method, IList<object> inputArguments, IList<object> outputArguments)
         {
+            ServerForm._beltModule1.Reset();
+            return ServiceResult.Good;
+        }
+
+        private ServiceResult OnStartModule2Process(ISystemContext context, MethodState method, IList<object> inputArguments, IList<object> outputArguments)
+        {
+            ServerForm._beltModule2.Start();
+            return ServiceResult.Good;
+        }
+
+        private ServiceResult OnStopModule2Process(ISystemContext context, MethodState method, IList<object> inputArguments, IList<object> outputArguments)
+        {
+            ServerForm._beltModule2.Stop();
+            return ServiceResult.Good;
+        }
+
+        private ServiceResult OnResetModule2Process(ISystemContext context, MethodState method, IList<object> inputArguments, IList<object> outputArguments)
+        {
+            ServerForm._beltModule2.Reset();
             return ServiceResult.Good;
         }
 
@@ -82,7 +108,9 @@ namespace ServerBeltIdentifier.Models
             _Belt.Module1.QuantityOpaque.Input.Value = 0;
             _Belt.Module1.QuantityMetallic.Input.Value = 0;
             _Belt.Module1.QuantityNonMetallic.Input.Value = 0;
-            _Belt.Module1.Motor.Speed.Value = 0;
+            _Belt.Module1.Motor.Speed.Value = 1;
+            _Belt.Module1.Motor.Status.Value = false;
+            _Belt.Module1.Busy.Input.Value = false;
 
             _Belt.Module2.Barrier1.Output.Value = false;
             _Belt.Module2.Barrier2.Output.Value = false;
@@ -91,7 +119,9 @@ namespace ServerBeltIdentifier.Models
             _Belt.Module2.Inductive.Output.Value = true;
             _Belt.Module2.Capacitive.Output.Value = true;
             _Belt.Module2.Motor.Speed.Value = 0;
+            _Belt.Module2.Motor.Status.Value = false;
             _Belt.Module2.Error.Input.Value = false;
+            _Belt.Module2.Busy.Input.Value= false;
         }
 
         private readonly ServerConfiguration _configuration;

@@ -83,26 +83,6 @@ namespace ServerBeltIdentifier.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap led_red_off {
-            get {
-                object obj = ResourceManager.GetObject("led-red-off", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap led_red_on {
-            get {
-                object obj = ResourceManager.GetObject("led-red-on", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap red_led_off {
             get {
                 object obj = ResourceManager.GetObject("red-led-off", resourceCulture);
