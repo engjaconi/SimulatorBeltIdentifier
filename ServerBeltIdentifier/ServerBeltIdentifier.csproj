@@ -9,7 +9,23 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Models\OpcComunication\BeltIdentifier.PredefinedNodes.uanodes" />
+    <None Remove="Models\OpcComunication\BeltIdentifier.PredefinedNodes.xml" />
+    <None Remove="Models\OpcComunication\ServerBeltIdentifier.Config.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="OPCFoundation.NetStandard.Opc.Ua.Server" Version="1.4.371.60" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Models\OpcComunication\BeltIdentifier.PredefinedNodes.uanodes">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Models\OpcComunication\BeltIdentifier.PredefinedNodes.xml" />
+    <Resource Include="Models\OpcComunication\ServerBeltIdentifier.Config.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
   <ItemGroup>

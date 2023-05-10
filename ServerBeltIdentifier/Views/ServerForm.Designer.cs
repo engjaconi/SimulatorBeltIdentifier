@@ -83,7 +83,8 @@ namespace BeltIdentifierServer
             pMotorStatus = new Panel();
             lblMotor = new Label();
             btnReset = new Button();
-            timerAutoControl = new System.Windows.Forms.Timer(components);
+            timerAutoModule1 = new System.Windows.Forms.Timer(components);
+            timerAutoModule2 = new System.Windows.Forms.Timer(components);
             tbcModules.SuspendLayout();
             tpModule1.SuspendLayout();
             gbOpcStatusModule1.SuspendLayout();
@@ -99,7 +100,7 @@ namespace BeltIdentifierServer
             // 
             cbServerUrl.DropDownStyle = ComboBoxStyle.Simple;
             cbServerUrl.FormattingEnabled = true;
-            cbServerUrl.Location = new Point(138, 11);
+            cbServerUrl.Location = new Point(138, 13);
             cbServerUrl.Margin = new Padding(3, 4, 3, 4);
             cbServerUrl.Name = "cbServerUrl";
             cbServerUrl.Size = new Size(564, 28);
@@ -109,7 +110,7 @@ namespace BeltIdentifierServer
             // lblServerUrl
             // 
             lblServerUrl.AutoSize = true;
-            lblServerUrl.Location = new Point(16, 13);
+            lblServerUrl.Location = new Point(16, 16);
             lblServerUrl.Name = "lblServerUrl";
             lblServerUrl.Size = new Size(120, 20);
             lblServerUrl.TabIndex = 1;
@@ -421,7 +422,7 @@ namespace BeltIdentifierServer
             btnAddPiece.Name = "btnAddPiece";
             btnAddPiece.Size = new Size(114, 63);
             btnAddPiece.TabIndex = 1;
-            btnAddPiece.Text = "Colocar Peça na Esteira";
+            btnAddPiece.Text = "Adicionar Peça";
             btnAddPiece.UseVisualStyleBackColor = true;
             btnAddPiece.Click += BtnAddPiece_Click;
             // 
@@ -649,11 +650,17 @@ namespace BeltIdentifierServer
             btnReset.UseVisualStyleBackColor = true;
             btnReset.Click += BtnReset_Click;
             // 
-            // timerAutoControl
+            // timerAutoModule1
             // 
-            timerAutoControl.Enabled = true;
-            timerAutoControl.Interval = 4001;
-            timerAutoControl.Tick += TimerAuto_Tick;
+            timerAutoModule1.Enabled = true;
+            timerAutoModule1.Interval = 4001;
+            timerAutoModule1.Tick += TimerModule1_Tick;
+            // 
+            // timerAutoModule2
+            // 
+            timerAutoModule2.Enabled = true;
+            timerAutoModule2.Interval = 24001;
+            timerAutoModule2.Tick += TimerAutoModule2_Tick;
             // 
             // ServerForm
             // 
@@ -755,6 +762,7 @@ namespace BeltIdentifierServer
         private Label lblBarrier1;
         private Panel pBarrier2;
         private Panel pBarrier1;
-        private System.Windows.Forms.Timer timerAutoControl;
+        private System.Windows.Forms.Timer timerAutoModule1;
+        private System.Windows.Forms.Timer timerAutoModule2;
     }
 }

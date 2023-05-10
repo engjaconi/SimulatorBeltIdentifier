@@ -13,22 +13,6 @@
         {
             ReadOpc();
         }
-
-        public void Start()
-        {
-            if (Error) return;
-
-            MotorOn = true;
-            WriteOpc();
-        }
-        
-        public void Stop()
-        {
-            if (Error) return;
-
-            MotorOn = false;
-            WriteOpc();
-        }
         
         public void Reset()
         {
@@ -86,7 +70,7 @@
                 case "Transparent":
                     Transparent = true;
                     QuantityTransparent++;
-                    TaskOpaque();
+                    TaskTransparent();
                     break;
                 case "Metallic":
                     Metallic = true;
@@ -130,16 +114,16 @@
             t.Start();
         }
         
-        private void TaskOpaque()
+        private void TaskTransparent()
         {
-            Task tOpaque = new(() => {
+            Task tTransparent = new(() => {
                 Thread.Sleep(MotorSpeed * 1000);
                 if (Error) return;
                 Transparent = false;
                 Busy = false;
                 WriteOpc();
             });
-            tOpaque.Start();
+            tTransparent.Start();
         }
         
         private void TaskMetallic()
@@ -180,7 +164,7 @@
             MotorOn = NodeManager._Belt.Module1.Motor.Status.Value;
         }
         
-        public void WriteOpc()
+        public override void WriteOpc()
         {
             NodeManager._Belt.Module1.Transparent.Input.Value = Transparent;
             NodeManager._Belt.Module1.Metallic.Input.Value = Metallic;

@@ -47,7 +47,7 @@ namespace BeltIdentifierServer
         {
 
         }
-        
+
         private void BtnStart_Click(object sender, EventArgs e)
         {
             if (tpModule1.CanFocus)
@@ -59,7 +59,7 @@ namespace BeltIdentifierServer
                 beltModule2.Start();
             }
         }
-        
+
         private void BtnStop_Click(object sender, EventArgs e)
         {
             if (tpModule1.CanFocus)
@@ -71,7 +71,7 @@ namespace BeltIdentifierServer
                 beltModule2.Stop();
             }
         }
-        
+
         private void BtnReset_Click(object sender, EventArgs e)
         {
             if (tpModule1.CanFocus && beltModule1.Error)
@@ -83,7 +83,7 @@ namespace BeltIdentifierServer
                 beltModule2.Reset();
             }
         }
-        
+
         private void BtnAddPiece_Click(object sender, EventArgs e)
         {
             string pieceType = rbTransparent.Checked ? "Transparent" : rbMetallic.Checked ? "Metallic" : "NonMetallic";
@@ -112,13 +112,13 @@ namespace BeltIdentifierServer
                 }
             }
         }
-        
+
         private void UpdateForm()
         {
             UpdateButtons();
             UpdateIndicators();
         }
-        
+
         private void UpdateButtons()
         {
             if (beltModule1.MotorOn || beltModule2.MotorOn)
@@ -173,7 +173,7 @@ namespace BeltIdentifierServer
                 }
             }
         }
-        
+
         private void UpdateIndicators()
         {
             if (tpModule1.CanFocus)
@@ -233,9 +233,30 @@ namespace BeltIdentifierServer
                 pInductive.BackgroundImage = beltModule2.Inductive ?
                     ServerBeltIdentifier.Properties.Resources.green_led_off :
                     ServerBeltIdentifier.Properties.Resources.green_led_on;
+
+                if (rbAutomatic.Checked && tpModule2.CanFocus)
+                {
+                    switch (beltModule2.PieceType)
+                    {
+                        case "Transparent":
+                            rbTransparent.Checked = true;
+                            break;
+                        case "Metallic":
+                            rbMetallic.Checked = true;
+                            break;
+                        case "NonMetallic":
+                            rbNonMetallic.Checked = true;
+                            break;
+                        default:
+                            rbTransparent.Checked = false;
+                            rbMetallic.Checked = false;
+                            rbNonMetallic.Checked = false;
+                            break;
+                    }
+                }
             }
         }
-        
+
         private void TimerUpdateForm_Tick(object sender, EventArgs e)
         {
             if (tpModule1.CanFocus)
@@ -250,17 +271,24 @@ namespace BeltIdentifierServer
             UpdateForm();
         }
 
-        private void TimerAuto_Tick(object sender, EventArgs e)
+        private void TimerModule1_Tick(object sender, EventArgs e)
         {
-            if (rbAutomatic.Checked &&
-                (beltModule1.MotorOn || beltModule2.MotorOn)
-                && (!beltModule1.Error && !beltModule2.Error))
+            if (rbAutomatic.Checked && beltModule1.MotorOn && !beltModule1.Error && tpModule1.CanFocus)
             {
-                if (tpModule1.CanFocus)
-                {
-                    int speedMotor = rbSpeed1.Checked ? 1 : rbSpeed2.Checked ? 2 : rbSpeed3.Checked ? 3 : 4;
-                    beltModule1.AddPieceAuto(speedMotor);
-                }
+                int speedMotor = rbSpeed1.Checked ? 1 : rbSpeed2.Checked ? 2 : rbSpeed3.Checked ? 3 : 4;
+                timerAutoModule1.Interval = (speedMotor * 1000) + 1000; // Intervalo entre cada peça será de 1s.
+                beltModule1.AddPieceAuto(speedMotor);
+            }
+        }
+
+        private void TimerAutoModule2_Tick(object sender, EventArgs e)
+        {
+            if (rbAutomatic.Checked && beltModule2.MotorOn && !beltModule2.Error && tpModule2.CanFocus)
+            {
+                int speedMotor = rbSpeed1.Checked ? 1 : rbSpeed2.Checked ? 2 : rbSpeed3.Checked ? 3 : 4;
+                timerAutoModule2.Interval = (speedMotor * 6000) + 1000; // Intervalo entre cada sensor será de 1s.
+
+                beltModule2.AddPieceAuto(speedMotor);
             }
         }
     }
