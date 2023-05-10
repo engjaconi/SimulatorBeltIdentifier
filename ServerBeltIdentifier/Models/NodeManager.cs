@@ -28,7 +28,7 @@ namespace ServerBeltIdentifier.Models
         protected override NodeStateCollection LoadPredefinedNodes(ISystemContext context)
         {
             NodeStateCollection predefinedNodes = new();
-            predefinedNodes.LoadFromBinaryResource(context, "C:\\Users\\engja\\source\\repos\\SimulatorBeltIdentifier\\ServerBeltIdentifier\\Models\\OpcComunication\\BeltIdentifier.PredefinedNodes.uanodes",
+            predefinedNodes.LoadFromBinaryResource(context, Config.PathPredefinedNodes,
                 typeof(NodeManager).GetTypeInfo().Assembly, true);
 
             return predefinedNodes;
