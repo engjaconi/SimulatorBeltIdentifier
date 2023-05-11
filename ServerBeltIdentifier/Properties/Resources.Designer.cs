@@ -83,6 +83,26 @@ namespace ServerBeltIdentifier.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap logo_ucl_blue {
+            get {
+                object obj = ResourceManager.GetObject("logo_ucl_blue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap OPC_UA_Logo {
+            get {
+                object obj = ResourceManager.GetObject("OPC-UA-Logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap red_led_off {
             get {
                 object obj = ResourceManager.GetObject("red-led-off", resourceCulture);

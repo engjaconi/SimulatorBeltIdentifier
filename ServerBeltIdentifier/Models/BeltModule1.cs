@@ -24,7 +24,7 @@ namespace ServerBeltIdentifier.Models
             {
                 Transparent = false;
                 QuantityTransparent--;
-                if (!Metallic && !NonMetallic)
+                if (!Metallic && !NonMetallic && (QuantityTransparent > 0))
                 {
                     QuantityTransparent--;
                 }
@@ -34,7 +34,7 @@ namespace ServerBeltIdentifier.Models
             {
                 Metallic = false;
                 QuantityMetallic--;
-                if (!Transparent && !NonMetallic)
+                if (!Transparent && !NonMetallic && (QuantityMetallic > 0))
                 {
                     QuantityMetallic--;
                 }
@@ -43,7 +43,7 @@ namespace ServerBeltIdentifier.Models
             if (NonMetallic){
                 NonMetallic = false;
                 QuantityNonMetallic--;
-                if (!Transparent && !Metallic)
+                if (!Transparent && !Metallic && (QuantityNonMetallic > 0))
                 {
                     QuantityNonMetallic--;
                 }
@@ -56,7 +56,7 @@ namespace ServerBeltIdentifier.Models
             WriteOpc();
         }
         
-        public void AddPieceManual(string pieceType, int speedMotor)
+        public void AddPieceManual(string pieceType)
         {
             if(Transparent || Metallic || NonMetallic)
             {
@@ -64,7 +64,6 @@ namespace ServerBeltIdentifier.Models
                 MotorOn = false;
             }
 
-            MotorSpeed = speedMotor;
             Busy = true;
 
             switch(pieceType)
@@ -90,7 +89,7 @@ namespace ServerBeltIdentifier.Models
             WriteOpc();
         }
         
-        public void AddPieceAuto(int speedMotor) 
+        public void AddPieceAuto() 
         {
             Task t = new (()=>
             {
@@ -99,13 +98,13 @@ namespace ServerBeltIdentifier.Models
 
                 if (option > 0 && option < 3)
                 {
-                    AddPieceManual("Transparent", speedMotor);
+                    AddPieceManual("Transparent");
                 } else if (option >= 3 && option < 5)
                 {
-                    AddPieceManual("Metallic", speedMotor);
+                    AddPieceManual("Metallic");
                 } else if (option >= 5 && option < 7)
                 {
-                    AddPieceManual("NonMetallic", speedMotor);
+                    AddPieceManual("NonMetallic");
                 } else
                 {
                     Error = true;
@@ -119,7 +118,7 @@ namespace ServerBeltIdentifier.Models
         private void TaskTransparent()
         {
             Task tTransparent = new(() => {
-                Thread.Sleep(MotorSpeed * 1000);
+                Thread.Sleep(JourneyTime * 1000);
                 if (Error) return;
                 Transparent = false;
                 Busy = false;
@@ -131,7 +130,7 @@ namespace ServerBeltIdentifier.Models
         private void TaskMetallic()
         {
             Task tMetallic = new(() => {
-                Thread.Sleep(MotorSpeed * 1000);
+                Thread.Sleep(JourneyTime * 1000);
                 if (Error) return;
                 Metallic = false;
                 Busy = false;
@@ -143,7 +142,7 @@ namespace ServerBeltIdentifier.Models
         private void TaskNonMetallic()
         {
             Task tNonMetallic = new(() => {
-                Thread.Sleep(MotorSpeed * 1000);
+                Thread.Sleep(JourneyTime * 1000);
                 if (Error) return;
                 NonMetallic = false;
                 Busy = false;
@@ -160,7 +159,7 @@ namespace ServerBeltIdentifier.Models
             QuantityTransparent = NodeManager.Belt.Module1.QuantityTransparent.Input.Value;
             QuantityMetallic = NodeManager.Belt.Module1.QuantityMetallic.Input.Value;
             QuantityNonMetallic = NodeManager.Belt.Module1.QuantityNonMetallic.Input.Value;
-            MotorSpeed = NodeManager.Belt.Module1.Motor.Speed.Value;
+            JourneyTime = NodeManager.Belt.Module1.Motor.JourneyTime.Value;
             Busy = NodeManager.Belt.Module1.Busy.Input.Value;
             Error = NodeManager.Belt.Module1.Error.Input.Value;
             MotorOn = NodeManager.Belt.Module1.Motor.Status.Value;
@@ -174,7 +173,7 @@ namespace ServerBeltIdentifier.Models
             NodeManager.Belt.Module1.QuantityTransparent.Input.Value = QuantityTransparent;
             NodeManager.Belt.Module1.QuantityMetallic.Input.Value = QuantityMetallic;
             NodeManager.Belt.Module1.QuantityNonMetallic.Input.Value = QuantityNonMetallic;
-            NodeManager.Belt.Module1.Motor.Speed.Value = MotorSpeed;
+            NodeManager.Belt.Module1.Motor.JourneyTime.Value = JourneyTime;
             NodeManager.Belt.Module1.Busy.Input.Value = Busy;
             NodeManager.Belt.Module1.Error.Input.Value = Error;
             NodeManager.Belt.Module1.Motor.Status.Value = MotorOn;

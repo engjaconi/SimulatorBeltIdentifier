@@ -8,8 +8,6 @@ GenericDisplayType,15,ObjectType
 GenericDisplayType_Input,16,Variable
 GenericDisplayType_Input_EURange,20,Variable
 GenericMotorType,22,ObjectType
-GenericMotorType_Speed,23,Variable
-GenericMotorType_Speed_EURange,27,Variable
 OpticalBarrier,29,ObjectType
 ElectricPhotoSensor,36,ObjectType
 CapacitiveSensor,43,ObjectType
@@ -36,8 +34,6 @@ Module1Type_QuantityNonMetallic,156,Object
 Module1Type_QuantityNonMetallic_Input,157,Variable
 Module1Type_QuantityNonMetallic_Input_EURange,161,Variable
 Module1Type_Motor,163,Object
-Module1Type_Motor_Speed,164,Variable
-Module1Type_Motor_Speed_EURange,168,Variable
 Module2Type,170,ObjectType
 Module2Type_Barrier1,171,Object
 Module2Type_Barrier1_Output,172,Variable
@@ -61,8 +57,6 @@ Module2Type_Error,213,Object
 Module2Type_Error_Input,214,Variable
 Module2Type_Error_Input_EURange,218,Variable
 Module2Type_Motor,220,Object
-Module2Type_Motor_Speed,221,Variable
-Module2Type_Motor_Speed_EURange,225,Variable
 BeltType,227,ObjectType
 BeltType_Module1,228,Object
 BeltType_Module1_Error,229,Object
@@ -81,8 +75,6 @@ BeltType_Module1_QuantityNonMetallic,271,Object
 BeltType_Module1_QuantityNonMetallic_Input,272,Variable
 BeltType_Module1_QuantityNonMetallic_Input_EURange,276,Variable
 BeltType_Module1_Motor,278,Object
-BeltType_Module1_Motor_Speed,279,Variable
-BeltType_Module1_Motor_Speed_EURange,283,Variable
 BeltType_Module2,285,Object
 BeltType_Module2_Barrier1,286,Object
 BeltType_Module2_Barrier1_Output,287,Variable
@@ -106,8 +98,6 @@ BeltType_Module2_Error,328,Object
 BeltType_Module2_Error_Input,329,Variable
 BeltType_Module2_Error_Input_EURange,333,Variable
 BeltType_Module2_Motor,335,Object
-BeltType_Module2_Motor_Speed,336,Variable
-BeltType_Module2_Motor_Speed_EURange,340,Variable
 BeltServer,345,Object
 BeltServer_Module1,346,Object
 BeltServer_Module1_Error,347,Object
@@ -126,8 +116,6 @@ BeltServer_Module1_QuantityNonMetallic,389,Object
 BeltServer_Module1_QuantityNonMetallic_Input,390,Variable
 BeltServer_Module1_QuantityNonMetallic_Input_EURange,394,Variable
 BeltServer_Module1_Motor,396,Object
-BeltServer_Module1_Motor_Speed,397,Variable
-BeltServer_Module1_Motor_Speed_EURange,401,Variable
 BeltServer_Module2,403,Object
 BeltServer_Module2_Barrier1,404,Object
 BeltServer_Module2_Barrier1_Output,405,Variable
@@ -151,8 +139,6 @@ BeltServer_Module2_Error,446,Object
 BeltServer_Module2_Error_Input,447,Variable
 BeltServer_Module2_Error_Input_EURange,451,Variable
 BeltServer_Module2_Motor,453,Object
-BeltServer_Module2_Motor_Speed,454,Variable
-BeltServer_Module2_Motor_Speed_EURange,458,Variable
 MotorType,799,ObjectType
 BusyIlumination,806,ObjectType
 Module1Type_Busy,813,Object
@@ -219,3 +205,17 @@ BeltServer_Module1_Transparent_Input_EURange,962,Variable
 BeltServer_Module1_QuantityTransparent,964,Object
 BeltServer_Module1_QuantityTransparent_Input,965,Variable
 BeltServer_Module1_QuantityTransparent_Input_EURange,969,Variable
+GenericMotorType_JourneyTime,971,Variable
+GenericMotorType_JourneyTime_EURange,975,Variable
+Module1Type_Motor_JourneyTime,983,Variable
+Module1Type_Motor_JourneyTime_EURange,987,Variable
+Module2Type_Motor_JourneyTime,989,Variable
+Module2Type_Motor_JourneyTime_EURange,993,Variable
+BeltType_Module1_Motor_JourneyTime,995,Variable
+BeltType_Module1_Motor_JourneyTime_EURange,999,Variable
+BeltType_Module2_Motor_JourneyTime,1001,Variable
+BeltType_Module2_Motor_JourneyTime_EURange,1005,Variable
+BeltServer_Module1_Motor_JourneyTime,1007,Variable
+BeltServer_Module1_Motor_JourneyTime_EURange,1011,Variable
+BeltServer_Module2_Motor_JourneyTime,1013,Variable
+BeltServer_Module2_Motor_JourneyTime_EURange,1017,Variable

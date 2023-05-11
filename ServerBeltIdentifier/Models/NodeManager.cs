@@ -66,37 +66,37 @@ namespace ServerBeltIdentifier.Models
 
         private ServiceResult OnStartModule1Process(ISystemContext context, MethodState method, IList<object> inputArguments, IList<object> outputArguments)
         {
-            ServerForm.beltModule1.Start();
+            ServerForm.BeltModule1.Start();
             return ServiceResult.Good;
         }
 
         private ServiceResult OnStopModule1Process(ISystemContext context, MethodState method, IList<object> inputArguments, IList<object> outputArguments)
         {
-            ServerForm.beltModule1.Stop();
+            ServerForm.BeltModule1.Stop();
             return ServiceResult.Good;
         }
 
         private ServiceResult OnResetModule1Process(ISystemContext context, MethodState method, IList<object> inputArguments, IList<object> outputArguments)
         {
-            ServerForm.beltModule1.Reset();
+            ServerForm.BeltModule1.Reset();
             return ServiceResult.Good;
         }
 
         private ServiceResult OnStartModule2Process(ISystemContext context, MethodState method, IList<object> inputArguments, IList<object> outputArguments)
         {
-            ServerForm.beltModule2.Start();
+            ServerForm.BeltModule2.Start();
             return ServiceResult.Good;
         }
 
         private ServiceResult OnStopModule2Process(ISystemContext context, MethodState method, IList<object> inputArguments, IList<object> outputArguments)
         {
-            ServerForm.beltModule2.Stop();
+            ServerForm.BeltModule2.Stop();
             return ServiceResult.Good;
         }
 
         private ServiceResult OnResetModule2Process(ISystemContext context, MethodState method, IList<object> inputArguments, IList<object> outputArguments)
         {
-            ServerForm.beltModule2.Reset();
+            ServerForm.BeltModule2.Reset();
             return ServiceResult.Good;
         }
 
@@ -109,7 +109,7 @@ namespace ServerBeltIdentifier.Models
             Belt.Module1.QuantityTransparent.Input.Value = 0;
             Belt.Module1.QuantityMetallic.Input.Value = 0;
             Belt.Module1.QuantityNonMetallic.Input.Value = 0;
-            Belt.Module1.Motor.Speed.Value = 1;
+            Belt.Module1.Motor.JourneyTime.Value = 1;
             Belt.Module1.Motor.Status.Value = false;
             Belt.Module1.Busy.Input.Value = false;
 
@@ -119,7 +119,7 @@ namespace ServerBeltIdentifier.Models
             Belt.Module2.PhotoSensor.Output.Value = false;
             Belt.Module2.Inductive.Output.Value = true;
             Belt.Module2.Capacitive.Output.Value = true;
-            Belt.Module2.Motor.Speed.Value = 1;
+            Belt.Module2.Motor.JourneyTime.Value = 1;
             Belt.Module2.Motor.Status.Value = false;
             Belt.Module2.Error.Input.Value = false;
             Belt.Module2.Busy.Input.Value= false;

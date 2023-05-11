@@ -46,7 +46,7 @@ TargetNamespace="http://opcfoundation.org/BeltIdentifier"
 	<opc:ObjectType SymbolicName="GenericMotorType" BaseType="ua:BaseObjectType">
 		<opc:Description>A generic motor.</opc:Description>
 		<opc:Children>
-			<opc:Variable SymbolicName="Speed" DataType="ua:Int32"  ValueRank="Scalar" TypeDefinition="ua:AnalogItemType" AccessLevel="ReadWrite"/>
+			<opc:Variable SymbolicName="JourneyTime" DataType="ua:Int32"  ValueRank="Scalar" TypeDefinition="ua:AnalogItemType" AccessLevel="ReadWrite"/>
 			<opc:Variable SymbolicName="Status" DataType="ua:Boolean"  ValueRank="Scalar" TypeDefinition="ua:AnalogItemType" AccessLevel="ReadWrite"/>
 		</opc:Children>
 	</opc:ObjectType>

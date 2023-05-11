@@ -27,12 +27,17 @@
  * http://opcfoundation.org/License/MIT/1.00/
  * ======================================================================*/
 
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Xml;
+using System.Runtime.Serialization;
 using Opc.Ua;
 
 namespace BeltIdentifier
 {
     #region GenericSensorState Class
-#if (!OPCUA_EXCLUDE_GenericSensorState)
+    #if (!OPCUA_EXCLUDE_GenericSensorState)
     /// <remarks />
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
@@ -495,32 +500,32 @@ namespace BeltIdentifier
         #region Initialization String
         private const string InitializationString =
            "AQAAACcAAABodHRwOi8vb3BjZm91bmRhdGlvbi5vcmcvQmVsdElkZW50aWZpZXL/////BGCAAgEAAAAB" +
-           "ABgAAABHZW5lcmljTW90b3JUeXBlSW5zdGFuY2UBARYAAQEWABYAAAD/////AgAAABVgiQoCAAAAAQAF" +
-           "AAAAU3BlZWQBARcAAC8BAEAJFwAAAAAG/////wMD/////wEAAAAVYIkKAgAAAAAABwAAAEVVUmFuZ2UB" +
-           "ARsAAC4ARBsAAAABAHQD/////wEB/////wAAAAAVYIkKAgAAAAEABgAAAFN0YXR1cwEBVwMALwEAQAlX" +
-           "AwAAAAH/////AwP/////AQAAABVgiQoCAAAAAAAHAAAARVVSYW5nZQEBWwMALgBEWwMAAAEAdAP/////" +
-           "AQH/////AAAAAA==";
+           "ABgAAABHZW5lcmljTW90b3JUeXBlSW5zdGFuY2UBARYAAQEWABYAAAD/////AgAAABVgiQoCAAAAAQAL" +
+           "AAAASm91cm5leVRpbWUBAcsDAC8BAEAJywMAAAAG/////wMD/////wEAAAAVYIkKAgAAAAAABwAAAEVV" +
+           "UmFuZ2UBAc8DAC4ARM8DAAABAHQD/////wEB/////wAAAAAVYIkKAgAAAAEABgAAAFN0YXR1cwEBVwMA" +
+           "LwEAQAlXAwAAAAH/////AwP/////AQAAABVgiQoCAAAAAAAHAAAARVVSYW5nZQEBWwMALgBEWwMAAAEA" +
+           "dAP/////AQH/////AAAAAA==";
         #endregion
         #endif
         #endregion
 
         #region Public Properties
         /// <remarks />
-        public AnalogItemState<int> Speed
+        public AnalogItemState<int> JourneyTime
         {
             get
             {
-                return m_speed;
+                return m_journeyTime;
             }
 
             set
             {
-                if (!Object.ReferenceEquals(m_speed, value))
+                if (!Object.ReferenceEquals(m_journeyTime, value))
                 {
                     ChangeMasks |= NodeStateChangeMasks.Children;
                 }
 
-                m_speed = value;
+                m_journeyTime = value;
             }
         }
 
@@ -550,9 +555,9 @@ namespace BeltIdentifier
             ISystemContext context,
             IList<BaseInstanceState> children)
         {
-            if (m_speed != null)
+            if (m_journeyTime != null)
             {
-                children.Add(m_speed);
+                children.Add(m_journeyTime);
             }
 
             if (m_status != null)
@@ -579,24 +584,24 @@ namespace BeltIdentifier
 
             switch (browseName.Name)
             {
-                case BeltIdentifier.BrowseNames.Speed:
+                case BeltIdentifier.BrowseNames.JourneyTime:
                 {
                     if (createOrReplace)
                     {
-                        if (Speed == null)
+                        if (JourneyTime == null)
                         {
                             if (replacement == null)
                             {
-                                Speed = new AnalogItemState<int>(this);
+                                JourneyTime = new AnalogItemState<int>(this);
                             }
                             else
                             {
-                                Speed = (AnalogItemState<int>)replacement;
+                                JourneyTime = (AnalogItemState<int>)replacement;
                             }
                         }
                     }
 
-                    instance = Speed;
+                    instance = JourneyTime;
                     break;
                 }
 
@@ -632,7 +637,7 @@ namespace BeltIdentifier
         #endregion
 
         #region Private Fields
-        private AnalogItemState<int> m_speed;
+        private AnalogItemState<int> m_journeyTime;
         private AnalogItemState<bool> m_status;
         #endregion
     }
@@ -1439,11 +1444,11 @@ namespace BeltIdentifier
         #region Initialization String
         private const string InitializationString =
            "AQAAACcAAABodHRwOi8vb3BjZm91bmRhdGlvbi5vcmcvQmVsdElkZW50aWZpZXL/////BGCAAgEAAAAB" +
-           "ABEAAABNb3RvclR5cGVJbnN0YW5jZQEBHwMBAR8DHwMAAP////8CAAAAFWCJCgIAAAABAAUAAABTcGVl" +
-           "ZAEBIAMALwEAQAkgAwAAAAb/////AwP/////AQAAABVgiQoCAAAAAAAHAAAARVVSYW5nZQEBJAMALgBE" +
-           "JAMAAAEAdAP/////AQH/////AAAAABVgiQoCAAAAAQAGAAAAU3RhdHVzAQFdAwAvAQBACV0DAAAAAf//" +
-           "//8DA/////8BAAAAFWCJCgIAAAAAAAcAAABFVVJhbmdlAQFhAwAuAERhAwAAAQB0A/////8BAf////8A" +
-           "AAAA";
+           "ABEAAABNb3RvclR5cGVJbnN0YW5jZQEBHwMBAR8DHwMAAP////8CAAAAFWCJCgIAAAABAAsAAABKb3Vy" +
+           "bmV5VGltZQEB0QMALwEAQAnRAwAAAAb/////AwP/////AQAAABVgiQoCAAAAAAAHAAAARVVSYW5nZQEB" +
+           "1QMALgBE1QMAAAEAdAP/////AQH/////AAAAABVgiQoCAAAAAQAGAAAAU3RhdHVzAQFdAwAvAQBACV0D" +
+           "AAAAAf////8DA/////8BAAAAFWCJCgIAAAAAAAcAAABFVVJhbmdlAQFhAwAuAERhAwAAAQB0A/////8B" +
+           "Af////8AAAAA";
         #endregion
         #endif
         #endregion
@@ -1525,10 +1530,10 @@ namespace BeltIdentifier
            "/wEB/////wAAAACEYIAKAQAAAAEAEwAAAFF1YW50aXR5Tm9uTWV0YWxsaWMBAZwAAC8BAWMAnAAAAAH/" +
            "////AQAAABVgiQoCAAAAAQAFAAAASW5wdXQBAZ0AAC8BAEAJnQAAAAAG/////wMD/////wEAAAAVYIkK" +
            "AgAAAAAABwAAAEVVUmFuZ2UBAaEAAC4ARKEAAAABAHQD/////wEB/////wAAAACEYIAKAQAAAAEABQAA" +
-           "AE1vdG9yAQGjAAAvAQEfA6MAAAAB/////wIAAAAVYIkKAgAAAAEABQAAAFNwZWVkAQGkAAAvAQBACaQA" +
-           "AAAABv////8DA/////8BAAAAFWCJCgIAAAAAAAcAAABFVVJhbmdlAQGoAAAuAESoAAAAAQB0A/////8B" +
-           "Af////8AAAAAFWCJCgIAAAABAAYAAABTdGF0dXMBAWMDAC8BAEAJYwMAAAAB/////wMD/////wEAAAAV" +
-           "YIkKAgAAAAAABwAAAEVVUmFuZ2UBAWcDAC4ARGcDAAABAHQD/////wEB/////wAAAAA=";
+           "AE1vdG9yAQGjAAAvAQEfA6MAAAAB/////wIAAAAVYIkKAgAAAAEACwAAAEpvdXJuZXlUaW1lAQHXAwAv" +
+           "AQBACdcDAAAABv////8DA/////8BAAAAFWCJCgIAAAAAAAcAAABFVVJhbmdlAQHbAwAuAETbAwAAAQB0" +
+           "A/////8BAf////8AAAAAFWCJCgIAAAABAAYAAABTdGF0dXMBAWMDAC8BAEAJYwMAAAAB/////wMD////" +
+           "/wEAAAAVYIkKAgAAAAAABwAAAEVVUmFuZ2UBAWcDAC4ARGcDAAABAHQD/////wEB/////wAAAAA=";
         #endregion
         #endif
         #endregion
@@ -2055,10 +2060,10 @@ namespace BeltIdentifier
            "AACEYIAKAQAAAAEABAAAAEJ1c3kBATQDAC8BASYDNAMAAAH/////AQAAABVgiQoCAAAAAQAFAAAASW5w" +
            "dXQBATUDAC8BAEAJNQMAAAAB/////wMD/////wEAAAAVYIkKAgAAAAAABwAAAEVVUmFuZ2UBATkDAC4A" +
            "RDkDAAABAHQD/////wEB/////wAAAACEYIAKAQAAAAEABQAAAE1vdG9yAQHcAAAvAQEfA9wAAAAB////" +
-           "/wIAAAAVYIkKAgAAAAEABQAAAFNwZWVkAQHdAAAvAQBACd0AAAAABv////8DA/////8BAAAAFWCJCgIA" +
-           "AAAAAAcAAABFVVJhbmdlAQHhAAAuAEThAAAAAQB0A/////8BAf////8AAAAAFWCJCgIAAAABAAYAAABT" +
-           "dGF0dXMBAWkDAC8BAEAJaQMAAAAB/////wMD/////wEAAAAVYIkKAgAAAAAABwAAAEVVUmFuZ2UBAW0D" +
-           "AC4ARG0DAAABAHQD/////wEB/////wAAAAA=";
+           "/wIAAAAVYIkKAgAAAAEACwAAAEpvdXJuZXlUaW1lAQHdAwAvAQBACd0DAAAABv////8DA/////8BAAAA" +
+           "FWCJCgIAAAAAAAcAAABFVVJhbmdlAQHhAwAuAEThAwAAAQB0A/////8BAf////8AAAAAFWCJCgIAAAAB" +
+           "AAYAAABTdGF0dXMBAWkDAC8BAEAJaQMAAAAB/////wMD/////wEAAAAVYIkKAgAAAAAABwAAAEVVUmFu" +
+           "Z2UBAW0DAC4ARG0DAAABAHQD/////wEB/////wAAAAA=";
         #endregion
         #endif
         #endregion
@@ -2586,41 +2591,41 @@ namespace BeltIdentifier
            "AEQNAQAAAQB0A/////8BAf////8AAAAAhGCACgEAAAABABMAAABRdWFudGl0eU5vbk1ldGFsbGljAQEP" +
            "AQAvAQFjAA8BAAAB/////wEAAAAVYIkKAgAAAAEABQAAAElucHV0AQEQAQAvAQBACRABAAAABv////8D" +
            "A/////8BAAAAFWCJCgIAAAAAAAcAAABFVVJhbmdlAQEUAQAuAEQUAQAAAQB0A/////8BAf////8AAAAA" +
-           "hGCACgEAAAABAAUAAABNb3RvcgEBFgEALwEBHwMWAQAAAf////8CAAAAFWCJCgIAAAABAAUAAABTcGVl" +
-           "ZAEBFwEALwEAQAkXAQAAAAb/////AwP/////AQAAABVgiQoCAAAAAAAHAAAARVVSYW5nZQEBGwEALgBE" +
-           "GwEAAAEAdAP/////AQH/////AAAAABVgiQoCAAAAAQAGAAAAU3RhdHVzAQFvAwAvAQBACW8DAAAAAf//" +
-           "//8DA/////8BAAAAFWCJCgIAAAAAAAcAAABFVVJhbmdlAQFzAwAuAERzAwAAAQB0A/////8BAf////8A" +
-           "AAAAhGDACgEAAAAHAAAATW9kdWxlMgEADQAAAEJlbHQgTW9kdWxlIDIBAR0BAC8BAaoAHQEAAAEBAAAA" +
-           "ADAAAQEeAQkAAACEYIAKAQAAAAEACAAAAEJhcnJpZXIxAQEeAQAvAQEdAB4BAAABAQAAAAAwAQEBHQEB" +
-           "AAAAFWCJCgIAAAABAAYAAABPdXRwdXQBAR8BAC8BAEAJHwEAAAAB/////wMD/////wEAAAAVYIkKAgAA" +
-           "AAAABwAAAEVVUmFuZ2UBASMBAC4ARCMBAAABAHQD/////wEB/////wAAAACEYIAKAQAAAAEACAAAAEJh" +
-           "cnJpZXIyAQElAQAvAQEdACUBAAAB/////wEAAAAVYIkKAgAAAAEABgAAAE91dHB1dAEBJgEALwEAQAkm" +
-           "AQAAAAH/////AwP/////AQAAABVgiQoCAAAAAAAHAAAARVVSYW5nZQEBKgEALgBEKgEAAAEAdAP/////" +
-           "AQH/////AAAAAIRggAoBAAAAAQAIAAAAQmFycmllcjMBASwBAC8BAR0ALAEAAAH/////AQAAABVgiQoC" +
-           "AAAAAQAGAAAAT3V0cHV0AQEtAQAvAQBACS0BAAAAAf////8DA/////8BAAAAFWCJCgIAAAAAAAcAAABF" +
-           "VVJhbmdlAQExAQAuAEQxAQAAAQB0A/////8BAf////8AAAAAhGCACgEAAAABAAsAAABQaG90b1NlbnNv" +
-           "cgEBMwEALwEBJAAzAQAAAf////8BAAAAFWCJCgIAAAABAAYAAABPdXRwdXQBATQBAC8BAEAJNAEAAAAB" +
-           "/////wMD/////wEAAAAVYIkKAgAAAAAABwAAAEVVUmFuZ2UBATgBAC4ARDgBAAABAHQD/////wEB////" +
-           "/wAAAACEYIAKAQAAAAEACgAAAENhcGFjaXRpdmUBAToBAC8BASsAOgEAAAH/////AQAAABVgiQoCAAAA" +
-           "AQAGAAAAT3V0cHV0AQE7AQAvAQBACTsBAAAAAf////8DA/////8BAAAAFWCJCgIAAAAAAAcAAABFVVJh" +
-           "bmdlAQE/AQAuAEQ/AQAAAQB0A/////8BAf////8AAAAAhGCACgEAAAABAAkAAABJbmR1Y3RpdmUBAUEB" +
-           "AC8BATIAQQEAAAH/////AQAAABVgiQoCAAAAAQAGAAAAT3V0cHV0AQFCAQAvAQBACUIBAAAAAf////8D" +
-           "A/////8BAAAAFWCJCgIAAAAAAAcAAABFVVJhbmdlAQFGAQAuAERGAQAAAQB0A/////8BAf////8AAAAA" +
-           "hGCACgEAAAABAAUAAABFcnJvcgEBSAEALwEBTgBIAQAAAf////8BAAAAFWCJCgIAAAABAAUAAABJbnB1" +
-           "dAEBSQEALwEAQAlJAQAAAAH/////AwP/////AQAAABVgiQoCAAAAAAAHAAAARVVSYW5nZQEBTQEALgBE" +
-           "TQEAAAEAdAP/////AQH/////AAAAAIRggAoBAAAAAQAEAAAAQnVzeQEBQgMALwEBJgNCAwAAAf////8B" +
-           "AAAAFWCJCgIAAAABAAUAAABJbnB1dAEBQwMALwEAQAlDAwAAAAH/////AwP/////AQAAABVgiQoCAAAA" +
-           "AAAHAAAARVVSYW5nZQEBRwMALgBERwMAAAEAdAP/////AQH/////AAAAAIRggAoBAAAAAQAFAAAATW90" +
-           "b3IBAU8BAC8BAR8DTwEAAAH/////AgAAABVgiQoCAAAAAQAFAAAAU3BlZWQBAVABAC8BAEAJUAEAAAAG" +
-           "/////wMD/////wEAAAAVYIkKAgAAAAAABwAAAEVVUmFuZ2UBAVQBAC4ARFQBAAABAHQD/////wEB////" +
-           "/wAAAAAVYIkKAgAAAAEABgAAAFN0YXR1cwEBdQMALwEAQAl1AwAAAAH/////AwP/////AQAAABVgiQoC" +
-           "AAAAAAAHAAAARVVSYW5nZQEBeQMALgBEeQMAAAEAdAP/////AQH/////AAAAAARhggoEAAAAAQATAAAA" +
-           "U3RhcnRNb2R1bGUxUHJvY2VzcwEBhwMALwEBhwOHAwAAAQH/////AAAAAARhggoEAAAAAQASAAAAU3Rv" +
-           "cE1vZHVsZTFQcm9jZXNzAQGIAwAvAQGIA4gDAAABAf////8AAAAABGGCCgQAAAABABMAAABSZXNldE1v" +
-           "ZHVsZTFQcm9jZXNzAQGJAwAvAQGJA4kDAAABAf////8AAAAABGGCCgQAAAABABMAAABTdGFydE1vZHVs" +
-           "ZTJQcm9jZXNzAQGKAwAvAQGKA4oDAAABAf////8AAAAABGGCCgQAAAABABIAAABTdG9wTW9kdWxlMlBy" +
-           "b2Nlc3MBAYsDAC8BAYsDiwMAAAEB/////wAAAAAEYYIKBAAAAAEAEwAAAFJlc2V0TW9kdWxlMlByb2Nl" +
-           "c3MBAYwDAC8BAYwDjAMAAAEB/////wAAAAA=";
+           "hGCACgEAAAABAAUAAABNb3RvcgEBFgEALwEBHwMWAQAAAf////8CAAAAFWCJCgIAAAABAAsAAABKb3Vy" +
+           "bmV5VGltZQEB4wMALwEAQAnjAwAAAAb/////AwP/////AQAAABVgiQoCAAAAAAAHAAAARVVSYW5nZQEB" +
+           "5wMALgBE5wMAAAEAdAP/////AQH/////AAAAABVgiQoCAAAAAQAGAAAAU3RhdHVzAQFvAwAvAQBACW8D" +
+           "AAAAAf////8DA/////8BAAAAFWCJCgIAAAAAAAcAAABFVVJhbmdlAQFzAwAuAERzAwAAAQB0A/////8B" +
+           "Af////8AAAAAhGDACgEAAAAHAAAATW9kdWxlMgEADQAAAEJlbHQgTW9kdWxlIDIBAR0BAC8BAaoAHQEA" +
+           "AAEBAAAAADAAAQEeAQkAAACEYIAKAQAAAAEACAAAAEJhcnJpZXIxAQEeAQAvAQEdAB4BAAABAQAAAAAw" +
+           "AQEBHQEBAAAAFWCJCgIAAAABAAYAAABPdXRwdXQBAR8BAC8BAEAJHwEAAAAB/////wMD/////wEAAAAV" +
+           "YIkKAgAAAAAABwAAAEVVUmFuZ2UBASMBAC4ARCMBAAABAHQD/////wEB/////wAAAACEYIAKAQAAAAEA" +
+           "CAAAAEJhcnJpZXIyAQElAQAvAQEdACUBAAAB/////wEAAAAVYIkKAgAAAAEABgAAAE91dHB1dAEBJgEA" +
+           "LwEAQAkmAQAAAAH/////AwP/////AQAAABVgiQoCAAAAAAAHAAAARVVSYW5nZQEBKgEALgBEKgEAAAEA" +
+           "dAP/////AQH/////AAAAAIRggAoBAAAAAQAIAAAAQmFycmllcjMBASwBAC8BAR0ALAEAAAH/////AQAA" +
+           "ABVgiQoCAAAAAQAGAAAAT3V0cHV0AQEtAQAvAQBACS0BAAAAAf////8DA/////8BAAAAFWCJCgIAAAAA" +
+           "AAcAAABFVVJhbmdlAQExAQAuAEQxAQAAAQB0A/////8BAf////8AAAAAhGCACgEAAAABAAsAAABQaG90" +
+           "b1NlbnNvcgEBMwEALwEBJAAzAQAAAf////8BAAAAFWCJCgIAAAABAAYAAABPdXRwdXQBATQBAC8BAEAJ" +
+           "NAEAAAAB/////wMD/////wEAAAAVYIkKAgAAAAAABwAAAEVVUmFuZ2UBATgBAC4ARDgBAAABAHQD////" +
+           "/wEB/////wAAAACEYIAKAQAAAAEACgAAAENhcGFjaXRpdmUBAToBAC8BASsAOgEAAAH/////AQAAABVg" +
+           "iQoCAAAAAQAGAAAAT3V0cHV0AQE7AQAvAQBACTsBAAAAAf////8DA/////8BAAAAFWCJCgIAAAAAAAcA" +
+           "AABFVVJhbmdlAQE/AQAuAEQ/AQAAAQB0A/////8BAf////8AAAAAhGCACgEAAAABAAkAAABJbmR1Y3Rp" +
+           "dmUBAUEBAC8BATIAQQEAAAH/////AQAAABVgiQoCAAAAAQAGAAAAT3V0cHV0AQFCAQAvAQBACUIBAAAA" +
+           "Af////8DA/////8BAAAAFWCJCgIAAAAAAAcAAABFVVJhbmdlAQFGAQAuAERGAQAAAQB0A/////8BAf//" +
+           "//8AAAAAhGCACgEAAAABAAUAAABFcnJvcgEBSAEALwEBTgBIAQAAAf////8BAAAAFWCJCgIAAAABAAUA" +
+           "AABJbnB1dAEBSQEALwEAQAlJAQAAAAH/////AwP/////AQAAABVgiQoCAAAAAAAHAAAARVVSYW5nZQEB" +
+           "TQEALgBETQEAAAEAdAP/////AQH/////AAAAAIRggAoBAAAAAQAEAAAAQnVzeQEBQgMALwEBJgNCAwAA" +
+           "Af////8BAAAAFWCJCgIAAAABAAUAAABJbnB1dAEBQwMALwEAQAlDAwAAAAH/////AwP/////AQAAABVg" +
+           "iQoCAAAAAAAHAAAARVVSYW5nZQEBRwMALgBERwMAAAEAdAP/////AQH/////AAAAAIRggAoBAAAAAQAF" +
+           "AAAATW90b3IBAU8BAC8BAR8DTwEAAAH/////AgAAABVgiQoCAAAAAQALAAAASm91cm5leVRpbWUBAekD" +
+           "AC8BAEAJ6QMAAAAG/////wMD/////wEAAAAVYIkKAgAAAAAABwAAAEVVUmFuZ2UBAe0DAC4ARO0DAAAB" +
+           "AHQD/////wEB/////wAAAAAVYIkKAgAAAAEABgAAAFN0YXR1cwEBdQMALwEAQAl1AwAAAAH/////AwP/" +
+           "////AQAAABVgiQoCAAAAAAAHAAAARVVSYW5nZQEBeQMALgBEeQMAAAEAdAP/////AQH/////AAAAAARh" +
+           "ggoEAAAAAQATAAAAU3RhcnRNb2R1bGUxUHJvY2VzcwEBhwMALwEBhwOHAwAAAQH/////AAAAAARhggoE" +
+           "AAAAAQASAAAAU3RvcE1vZHVsZTFQcm9jZXNzAQGIAwAvAQGIA4gDAAABAf////8AAAAABGGCCgQAAAAB" +
+           "ABMAAABSZXNldE1vZHVsZTFQcm9jZXNzAQGJAwAvAQGJA4kDAAABAf////8AAAAABGGCCgQAAAABABMA" +
+           "AABTdGFydE1vZHVsZTJQcm9jZXNzAQGKAwAvAQGKA4oDAAABAf////8AAAAABGGCCgQAAAABABIAAABT" +
+           "dG9wTW9kdWxlMlByb2Nlc3MBAYsDAC8BAYsDiwMAAAEB/////wAAAAAEYYIKBAAAAAEAEwAAAFJlc2V0" +
+           "TW9kdWxlMlByb2Nlc3MBAYwDAC8BAYwDjAMAAAEB/////wAAAAA=";
         #endregion
         #endif
         #endregion

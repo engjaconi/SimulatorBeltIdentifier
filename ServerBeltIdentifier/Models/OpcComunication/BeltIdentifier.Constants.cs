@@ -27,6 +27,12 @@
  * http://opcfoundation.org/License/MIT/1.00/
  * ======================================================================*/
 
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Reflection;
+using System.Xml;
+using System.Runtime.Serialization;
 using Opc.Ua;
 
 namespace BeltIdentifier
@@ -353,10 +359,10 @@ namespace BeltIdentifier
         public const uint GenericDisplayType_Input_EURange = 20;
 
         /// <remarks />
-        public const uint GenericMotorType_Speed = 23;
+        public const uint GenericMotorType_JourneyTime = 971;
 
         /// <remarks />
-        public const uint GenericMotorType_Speed_EURange = 27;
+        public const uint GenericMotorType_JourneyTime_EURange = 975;
 
         /// <remarks />
         public const uint GenericMotorType_Status = 855;
@@ -401,7 +407,7 @@ namespace BeltIdentifier
         public const uint QuantityNonMetallicPiece_Input_EURange = 104;
 
         /// <remarks />
-        public const uint MotorType_Speed_EURange = 804;
+        public const uint MotorType_JourneyTime_EURange = 981;
 
         /// <remarks />
         public const uint MotorType_Status_EURange = 865;
@@ -455,10 +461,10 @@ namespace BeltIdentifier
         public const uint Module1Type_QuantityNonMetallic_Input_EURange = 161;
 
         /// <remarks />
-        public const uint Module1Type_Motor_Speed = 164;
+        public const uint Module1Type_Motor_JourneyTime = 983;
 
         /// <remarks />
-        public const uint Module1Type_Motor_Speed_EURange = 168;
+        public const uint Module1Type_Motor_JourneyTime_EURange = 987;
 
         /// <remarks />
         public const uint Module1Type_Motor_Status = 867;
@@ -515,10 +521,10 @@ namespace BeltIdentifier
         public const uint Module2Type_Busy_Input_EURange = 825;
 
         /// <remarks />
-        public const uint Module2Type_Motor_Speed = 221;
+        public const uint Module2Type_Motor_JourneyTime = 989;
 
         /// <remarks />
-        public const uint Module2Type_Motor_Speed_EURange = 225;
+        public const uint Module2Type_Motor_JourneyTime_EURange = 993;
 
         /// <remarks />
         public const uint Module2Type_Motor_Status = 873;
@@ -575,10 +581,10 @@ namespace BeltIdentifier
         public const uint BeltType_Module1_QuantityNonMetallic_Input_EURange = 276;
 
         /// <remarks />
-        public const uint BeltType_Module1_Motor_Speed = 279;
+        public const uint BeltType_Module1_Motor_JourneyTime = 995;
 
         /// <remarks />
-        public const uint BeltType_Module1_Motor_Speed_EURange = 283;
+        public const uint BeltType_Module1_Motor_JourneyTime_EURange = 999;
 
         /// <remarks />
         public const uint BeltType_Module1_Motor_Status = 879;
@@ -635,10 +641,10 @@ namespace BeltIdentifier
         public const uint BeltType_Module2_Busy_Input_EURange = 839;
 
         /// <remarks />
-        public const uint BeltType_Module2_Motor_Speed = 336;
+        public const uint BeltType_Module2_Motor_JourneyTime = 1001;
 
         /// <remarks />
-        public const uint BeltType_Module2_Motor_Speed_EURange = 340;
+        public const uint BeltType_Module2_Motor_JourneyTime_EURange = 1005;
 
         /// <remarks />
         public const uint BeltType_Module2_Motor_Status = 885;
@@ -695,10 +701,10 @@ namespace BeltIdentifier
         public const uint BeltServer_Module1_QuantityNonMetallic_Input_EURange = 394;
 
         /// <remarks />
-        public const uint BeltServer_Module1_Motor_Speed = 397;
+        public const uint BeltServer_Module1_Motor_JourneyTime = 1007;
 
         /// <remarks />
-        public const uint BeltServer_Module1_Motor_Speed_EURange = 401;
+        public const uint BeltServer_Module1_Motor_JourneyTime_EURange = 1011;
 
         /// <remarks />
         public const uint BeltServer_Module1_Motor_Status = 891;
@@ -755,10 +761,10 @@ namespace BeltIdentifier
         public const uint BeltServer_Module2_Busy_Input_EURange = 853;
 
         /// <remarks />
-        public const uint BeltServer_Module2_Motor_Speed = 454;
+        public const uint BeltServer_Module2_Motor_JourneyTime = 1013;
 
         /// <remarks />
-        public const uint BeltServer_Module2_Motor_Speed_EURange = 458;
+        public const uint BeltServer_Module2_Motor_JourneyTime_EURange = 1017;
 
         /// <remarks />
         public const uint BeltServer_Module2_Motor_Status = 897;
@@ -1090,10 +1096,10 @@ namespace BeltIdentifier
         public static readonly ExpandedNodeId GenericDisplayType_Input_EURange = new ExpandedNodeId(BeltIdentifier.Variables.GenericDisplayType_Input_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId GenericMotorType_Speed = new ExpandedNodeId(BeltIdentifier.Variables.GenericMotorType_Speed, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId GenericMotorType_JourneyTime = new ExpandedNodeId(BeltIdentifier.Variables.GenericMotorType_JourneyTime, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId GenericMotorType_Speed_EURange = new ExpandedNodeId(BeltIdentifier.Variables.GenericMotorType_Speed_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId GenericMotorType_JourneyTime_EURange = new ExpandedNodeId(BeltIdentifier.Variables.GenericMotorType_JourneyTime_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
         public static readonly ExpandedNodeId GenericMotorType_Status = new ExpandedNodeId(BeltIdentifier.Variables.GenericMotorType_Status, BeltIdentifier.Namespaces.BeltIdentifier);
@@ -1138,7 +1144,7 @@ namespace BeltIdentifier
         public static readonly ExpandedNodeId QuantityNonMetallicPiece_Input_EURange = new ExpandedNodeId(BeltIdentifier.Variables.QuantityNonMetallicPiece_Input_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId MotorType_Speed_EURange = new ExpandedNodeId(BeltIdentifier.Variables.MotorType_Speed_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId MotorType_JourneyTime_EURange = new ExpandedNodeId(BeltIdentifier.Variables.MotorType_JourneyTime_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
         public static readonly ExpandedNodeId MotorType_Status_EURange = new ExpandedNodeId(BeltIdentifier.Variables.MotorType_Status_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
@@ -1192,10 +1198,10 @@ namespace BeltIdentifier
         public static readonly ExpandedNodeId Module1Type_QuantityNonMetallic_Input_EURange = new ExpandedNodeId(BeltIdentifier.Variables.Module1Type_QuantityNonMetallic_Input_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId Module1Type_Motor_Speed = new ExpandedNodeId(BeltIdentifier.Variables.Module1Type_Motor_Speed, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId Module1Type_Motor_JourneyTime = new ExpandedNodeId(BeltIdentifier.Variables.Module1Type_Motor_JourneyTime, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId Module1Type_Motor_Speed_EURange = new ExpandedNodeId(BeltIdentifier.Variables.Module1Type_Motor_Speed_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId Module1Type_Motor_JourneyTime_EURange = new ExpandedNodeId(BeltIdentifier.Variables.Module1Type_Motor_JourneyTime_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
         public static readonly ExpandedNodeId Module1Type_Motor_Status = new ExpandedNodeId(BeltIdentifier.Variables.Module1Type_Motor_Status, BeltIdentifier.Namespaces.BeltIdentifier);
@@ -1252,10 +1258,10 @@ namespace BeltIdentifier
         public static readonly ExpandedNodeId Module2Type_Busy_Input_EURange = new ExpandedNodeId(BeltIdentifier.Variables.Module2Type_Busy_Input_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId Module2Type_Motor_Speed = new ExpandedNodeId(BeltIdentifier.Variables.Module2Type_Motor_Speed, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId Module2Type_Motor_JourneyTime = new ExpandedNodeId(BeltIdentifier.Variables.Module2Type_Motor_JourneyTime, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId Module2Type_Motor_Speed_EURange = new ExpandedNodeId(BeltIdentifier.Variables.Module2Type_Motor_Speed_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId Module2Type_Motor_JourneyTime_EURange = new ExpandedNodeId(BeltIdentifier.Variables.Module2Type_Motor_JourneyTime_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
         public static readonly ExpandedNodeId Module2Type_Motor_Status = new ExpandedNodeId(BeltIdentifier.Variables.Module2Type_Motor_Status, BeltIdentifier.Namespaces.BeltIdentifier);
@@ -1312,10 +1318,10 @@ namespace BeltIdentifier
         public static readonly ExpandedNodeId BeltType_Module1_QuantityNonMetallic_Input_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltType_Module1_QuantityNonMetallic_Input_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltType_Module1_Motor_Speed = new ExpandedNodeId(BeltIdentifier.Variables.BeltType_Module1_Motor_Speed, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltType_Module1_Motor_JourneyTime = new ExpandedNodeId(BeltIdentifier.Variables.BeltType_Module1_Motor_JourneyTime, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltType_Module1_Motor_Speed_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltType_Module1_Motor_Speed_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltType_Module1_Motor_JourneyTime_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltType_Module1_Motor_JourneyTime_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
         public static readonly ExpandedNodeId BeltType_Module1_Motor_Status = new ExpandedNodeId(BeltIdentifier.Variables.BeltType_Module1_Motor_Status, BeltIdentifier.Namespaces.BeltIdentifier);
@@ -1372,10 +1378,10 @@ namespace BeltIdentifier
         public static readonly ExpandedNodeId BeltType_Module2_Busy_Input_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltType_Module2_Busy_Input_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltType_Module2_Motor_Speed = new ExpandedNodeId(BeltIdentifier.Variables.BeltType_Module2_Motor_Speed, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltType_Module2_Motor_JourneyTime = new ExpandedNodeId(BeltIdentifier.Variables.BeltType_Module2_Motor_JourneyTime, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltType_Module2_Motor_Speed_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltType_Module2_Motor_Speed_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltType_Module2_Motor_JourneyTime_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltType_Module2_Motor_JourneyTime_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
         public static readonly ExpandedNodeId BeltType_Module2_Motor_Status = new ExpandedNodeId(BeltIdentifier.Variables.BeltType_Module2_Motor_Status, BeltIdentifier.Namespaces.BeltIdentifier);
@@ -1432,10 +1438,10 @@ namespace BeltIdentifier
         public static readonly ExpandedNodeId BeltServer_Module1_QuantityNonMetallic_Input_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_Module1_QuantityNonMetallic_Input_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltServer_Module1_Motor_Speed = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_Module1_Motor_Speed, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltServer_Module1_Motor_JourneyTime = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_Module1_Motor_JourneyTime, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltServer_Module1_Motor_Speed_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_Module1_Motor_Speed_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltServer_Module1_Motor_JourneyTime_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_Module1_Motor_JourneyTime_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
         public static readonly ExpandedNodeId BeltServer_Module1_Motor_Status = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_Module1_Motor_Status, BeltIdentifier.Namespaces.BeltIdentifier);
@@ -1492,10 +1498,10 @@ namespace BeltIdentifier
         public static readonly ExpandedNodeId BeltServer_Module2_Busy_Input_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_Module2_Busy_Input_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltServer_Module2_Motor_Speed = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_Module2_Motor_Speed, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltServer_Module2_Motor_JourneyTime = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_Module2_Motor_JourneyTime, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
-        public static readonly ExpandedNodeId BeltServer_Module2_Motor_Speed_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_Module2_Motor_Speed_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
+        public static readonly ExpandedNodeId BeltServer_Module2_Motor_JourneyTime_EURange = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_Module2_Motor_JourneyTime_EURange, BeltIdentifier.Namespaces.BeltIdentifier);
 
         /// <remarks />
         public static readonly ExpandedNodeId BeltServer_Module2_Motor_Status = new ExpandedNodeId(BeltIdentifier.Variables.BeltServer_Module2_Motor_Status, BeltIdentifier.Namespaces.BeltIdentifier);
@@ -1568,6 +1574,9 @@ namespace BeltIdentifier
         public const string Input = "Input";
 
         /// <remarks />
+        public const string JourneyTime = "JourneyTime";
+
+        /// <remarks />
         public const string Metallic = "Metallic";
 
         /// <remarks />
@@ -1629,9 +1638,6 @@ namespace BeltIdentifier
 
         /// <remarks />
         public const string ResetModule2Process = "ResetModule2Process";
-
-        /// <remarks />
-        public const string Speed = "Speed";
 
         /// <remarks />
         public const string StartModule1Process = "StartModule1Process";

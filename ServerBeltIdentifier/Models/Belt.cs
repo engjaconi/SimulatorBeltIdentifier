@@ -2,11 +2,12 @@
 {
     public abstract class Belt
     {
-        public int MotorSpeed;
+        public int JourneyTime;
         public bool MotorOn;
         public bool Busy;
         public bool Error;
         public bool StopClick;
+        public int Interval = 1;
 
         public void Start()
         {

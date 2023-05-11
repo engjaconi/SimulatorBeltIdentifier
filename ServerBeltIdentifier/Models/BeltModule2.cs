@@ -32,7 +32,7 @@
             WriteOpc();
         }
 
-        public void AddPieceManual(string pieceType, int speedMotor)
+        public void AddPieceManual(string pieceType)
         {
             if (Busy)
             {
@@ -42,7 +42,6 @@
                 return;
             }
             PieceType = pieceType;
-            MotorSpeed = speedMotor;
             Busy = true;
 
             switch (pieceType)
@@ -70,7 +69,7 @@
                 {
                     Barrier1 = true;
                     WriteOpc();
-                    Thread.Sleep(MotorSpeed * 1000);
+                    Thread.Sleep((JourneyTime / 6) * 1000);
                 }
 
                 if (!Error && !StopClick)
@@ -78,35 +77,35 @@
                     Barrier1 = false;
                     Barrier2 = true;
                     WriteOpc();
-                    Thread.Sleep(MotorSpeed * 1000);
+                    Thread.Sleep((JourneyTime / 6) * 1000);
                 }
 
                 if (!Error && !StopClick)
                 {
                     Barrier2 = false;
                     WriteOpc();
-                    Thread.Sleep(MotorSpeed * 1000);
+                    Thread.Sleep((JourneyTime / 6) * 1000);
                 }
 
                 if (!Error && !StopClick)
                 {
                     Capacitive = false;
                     WriteOpc();
-                    Thread.Sleep(MotorSpeed * 1000);
+                    Thread.Sleep((JourneyTime / 6) * 1000);
                 }
 
                 if (!Error && !StopClick)
                 {
                     Capacitive = true;
                     WriteOpc();
-                    Thread.Sleep(MotorSpeed * 1000);
+                    Thread.Sleep((JourneyTime / 6) * 1000);
                 }
 
                 if (!Error && !StopClick)
                 {
                     Barrier3 = true;
                     WriteOpc();
-                    Thread.Sleep(MotorSpeed * 1000);
+                    Thread.Sleep((JourneyTime / 6) * 1000);
                 }
 
                 if (!Error && !StopClick)
@@ -127,42 +126,42 @@
                 {
                     Barrier1 = true;
                     WriteOpc();
-                    Thread.Sleep(MotorSpeed * 1000);
+                    Thread.Sleep((JourneyTime / 6) * 1000);
                 }
                 if (!Error && !StopClick)
                 {
                     Barrier1 = false;
                     Barrier2 = true;
                     WriteOpc();
-                    Thread.Sleep(MotorSpeed * 1000);
+                    Thread.Sleep((JourneyTime / 6) * 1000);
                 }
                 if (!Error && !StopClick)
                 {
                     Barrier2 = false;
                     PhotoSensor = true;
                     WriteOpc();
-                    Thread.Sleep(MotorSpeed * 1000);
+                    Thread.Sleep((JourneyTime / 6) * 1000);
                 }
                 if (!Error && !StopClick)
                 {
                     PhotoSensor = false;
                     Capacitive = false;
                     WriteOpc();
-                    Thread.Sleep(MotorSpeed * 1000);
+                    Thread.Sleep((JourneyTime / 6) * 1000);
                 }
                 if (!Error && !StopClick)
                 {
                     Capacitive = true;
                     Inductive = false;
                     WriteOpc();
-                    Thread.Sleep(MotorSpeed * 1000);
+                    Thread.Sleep((JourneyTime / 6) * 1000);
                 }
                 if (!Error && !StopClick)
                 {
                     Inductive = true;
                     Barrier3 = true;
                     WriteOpc();
-                    Thread.Sleep(MotorSpeed * 1000);
+                    Thread.Sleep((JourneyTime / 6) * 1000);
                 }
                 if (!Error && !StopClick)
                 {
@@ -182,40 +181,40 @@
                 {
                     Barrier1 = true;
                     WriteOpc();
-                    Thread.Sleep(MotorSpeed * 1000);
+                    Thread.Sleep((JourneyTime / 6) * 1000);
                 }
                 if (!Error && !StopClick)
                 {
                     Barrier1 = false;
                     Barrier2 = true;
                     WriteOpc();
-                    Thread.Sleep(MotorSpeed * 1000);
+                    Thread.Sleep((JourneyTime / 6) * 1000);
                 }
                 if (!Error && !StopClick)
                 {
                     Barrier2 = false;
                     PhotoSensor = true;
                     WriteOpc();
-                    Thread.Sleep(MotorSpeed * 1000);
+                    Thread.Sleep((JourneyTime / 6) * 1000);
                 }
                 if (!Error && !StopClick)
                 {
                     PhotoSensor = false;
                     Capacitive = false;
                     WriteOpc();
-                    Thread.Sleep(MotorSpeed * 1000);
+                    Thread.Sleep((JourneyTime / 6) * 1000);
                 }
                 if (!Error && !StopClick)
                 {
                     Capacitive = true;
                     WriteOpc();
-                    Thread.Sleep(MotorSpeed * 1000);
+                    Thread.Sleep((JourneyTime / 6) * 1000);
                 }
                 if (!Error && !StopClick)
                 {
                     Barrier3 = true;
                     WriteOpc();
-                    Thread.Sleep(MotorSpeed * 1000);
+                    Thread.Sleep((JourneyTime / 6) * 1000);
                 }
                 if (!Error && !StopClick)
                 {
@@ -227,7 +226,7 @@
             tNonMetallic.Start();
         }
 
-        public void AddPieceAuto(int speedMotor)
+        public void AddPieceAuto()
         {
             Task t = new(() =>
             {
@@ -236,15 +235,15 @@
 
                 if (option > 0 && option < 3)
                 {
-                    AddPieceManual("Transparent", speedMotor);
+                    AddPieceManual("Transparent");
                 }
                 else if (option >= 3 && option < 5)
                 {
-                    AddPieceManual("Metallic", speedMotor);
+                    AddPieceManual("Metallic");
                 }
                 else if (option >= 5 && option < 7)
                 {
-                    AddPieceManual("NonMetallic", speedMotor);
+                    AddPieceManual("NonMetallic");
                 }
                 else
                 {
@@ -264,7 +263,7 @@
             PhotoSensor = NodeManager.Belt.Module2.PhotoSensor.Output.Value;
             Capacitive = NodeManager.Belt.Module2.Capacitive.Output.Value;
             Inductive = NodeManager.Belt.Module2.Inductive.Output.Value;
-            MotorSpeed = NodeManager.Belt.Module2.Motor.Speed.Value;
+            JourneyTime = NodeManager.Belt.Module2.Motor.JourneyTime.Value;
             Busy = NodeManager.Belt.Module2.Busy.Input.Value;
             Error = NodeManager.Belt.Module2.Error.Input.Value;
             MotorOn = NodeManager.Belt.Module2.Motor.Status.Value;
@@ -278,7 +277,7 @@
             NodeManager.Belt.Module2.PhotoSensor.Output.Value = PhotoSensor;
             NodeManager.Belt.Module2.Capacitive.Output.Value = Capacitive;
             NodeManager.Belt.Module2.Inductive.Output.Value = Inductive;
-            NodeManager.Belt.Module2.Motor.Speed.Value = MotorSpeed;
+            NodeManager.Belt.Module2.Motor.JourneyTime.Value = JourneyTime;
             NodeManager.Belt.Module2.Busy.Input.Value = Busy;
             NodeManager.Belt.Module2.Error.Input.Value = Error;
             NodeManager.Belt.Module2.Motor.Status.Value = MotorOn;

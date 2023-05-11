@@ -222,14 +222,14 @@
     <uax:SuperTypeId>
       <uax:Identifier>i=58</uax:Identifier>
     </uax:SuperTypeId>
-    <Speed>
+    <JourneyTime>
       <uax:NodeClass>Variable_2</uax:NodeClass>
       <uax:NodeId>
-        <uax:Identifier>ns=1;i=23</uax:Identifier>
+        <uax:Identifier>ns=1;i=971</uax:Identifier>
       </uax:NodeId>
       <uax:BrowseName>
         <uax:NamespaceIndex>1</uax:NamespaceIndex>
-        <uax:Name>Speed</uax:Name>
+        <uax:Name>JourneyTime</uax:Name>
       </uax:BrowseName>
       <uax:ReferenceTypeId>
         <uax:Identifier>i=47</uax:Identifier>
@@ -240,7 +240,7 @@
       <uax:ModellingRuleId>
         <uax:Identifier>i=78</uax:Identifier>
       </uax:ModellingRuleId>
-      <uax:NumericId>23</uax:NumericId>
+      <uax:NumericId>971</uax:NumericId>
       <uax:DataType>
         <uax:Identifier>i=6</uax:Identifier>
       </uax:DataType>
@@ -250,7 +250,7 @@
       <EURange xmlns="http://opcfoundation.org/UA/">
         <uax:NodeClass>Variable_2</uax:NodeClass>
         <uax:NodeId>
-          <uax:Identifier>ns=1;i=27</uax:Identifier>
+          <uax:Identifier>ns=1;i=975</uax:Identifier>
         </uax:NodeId>
         <uax:BrowseName>
           <uax:NamespaceIndex>0</uax:NamespaceIndex>
@@ -265,7 +265,7 @@
         <uax:ModellingRuleId>
           <uax:Identifier>i=78</uax:Identifier>
         </uax:ModellingRuleId>
-        <uax:NumericId>27</uax:NumericId>
+        <uax:NumericId>975</uax:NumericId>
         <uax:DataType>
           <uax:Identifier>i=884</uax:Identifier>
         </uax:DataType>
@@ -273,7 +273,7 @@
         <uax:AccessLevel>1</uax:AccessLevel>
         <uax:UserAccessLevel>1</uax:UserAccessLevel>
       </EURange>
-    </Speed>
+    </JourneyTime>
     <Status>
       <uax:NodeClass>Variable_2</uax:NodeClass>
       <uax:NodeId>
@@ -1161,14 +1161,14 @@
       </uax:ModellingRuleId>
       <uax:NumericId>163</uax:NumericId>
       <uax:EventNotifier>1</uax:EventNotifier>
-      <Speed>
+      <JourneyTime>
         <uax:NodeClass>Variable_2</uax:NodeClass>
         <uax:NodeId>
-          <uax:Identifier>ns=1;i=164</uax:Identifier>
+          <uax:Identifier>ns=1;i=983</uax:Identifier>
         </uax:NodeId>
         <uax:BrowseName>
           <uax:NamespaceIndex>1</uax:NamespaceIndex>
-          <uax:Name>Speed</uax:Name>
+          <uax:Name>JourneyTime</uax:Name>
         </uax:BrowseName>
         <uax:ReferenceTypeId>
           <uax:Identifier>i=47</uax:Identifier>
@@ -1179,7 +1179,7 @@
         <uax:ModellingRuleId>
           <uax:Identifier>i=78</uax:Identifier>
         </uax:ModellingRuleId>
-        <uax:NumericId>164</uax:NumericId>
+        <uax:NumericId>983</uax:NumericId>
         <uax:DataType>
           <uax:Identifier>i=6</uax:Identifier>
         </uax:DataType>
@@ -1189,7 +1189,7 @@
         <EURange xmlns="http://opcfoundation.org/UA/">
           <uax:NodeClass>Variable_2</uax:NodeClass>
           <uax:NodeId>
-            <uax:Identifier>ns=1;i=168</uax:Identifier>
+            <uax:Identifier>ns=1;i=987</uax:Identifier>
           </uax:NodeId>
           <uax:BrowseName>
             <uax:NamespaceIndex>0</uax:NamespaceIndex>
@@ -1204,7 +1204,7 @@
           <uax:ModellingRuleId>
             <uax:Identifier>i=78</uax:Identifier>
           </uax:ModellingRuleId>
-          <uax:NumericId>168</uax:NumericId>
+          <uax:NumericId>987</uax:NumericId>
           <uax:DataType>
             <uax:Identifier>i=884</uax:Identifier>
           </uax:DataType>
@@ -1212,7 +1212,7 @@
           <uax:AccessLevel>1</uax:AccessLevel>
           <uax:UserAccessLevel>1</uax:UserAccessLevel>
         </EURange>
-      </Speed>
+      </JourneyTime>
       <Status>
         <uax:NodeClass>Variable_2</uax:NodeClass>
         <uax:NodeId>
@@ -1893,14 +1893,14 @@
       </uax:ModellingRuleId>
       <uax:NumericId>220</uax:NumericId>
       <uax:EventNotifier>1</uax:EventNotifier>
-      <Speed>
+      <JourneyTime>
         <uax:NodeClass>Variable_2</uax:NodeClass>
         <uax:NodeId>
-          <uax:Identifier>ns=1;i=221</uax:Identifier>
+          <uax:Identifier>ns=1;i=989</uax:Identifier>
         </uax:NodeId>
         <uax:BrowseName>
           <uax:NamespaceIndex>1</uax:NamespaceIndex>
-          <uax:Name>Speed</uax:Name>
+          <uax:Name>JourneyTime</uax:Name>
         </uax:BrowseName>
         <uax:ReferenceTypeId>
           <uax:Identifier>i=47</uax:Identifier>
@@ -1911,7 +1911,7 @@
         <uax:ModellingRuleId>
           <uax:Identifier>i=78</uax:Identifier>
         </uax:ModellingRuleId>
-        <uax:NumericId>221</uax:NumericId>
+        <uax:NumericId>989</uax:NumericId>
         <uax:DataType>
           <uax:Identifier>i=6</uax:Identifier>
         </uax:DataType>
@@ -1921,7 +1921,7 @@
         <EURange xmlns="http://opcfoundation.org/UA/">
           <uax:NodeClass>Variable_2</uax:NodeClass>
           <uax:NodeId>
-            <uax:Identifier>ns=1;i=225</uax:Identifier>
+            <uax:Identifier>ns=1;i=993</uax:Identifier>
           </uax:NodeId>
           <uax:BrowseName>
             <uax:NamespaceIndex>0</uax:NamespaceIndex>
@@ -1936,7 +1936,7 @@
           <uax:ModellingRuleId>
             <uax:Identifier>i=78</uax:Identifier>
           </uax:ModellingRuleId>
-          <uax:NumericId>225</uax:NumericId>
+          <uax:NumericId>993</uax:NumericId>
           <uax:DataType>
             <uax:Identifier>i=884</uax:Identifier>
           </uax:DataType>
@@ -1944,7 +1944,7 @@
           <uax:AccessLevel>1</uax:AccessLevel>
           <uax:UserAccessLevel>1</uax:UserAccessLevel>
         </EURange>
-      </Speed>
+      </JourneyTime>
       <Status>
         <uax:NodeClass>Variable_2</uax:NodeClass>
         <uax:NodeId>
@@ -2659,14 +2659,14 @@
         </uax:ModellingRuleId>
         <uax:NumericId>278</uax:NumericId>
         <uax:EventNotifier>1</uax:EventNotifier>
-        <Speed>
+        <JourneyTime>
           <uax:NodeClass>Variable_2</uax:NodeClass>
           <uax:NodeId>
-            <uax:Identifier>ns=1;i=279</uax:Identifier>
+            <uax:Identifier>ns=1;i=995</uax:Identifier>
           </uax:NodeId>
           <uax:BrowseName>
             <uax:NamespaceIndex>1</uax:NamespaceIndex>
-            <uax:Name>Speed</uax:Name>
+            <uax:Name>JourneyTime</uax:Name>
           </uax:BrowseName>
           <uax:ReferenceTypeId>
             <uax:Identifier>i=47</uax:Identifier>
@@ -2677,7 +2677,7 @@
           <uax:ModellingRuleId>
             <uax:Identifier>i=78</uax:Identifier>
           </uax:ModellingRuleId>
-          <uax:NumericId>279</uax:NumericId>
+          <uax:NumericId>995</uax:NumericId>
           <uax:DataType>
             <uax:Identifier>i=6</uax:Identifier>
           </uax:DataType>
@@ -2687,7 +2687,7 @@
           <EURange xmlns="http://opcfoundation.org/UA/">
             <uax:NodeClass>Variable_2</uax:NodeClass>
             <uax:NodeId>
-              <uax:Identifier>ns=1;i=283</uax:Identifier>
+              <uax:Identifier>ns=1;i=999</uax:Identifier>
             </uax:NodeId>
             <uax:BrowseName>
               <uax:NamespaceIndex>0</uax:NamespaceIndex>
@@ -2702,7 +2702,7 @@
             <uax:ModellingRuleId>
               <uax:Identifier>i=78</uax:Identifier>
             </uax:ModellingRuleId>
-            <uax:NumericId>283</uax:NumericId>
+            <uax:NumericId>999</uax:NumericId>
             <uax:DataType>
               <uax:Identifier>i=884</uax:Identifier>
             </uax:DataType>
@@ -2710,7 +2710,7 @@
             <uax:AccessLevel>1</uax:AccessLevel>
             <uax:UserAccessLevel>1</uax:UserAccessLevel>
           </EURange>
-        </Speed>
+        </JourneyTime>
         <Status>
           <uax:NodeClass>Variable_2</uax:NodeClass>
           <uax:NodeId>
@@ -3400,14 +3400,14 @@
         </uax:ModellingRuleId>
         <uax:NumericId>335</uax:NumericId>
         <uax:EventNotifier>1</uax:EventNotifier>
-        <Speed>
+        <JourneyTime>
           <uax:NodeClass>Variable_2</uax:NodeClass>
           <uax:NodeId>
-            <uax:Identifier>ns=1;i=336</uax:Identifier>
+            <uax:Identifier>ns=1;i=1001</uax:Identifier>
           </uax:NodeId>
           <uax:BrowseName>
             <uax:NamespaceIndex>1</uax:NamespaceIndex>
-            <uax:Name>Speed</uax:Name>
+            <uax:Name>JourneyTime</uax:Name>
           </uax:BrowseName>
           <uax:ReferenceTypeId>
             <uax:Identifier>i=47</uax:Identifier>
@@ -3418,7 +3418,7 @@
           <uax:ModellingRuleId>
             <uax:Identifier>i=78</uax:Identifier>
           </uax:ModellingRuleId>
-          <uax:NumericId>336</uax:NumericId>
+          <uax:NumericId>1001</uax:NumericId>
           <uax:DataType>
             <uax:Identifier>i=6</uax:Identifier>
           </uax:DataType>
@@ -3428,7 +3428,7 @@
           <EURange xmlns="http://opcfoundation.org/UA/">
             <uax:NodeClass>Variable_2</uax:NodeClass>
             <uax:NodeId>
-              <uax:Identifier>ns=1;i=340</uax:Identifier>
+              <uax:Identifier>ns=1;i=1005</uax:Identifier>
             </uax:NodeId>
             <uax:BrowseName>
               <uax:NamespaceIndex>0</uax:NamespaceIndex>
@@ -3443,7 +3443,7 @@
             <uax:ModellingRuleId>
               <uax:Identifier>i=78</uax:Identifier>
             </uax:ModellingRuleId>
-            <uax:NumericId>340</uax:NumericId>
+            <uax:NumericId>1005</uax:NumericId>
             <uax:DataType>
               <uax:Identifier>i=884</uax:Identifier>
             </uax:DataType>
@@ -3451,7 +3451,7 @@
             <uax:AccessLevel>1</uax:AccessLevel>
             <uax:UserAccessLevel>1</uax:UserAccessLevel>
           </EURange>
-        </Speed>
+        </JourneyTime>
         <Status>
           <uax:NodeClass>Variable_2</uax:NodeClass>
           <uax:NodeId>
@@ -4251,14 +4251,14 @@
         </uax:TypeDefinitionId>
         <uax:NumericId>396</uax:NumericId>
         <uax:EventNotifier>1</uax:EventNotifier>
-        <Speed>
+        <JourneyTime>
           <uax:NodeClass>Variable_2</uax:NodeClass>
           <uax:NodeId>
-            <uax:Identifier>ns=1;i=397</uax:Identifier>
+            <uax:Identifier>ns=1;i=1007</uax:Identifier>
           </uax:NodeId>
           <uax:BrowseName>
             <uax:NamespaceIndex>1</uax:NamespaceIndex>
-            <uax:Name>Speed</uax:Name>
+            <uax:Name>JourneyTime</uax:Name>
           </uax:BrowseName>
           <uax:ReferenceTypeId>
             <uax:Identifier>i=47</uax:Identifier>
@@ -4266,7 +4266,7 @@
           <uax:TypeDefinitionId>
             <uax:Identifier>i=2368</uax:Identifier>
           </uax:TypeDefinitionId>
-          <uax:NumericId>397</uax:NumericId>
+          <uax:NumericId>1007</uax:NumericId>
           <uax:DataType>
             <uax:Identifier>i=6</uax:Identifier>
           </uax:DataType>
@@ -4276,7 +4276,7 @@
           <EURange xmlns="http://opcfoundation.org/UA/">
             <uax:NodeClass>Variable_2</uax:NodeClass>
             <uax:NodeId>
-              <uax:Identifier>ns=1;i=401</uax:Identifier>
+              <uax:Identifier>ns=1;i=1011</uax:Identifier>
             </uax:NodeId>
             <uax:BrowseName>
               <uax:NamespaceIndex>0</uax:NamespaceIndex>
@@ -4288,7 +4288,7 @@
             <uax:TypeDefinitionId>
               <uax:Identifier>i=68</uax:Identifier>
             </uax:TypeDefinitionId>
-            <uax:NumericId>401</uax:NumericId>
+            <uax:NumericId>1011</uax:NumericId>
             <uax:DataType>
               <uax:Identifier>i=884</uax:Identifier>
             </uax:DataType>
@@ -4296,7 +4296,7 @@
             <uax:AccessLevel>1</uax:AccessLevel>
             <uax:UserAccessLevel>1</uax:UserAccessLevel>
           </EURange>
-        </Speed>
+        </JourneyTime>
         <Status>
           <uax:NodeClass>Variable_2</uax:NodeClass>
           <uax:NodeId>
@@ -4912,14 +4912,14 @@
         </uax:TypeDefinitionId>
         <uax:NumericId>453</uax:NumericId>
         <uax:EventNotifier>1</uax:EventNotifier>
-        <Speed>
+        <JourneyTime>
           <uax:NodeClass>Variable_2</uax:NodeClass>
           <uax:NodeId>
-            <uax:Identifier>ns=1;i=454</uax:Identifier>
+            <uax:Identifier>ns=1;i=1013</uax:Identifier>
           </uax:NodeId>
           <uax:BrowseName>
             <uax:NamespaceIndex>1</uax:NamespaceIndex>
-            <uax:Name>Speed</uax:Name>
+            <uax:Name>JourneyTime</uax:Name>
           </uax:BrowseName>
           <uax:ReferenceTypeId>
             <uax:Identifier>i=47</uax:Identifier>
@@ -4927,7 +4927,7 @@
           <uax:TypeDefinitionId>
             <uax:Identifier>i=2368</uax:Identifier>
           </uax:TypeDefinitionId>
-          <uax:NumericId>454</uax:NumericId>
+          <uax:NumericId>1013</uax:NumericId>
           <uax:DataType>
             <uax:Identifier>i=6</uax:Identifier>
           </uax:DataType>
@@ -4937,7 +4937,7 @@
           <EURange xmlns="http://opcfoundation.org/UA/">
             <uax:NodeClass>Variable_2</uax:NodeClass>
             <uax:NodeId>
-              <uax:Identifier>ns=1;i=458</uax:Identifier>
+              <uax:Identifier>ns=1;i=1017</uax:Identifier>
             </uax:NodeId>
             <uax:BrowseName>
               <uax:NamespaceIndex>0</uax:NamespaceIndex>
@@ -4949,7 +4949,7 @@
             <uax:TypeDefinitionId>
               <uax:Identifier>i=68</uax:Identifier>
             </uax:TypeDefinitionId>
-            <uax:NumericId>458</uax:NumericId>
+            <uax:NumericId>1017</uax:NumericId>
             <uax:DataType>
               <uax:Identifier>i=884</uax:Identifier>
             </uax:DataType>
@@ -4957,7 +4957,7 @@
             <uax:AccessLevel>1</uax:AccessLevel>
             <uax:UserAccessLevel>1</uax:UserAccessLevel>
           </EURange>
-        </Speed>
+        </JourneyTime>
         <Status>
           <uax:NodeClass>Variable_2</uax:NodeClass>
           <uax:NodeId>
