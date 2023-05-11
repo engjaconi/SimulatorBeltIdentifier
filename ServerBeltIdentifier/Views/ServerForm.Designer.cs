@@ -668,7 +668,7 @@ namespace BeltIdentifierServer
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             BackColor = SystemColors.ControlLightLight;
-            ClientSize = new Size(715, 456);
+            ClientSize = new Size(722, 453);
             Controls.Add(btnStop);
             Controls.Add(btnAddPiece);
             Controls.Add(btnReset);
@@ -683,7 +683,8 @@ namespace BeltIdentifierServer
             ImeMode = ImeMode.Off;
             Margin = new Padding(3, 4, 3, 4);
             MaximizeBox = false;
-            MaximumSize = new Size(949, 647);
+            MaximumSize = new Size(740, 500);
+            MinimumSize = new Size(740, 500);
             Name = "ServerForm";
             ShowIcon = false;
             StartPosition = FormStartPosition.CenterScreen;

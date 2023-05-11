@@ -258,30 +258,31 @@
 
         public void ReadOpc()
         {
-            Barrier1 = NodeManager._Belt.Module2.Barrier1.Output.Value;
-            Barrier2 = NodeManager._Belt.Module2.Barrier2.Output.Value;
-            Barrier3 = NodeManager._Belt.Module2.Barrier3.Output.Value;
-            PhotoSensor = NodeManager._Belt.Module2.PhotoSensor.Output.Value;
-            Capacitive = NodeManager._Belt.Module2.Capacitive.Output.Value;
-            Inductive = NodeManager._Belt.Module2.Inductive.Output.Value;
-            MotorSpeed = NodeManager._Belt.Module2.Motor.Speed.Value;
-            Busy = NodeManager._Belt.Module2.Busy.Input.Value;
-            Error = NodeManager._Belt.Module2.Error.Input.Value;
-            MotorOn = NodeManager._Belt.Module2.Motor.Status.Value;
+            Barrier1 = NodeManager.Belt.Module2.Barrier1.Output.Value;
+            Barrier2 = NodeManager.Belt.Module2.Barrier2.Output.Value;
+            Barrier3 = NodeManager.Belt.Module2.Barrier3.Output.Value;
+            PhotoSensor = NodeManager.Belt.Module2.PhotoSensor.Output.Value;
+            Capacitive = NodeManager.Belt.Module2.Capacitive.Output.Value;
+            Inductive = NodeManager.Belt.Module2.Inductive.Output.Value;
+            MotorSpeed = NodeManager.Belt.Module2.Motor.Speed.Value;
+            Busy = NodeManager.Belt.Module2.Busy.Input.Value;
+            Error = NodeManager.Belt.Module2.Error.Input.Value;
+            MotorOn = NodeManager.Belt.Module2.Motor.Status.Value;
         }
 
         public override void WriteOpc()
         {
-            NodeManager._Belt.Module2.Barrier1.Output.Value = Barrier1;
-            NodeManager._Belt.Module2.Barrier2.Output.Value = Barrier2;
-            NodeManager._Belt.Module2.Barrier3.Output.Value = Barrier3;
-            NodeManager._Belt.Module2.PhotoSensor.Output.Value = PhotoSensor;
-            NodeManager._Belt.Module2.Capacitive.Output.Value = Capacitive;
-            NodeManager._Belt.Module2.Inductive.Output.Value = Inductive;
-            NodeManager._Belt.Module2.Motor.Speed.Value = MotorSpeed;
-            NodeManager._Belt.Module2.Busy.Input.Value = Busy;
-            NodeManager._Belt.Module2.Error.Input.Value = Error;
-            NodeManager._Belt.Module2.Motor.Status.Value = MotorOn;
+            NodeManager.Belt.Module2.Barrier1.Output.Value = Barrier1;
+            NodeManager.Belt.Module2.Barrier2.Output.Value = Barrier2;
+            NodeManager.Belt.Module2.Barrier3.Output.Value = Barrier3;
+            NodeManager.Belt.Module2.PhotoSensor.Output.Value = PhotoSensor;
+            NodeManager.Belt.Module2.Capacitive.Output.Value = Capacitive;
+            NodeManager.Belt.Module2.Inductive.Output.Value = Inductive;
+            NodeManager.Belt.Module2.Motor.Speed.Value = MotorSpeed;
+            NodeManager.Belt.Module2.Busy.Input.Value = Busy;
+            NodeManager.Belt.Module2.Error.Input.Value = Error;
+            NodeManager.Belt.Module2.Motor.Status.Value = MotorOn;
+            NodeManager.Belt.ClearChangeMasks(NodeManager.Context, true);
         }
     }
 }

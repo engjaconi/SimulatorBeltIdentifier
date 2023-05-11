@@ -1,4 +1,6 @@
-﻿namespace ServerBeltIdentifier.Models
+﻿using Opc.Ua;
+
+namespace ServerBeltIdentifier.Models
 {
     public class BeltModule1 : Belt
     {
@@ -152,30 +154,31 @@
         
         public void ReadOpc()
         {
-            Transparent = NodeManager._Belt.Module1.Transparent.Input.Value;
-            Metallic = NodeManager._Belt.Module1.Metallic.Input.Value;
-            NonMetallic = NodeManager._Belt.Module1.NonMetallic.Input.Value;
-            QuantityTransparent = NodeManager._Belt.Module1.QuantityTransparent.Input.Value;
-            QuantityMetallic = NodeManager._Belt.Module1.QuantityMetallic.Input.Value;
-            QuantityNonMetallic = NodeManager._Belt.Module1.QuantityNonMetallic.Input.Value;
-            MotorSpeed = NodeManager._Belt.Module1.Motor.Speed.Value;
-            Busy = NodeManager._Belt.Module1.Busy.Input.Value;
-            Error = NodeManager._Belt.Module1.Error.Input.Value;
-            MotorOn = NodeManager._Belt.Module1.Motor.Status.Value;
+            Transparent = NodeManager.Belt.Module1.Transparent.Input.Value;
+            Metallic = NodeManager.Belt.Module1.Metallic.Input.Value;
+            NonMetallic = NodeManager.Belt.Module1.NonMetallic.Input.Value;
+            QuantityTransparent = NodeManager.Belt.Module1.QuantityTransparent.Input.Value;
+            QuantityMetallic = NodeManager.Belt.Module1.QuantityMetallic.Input.Value;
+            QuantityNonMetallic = NodeManager.Belt.Module1.QuantityNonMetallic.Input.Value;
+            MotorSpeed = NodeManager.Belt.Module1.Motor.Speed.Value;
+            Busy = NodeManager.Belt.Module1.Busy.Input.Value;
+            Error = NodeManager.Belt.Module1.Error.Input.Value;
+            MotorOn = NodeManager.Belt.Module1.Motor.Status.Value;
         }
         
         public override void WriteOpc()
         {
-            NodeManager._Belt.Module1.Transparent.Input.Value = Transparent;
-            NodeManager._Belt.Module1.Metallic.Input.Value = Metallic;
-            NodeManager._Belt.Module1.NonMetallic.Input.Value = NonMetallic;
-            NodeManager._Belt.Module1.QuantityTransparent.Input.Value = QuantityTransparent;
-            NodeManager._Belt.Module1.QuantityMetallic.Input.Value = QuantityMetallic;
-            NodeManager._Belt.Module1.QuantityNonMetallic.Input.Value = QuantityNonMetallic;
-            NodeManager._Belt.Module1.Motor.Speed.Value = MotorSpeed;
-            NodeManager._Belt.Module1.Busy.Input.Value = Busy;
-            NodeManager._Belt.Module1.Error.Input.Value = Error;
-            NodeManager._Belt.Module1.Motor.Status.Value = MotorOn;
+            NodeManager.Belt.Module1.Transparent.Input.Value = Transparent;
+            NodeManager.Belt.Module1.Metallic.Input.Value = Metallic;
+            NodeManager.Belt.Module1.NonMetallic.Input.Value = NonMetallic;
+            NodeManager.Belt.Module1.QuantityTransparent.Input.Value = QuantityTransparent;
+            NodeManager.Belt.Module1.QuantityMetallic.Input.Value = QuantityMetallic;
+            NodeManager.Belt.Module1.QuantityNonMetallic.Input.Value = QuantityNonMetallic;
+            NodeManager.Belt.Module1.Motor.Speed.Value = MotorSpeed;
+            NodeManager.Belt.Module1.Busy.Input.Value = Busy;
+            NodeManager.Belt.Module1.Error.Input.Value = Error;
+            NodeManager.Belt.Module1.Motor.Status.Value = MotorOn;
+            NodeManager.Belt.ClearChangeMasks(NodeManager.Context, true);
         }
     }
 }

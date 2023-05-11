@@ -19,10 +19,10 @@ namespace ServerBeltIdentifier.Models
             SetNamespaces(namespaceUrls);
 
             // obtém a configuração para o gerenciador de nós.
-            _configuration = configuration.ParseExtension<ServerConfiguration>();
+            Configuration = configuration.ParseExtension<ServerConfiguration>();
 
             // Usar padrões adequados, se não houver configuração.
-            _configuration ??= new ServerConfiguration();
+            Configuration ??= new ServerConfiguration();
         }
 
         protected override NodeStateCollection LoadPredefinedNodes(ISystemContext context)
@@ -45,19 +45,20 @@ namespace ServerBeltIdentifier.Models
                     , NamespaceIndexes[0]), typeof(BaseObjectState));
 
                 // converte o nó sem tipo em um nó tipado que pode ser manipulado dentro do servidor.
-                _Belt = new BeltState(null);
-                _Belt.Create(SystemContext, passiveNode);
+                Belt = new BeltState(null);
+                Context = SystemContext;
+                Belt.Create(SystemContext, passiveNode);
 
                 // substitui os nós predefinidos sem tipo por suas versões fortemente tipadas.
-                AddPredefinedNode(SystemContext, _Belt);
+                AddPredefinedNode(SystemContext, Belt);
 
-                _Belt.StartModule1Process.OnCallMethod = new GenericMethodCalledEventHandler(OnStartModule1Process);
-                _Belt.StopModule1Process.OnCallMethod = new GenericMethodCalledEventHandler(OnStopModule1Process);
-                _Belt.ResetModule1Process.OnCallMethod = new GenericMethodCalledEventHandler(OnResetModule1Process);
+                Belt.StartModule1Process.OnCallMethod = new GenericMethodCalledEventHandler(OnStartModule1Process);
+                Belt.StopModule1Process.OnCallMethod = new GenericMethodCalledEventHandler(OnStopModule1Process);
+                Belt.ResetModule1Process.OnCallMethod = new GenericMethodCalledEventHandler(OnResetModule1Process);
 
-                _Belt.StartModule2Process.OnCallMethod = new GenericMethodCalledEventHandler(OnStartModule2Process);
-                _Belt.StopModule2Process.OnCallMethod = new GenericMethodCalledEventHandler(OnStopModule2Process);
-                _Belt.ResetModule2Process.OnCallMethod = new GenericMethodCalledEventHandler(OnResetModule2Process);
+                Belt.StartModule2Process.OnCallMethod = new GenericMethodCalledEventHandler(OnStartModule2Process);
+                Belt.StopModule2Process.OnCallMethod = new GenericMethodCalledEventHandler(OnStopModule2Process);
+                Belt.ResetModule2Process.OnCallMethod = new GenericMethodCalledEventHandler(OnResetModule2Process);
 
                 InitializeVariableValues();
             }
@@ -101,30 +102,31 @@ namespace ServerBeltIdentifier.Models
 
         private void InitializeVariableValues()
         {
-            _Belt.Module1.Transparent.Input.Value = false;
-            _Belt.Module1.Metallic.Input.Value = false;
-            _Belt.Module1.NonMetallic.Input.Value = false;
-            _Belt.Module1.Error.Input.Value = false;
-            _Belt.Module1.QuantityTransparent.Input.Value = 0;
-            _Belt.Module1.QuantityMetallic.Input.Value = 0;
-            _Belt.Module1.QuantityNonMetallic.Input.Value = 0;
-            _Belt.Module1.Motor.Speed.Value = 1;
-            _Belt.Module1.Motor.Status.Value = false;
-            _Belt.Module1.Busy.Input.Value = false;
+            Belt.Module1.Transparent.Input.Value = false;
+            Belt.Module1.Metallic.Input.Value = false;
+            Belt.Module1.NonMetallic.Input.Value = false;
+            Belt.Module1.Error.Input.Value = false;
+            Belt.Module1.QuantityTransparent.Input.Value = 0;
+            Belt.Module1.QuantityMetallic.Input.Value = 0;
+            Belt.Module1.QuantityNonMetallic.Input.Value = 0;
+            Belt.Module1.Motor.Speed.Value = 1;
+            Belt.Module1.Motor.Status.Value = false;
+            Belt.Module1.Busy.Input.Value = false;
 
-            _Belt.Module2.Barrier1.Output.Value = false;
-            _Belt.Module2.Barrier2.Output.Value = false;
-            _Belt.Module2.Barrier3.Output.Value = false;
-            _Belt.Module2.PhotoSensor.Output.Value = false;
-            _Belt.Module2.Inductive.Output.Value = true;
-            _Belt.Module2.Capacitive.Output.Value = true;
-            _Belt.Module2.Motor.Speed.Value = 0;
-            _Belt.Module2.Motor.Status.Value = false;
-            _Belt.Module2.Error.Input.Value = false;
-            _Belt.Module2.Busy.Input.Value= false;
+            Belt.Module2.Barrier1.Output.Value = false;
+            Belt.Module2.Barrier2.Output.Value = false;
+            Belt.Module2.Barrier3.Output.Value = false;
+            Belt.Module2.PhotoSensor.Output.Value = false;
+            Belt.Module2.Inductive.Output.Value = true;
+            Belt.Module2.Capacitive.Output.Value = true;
+            Belt.Module2.Motor.Speed.Value = 1;
+            Belt.Module2.Motor.Status.Value = false;
+            Belt.Module2.Error.Input.Value = false;
+            Belt.Module2.Busy.Input.Value= false;
         }
 
-        private readonly ServerConfiguration _configuration;
-        public static BeltState _Belt;
+        private readonly ServerConfiguration Configuration;
+        public static BeltState Belt;
+        public static SystemContext Context;
     }
 }
