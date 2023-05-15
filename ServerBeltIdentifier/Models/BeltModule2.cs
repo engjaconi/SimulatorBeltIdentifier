@@ -255,7 +255,7 @@
             t.Start();
         }
 
-        public void ReadOpc()
+        public override void ReadOpc()
         {
             Barrier1 = NodeManager.Belt.Module2.Barrier1.Output.Value;
             Barrier2 = NodeManager.Belt.Module2.Barrier2.Output.Value;

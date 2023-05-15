@@ -151,7 +151,7 @@ namespace ServerBeltIdentifier.Models
             tNonMetallic.Start();
         }
         
-        public void ReadOpc()
+        public override void ReadOpc()
         {
             Transparent = NodeManager.Belt.Module1.Transparent.Input.Value;
             Metallic = NodeManager.Belt.Module1.Metallic.Input.Value;

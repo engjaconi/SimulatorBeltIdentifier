@@ -12,7 +12,7 @@
         public void Start()
         {
             if (Error) return;
-
+            ReadOpc();
             StopClick = false;
             MotorOn = true;
             WriteOpc();
@@ -28,5 +28,6 @@
         }
 
         public abstract void WriteOpc();
+        public abstract void ReadOpc();
     }
 }
