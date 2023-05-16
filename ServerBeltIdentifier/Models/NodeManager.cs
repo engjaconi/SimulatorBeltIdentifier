@@ -14,8 +14,8 @@ namespace ServerBeltIdentifier.Models
 
             // define um namespace para o modelo de tipo e um nome para nós criados dinamicamente.
             string[] namespaceUrls = new string[2];
-            namespaceUrls[0] = BeltIdentifier.Namespaces.BeltIdentifier;
-            namespaceUrls[1] = BeltIdentifier.Namespaces.BeltIdentifier + "/Istance";
+            namespaceUrls[0] = global::BeltIdentifier.Namespaces.BeltIdentifier;
+            namespaceUrls[1] = global::BeltIdentifier.Namespaces.BeltIdentifier + "/Istance";
             SetNamespaces(namespaceUrls);
 
             // obtém a configuração para o gerenciador de nós.
@@ -41,7 +41,7 @@ namespace ServerBeltIdentifier.Models
                 LoadPredefinedNodes(SystemContext, externalReference);
 
                 // localiza o nó Belt Identifier 1 não tipado que foi criado quando o modelo foi carregado.
-                BaseObjectState passiveNode = (BaseObjectState)FindPredefinedNode(new NodeId(BeltIdentifier.Objects.BeltServer
+                BaseObjectState passiveNode = (BaseObjectState)FindPredefinedNode(new NodeId(global::BeltIdentifier.Objects.BeltServer
                     , NamespaceIndexes[0]), typeof(BaseObjectState));
 
                 // converte o nó sem tipo em um nó tipado que pode ser manipulado dentro do servidor.
@@ -52,77 +52,111 @@ namespace ServerBeltIdentifier.Models
                 // substitui os nós predefinidos sem tipo por suas versões fortemente tipadas.
                 AddPredefinedNode(SystemContext, Belt);
 
-                Belt.StartModule1Process.OnCallMethod = new GenericMethodCalledEventHandler(OnStartModule1Process);
-                Belt.StopModule1Process.OnCallMethod = new GenericMethodCalledEventHandler(OnStopModule1Process);
-                Belt.ResetModule1Process.OnCallMethod = new GenericMethodCalledEventHandler(OnResetModule1Process);
-
-                Belt.StartModule2Process.OnCallMethod = new GenericMethodCalledEventHandler(OnStartModule2Process);
-                Belt.StopModule2Process.OnCallMethod = new GenericMethodCalledEventHandler(OnStopModule2Process);
-                Belt.ResetModule2Process.OnCallMethod = new GenericMethodCalledEventHandler(OnResetModule2Process);
-
+                Belt.StartProcess.OnCallMethod = new GenericMethodCalledEventHandler(OnStartProcess);
+                Belt.StopProcess.OnCallMethod = new GenericMethodCalledEventHandler(OnStopProcess);
+                Belt.ResetProcess.OnCallMethod = new GenericMethodCalledEventHandler(OnResetProcess);
+                Belt.SelectModule1Process.OnCallMethod = new GenericMethodCalledEventHandler(OnSelectModule1Process);
+                Belt.SelectModule2Process.OnCallMethod = new GenericMethodCalledEventHandler(OnSelectModule2Process);
+                Belt.AddTransparentPieceProcess.OnCallMethod = new GenericMethodCalledEventHandler(OnAddTransparentPieceProcess);
+                Belt.AddMetallicPieceProcess.OnCallMethod = new GenericMethodCalledEventHandler(OnAddMetallicPieceProcess);
+                Belt.AddNonMetallicPieceProcess.OnCallMethod = new GenericMethodCalledEventHandler(OnAddNonMetallicPieceProcess);
+                Belt.SelectManualProcess.OnCallMethod = new GenericMethodCalledEventHandler(OnSelectManualProcess);
+                Belt.SelectAutomaticProcess.OnCallMethod = new GenericMethodCalledEventHandler(OnSelectAutomaticProcess);
+               
                 InitializeVariableValues();
             }
         }
 
-        private ServiceResult OnStartModule1Process(ISystemContext context, MethodState method, IList<object> inputArguments, IList<object> outputArguments)
+        private ServiceResult OnStartProcess(ISystemContext context, MethodState method, IList<object> inputArguments, IList<object> outputArguments)
         {
-            ServerForm.BeltModule1.Start();
+            ServerForm.BeltIdentifier.Start();
             return ServiceResult.Good;
         }
 
-        private ServiceResult OnStopModule1Process(ISystemContext context, MethodState method, IList<object> inputArguments, IList<object> outputArguments)
+        private ServiceResult OnStopProcess(ISystemContext context, MethodState method, IList<object> inputArguments, IList<object> outputArguments)
         {
-            ServerForm.BeltModule1.Stop();
+            ServerForm.BeltIdentifier.Stop();
             return ServiceResult.Good;
         }
 
-        private ServiceResult OnResetModule1Process(ISystemContext context, MethodState method, IList<object> inputArguments, IList<object> outputArguments)
+        private ServiceResult OnResetProcess(ISystemContext context, MethodState method, IList<object> inputArguments, IList<object> outputArguments)
         {
-            ServerForm.BeltModule1.Reset();
+            ServerForm.BeltIdentifier.Reset();
             return ServiceResult.Good;
         }
 
-        private ServiceResult OnStartModule2Process(ISystemContext context, MethodState method, IList<object> inputArguments, IList<object> outputArguments)
+        private ServiceResult OnSelectModule1Process(ISystemContext context, MethodState method, IList<object> inputArguments, IList<object> outputArguments)
         {
-            ServerForm.BeltModule2.Start();
+            ServerForm.BeltIdentifier.IsModule1 = true;
+            ServerForm.BeltIdentifier.WriteOpc();
             return ServiceResult.Good;
         }
 
-        private ServiceResult OnStopModule2Process(ISystemContext context, MethodState method, IList<object> inputArguments, IList<object> outputArguments)
+        private ServiceResult OnSelectModule2Process(ISystemContext context, MethodState method, IList<object> inputArguments, IList<object> outputArguments)
         {
-            ServerForm.BeltModule2.Stop();
+            ServerForm.BeltIdentifier.IsModule1 = false;
+            ServerForm.BeltIdentifier.WriteOpc();
             return ServiceResult.Good;
         }
 
-        private ServiceResult OnResetModule2Process(ISystemContext context, MethodState method, IList<object> inputArguments, IList<object> outputArguments)
+        private ServiceResult OnAddTransparentPieceProcess(ISystemContext context, MethodState method, IList<object> inputArguments, IList<object> outputArguments)
         {
-            ServerForm.BeltModule2.Reset();
+            if (!ServerForm.BeltIdentifier.IsAuto)
+                ServerForm.BeltIdentifier.AddPieceManual("Transparent");
             return ServiceResult.Good;
         }
 
+        private ServiceResult OnAddMetallicPieceProcess(ISystemContext context, MethodState method, IList<object> inputArguments, IList<object> outputArguments)
+        {
+            if (!ServerForm.BeltIdentifier.IsAuto)
+                ServerForm.BeltIdentifier.AddPieceManual("Metallic");
+            return ServiceResult.Good;
+        }
+        
+        private ServiceResult OnAddNonMetallicPieceProcess(ISystemContext context, MethodState method, IList<object> inputArguments, IList<object> outputArguments)
+        {
+            if (!ServerForm.BeltIdentifier.IsAuto)
+                ServerForm.BeltIdentifier.AddPieceManual("NonMetallic");
+            return ServiceResult.Good;
+        }
+
+        private ServiceResult OnSelectManualProcess(ISystemContext context, MethodState method, IList<object> inputArguments, IList<object> outputArguments)
+        {
+            ServerForm.BeltIdentifier.IsAuto = false;
+            ServerForm.BeltIdentifier.WriteOpc();
+            return ServiceResult.Good;
+        }
+
+        private ServiceResult OnSelectAutomaticProcess(ISystemContext context, MethodState method, IList<object> inputArguments, IList<object> outputArguments)
+        {
+            ServerForm.BeltIdentifier.IsAuto = true;
+            ServerForm.BeltIdentifier.WriteOpc();
+            return ServiceResult.Good;
+        }
+        
         private void InitializeVariableValues()
         {
+            Belt.IsModule1.Input.Value = true;
+            Belt.IsAuto.Input.Value = false;
+            Belt.IsError.Input.Value = false;
+            Belt.IsBusy.Input.Value = false;
+            Belt.Motor.Status.Value = false;
+            Belt.Motor.Interval.Value = 1;
+            Belt.Motor.JourneyTime.Value = 1;
+
             Belt.Module1.Transparent.Input.Value = false;
             Belt.Module1.Metallic.Input.Value = false;
             Belt.Module1.NonMetallic.Input.Value = false;
-            Belt.Module1.Error.Input.Value = false;
             Belt.Module1.QuantityTransparent.Input.Value = 0;
             Belt.Module1.QuantityMetallic.Input.Value = 0;
             Belt.Module1.QuantityNonMetallic.Input.Value = 0;
-            Belt.Module1.Motor.JourneyTime.Value = 1;
-            Belt.Module1.Motor.Status.Value = false;
-            Belt.Module1.Busy.Input.Value = false;
-
+   
             Belt.Module2.Barrier1.Output.Value = false;
             Belt.Module2.Barrier2.Output.Value = false;
             Belt.Module2.Barrier3.Output.Value = false;
             Belt.Module2.PhotoSensor.Output.Value = false;
             Belt.Module2.Inductive.Output.Value = true;
             Belt.Module2.Capacitive.Output.Value = true;
-            Belt.Module2.Motor.JourneyTime.Value = 1;
-            Belt.Module2.Motor.Status.Value = false;
-            Belt.Module2.Error.Input.Value = false;
-            Belt.Module2.Busy.Input.Value= false;
         }
 
         private readonly ServerConfiguration Configuration;

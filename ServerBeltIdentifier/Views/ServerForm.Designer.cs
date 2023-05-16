@@ -84,8 +84,7 @@ namespace BeltIdentifierServer
             pMotorStatus = new Panel();
             lblMotor = new Label();
             btnReset = new Button();
-            timerAutoModule1 = new System.Windows.Forms.Timer(components);
-            timerAutoModule2 = new System.Windows.Forms.Timer(components);
+            timerAuto = new System.Windows.Forms.Timer(components);
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
             tbcModules.SuspendLayout();
@@ -148,6 +147,7 @@ namespace BeltIdentifierServer
             // timerUpdateForm
             // 
             timerUpdateForm.Enabled = true;
+            timerUpdateForm.Interval = 500;
             timerUpdateForm.Tick += TimerUpdateForm_Tick;
             // 
             // tbcModules
@@ -159,6 +159,7 @@ namespace BeltIdentifierServer
             tbcModules.SelectedIndex = 0;
             tbcModules.Size = new Size(473, 304);
             tbcModules.TabIndex = 5;
+            tbcModules.Selected += TbcModules_Selected;
             // 
             // tpModule1
             // 
@@ -343,7 +344,7 @@ namespace BeltIdentifierServer
             // lblPhotoSensor
             // 
             lblPhotoSensor.AutoSize = true;
-            lblPhotoSensor.Location = new Point(347, 93);
+            lblPhotoSensor.Location = new Point(326, 93);
             lblPhotoSensor.Name = "lblPhotoSensor";
             lblPhotoSensor.Size = new Size(89, 20);
             lblPhotoSensor.TabIndex = 9;
@@ -496,6 +497,7 @@ namespace BeltIdentifierServer
             rbAutomatic.TabIndex = 1;
             rbAutomatic.Text = "Automatico";
             rbAutomatic.UseVisualStyleBackColor = true;
+            rbAutomatic.Enter += RbAutomatic_Enter;
             // 
             // rbManual
             // 
@@ -508,6 +510,7 @@ namespace BeltIdentifierServer
             rbManual.TabStop = true;
             rbManual.Text = "Manual";
             rbManual.UseVisualStyleBackColor = true;
+            rbManual.Enter += RbManual_Enter;
             // 
             // gbBeltTimes
             // 
@@ -651,17 +654,11 @@ namespace BeltIdentifierServer
             btnReset.UseVisualStyleBackColor = true;
             btnReset.Click += BtnReset_Click;
             // 
-            // timerAutoModule1
+            // timerAuto
             // 
-            timerAutoModule1.Enabled = true;
-            timerAutoModule1.Interval = 4001;
-            timerAutoModule1.Tick += TimerModule1_Tick;
-            // 
-            // timerAutoModule2
-            // 
-            timerAutoModule2.Enabled = true;
-            timerAutoModule2.Interval = 24001;
-            timerAutoModule2.Tick += TimerAutoModule2_Tick;
+            timerAuto.Enabled = true;
+            timerAuto.Interval = 200;
+            timerAuto.Tick += TimerMotor_Tick;
             // 
             // pictureBox1
             // 
@@ -786,8 +783,7 @@ namespace BeltIdentifierServer
         private Label lblBarrier1;
         private Panel pBarrier2;
         private Panel pBarrier1;
-        private System.Windows.Forms.Timer timerAutoModule1;
-        private System.Windows.Forms.Timer timerAutoModule2;
+        private System.Windows.Forms.Timer timerAuto;
         private TextBox tbInterval;
         private Label lblInterval;
         private Label lblJourneyTime;
