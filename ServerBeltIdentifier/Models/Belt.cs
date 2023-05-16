@@ -6,8 +6,8 @@ namespace ServerBeltIdentifier.Models
     public class Belt
     {
         public bool MotorOn;
-        public int JourneyTime = 1;
-        public int Interval = 1;
+        public uint JourneyTime = 1;
+        public uint Interval = 1;
         public bool IsBusy;
         public bool IsError;
         public bool IsModule1;
@@ -193,7 +193,7 @@ namespace ServerBeltIdentifier.Models
             if(IsModule1)
             {
                 Task tTransparent = new(() => {
-                    Thread.Sleep(JourneyTime * 1000);
+                    Thread.Sleep((int)JourneyTime * 1000);
                     if (IsError) return;
                     Module1.Transparent = false;
                     IsBusy = false;
@@ -209,7 +209,7 @@ namespace ServerBeltIdentifier.Models
                     {
                         Module2.Barrier1 = true;
                         WriteOpc();
-                        Thread.Sleep((JourneyTime / 6) * 1000);
+                        Thread.Sleep(((int)JourneyTime / 6) * 1000);
                     }
 
                     if (!IsError && !StopClick)
@@ -217,35 +217,35 @@ namespace ServerBeltIdentifier.Models
                         Module2.Barrier1 = false;
                         Module2.Barrier2 = true;
                         WriteOpc();
-                        Thread.Sleep((JourneyTime / 6) * 1000);
+                        Thread.Sleep(((int)JourneyTime / 6) * 1000);
                     }
 
                     if (!IsError && !StopClick)
                     {
                         Module2.Barrier2 = false;
                         WriteOpc();
-                        Thread.Sleep((JourneyTime / 6) * 1000);
+                        Thread.Sleep(((int)JourneyTime / 6) * 1000);
                     }
 
                     if (!IsError && !StopClick)
                     {
                         Module2.Capacitive = false;
                         WriteOpc();
-                        Thread.Sleep((JourneyTime / 6) * 1000);
+                        Thread.Sleep(((int)JourneyTime / 6) * 1000);
                     }
 
                     if (!IsError && !StopClick)
                     {
                         Module2.Capacitive = true;
                         WriteOpc();
-                        Thread.Sleep((JourneyTime / 6) * 1000);
+                        Thread.Sleep(((int)JourneyTime / 6) * 1000);
                     }
 
                     if (!IsError && !StopClick)
                     {
                         Module2.Barrier3 = true;
                         WriteOpc();
-                        Thread.Sleep((JourneyTime / 6) * 1000);
+                        Thread.Sleep(((int)JourneyTime / 6) * 1000);
                     }
 
                     if (!IsError && !StopClick)
@@ -264,7 +264,7 @@ namespace ServerBeltIdentifier.Models
             if(IsModule1)
             {
                 Task tMetallic = new(() => {
-                    Thread.Sleep(JourneyTime * 1000);
+                    Thread.Sleep((int)JourneyTime * 1000);
                     if (IsError) return;
                     Module1.Metallic = false;
                     IsBusy = false;
@@ -280,42 +280,42 @@ namespace ServerBeltIdentifier.Models
                     {
                         Module2.Barrier1 = true;
                         WriteOpc();
-                        Thread.Sleep((JourneyTime / 6) * 1000);
+                        Thread.Sleep(((int)JourneyTime / 6) * 1000);
                     }
                     if (!IsError && !StopClick)
                     {
                         Module2.Barrier1 = false;
                         Module2.Barrier2 = true;
                         WriteOpc();
-                        Thread.Sleep((JourneyTime / 6) * 1000);
+                        Thread.Sleep(((int)JourneyTime / 6) * 1000);
                     }
                     if (!IsError && !StopClick)
                     {
                         Module2.Barrier2 = false;
                         Module2.PhotoSensor = true;
                         WriteOpc();
-                        Thread.Sleep((JourneyTime / 6) * 1000);
+                        Thread.Sleep(((int)JourneyTime / 6) * 1000);
                     }
                     if (!IsError && !StopClick)
                     {
                         Module2.PhotoSensor = false;
                         Module2.Capacitive = false;
                         WriteOpc();
-                        Thread.Sleep((JourneyTime / 6) * 1000);
+                        Thread.Sleep(((int)JourneyTime / 6) * 1000);
                     }
                     if (!IsError && !StopClick)
                     {
                         Module2.Capacitive = true;
                         Module2.Inductive = false;
                         WriteOpc();
-                        Thread.Sleep((JourneyTime / 6) * 1000);
+                        Thread.Sleep(((int)JourneyTime / 6) * 1000);
                     }
                     if (!IsError && !StopClick)
                     {
                         Module2.Inductive = true;
                         Module2.Barrier3 = true;
                         WriteOpc();
-                        Thread.Sleep((JourneyTime / 6) * 1000);
+                        Thread.Sleep(((int)JourneyTime / 6) * 1000);
                     }
                     if (!IsError && !StopClick)
                     {
@@ -333,7 +333,7 @@ namespace ServerBeltIdentifier.Models
             if(IsModule1)
             {
                 Task tNonMetallic = new(() => {
-                    Thread.Sleep(JourneyTime * 1000);
+                    Thread.Sleep((int)JourneyTime * 1000);
                     if (IsError) return;
                     Module1.NonMetallic = false;
                     IsBusy = false;
@@ -349,40 +349,40 @@ namespace ServerBeltIdentifier.Models
                     {
                         Module2.Barrier1 = true;
                         WriteOpc();
-                        Thread.Sleep((JourneyTime / 6) * 1000);
+                        Thread.Sleep(((int)JourneyTime / 6) * 1000);
                     }
                     if (!IsError && !StopClick)
                     {
                         Module2.Barrier1 = false;
                         Module2.Barrier2 = true;
                         WriteOpc();
-                        Thread.Sleep((JourneyTime / 6) * 1000);
+                        Thread.Sleep(((int)JourneyTime / 6) * 1000);
                     }
                     if (!IsError && !StopClick)
                     {
                         Module2.Barrier2 = false;
                         Module2.PhotoSensor = true;
                         WriteOpc();
-                        Thread.Sleep((JourneyTime / 6) * 1000);
+                        Thread.Sleep(((int)JourneyTime / 6) * 1000);
                     }
                     if (!IsError && !StopClick)
                     {
                         Module2.PhotoSensor = false;
                         Module2.Capacitive = false;
                         WriteOpc();
-                        Thread.Sleep((JourneyTime / 6) * 1000);
+                        Thread.Sleep(((int)JourneyTime / 6) * 1000);
                     }
                     if (!IsError && !StopClick)
                     {
                         Module2.Capacitive = true;
                         WriteOpc();
-                        Thread.Sleep((JourneyTime / 6) * 1000);
+                        Thread.Sleep(((int)JourneyTime / 6) * 1000);
                     }
                     if (!IsError && !StopClick)
                     {
                         Module2.Barrier3 = true;
                         WriteOpc();
-                        Thread.Sleep((JourneyTime / 6) * 1000);
+                        Thread.Sleep(((int)JourneyTime / 6) * 1000);
                     }
                     if (!IsError && !StopClick)
                     {

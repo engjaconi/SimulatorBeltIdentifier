@@ -55,13 +55,9 @@ namespace ServerBeltIdentifier.Models
                 Belt.StartProcess.OnCallMethod = new GenericMethodCalledEventHandler(OnStartProcess);
                 Belt.StopProcess.OnCallMethod = new GenericMethodCalledEventHandler(OnStopProcess);
                 Belt.ResetProcess.OnCallMethod = new GenericMethodCalledEventHandler(OnResetProcess);
-                Belt.SelectModule1Process.OnCallMethod = new GenericMethodCalledEventHandler(OnSelectModule1Process);
-                Belt.SelectModule2Process.OnCallMethod = new GenericMethodCalledEventHandler(OnSelectModule2Process);
                 Belt.AddTransparentPieceProcess.OnCallMethod = new GenericMethodCalledEventHandler(OnAddTransparentPieceProcess);
                 Belt.AddMetallicPieceProcess.OnCallMethod = new GenericMethodCalledEventHandler(OnAddMetallicPieceProcess);
                 Belt.AddNonMetallicPieceProcess.OnCallMethod = new GenericMethodCalledEventHandler(OnAddNonMetallicPieceProcess);
-                Belt.SelectManualProcess.OnCallMethod = new GenericMethodCalledEventHandler(OnSelectManualProcess);
-                Belt.SelectAutomaticProcess.OnCallMethod = new GenericMethodCalledEventHandler(OnSelectAutomaticProcess);
                
                 InitializeVariableValues();
             }
@@ -85,20 +81,6 @@ namespace ServerBeltIdentifier.Models
             return ServiceResult.Good;
         }
 
-        private ServiceResult OnSelectModule1Process(ISystemContext context, MethodState method, IList<object> inputArguments, IList<object> outputArguments)
-        {
-            ServerForm.BeltIdentifier.IsModule1 = true;
-            ServerForm.BeltIdentifier.WriteOpc();
-            return ServiceResult.Good;
-        }
-
-        private ServiceResult OnSelectModule2Process(ISystemContext context, MethodState method, IList<object> inputArguments, IList<object> outputArguments)
-        {
-            ServerForm.BeltIdentifier.IsModule1 = false;
-            ServerForm.BeltIdentifier.WriteOpc();
-            return ServiceResult.Good;
-        }
-
         private ServiceResult OnAddTransparentPieceProcess(ISystemContext context, MethodState method, IList<object> inputArguments, IList<object> outputArguments)
         {
             if (!ServerForm.BeltIdentifier.IsAuto)
@@ -117,20 +99,6 @@ namespace ServerBeltIdentifier.Models
         {
             if (!ServerForm.BeltIdentifier.IsAuto)
                 ServerForm.BeltIdentifier.AddPieceManual("NonMetallic");
-            return ServiceResult.Good;
-        }
-
-        private ServiceResult OnSelectManualProcess(ISystemContext context, MethodState method, IList<object> inputArguments, IList<object> outputArguments)
-        {
-            ServerForm.BeltIdentifier.IsAuto = false;
-            ServerForm.BeltIdentifier.WriteOpc();
-            return ServiceResult.Good;
-        }
-
-        private ServiceResult OnSelectAutomaticProcess(ISystemContext context, MethodState method, IList<object> inputArguments, IList<object> outputArguments)
-        {
-            ServerForm.BeltIdentifier.IsAuto = true;
-            ServerForm.BeltIdentifier.WriteOpc();
             return ServiceResult.Good;
         }
         

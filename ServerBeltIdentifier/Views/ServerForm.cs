@@ -289,7 +289,7 @@ namespace BeltIdentifierServer
         {
             if (rbAutomatic.Checked && BeltIdentifier.MotorOn && !BeltIdentifier.IsError)
             {
-                timerAuto.Interval = BeltIdentifier.Interval * 1000; // Para segundos.
+                timerAuto.Interval = (int)BeltIdentifier.Interval * 1000; // Para segundos.
                 BeltIdentifier.AddPieceAuto();
             }
         }
@@ -308,7 +308,7 @@ namespace BeltIdentifierServer
         {
             try
             {
-                int journey = Convert.ToInt16(tbJourneyTime.Text);
+                uint journey = Convert.ToUInt32(tbJourneyTime.Text);
                 if (journey <= 0) throw new Exception();
 
                 BeltIdentifier.JourneyTime = journey;
@@ -329,7 +329,7 @@ namespace BeltIdentifierServer
         {
             try
             {
-                int interval = Convert.ToInt16(tbInterval.Text);
+                uint interval = Convert.ToUInt32(tbInterval.Text);
                 if (interval <= 0) throw new Exception();
                 BeltIdentifier.Interval = interval;
                 BeltIdentifier.WriteOpc();

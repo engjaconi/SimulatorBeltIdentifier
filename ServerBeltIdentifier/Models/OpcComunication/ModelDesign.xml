@@ -225,13 +225,9 @@ TargetNamespace="http://opcfoundation.org/BeltIdentifier"
 			<opc:Method SymbolicName="StartProcess" ModellingRule="Mandatory"></opc:Method>
 			<opc:Method SymbolicName="StopProcess" ModellingRule="Mandatory"></opc:Method>
 			<opc:Method SymbolicName="ResetProcess" ModellingRule="Mandatory"></opc:Method>
-			<opc:Method SymbolicName="SelectModule1Process" ModellingRule="Mandatory"></opc:Method>
-			<opc:Method SymbolicName="SelectModule2Process" ModellingRule="Mandatory"></opc:Method>
 			<opc:Method SymbolicName="AddTransparentPieceProcess" ModellingRule="Mandatory"></opc:Method>
 			<opc:Method SymbolicName="AddMetallicPieceProcess" ModellingRule="Mandatory"></opc:Method>
 			<opc:Method SymbolicName="AddNonMetallicPieceProcess" ModellingRule="Mandatory"></opc:Method>
-			<opc:Method SymbolicName="SelectManualProcess" ModellingRule="Mandatory"></opc:Method>
-			<opc:Method SymbolicName="SelectAutomaticProcess" ModellingRule="Mandatory"></opc:Method>
 		</opc:Children>
 
 		<opc:References>

@@ -81,15 +81,14 @@ namespace BeltIdentifier
         private const string InitializationString =
            "AQAAACcAAABodHRwOi8vb3BjZm91bmRhdGlvbi5vcmcvQmVsdElkZW50aWZpZXL/////BGCAAgEAAAAB" +
            "ABkAAABHZW5lcmljU2Vuc29yVHlwZUluc3RhbmNlAQEBAAEBAQABAAAA/////wEAAAAVYIkKAgAAAAEA" +
-           "BgAAAE91dHB1dAEBAgAALwEAQAkCAAAAAAH/////AwP/////AQAAABVgiQoCAAAAAAAHAAAARVVSYW5n" +
-           "ZQEBBgAALgBEBgAAAAEAdAP/////AQH/////AAAAAA==";
+           "BgAAAE91dHB1dAEBAgAALwEARAkCAAAAAAH/////AwP/////AAAAAA==";
         #endregion
         #endif
         #endregion
 
         #region Public Properties
         /// <remarks />
-        public AnalogItemState<bool> Output
+        public DiscreteItemState<bool> Output
         {
             get
             {
@@ -146,11 +145,11 @@ namespace BeltIdentifier
                         {
                             if (replacement == null)
                             {
-                                Output = new AnalogItemState<bool>(this);
+                                Output = new DiscreteItemState<bool>(this);
                             }
                             else
                             {
-                                Output = (AnalogItemState<bool>)replacement;
+                                Output = (DiscreteItemState<bool>)replacement;
                             }
                         }
                     }
@@ -170,7 +169,7 @@ namespace BeltIdentifier
         #endregion
 
         #region Private Fields
-        private AnalogItemState<bool> m_output;
+        private DiscreteItemState<bool> m_output;
         #endregion
     }
     #endif
@@ -221,15 +220,14 @@ namespace BeltIdentifier
         private const string InitializationString =
            "AQAAACcAAABodHRwOi8vb3BjZm91bmRhdGlvbi5vcmcvQmVsdElkZW50aWZpZXL/////BGCAAgEAAAAB" +
            "ABsAAABHZW5lcmljQWN0dWF0b3JUeXBlSW5zdGFuY2UBAQgAAQEIAAgAAAD/////AQAAABVgiQoCAAAA" +
-           "AQAFAAAASW5wdXQBAQkAAC8BAEAJCQAAAAAB/////wMD/////wEAAAAVYIkKAgAAAAAABwAAAEVVUmFu" +
-           "Z2UBAQ0AAC4ARA0AAAABAHQD/////wEB/////wAAAAA=";
+           "AQAFAAAASW5wdXQBAQkAAC8BAEQJCQAAAAAB/////wMD/////wAAAAA=";
         #endregion
         #endif
         #endregion
 
         #region Public Properties
         /// <remarks />
-        public AnalogItemState<bool> Input
+        public DiscreteItemState<bool> Input
         {
             get
             {
@@ -286,11 +284,11 @@ namespace BeltIdentifier
                         {
                             if (replacement == null)
                             {
-                                Input = new AnalogItemState<bool>(this);
+                                Input = new DiscreteItemState<bool>(this);
                             }
                             else
                             {
-                                Input = (AnalogItemState<bool>)replacement;
+                                Input = (DiscreteItemState<bool>)replacement;
                             }
                         }
                     }
@@ -310,7 +308,7 @@ namespace BeltIdentifier
         #endregion
 
         #region Private Fields
-        private AnalogItemState<bool> m_input;
+        private DiscreteItemState<bool> m_input;
         #endregion
     }
     #endif
@@ -361,7 +359,7 @@ namespace BeltIdentifier
         private const string InitializationString =
            "AQAAACcAAABodHRwOi8vb3BjZm91bmRhdGlvbi5vcmcvQmVsdElkZW50aWZpZXL/////BGCAAgEAAAAB" +
            "ABoAAABHZW5lcmljRGlzcGxheVR5cGVJbnN0YW5jZQEBDwABAQ8ADwAAAP////8BAAAAFWCJCgIAAAAB" +
-           "AAUAAABJbnB1dAEBEAAALwEAQAkQAAAAAAb/////AwP/////AQAAABVgiQoCAAAAAAAHAAAARVVSYW5n" +
+           "AAUAAABJbnB1dAEBEAAALwEAQAkQAAAAAAf/////AwP/////AQAAABVgiQoCAAAAAAAHAAAARVVSYW5n" +
            "ZQEBFAAALgBEFAAAAAEAdAP/////AQH/////AAAAAA==";
         #endregion
         #endif
@@ -369,7 +367,7 @@ namespace BeltIdentifier
 
         #region Public Properties
         /// <remarks />
-        public AnalogItemState<int> Input
+        public AnalogItemState<uint> Input
         {
             get
             {
@@ -426,11 +424,11 @@ namespace BeltIdentifier
                         {
                             if (replacement == null)
                             {
-                                Input = new AnalogItemState<int>(this);
+                                Input = new AnalogItemState<uint>(this);
                             }
                             else
                             {
-                                Input = (AnalogItemState<int>)replacement;
+                                Input = (AnalogItemState<uint>)replacement;
                             }
                         }
                     }
@@ -450,7 +448,7 @@ namespace BeltIdentifier
         #endregion
 
         #region Private Fields
-        private AnalogItemState<int> m_input;
+        private AnalogItemState<uint> m_input;
         #endregion
     }
     #endif
@@ -501,18 +499,18 @@ namespace BeltIdentifier
         private const string InitializationString =
            "AQAAACcAAABodHRwOi8vb3BjZm91bmRhdGlvbi5vcmcvQmVsdElkZW50aWZpZXL/////BGCAAgEAAAAB" +
            "ABgAAABHZW5lcmljTW90b3JUeXBlSW5zdGFuY2UBARYAAQEWABYAAAD/////AwAAABVgiQoCAAAAAQAL" +
-           "AAAASm91cm5leVRpbWUBAcsDAC8BAEAJywMAAAAG/////wMD/////wEAAAAVYIkKAgAAAAAABwAAAEVV" +
+           "AAAASm91cm5leVRpbWUBAcsDAC8BAEAJywMAAAAH/////wMD/////wEAAAAVYIkKAgAAAAAABwAAAEVV" +
            "UmFuZ2UBAc8DAC4ARM8DAAABAHQD/////wEB/////wAAAAAVYIkKAgAAAAEACAAAAEludGVydmFsAQH7" +
-           "AwAvAQBACfsDAAAABv////8DA/////8BAAAAFWCJCgIAAAAAAAcAAABFVVJhbmdlAQH/AwAuAET/AwAA" +
-           "AQB0A/////8BAf////8AAAAAFWCJCgIAAAABAAYAAABTdGF0dXMBAVcDAC8BAEAJVwMAAAAB/////wMD" +
-           "/////wEAAAAVYIkKAgAAAAAABwAAAEVVUmFuZ2UBAVsDAC4ARFsDAAABAHQD/////wEB/////wAAAAA=";
+           "AwAvAQBACfsDAAAAB/////8DA/////8BAAAAFWCJCgIAAAAAAAcAAABFVVJhbmdlAQH/AwAuAET/AwAA" +
+           "AQB0A/////8BAf////8AAAAAFWCJCgIAAAABAAYAAABTdGF0dXMBAVcDAC8BAEQJVwMAAAAB/////wMD" +
+           "/////wAAAAA=";
         #endregion
         #endif
         #endregion
 
         #region Public Properties
         /// <remarks />
-        public AnalogItemState<int> JourneyTime
+        public AnalogItemState<uint> JourneyTime
         {
             get
             {
@@ -531,7 +529,7 @@ namespace BeltIdentifier
         }
 
         /// <remarks />
-        public AnalogItemState<int> Interval
+        public AnalogItemState<uint> Interval
         {
             get
             {
@@ -550,7 +548,7 @@ namespace BeltIdentifier
         }
 
         /// <remarks />
-        public AnalogItemState<bool> Status
+        public DiscreteItemState<bool> Status
         {
             get
             {
@@ -617,11 +615,11 @@ namespace BeltIdentifier
                         {
                             if (replacement == null)
                             {
-                                JourneyTime = new AnalogItemState<int>(this);
+                                JourneyTime = new AnalogItemState<uint>(this);
                             }
                             else
                             {
-                                JourneyTime = (AnalogItemState<int>)replacement;
+                                JourneyTime = (AnalogItemState<uint>)replacement;
                             }
                         }
                     }
@@ -638,11 +636,11 @@ namespace BeltIdentifier
                         {
                             if (replacement == null)
                             {
-                                Interval = new AnalogItemState<int>(this);
+                                Interval = new AnalogItemState<uint>(this);
                             }
                             else
                             {
-                                Interval = (AnalogItemState<int>)replacement;
+                                Interval = (AnalogItemState<uint>)replacement;
                             }
                         }
                     }
@@ -659,11 +657,11 @@ namespace BeltIdentifier
                         {
                             if (replacement == null)
                             {
-                                Status = new AnalogItemState<bool>(this);
+                                Status = new DiscreteItemState<bool>(this);
                             }
                             else
                             {
-                                Status = (AnalogItemState<bool>)replacement;
+                                Status = (DiscreteItemState<bool>)replacement;
                             }
                         }
                     }
@@ -683,9 +681,9 @@ namespace BeltIdentifier
         #endregion
 
         #region Private Fields
-        private AnalogItemState<int> m_journeyTime;
-        private AnalogItemState<int> m_interval;
-        private AnalogItemState<bool> m_status;
+        private AnalogItemState<uint> m_journeyTime;
+        private AnalogItemState<uint> m_interval;
+        private DiscreteItemState<bool> m_status;
         #endregion
     }
     #endif
@@ -736,8 +734,7 @@ namespace BeltIdentifier
         private const string InitializationString =
            "AQAAACcAAABodHRwOi8vb3BjZm91bmRhdGlvbi5vcmcvQmVsdElkZW50aWZpZXL/////BGCAAgEAAAAB" +
            "ABkAAABJc0F1dG9JbHVtaW5hdGlvbkluc3RhbmNlAQEBBAEBAQQBBAAA/////wEAAAAVYIkKAgAAAAEA" +
-           "BQAAAElucHV0AQECBAAvAQBACQIEAAAAAf////8DA/////8BAAAAFWCJCgIAAAAAAAcAAABFVVJhbmdl" +
-           "AQEGBAAuAEQGBAAAAQB0A/////8BAf////8AAAAA";
+           "BQAAAElucHV0AQECBAAvAQBECQIEAAAAAf////8DA/////8AAAAA";
         #endregion
         #endif
         #endregion
@@ -799,8 +796,7 @@ namespace BeltIdentifier
         private const string InitializationString =
            "AQAAACcAAABodHRwOi8vb3BjZm91bmRhdGlvbi5vcmcvQmVsdElkZW50aWZpZXL/////BGCAAgEAAAAB" +
            "ABwAAABJc01vZHVsZTFJbHVtaW5hdGlvbkluc3RhbmNlAQEIBAEBCAQIBAAA/////wEAAAAVYIkKAgAA" +
-           "AAEABQAAAElucHV0AQEJBAAvAQBACQkEAAAAAf////8DA/////8BAAAAFWCJCgIAAAAAAAcAAABFVVJh" +
-           "bmdlAQENBAAuAEQNBAAAAQB0A/////8BAf////8AAAAA";
+           "AAEABQAAAElucHV0AQEJBAAvAQBECQkEAAAAAf////8DA/////8AAAAA";
         #endregion
         #endif
         #endregion
@@ -862,8 +858,7 @@ namespace BeltIdentifier
         private const string InitializationString =
            "AQAAACcAAABodHRwOi8vb3BjZm91bmRhdGlvbi5vcmcvQmVsdElkZW50aWZpZXL/////BGCAAgEAAAAB" +
            "ABkAAABJc0J1c3lJbHVtaW5hdGlvbkluc3RhbmNlAQGRBAEBkQSRBAAA/////wEAAAAVYIkKAgAAAAEA" +
-           "BQAAAElucHV0AQGSBAAvAQBACZIEAAAAAf////8DA/////8BAAAAFWCJCgIAAAAAAAcAAABFVVJhbmdl" +
-           "AQGWBAAuAESWBAAAAQB0A/////8BAf////8AAAAA";
+           "BQAAAElucHV0AQGSBAAvAQBECZIEAAAAAf////8DA/////8AAAAA";
         #endregion
         #endif
         #endregion
@@ -925,8 +920,7 @@ namespace BeltIdentifier
         private const string InitializationString =
            "AQAAACcAAABodHRwOi8vb3BjZm91bmRhdGlvbi5vcmcvQmVsdElkZW50aWZpZXL/////BGCAAgEAAAAB" +
            "ABoAAABJc0Vycm9ySWx1bWluYXRpb25JbnN0YW5jZQEBmAQBAZgEmAQAAP////8BAAAAFWCJCgIAAAAB" +
-           "AAUAAABJbnB1dAEBmQQALwEAQAmZBAAAAAH/////AwP/////AQAAABVgiQoCAAAAAAAHAAAARVVSYW5n" +
-           "ZQEBnQQALgBEnQQAAAEAdAP/////AQH/////AAAAAA==";
+           "AAUAAABJbnB1dAEBmQQALwEARAmZBAAAAAH/////AwP/////AAAAAA==";
         #endregion
         #endif
         #endregion
@@ -988,11 +982,11 @@ namespace BeltIdentifier
         private const string InitializationString =
            "AQAAACcAAABodHRwOi8vb3BjZm91bmRhdGlvbi5vcmcvQmVsdElkZW50aWZpZXL/////BGCAAgEAAAAB" +
            "ABEAAABNb3RvclR5cGVJbnN0YW5jZQEBHwMBAR8DHwMAAP////8DAAAAFWCJCgIAAAABAAsAAABKb3Vy" +
-           "bmV5VGltZQEB0QMALwEAQAnRAwAAAAb/////AwP/////AQAAABVgiQoCAAAAAAAHAAAARVVSYW5nZQEB" +
+           "bmV5VGltZQEB0QMALwEAQAnRAwAAAAf/////AwP/////AQAAABVgiQoCAAAAAAAHAAAARVVSYW5nZQEB" +
            "1QMALgBE1QMAAAEAdAP/////AQH/////AAAAABVgiQoCAAAAAQAIAAAASW50ZXJ2YWwBAQ8EAC8BAEAJ" +
-           "DwQAAAAG/////wMD/////wEAAAAVYIkKAgAAAAAABwAAAEVVUmFuZ2UBARMEAC4ARBMEAAABAHQD////" +
-           "/wEB/////wAAAAAVYIkKAgAAAAEABgAAAFN0YXR1cwEBXQMALwEAQAldAwAAAAH/////AwP/////AQAA" +
-           "ABVgiQoCAAAAAAAHAAAARVVSYW5nZQEBYQMALgBEYQMAAAEAdAP/////AQH/////AAAAAA==";
+           "DwQAAAAH/////wMD/////wEAAAAVYIkKAgAAAAAABwAAAEVVUmFuZ2UBARMEAC4ARBMEAAABAHQD////" +
+           "/wEB/////wAAAAAVYIkKAgAAAAEABgAAAFN0YXR1cwEBXQMALwEARAldAwAAAAH/////AwP/////AAAA" +
+           "AA==";
         #endregion
         #endif
         #endregion
@@ -1054,8 +1048,7 @@ namespace BeltIdentifier
         private const string InitializationString =
            "AQAAACcAAABodHRwOi8vb3BjZm91bmRhdGlvbi5vcmcvQmVsdElkZW50aWZpZXL/////BGCAAgEAAAAB" +
            "ABgAAABUcmFuc3BhcmVudFBpZWNlSW5zdGFuY2UBAZMDAQGTA5MDAAD/////AQAAABVgiQoCAAAAAQAF" +
-           "AAAASW5wdXQBAZQDAC8BAEAJlAMAAAAB/////wMD/////wEAAAAVYIkKAgAAAAAABwAAAEVVUmFuZ2UB" +
-           "AZgDAC4ARJgDAAABAHQD/////wEB/////wAAAAA=";
+           "AAAASW5wdXQBAZQDAC8BAEQJlAMAAAAB/////wMD/////wAAAAA=";
         #endregion
         #endif
         #endregion
@@ -1117,8 +1110,7 @@ namespace BeltIdentifier
         private const string InitializationString =
            "AQAAACcAAABodHRwOi8vb3BjZm91bmRhdGlvbi5vcmcvQmVsdElkZW50aWZpZXL/////BGCAAgEAAAAB" +
            "ABUAAABNZXRhbGxpY1BpZWNlSW5zdGFuY2UBAUAAAQFAAEAAAAD/////AQAAABVgiQoCAAAAAQAFAAAA" +
-           "SW5wdXQBAUEAAC8BAEAJQQAAAAAB/////wMD/////wEAAAAVYIkKAgAAAAAABwAAAEVVUmFuZ2UBAUUA" +
-           "AC4AREUAAAABAHQD/////wEB/////wAAAAA=";
+           "SW5wdXQBAUEAAC8BAEQJQQAAAAAB/////wMD/////wAAAAA=";
         #endregion
         #endif
         #endregion
@@ -1180,8 +1172,7 @@ namespace BeltIdentifier
         private const string InitializationString =
            "AQAAACcAAABodHRwOi8vb3BjZm91bmRhdGlvbi5vcmcvQmVsdElkZW50aWZpZXL/////BGCAAgEAAAAB" +
            "ABgAAABOb25NZXRhbGxpY1BpZWNlSW5zdGFuY2UBAUcAAQFHAEcAAAD/////AQAAABVgiQoCAAAAAQAF" +
-           "AAAASW5wdXQBAUgAAC8BAEAJSAAAAAAB/////wMD/////wEAAAAVYIkKAgAAAAAABwAAAEVVUmFuZ2UB" +
-           "AUwAAC4AREwAAAABAHQD/////wEB/////wAAAAA=";
+           "AAAASW5wdXQBAUgAAC8BAEQJSAAAAAAB/////wMD/////wAAAAA=";
         #endregion
         #endif
         #endregion
@@ -1243,7 +1234,7 @@ namespace BeltIdentifier
         private const string InitializationString =
            "AQAAACcAAABodHRwOi8vb3BjZm91bmRhdGlvbi5vcmcvQmVsdElkZW50aWZpZXL/////BGCAAgEAAAAB" +
            "ACAAAABRdWFudGl0eVRyYW5zcGFyZW50UGllY2VJbnN0YW5jZQEBmgMBAZoDmgMAAP////8BAAAAFWCJ" +
-           "CgIAAAABAAUAAABJbnB1dAEBmwMALwEAQAmbAwAAAAb/////AwP/////AQAAABVgiQoCAAAAAAAHAAAA" +
+           "CgIAAAABAAUAAABJbnB1dAEBmwMALwEAQAmbAwAAAAf/////AwP/////AQAAABVgiQoCAAAAAAAHAAAA" +
            "RVVSYW5nZQEBnwMALgBEnwMAAAEAdAP/////AQH/////AAAAAA==";
         #endregion
         #endif
@@ -1306,7 +1297,7 @@ namespace BeltIdentifier
         private const string InitializationString =
            "AQAAACcAAABodHRwOi8vb3BjZm91bmRhdGlvbi5vcmcvQmVsdElkZW50aWZpZXL/////BGCAAgEAAAAB" +
            "AB0AAABRdWFudGl0eU1ldGFsbGljUGllY2VJbnN0YW5jZQEBXAABAVwAXAAAAP////8BAAAAFWCJCgIA" +
-           "AAABAAUAAABJbnB1dAEBXQAALwEAQAldAAAAAAb/////AwP/////AQAAABVgiQoCAAAAAAAHAAAARVVS" +
+           "AAABAAUAAABJbnB1dAEBXQAALwEAQAldAAAAAAf/////AwP/////AQAAABVgiQoCAAAAAAAHAAAARVVS" +
            "YW5nZQEBYQAALgBEYQAAAAEAdAP/////AQH/////AAAAAA==";
         #endregion
         #endif
@@ -1369,7 +1360,7 @@ namespace BeltIdentifier
         private const string InitializationString =
            "AQAAACcAAABodHRwOi8vb3BjZm91bmRhdGlvbi5vcmcvQmVsdElkZW50aWZpZXL/////BGCAAgEAAAAB" +
            "ACAAAABRdWFudGl0eU5vbk1ldGFsbGljUGllY2VJbnN0YW5jZQEBYwABAWMAYwAAAP////8BAAAAFWCJ" +
-           "CgIAAAABAAUAAABJbnB1dAEBZAAALwEAQAlkAAAAAAb/////AwP/////AQAAABVgiQoCAAAAAAAHAAAA" +
+           "CgIAAAABAAUAAABJbnB1dAEBZAAALwEAQAlkAAAAAAf/////AwP/////AQAAABVgiQoCAAAAAAAHAAAA" +
            "RVVSYW5nZQEBaAAALgBEaAAAAAEAdAP/////AQH/////AAAAAA==";
         #endregion
         #endif
@@ -1432,8 +1423,7 @@ namespace BeltIdentifier
         private const string InitializationString =
            "AQAAACcAAABodHRwOi8vb3BjZm91bmRhdGlvbi5vcmcvQmVsdElkZW50aWZpZXL/////BGCAAgEAAAAB" +
            "ABYAAABPcHRpY2FsQmFycmllckluc3RhbmNlAQEdAAEBHQAdAAAA/////wEAAAAVYIkKAgAAAAEABgAA" +
-           "AE91dHB1dAEBHgAALwEAQAkeAAAAAAH/////AwP/////AQAAABVgiQoCAAAAAAAHAAAARVVSYW5nZQEB" +
-           "IgAALgBEIgAAAAEAdAP/////AQH/////AAAAAA==";
+           "AE91dHB1dAEBHgAALwEARAkeAAAAAAH/////AwP/////AAAAAA==";
         #endregion
         #endif
         #endregion
@@ -1495,8 +1485,7 @@ namespace BeltIdentifier
         private const string InitializationString =
            "AQAAACcAAABodHRwOi8vb3BjZm91bmRhdGlvbi5vcmcvQmVsdElkZW50aWZpZXL/////BGCAAgEAAAAB" +
            "ABsAAABFbGVjdHJpY1Bob3RvU2Vuc29ySW5zdGFuY2UBASQAAQEkACQAAAD/////AQAAABVgiQoCAAAA" +
-           "AQAGAAAAT3V0cHV0AQElAAAvAQBACSUAAAAAAf////8DA/////8BAAAAFWCJCgIAAAAAAAcAAABFVVJh" +
-           "bmdlAQEpAAAuAEQpAAAAAQB0A/////8BAf////8AAAAA";
+           "AQAGAAAAT3V0cHV0AQElAAAvAQBECSUAAAAAAf////8DA/////8AAAAA";
         #endregion
         #endif
         #endregion
@@ -1558,8 +1547,7 @@ namespace BeltIdentifier
         private const string InitializationString =
            "AQAAACcAAABodHRwOi8vb3BjZm91bmRhdGlvbi5vcmcvQmVsdElkZW50aWZpZXL/////BGCAAgEAAAAB" +
            "ABgAAABDYXBhY2l0aXZlU2Vuc29ySW5zdGFuY2UBASsAAQErACsAAAD/////AQAAABVgiQoCAAAAAQAG" +
-           "AAAAT3V0cHV0AQEsAAAvAQBACSwAAAAAAf////8DA/////8BAAAAFWCJCgIAAAAAAAcAAABFVVJhbmdl" +
-           "AQEwAAAuAEQwAAAAAQB0A/////8BAf////8AAAAA";
+           "AAAAT3V0cHV0AQEsAAAvAQBECSwAAAAAAf////8DA/////8AAAAA";
         #endregion
         #endif
         #endregion
@@ -1621,8 +1609,7 @@ namespace BeltIdentifier
         private const string InitializationString =
            "AQAAACcAAABodHRwOi8vb3BjZm91bmRhdGlvbi5vcmcvQmVsdElkZW50aWZpZXL/////BGCAAgEAAAAB" +
            "ABcAAABJbmR1Y3RpdmVTZW5zb3JJbnN0YW5jZQEBMgABATIAMgAAAP////8BAAAAFWCJCgIAAAABAAYA" +
-           "AABPdXRwdXQBATMAAC8BAEAJMwAAAAAB/////wMD/////wEAAAAVYIkKAgAAAAAABwAAAEVVUmFuZ2UB" +
-           "ATcAAC4ARDcAAAABAHQD/////wEB/////wAAAAA=";
+           "AABPdXRwdXQBATMAAC8BAEQJMwAAAAAB/////wMD/////wAAAAA=";
         #endregion
         #endif
         #endregion
@@ -1685,21 +1672,18 @@ namespace BeltIdentifier
            "AQAAACcAAABodHRwOi8vb3BjZm91bmRhdGlvbi5vcmcvQmVsdElkZW50aWZpZXL/////BGCAAgEAAAAB" +
            "ABMAAABNb2R1bGUxVHlwZUluc3RhbmNlAQFxAAEBcQBxAAAAAQAAAAAwAAEBoQMGAAAAhGCACgEAAAAB" +
            "AAsAAABUcmFuc3BhcmVudAEBoQMALwEBkwOhAwAAAQEAAAAAMAEBAXEAAQAAABVgiQoCAAAAAQAFAAAA" +
-           "SW5wdXQBAaIDAC8BAEAJogMAAAAB/////wMD/////wEAAAAVYIkKAgAAAAAABwAAAEVVUmFuZ2UBAaYD" +
-           "AC4ARKYDAAABAHQD/////wEB/////wAAAACEYIAKAQAAAAEACAAAAE1ldGFsbGljAQGAAAAvAQFAAIAA" +
-           "AAAB/////wEAAAAVYIkKAgAAAAEABQAAAElucHV0AQGBAAAvAQBACYEAAAAAAf////8DA/////8BAAAA" +
-           "FWCJCgIAAAAAAAcAAABFVVJhbmdlAQGFAAAuAESFAAAAAQB0A/////8BAf////8AAAAAhGCACgEAAAAB" +
-           "AAsAAABOb25NZXRhbGxpYwEBhwAALwEBRwCHAAAAAf////8BAAAAFWCJCgIAAAABAAUAAABJbnB1dAEB" +
-           "iAAALwEAQAmIAAAAAAH/////AwP/////AQAAABVgiQoCAAAAAAAHAAAARVVSYW5nZQEBjAAALgBEjAAA" +
-           "AAEAdAP/////AQH/////AAAAAIRggAoBAAAAAQATAAAAUXVhbnRpdHlUcmFuc3BhcmVudAEBqAMALwEB" +
-           "mgOoAwAAAf////8BAAAAFWCJCgIAAAABAAUAAABJbnB1dAEBqQMALwEAQAmpAwAAAAb/////AwP/////" +
-           "AQAAABVgiQoCAAAAAAAHAAAARVVSYW5nZQEBrQMALgBErQMAAAEAdAP/////AQH/////AAAAAIRggAoB" +
-           "AAAAAQAQAAAAUXVhbnRpdHlNZXRhbGxpYwEBlQAALwEBXACVAAAAAf////8BAAAAFWCJCgIAAAABAAUA" +
-           "AABJbnB1dAEBlgAALwEAQAmWAAAAAAb/////AwP/////AQAAABVgiQoCAAAAAAAHAAAARVVSYW5nZQEB" +
-           "mgAALgBEmgAAAAEAdAP/////AQH/////AAAAAIRggAoBAAAAAQATAAAAUXVhbnRpdHlOb25NZXRhbGxp" +
-           "YwEBnAAALwEBYwCcAAAAAf////8BAAAAFWCJCgIAAAABAAUAAABJbnB1dAEBnQAALwEAQAmdAAAAAAb/" +
-           "////AwP/////AQAAABVgiQoCAAAAAAAHAAAARVVSYW5nZQEBoQAALgBEoQAAAAEAdAP/////AQH/////" +
-           "AAAAAA==";
+           "SW5wdXQBAaIDAC8BAEQJogMAAAAB/////wMD/////wAAAACEYIAKAQAAAAEACAAAAE1ldGFsbGljAQGA" +
+           "AAAvAQFAAIAAAAAB/////wEAAAAVYIkKAgAAAAEABQAAAElucHV0AQGBAAAvAQBECYEAAAAAAf////8D" +
+           "A/////8AAAAAhGCACgEAAAABAAsAAABOb25NZXRhbGxpYwEBhwAALwEBRwCHAAAAAf////8BAAAAFWCJ" +
+           "CgIAAAABAAUAAABJbnB1dAEBiAAALwEARAmIAAAAAAH/////AwP/////AAAAAIRggAoBAAAAAQATAAAA" +
+           "UXVhbnRpdHlUcmFuc3BhcmVudAEBqAMALwEBmgOoAwAAAf////8BAAAAFWCJCgIAAAABAAUAAABJbnB1" +
+           "dAEBqQMALwEAQAmpAwAAAAf/////AwP/////AQAAABVgiQoCAAAAAAAHAAAARVVSYW5nZQEBrQMALgBE" +
+           "rQMAAAEAdAP/////AQH/////AAAAAIRggAoBAAAAAQAQAAAAUXVhbnRpdHlNZXRhbGxpYwEBlQAALwEB" +
+           "XACVAAAAAf////8BAAAAFWCJCgIAAAABAAUAAABJbnB1dAEBlgAALwEAQAmWAAAAAAf/////AwP/////" +
+           "AQAAABVgiQoCAAAAAAAHAAAARVVSYW5nZQEBmgAALgBEmgAAAAEAdAP/////AQH/////AAAAAIRggAoB" +
+           "AAAAAQATAAAAUXVhbnRpdHlOb25NZXRhbGxpYwEBnAAALwEBYwCcAAAAAf////8BAAAAFWCJCgIAAAAB" +
+           "AAUAAABJbnB1dAEBnQAALwEAQAmdAAAAAAf/////AwP/////AQAAABVgiQoCAAAAAAAHAAAARVVSYW5n" +
+           "ZQEBoQAALgBEoQAAAAEAdAP/////AQH/////AAAAAA==";
         #endregion
         #endif
         #endregion
@@ -2069,20 +2053,15 @@ namespace BeltIdentifier
            "AQAAACcAAABodHRwOi8vb3BjZm91bmRhdGlvbi5vcmcvQmVsdElkZW50aWZpZXL/////BGCAAgEAAAAB" +
            "ABMAAABNb2R1bGUyVHlwZUluc3RhbmNlAQGqAAEBqgCqAAAAAQAAAAAwAAEBqwAGAAAAhGCACgEAAAAB" +
            "AAgAAABCYXJyaWVyMQEBqwAALwEBHQCrAAAAAQEAAAAAMAEBAaoAAQAAABVgiQoCAAAAAQAGAAAAT3V0" +
-           "cHV0AQGsAAAvAQBACawAAAAAAf////8DA/////8BAAAAFWCJCgIAAAAAAAcAAABFVVJhbmdlAQGwAAAu" +
-           "AESwAAAAAQB0A/////8BAf////8AAAAAhGCACgEAAAABAAgAAABCYXJyaWVyMgEBsgAALwEBHQCyAAAA" +
-           "Af////8BAAAAFWCJCgIAAAABAAYAAABPdXRwdXQBAbMAAC8BAEAJswAAAAAB/////wMD/////wEAAAAV" +
-           "YIkKAgAAAAAABwAAAEVVUmFuZ2UBAbcAAC4ARLcAAAABAHQD/////wEB/////wAAAACEYIAKAQAAAAEA" +
-           "CAAAAEJhcnJpZXIzAQG5AAAvAQEdALkAAAAB/////wEAAAAVYIkKAgAAAAEABgAAAE91dHB1dAEBugAA" +
-           "LwEAQAm6AAAAAAH/////AwP/////AQAAABVgiQoCAAAAAAAHAAAARVVSYW5nZQEBvgAALgBEvgAAAAEA" +
-           "dAP/////AQH/////AAAAAIRggAoBAAAAAQALAAAAUGhvdG9TZW5zb3IBAcAAAC8BASQAwAAAAAH/////" +
-           "AQAAABVgiQoCAAAAAQAGAAAAT3V0cHV0AQHBAAAvAQBACcEAAAAAAf////8DA/////8BAAAAFWCJCgIA" +
-           "AAAAAAcAAABFVVJhbmdlAQHFAAAuAETFAAAAAQB0A/////8BAf////8AAAAAhGCACgEAAAABAAoAAABD" +
-           "YXBhY2l0aXZlAQHHAAAvAQErAMcAAAAB/////wEAAAAVYIkKAgAAAAEABgAAAE91dHB1dAEByAAALwEA" +
-           "QAnIAAAAAAH/////AwP/////AQAAABVgiQoCAAAAAAAHAAAARVVSYW5nZQEBzAAALgBEzAAAAAEAdAP/" +
-           "////AQH/////AAAAAIRggAoBAAAAAQAJAAAASW5kdWN0aXZlAQHOAAAvAQEyAM4AAAAB/////wEAAAAV" +
-           "YIkKAgAAAAEABgAAAE91dHB1dAEBzwAALwEAQAnPAAAAAAH/////AwP/////AQAAABVgiQoCAAAAAAAH" +
-           "AAAARVVSYW5nZQEB0wAALgBE0wAAAAEAdAP/////AQH/////AAAAAA==";
+           "cHV0AQGsAAAvAQBECawAAAAAAf////8DA/////8AAAAAhGCACgEAAAABAAgAAABCYXJyaWVyMgEBsgAA" +
+           "LwEBHQCyAAAAAf////8BAAAAFWCJCgIAAAABAAYAAABPdXRwdXQBAbMAAC8BAEQJswAAAAAB/////wMD" +
+           "/////wAAAACEYIAKAQAAAAEACAAAAEJhcnJpZXIzAQG5AAAvAQEdALkAAAAB/////wEAAAAVYIkKAgAA" +
+           "AAEABgAAAE91dHB1dAEBugAALwEARAm6AAAAAAH/////AwP/////AAAAAIRggAoBAAAAAQALAAAAUGhv" +
+           "dG9TZW5zb3IBAcAAAC8BASQAwAAAAAH/////AQAAABVgiQoCAAAAAQAGAAAAT3V0cHV0AQHBAAAvAQBE" +
+           "CcEAAAAAAf////8DA/////8AAAAAhGCACgEAAAABAAoAAABDYXBhY2l0aXZlAQHHAAAvAQErAMcAAAAB" +
+           "/////wEAAAAVYIkKAgAAAAEABgAAAE91dHB1dAEByAAALwEARAnIAAAAAAH/////AwP/////AAAAAIRg" +
+           "gAoBAAAAAQAJAAAASW5kdWN0aXZlAQHOAAAvAQEyAM4AAAAB/////wEAAAAVYIkKAgAAAAEABgAAAE91" +
+           "dHB1dAEBzwAALwEARAnPAAAAAAH/////AwP/////AAAAAA==";
         #endregion
         #endif
         #endregion
@@ -2450,65 +2429,49 @@ namespace BeltIdentifier
         #region Initialization String
         private const string InitializationString =
            "AQAAACcAAABodHRwOi8vb3BjZm91bmRhdGlvbi5vcmcvQmVsdElkZW50aWZpZXL/////hGCAAgEAAAAB" +
-           "ABAAAABCZWx0VHlwZUluc3RhbmNlAQHjAAEB4wDjAAAAAQEAAAAAMAABARsEEQAAAIRggAoBAAAAAQAG" +
+           "ABAAAABCZWx0VHlwZUluc3RhbmNlAQHjAAEB4wDjAAAAAQEAAAAAMAABARsEDQAAAIRggAoBAAAAAQAG" +
            "AAAASXNBdXRvAQEbBAAvAQEBBBsEAAABAQAAAAAwAQEB4wABAAAAFWCJCgIAAAABAAUAAABJbnB1dAEB" +
-           "HAQALwEAQAkcBAAAAAH/////AwP/////AQAAABVgiQoCAAAAAAAHAAAARVVSYW5nZQEBIAQALgBEIAQA" +
-           "AAEAdAP/////AQH/////AAAAAIRggAoBAAAAAQAJAAAASXNNb2R1bGUxAQEiBAAvAQEIBCIEAAAB////" +
-           "/wEAAAAVYIkKAgAAAAEABQAAAElucHV0AQEjBAAvAQBACSMEAAAAAf////8DA/////8BAAAAFWCJCgIA" +
-           "AAAAAAcAAABFVVJhbmdlAQEnBAAuAEQnBAAAAQB0A/////8BAf////8AAAAAhGDACgEAAAAHAAAASXNF" +
-           "cnJvcgEABQAAAEVycm9yAQGfBAAvAQGYBJ8EAAAB/////wEAAAAVYIkKAgAAAAEABQAAAElucHV0AQGg" +
-           "BAAvAQBACaAEAAAAAf////8DA/////8BAAAAFWCJCgIAAAAAAAcAAABFVVJhbmdlAQGkBAAuAESkBAAA" +
-           "AQB0A/////8BAf////8AAAAAhGDACgEAAAAGAAAASXNCdXN5AQAEAAAAQnVzeQEBpgQALwEBkQSmBAAA" +
-           "Af////8BAAAAFWCJCgIAAAABAAUAAABJbnB1dAEBpwQALwEAQAmnBAAAAAH/////AwP/////AQAAABVg" +
-           "iQoCAAAAAAAHAAAARVVSYW5nZQEBqwQALgBEqwQAAAEAdAP/////AQH/////AAAAAIRggAoBAAAAAQAF" +
-           "AAAATW90b3IBATcEAC8BAR8DNwQAAAH/////AwAAABVgiQoCAAAAAQALAAAASm91cm5leVRpbWUBATgE" +
-           "AC8BAEAJOAQAAAAG/////wMD/////wEAAAAVYIkKAgAAAAAABwAAAEVVUmFuZ2UBATwEAC4ARDwEAAAB" +
-           "AHQD/////wEB/////wAAAAAVYIkKAgAAAAEACAAAAEludGVydmFsAQE+BAAvAQBACT4EAAAABv////8D" +
-           "A/////8BAAAAFWCJCgIAAAAAAAcAAABFVVJhbmdlAQFCBAAuAERCBAAAAQB0A/////8BAf////8AAAAA" +
-           "FWCJCgIAAAABAAYAAABTdGF0dXMBAUQEAC8BAEAJRAQAAAAB/////wMD/////wEAAAAVYIkKAgAAAAAA" +
-           "BwAAAEVVUmFuZ2UBAUgEAC4AREgEAAABAHQD/////wEB/////wAAAACEYMAKAQAAAAcAAABNb2R1bGUx" +
-           "AQANAAAAQmVsdCBNb2R1bGUgMQEB5AAALwEBcQDkAAAAAQEAAAAAMAABAa8DBgAAAIRggAoBAAAAAQAL" +
-           "AAAAVHJhbnNwYXJlbnQBAa8DAC8BAZMDrwMAAAEBAAAAADABAQHkAAEAAAAVYIkKAgAAAAEABQAAAElu" +
-           "cHV0AQGwAwAvAQBACbADAAAAAf////8DA/////8BAAAAFWCJCgIAAAAAAAcAAABFVVJhbmdlAQG0AwAu" +
-           "AES0AwAAAQB0A/////8BAf////8AAAAAhGCACgEAAAABAAgAAABNZXRhbGxpYwEB8wAALwEBQADzAAAA" +
-           "Af////8BAAAAFWCJCgIAAAABAAUAAABJbnB1dAEB9AAALwEAQAn0AAAAAAH/////AwP/////AQAAABVg" +
-           "iQoCAAAAAAAHAAAARVVSYW5nZQEB+AAALgBE+AAAAAEAdAP/////AQH/////AAAAAIRggAoBAAAAAQAL" +
-           "AAAATm9uTWV0YWxsaWMBAfoAAC8BAUcA+gAAAAH/////AQAAABVgiQoCAAAAAQAFAAAASW5wdXQBAfsA" +
-           "AC8BAEAJ+wAAAAAB/////wMD/////wEAAAAVYIkKAgAAAAAABwAAAEVVUmFuZ2UBAf8AAC4ARP8AAAAB" +
-           "AHQD/////wEB/////wAAAACEYIAKAQAAAAEAEwAAAFF1YW50aXR5VHJhbnNwYXJlbnQBAbYDAC8BAZoD" +
-           "tgMAAAH/////AQAAABVgiQoCAAAAAQAFAAAASW5wdXQBAbcDAC8BAEAJtwMAAAAG/////wMD/////wEA" +
-           "AAAVYIkKAgAAAAAABwAAAEVVUmFuZ2UBAbsDAC4ARLsDAAABAHQD/////wEB/////wAAAACEYIAKAQAA" +
-           "AAEAEAAAAFF1YW50aXR5TWV0YWxsaWMBAQgBAC8BAVwACAEAAAH/////AQAAABVgiQoCAAAAAQAFAAAA" +
-           "SW5wdXQBAQkBAC8BAEAJCQEAAAAG/////wMD/////wEAAAAVYIkKAgAAAAAABwAAAEVVUmFuZ2UBAQ0B" +
-           "AC4ARA0BAAABAHQD/////wEB/////wAAAACEYIAKAQAAAAEAEwAAAFF1YW50aXR5Tm9uTWV0YWxsaWMB" +
-           "AQ8BAC8BAWMADwEAAAH/////AQAAABVgiQoCAAAAAQAFAAAASW5wdXQBARABAC8BAEAJEAEAAAAG////" +
-           "/wMD/////wEAAAAVYIkKAgAAAAAABwAAAEVVUmFuZ2UBARQBAC4ARBQBAAABAHQD/////wEB/////wAA" +
-           "AACEYMAKAQAAAAcAAABNb2R1bGUyAQANAAAAQmVsdCBNb2R1bGUgMgEBHQEALwEBqgAdAQAAAQEAAAAA" +
-           "MAABAR4BBgAAAIRggAoBAAAAAQAIAAAAQmFycmllcjEBAR4BAC8BAR0AHgEAAAEBAAAAADABAQEdAQEA" +
-           "AAAVYIkKAgAAAAEABgAAAE91dHB1dAEBHwEALwEAQAkfAQAAAAH/////AwP/////AQAAABVgiQoCAAAA" +
-           "AAAHAAAARVVSYW5nZQEBIwEALgBEIwEAAAEAdAP/////AQH/////AAAAAIRggAoBAAAAAQAIAAAAQmFy" +
-           "cmllcjIBASUBAC8BAR0AJQEAAAH/////AQAAABVgiQoCAAAAAQAGAAAAT3V0cHV0AQEmAQAvAQBACSYB" +
-           "AAAAAf////8DA/////8BAAAAFWCJCgIAAAAAAAcAAABFVVJhbmdlAQEqAQAuAEQqAQAAAQB0A/////8B" +
-           "Af////8AAAAAhGCACgEAAAABAAgAAABCYXJyaWVyMwEBLAEALwEBHQAsAQAAAf////8BAAAAFWCJCgIA" +
-           "AAABAAYAAABPdXRwdXQBAS0BAC8BAEAJLQEAAAAB/////wMD/////wEAAAAVYIkKAgAAAAAABwAAAEVV" +
-           "UmFuZ2UBATEBAC4ARDEBAAABAHQD/////wEB/////wAAAACEYIAKAQAAAAEACwAAAFBob3RvU2Vuc29y" +
-           "AQEzAQAvAQEkADMBAAAB/////wEAAAAVYIkKAgAAAAEABgAAAE91dHB1dAEBNAEALwEAQAk0AQAAAAH/" +
-           "////AwP/////AQAAABVgiQoCAAAAAAAHAAAARVVSYW5nZQEBOAEALgBEOAEAAAEAdAP/////AQH/////" +
-           "AAAAAIRggAoBAAAAAQAKAAAAQ2FwYWNpdGl2ZQEBOgEALwEBKwA6AQAAAf////8BAAAAFWCJCgIAAAAB" +
-           "AAYAAABPdXRwdXQBATsBAC8BAEAJOwEAAAAB/////wMD/////wEAAAAVYIkKAgAAAAAABwAAAEVVUmFu" +
-           "Z2UBAT8BAC4ARD8BAAABAHQD/////wEB/////wAAAACEYIAKAQAAAAEACQAAAEluZHVjdGl2ZQEBQQEA" +
-           "LwEBMgBBAQAAAf////8BAAAAFWCJCgIAAAABAAYAAABPdXRwdXQBAUIBAC8BAEAJQgEAAAAB/////wMD" +
-           "/////wEAAAAVYIkKAgAAAAAABwAAAEVVUmFuZ2UBAUYBAC4AREYBAAABAHQD/////wEB/////wAAAAAE" +
-           "YYIKBAAAAAEADAAAAFN0YXJ0UHJvY2VzcwEBVgEALwEBVgFWAQAAAQH/////AAAAAARhggoEAAAAAQAL" +
-           "AAAAU3RvcFByb2Nlc3MBAVcBAC8BAVcBVwEAAAEB/////wAAAAAEYYIKBAAAAAEADAAAAFJlc2V0UHJv" +
-           "Y2VzcwEBWAEALwEBWAFYAQAAAQH/////AAAAAARhggoEAAAAAQAUAAAAU2VsZWN0TW9kdWxlMVByb2Nl" +
-           "c3MBAVAEAC8BAVAEUAQAAAEB/////wAAAAAEYYIKBAAAAAEAFAAAAFNlbGVjdE1vZHVsZTJQcm9jZXNz" +
-           "AQFRBAAvAQFRBFEEAAABAf////8AAAAABGGCCgQAAAABABoAAABBZGRUcmFuc3BhcmVudFBpZWNlUHJv" +
-           "Y2VzcwEBUgQALwEBUgRSBAAAAQH/////AAAAAARhggoEAAAAAQAXAAAAQWRkTWV0YWxsaWNQaWVjZVBy" +
-           "b2Nlc3MBAVMEAC8BAVMEUwQAAAEB/////wAAAAAEYYIKBAAAAAEAGgAAAEFkZE5vbk1ldGFsbGljUGll" +
-           "Y2VQcm9jZXNzAQFUBAAvAQFUBFQEAAABAf////8AAAAABGGCCgQAAAABABMAAABTZWxlY3RNYW51YWxQ" +
-           "cm9jZXNzAQG7BAAvAQG7BLsEAAABAf////8AAAAABGGCCgQAAAABABYAAABTZWxlY3RBdXRvbWF0aWNQ" +
-           "cm9jZXNzAQFVBAAvAQFVBFUEAAABAf////8AAAAA";
+           "HAQALwEARAkcBAAAAAH/////AwP/////AAAAAIRggAoBAAAAAQAJAAAASXNNb2R1bGUxAQEiBAAvAQEI" +
+           "BCIEAAAB/////wEAAAAVYIkKAgAAAAEABQAAAElucHV0AQEjBAAvAQBECSMEAAAAAf////8DA/////8A" +
+           "AAAAhGDACgEAAAAHAAAASXNFcnJvcgEABQAAAEVycm9yAQGfBAAvAQGYBJ8EAAAB/////wEAAAAVYIkK" +
+           "AgAAAAEABQAAAElucHV0AQGgBAAvAQBECaAEAAAAAf////8DA/////8AAAAAhGDACgEAAAAGAAAASXNC" +
+           "dXN5AQAEAAAAQnVzeQEBpgQALwEBkQSmBAAAAf////8BAAAAFWCJCgIAAAABAAUAAABJbnB1dAEBpwQA" +
+           "LwEARAmnBAAAAAH/////AwP/////AAAAAIRggAoBAAAAAQAFAAAATW90b3IBATcEAC8BAR8DNwQAAAH/" +
+           "////AwAAABVgiQoCAAAAAQALAAAASm91cm5leVRpbWUBATgEAC8BAEAJOAQAAAAH/////wMD/////wEA" +
+           "AAAVYIkKAgAAAAAABwAAAEVVUmFuZ2UBATwEAC4ARDwEAAABAHQD/////wEB/////wAAAAAVYIkKAgAA" +
+           "AAEACAAAAEludGVydmFsAQE+BAAvAQBACT4EAAAAB/////8DA/////8BAAAAFWCJCgIAAAAAAAcAAABF" +
+           "VVJhbmdlAQFCBAAuAERCBAAAAQB0A/////8BAf////8AAAAAFWCJCgIAAAABAAYAAABTdGF0dXMBAUQE" +
+           "AC8BAEQJRAQAAAAB/////wMD/////wAAAACEYMAKAQAAAAcAAABNb2R1bGUxAQANAAAAQmVsdCBNb2R1" +
+           "bGUgMQEB5AAALwEBcQDkAAAAAQEAAAAAMAABAa8DBgAAAIRggAoBAAAAAQALAAAAVHJhbnNwYXJlbnQB" +
+           "Aa8DAC8BAZMDrwMAAAEBAAAAADABAQHkAAEAAAAVYIkKAgAAAAEABQAAAElucHV0AQGwAwAvAQBECbAD" +
+           "AAAAAf////8DA/////8AAAAAhGCACgEAAAABAAgAAABNZXRhbGxpYwEB8wAALwEBQADzAAAAAf////8B" +
+           "AAAAFWCJCgIAAAABAAUAAABJbnB1dAEB9AAALwEARAn0AAAAAAH/////AwP/////AAAAAIRggAoBAAAA" +
+           "AQALAAAATm9uTWV0YWxsaWMBAfoAAC8BAUcA+gAAAAH/////AQAAABVgiQoCAAAAAQAFAAAASW5wdXQB" +
+           "AfsAAC8BAEQJ+wAAAAAB/////wMD/////wAAAACEYIAKAQAAAAEAEwAAAFF1YW50aXR5VHJhbnNwYXJl" +
+           "bnQBAbYDAC8BAZoDtgMAAAH/////AQAAABVgiQoCAAAAAQAFAAAASW5wdXQBAbcDAC8BAEAJtwMAAAAH" +
+           "/////wMD/////wEAAAAVYIkKAgAAAAAABwAAAEVVUmFuZ2UBAbsDAC4ARLsDAAABAHQD/////wEB////" +
+           "/wAAAACEYIAKAQAAAAEAEAAAAFF1YW50aXR5TWV0YWxsaWMBAQgBAC8BAVwACAEAAAH/////AQAAABVg" +
+           "iQoCAAAAAQAFAAAASW5wdXQBAQkBAC8BAEAJCQEAAAAH/////wMD/////wEAAAAVYIkKAgAAAAAABwAA" +
+           "AEVVUmFuZ2UBAQ0BAC4ARA0BAAABAHQD/////wEB/////wAAAACEYIAKAQAAAAEAEwAAAFF1YW50aXR5" +
+           "Tm9uTWV0YWxsaWMBAQ8BAC8BAWMADwEAAAH/////AQAAABVgiQoCAAAAAQAFAAAASW5wdXQBARABAC8B" +
+           "AEAJEAEAAAAH/////wMD/////wEAAAAVYIkKAgAAAAAABwAAAEVVUmFuZ2UBARQBAC4ARBQBAAABAHQD" +
+           "/////wEB/////wAAAACEYMAKAQAAAAcAAABNb2R1bGUyAQANAAAAQmVsdCBNb2R1bGUgMgEBHQEALwEB" +
+           "qgAdAQAAAQEAAAAAMAABAR4BBgAAAIRggAoBAAAAAQAIAAAAQmFycmllcjEBAR4BAC8BAR0AHgEAAAEB" +
+           "AAAAADABAQEdAQEAAAAVYIkKAgAAAAEABgAAAE91dHB1dAEBHwEALwEARAkfAQAAAAH/////AwP/////" +
+           "AAAAAIRggAoBAAAAAQAIAAAAQmFycmllcjIBASUBAC8BAR0AJQEAAAH/////AQAAABVgiQoCAAAAAQAG" +
+           "AAAAT3V0cHV0AQEmAQAvAQBECSYBAAAAAf////8DA/////8AAAAAhGCACgEAAAABAAgAAABCYXJyaWVy" +
+           "MwEBLAEALwEBHQAsAQAAAf////8BAAAAFWCJCgIAAAABAAYAAABPdXRwdXQBAS0BAC8BAEQJLQEAAAAB" +
+           "/////wMD/////wAAAACEYIAKAQAAAAEACwAAAFBob3RvU2Vuc29yAQEzAQAvAQEkADMBAAAB/////wEA" +
+           "AAAVYIkKAgAAAAEABgAAAE91dHB1dAEBNAEALwEARAk0AQAAAAH/////AwP/////AAAAAIRggAoBAAAA" +
+           "AQAKAAAAQ2FwYWNpdGl2ZQEBOgEALwEBKwA6AQAAAf////8BAAAAFWCJCgIAAAABAAYAAABPdXRwdXQB" +
+           "ATsBAC8BAEQJOwEAAAAB/////wMD/////wAAAACEYIAKAQAAAAEACQAAAEluZHVjdGl2ZQEBQQEALwEB" +
+           "MgBBAQAAAf////8BAAAAFWCJCgIAAAABAAYAAABPdXRwdXQBAUIBAC8BAEQJQgEAAAAB/////wMD////" +
+           "/wAAAAAEYYIKBAAAAAEADAAAAFN0YXJ0UHJvY2VzcwEBVgEALwEBVgFWAQAAAQH/////AAAAAARhggoE" +
+           "AAAAAQALAAAAU3RvcFByb2Nlc3MBAVcBAC8BAVcBVwEAAAEB/////wAAAAAEYYIKBAAAAAEADAAAAFJl" +
+           "c2V0UHJvY2VzcwEBWAEALwEBWAFYAQAAAQH/////AAAAAARhggoEAAAAAQAaAAAAQWRkVHJhbnNwYXJl" +
+           "bnRQaWVjZVByb2Nlc3MBAVIEAC8BAVIEUgQAAAEB/////wAAAAAEYYIKBAAAAAEAFwAAAEFkZE1ldGFs" +
+           "bGljUGllY2VQcm9jZXNzAQFTBAAvAQFTBFMEAAABAf////8AAAAABGGCCgQAAAABABoAAABBZGROb25N" +
+           "ZXRhbGxpY1BpZWNlUHJvY2VzcwEBVAQALwEBVARUBAAAAQH/////AAAAAA==";
         #endregion
         #endif
         #endregion
@@ -2705,44 +2668,6 @@ namespace BeltIdentifier
         }
 
         /// <remarks />
-        public MethodState SelectModule1Process
-        {
-            get
-            {
-                return m_selectModule1ProcessMethod;
-            }
-
-            set
-            {
-                if (!Object.ReferenceEquals(m_selectModule1ProcessMethod, value))
-                {
-                    ChangeMasks |= NodeStateChangeMasks.Children;
-                }
-
-                m_selectModule1ProcessMethod = value;
-            }
-        }
-
-        /// <remarks />
-        public MethodState SelectModule2Process
-        {
-            get
-            {
-                return m_selectModule2ProcessMethod;
-            }
-
-            set
-            {
-                if (!Object.ReferenceEquals(m_selectModule2ProcessMethod, value))
-                {
-                    ChangeMasks |= NodeStateChangeMasks.Children;
-                }
-
-                m_selectModule2ProcessMethod = value;
-            }
-        }
-
-        /// <remarks />
         public MethodState AddTransparentPieceProcess
         {
             get
@@ -2796,44 +2721,6 @@ namespace BeltIdentifier
                 }
 
                 m_addNonMetallicPieceProcessMethod = value;
-            }
-        }
-
-        /// <remarks />
-        public MethodState SelectManualProcess
-        {
-            get
-            {
-                return m_selectManualProcessMethod;
-            }
-
-            set
-            {
-                if (!Object.ReferenceEquals(m_selectManualProcessMethod, value))
-                {
-                    ChangeMasks |= NodeStateChangeMasks.Children;
-                }
-
-                m_selectManualProcessMethod = value;
-            }
-        }
-
-        /// <remarks />
-        public MethodState SelectAutomaticProcess
-        {
-            get
-            {
-                return m_selectAutomaticProcessMethod;
-            }
-
-            set
-            {
-                if (!Object.ReferenceEquals(m_selectAutomaticProcessMethod, value))
-                {
-                    ChangeMasks |= NodeStateChangeMasks.Children;
-                }
-
-                m_selectAutomaticProcessMethod = value;
             }
         }
         #endregion
@@ -2894,16 +2781,6 @@ namespace BeltIdentifier
                 children.Add(m_resetProcessMethod);
             }
 
-            if (m_selectModule1ProcessMethod != null)
-            {
-                children.Add(m_selectModule1ProcessMethod);
-            }
-
-            if (m_selectModule2ProcessMethod != null)
-            {
-                children.Add(m_selectModule2ProcessMethod);
-            }
-
             if (m_addTransparentPieceProcessMethod != null)
             {
                 children.Add(m_addTransparentPieceProcessMethod);
@@ -2917,16 +2794,6 @@ namespace BeltIdentifier
             if (m_addNonMetallicPieceProcessMethod != null)
             {
                 children.Add(m_addNonMetallicPieceProcessMethod);
-            }
-
-            if (m_selectManualProcessMethod != null)
-            {
-                children.Add(m_selectManualProcessMethod);
-            }
-
-            if (m_selectAutomaticProcessMethod != null)
-            {
-                children.Add(m_selectAutomaticProcessMethod);
             }
 
             base.GetChildren(context, children);
@@ -3158,48 +3025,6 @@ namespace BeltIdentifier
                     break;
                 }
 
-                case BeltIdentifier.BrowseNames.SelectModule1Process:
-                {
-                    if (createOrReplace)
-                    {
-                        if (SelectModule1Process == null)
-                        {
-                            if (replacement == null)
-                            {
-                                SelectModule1Process = new MethodState(this);
-                            }
-                            else
-                            {
-                                SelectModule1Process = (MethodState)replacement;
-                            }
-                        }
-                    }
-
-                    instance = SelectModule1Process;
-                    break;
-                }
-
-                case BeltIdentifier.BrowseNames.SelectModule2Process:
-                {
-                    if (createOrReplace)
-                    {
-                        if (SelectModule2Process == null)
-                        {
-                            if (replacement == null)
-                            {
-                                SelectModule2Process = new MethodState(this);
-                            }
-                            else
-                            {
-                                SelectModule2Process = (MethodState)replacement;
-                            }
-                        }
-                    }
-
-                    instance = SelectModule2Process;
-                    break;
-                }
-
                 case BeltIdentifier.BrowseNames.AddTransparentPieceProcess:
                 {
                     if (createOrReplace)
@@ -3262,48 +3087,6 @@ namespace BeltIdentifier
                     instance = AddNonMetallicPieceProcess;
                     break;
                 }
-
-                case BeltIdentifier.BrowseNames.SelectManualProcess:
-                {
-                    if (createOrReplace)
-                    {
-                        if (SelectManualProcess == null)
-                        {
-                            if (replacement == null)
-                            {
-                                SelectManualProcess = new MethodState(this);
-                            }
-                            else
-                            {
-                                SelectManualProcess = (MethodState)replacement;
-                            }
-                        }
-                    }
-
-                    instance = SelectManualProcess;
-                    break;
-                }
-
-                case BeltIdentifier.BrowseNames.SelectAutomaticProcess:
-                {
-                    if (createOrReplace)
-                    {
-                        if (SelectAutomaticProcess == null)
-                        {
-                            if (replacement == null)
-                            {
-                                SelectAutomaticProcess = new MethodState(this);
-                            }
-                            else
-                            {
-                                SelectAutomaticProcess = (MethodState)replacement;
-                            }
-                        }
-                    }
-
-                    instance = SelectAutomaticProcess;
-                    break;
-                }
             }
 
             if (instance != null)
@@ -3326,13 +3109,9 @@ namespace BeltIdentifier
         private MethodState m_startProcessMethod;
         private MethodState m_stopProcessMethod;
         private MethodState m_resetProcessMethod;
-        private MethodState m_selectModule1ProcessMethod;
-        private MethodState m_selectModule2ProcessMethod;
         private MethodState m_addTransparentPieceProcessMethod;
         private MethodState m_addMetallicPieceProcessMethod;
         private MethodState m_addNonMetallicPieceProcessMethod;
-        private MethodState m_selectManualProcessMethod;
-        private MethodState m_selectAutomaticProcessMethod;
         #endregion
     }
     #endif
