@@ -1,7 +1,4 @@
-﻿using System.Threading;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-
-namespace ServerBeltIdentifier.Models
+﻿namespace ServerBeltIdentifier.Models
 {
     public class Belt
     {
