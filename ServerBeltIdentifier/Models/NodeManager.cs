@@ -8,6 +8,10 @@ namespace ServerBeltIdentifier.Models
 {
     internal class NodeManager : CustomNodeManager2
     {
+        private readonly ServerConfiguration Configuration;
+        public static BeltState Belt;
+        public static SystemContext Context;
+
         public NodeManager(IServerInternal server, Opc.Ua.ApplicationConfiguration configuration) : base(server, configuration)
         {
             SystemContext.NodeIdFactory = this;
@@ -58,7 +62,7 @@ namespace ServerBeltIdentifier.Models
                 Belt.AddTransparentPieceProcess.OnCallMethod = new GenericMethodCalledEventHandler(OnAddTransparentPieceProcess);
                 Belt.AddMetallicPieceProcess.OnCallMethod = new GenericMethodCalledEventHandler(OnAddMetallicPieceProcess);
                 Belt.AddNonMetallicPieceProcess.OnCallMethod = new GenericMethodCalledEventHandler(OnAddNonMetallicPieceProcess);
-               
+
                 InitializeVariableValues();
             }
         }
@@ -84,25 +88,25 @@ namespace ServerBeltIdentifier.Models
         private ServiceResult OnAddTransparentPieceProcess(ISystemContext context, MethodState method, IList<object> inputArguments, IList<object> outputArguments)
         {
             if (!ServerForm.BeltIdentifier.IsAuto)
-                ServerForm.BeltIdentifier.AddPieceManual("Transparent");
+                ServerForm.BeltIdentifier.AddPieceManual(EPieceType.Transparent);
             return ServiceResult.Good;
         }
 
         private ServiceResult OnAddMetallicPieceProcess(ISystemContext context, MethodState method, IList<object> inputArguments, IList<object> outputArguments)
         {
             if (!ServerForm.BeltIdentifier.IsAuto)
-                ServerForm.BeltIdentifier.AddPieceManual("Metallic");
+                ServerForm.BeltIdentifier.AddPieceManual(EPieceType.Metallic);
             return ServiceResult.Good;
         }
         
         private ServiceResult OnAddNonMetallicPieceProcess(ISystemContext context, MethodState method, IList<object> inputArguments, IList<object> outputArguments)
         {
             if (!ServerForm.BeltIdentifier.IsAuto)
-                ServerForm.BeltIdentifier.AddPieceManual("NonMetallic");
+                ServerForm.BeltIdentifier.AddPieceManual(EPieceType.NonMetallic);
             return ServiceResult.Good;
         }
         
-        private void InitializeVariableValues()
+        private static void InitializeVariableValues()
         {
             Belt.IsModule1.Input.Value = true;
             Belt.IsAuto.Input.Value = false;
@@ -126,9 +130,5 @@ namespace ServerBeltIdentifier.Models
             Belt.Module2.Inductive.Output.Value = true;
             Belt.Module2.Capacitive.Output.Value = true;
         }
-
-        private readonly ServerConfiguration Configuration;
-        public static BeltState Belt;
-        public static SystemContext Context;
     }
 }

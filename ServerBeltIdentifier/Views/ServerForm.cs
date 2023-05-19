@@ -7,7 +7,7 @@ namespace BeltIdentifierServer
 {
     public partial class ServerForm : Form
     {
-        public static Belt BeltIdentifier;
+        public static BeltIdentifierController BeltIdentifier;
 
         public ServerForm()
         {
@@ -36,7 +36,7 @@ namespace BeltIdentifierServer
                 cbServerUrl.SelectedIndex = 0;
             }
 
-            BeltIdentifier = new Belt();
+            BeltIdentifier = new ServerBeltIdentifier.Models.BeltIdentifierController();
         }
 
         private void ServerForm_Load(object sender, EventArgs e)
@@ -86,7 +86,7 @@ namespace BeltIdentifierServer
 
         private void BtnAddPiece_Click(object sender, EventArgs e)
         {
-            string pieceType = rbTransparent.Checked ? "Transparent" : rbMetallic.Checked ? "Metallic" : "NonMetallic";
+            EPieceType pieceType = rbTransparent.Checked ? EPieceType.Transparent : rbMetallic.Checked ? EPieceType.Metallic : EPieceType.NonMetallic;
 
             if (tpModule1.CanFocus)
             {
@@ -205,55 +205,55 @@ namespace BeltIdentifierServer
 
             if (tpModule1.CanFocus)
             {
-                pTransparent.BackgroundImage = BeltIdentifier.Module1.Transparent ?
+                pTransparent.BackgroundImage = BeltIdentifier.Transparent ?
                     ServerBeltIdentifier.Properties.Resources.green_led_on :
                     ServerBeltIdentifier.Properties.Resources.green_led_off;
-                pMetallic.BackgroundImage = BeltIdentifier.Module1.Metallic ?
+                pMetallic.BackgroundImage = BeltIdentifier.Metallic ?
                     ServerBeltIdentifier.Properties.Resources.green_led_on :
                     ServerBeltIdentifier.Properties.Resources.green_led_off;
-                pNonMetallic.BackgroundImage = BeltIdentifier.Module1.NonMetallic ?
+                pNonMetallic.BackgroundImage = BeltIdentifier.NonMetallic ?
                     ServerBeltIdentifier.Properties.Resources.green_led_on :
                     ServerBeltIdentifier.Properties.Resources.green_led_off;
-                tbQuantityTransparent.Text = BeltIdentifier.Module1.QuantityTransparent.ToString();
-                tbQuantityMetallic.Text = BeltIdentifier.Module1.QuantityMetallic.ToString();
-                tbQuantityNonMetallic.Text = BeltIdentifier.Module1.QuantityNonMetallic.ToString();
+                tbQuantityTransparent.Text = BeltIdentifier.QuantityTransparent.ToString();
+                tbQuantityMetallic.Text = BeltIdentifier.QuantityMetallic.ToString();
+                tbQuantityNonMetallic.Text = BeltIdentifier.QuantityNonMetallic.ToString();
             }
             else
             {
-                pBarrier1.BackgroundImage = BeltIdentifier.Module2.Barrier1 ?
+                pBarrier1.BackgroundImage = BeltIdentifier.Barrier1 ?
                     ServerBeltIdentifier.Properties.Resources.green_led_on :
                     ServerBeltIdentifier.Properties.Resources.green_led_off;
-                pBarrier2.BackgroundImage = BeltIdentifier.Module2.Barrier2 ?
+                pBarrier2.BackgroundImage = BeltIdentifier.Barrier2 ?
                     ServerBeltIdentifier.Properties.Resources.green_led_on :
                     ServerBeltIdentifier.Properties.Resources.green_led_off;
-                pBarrier3.BackgroundImage = BeltIdentifier.Module2.Barrier3 ?
+                pBarrier3.BackgroundImage = BeltIdentifier.Barrier3 ?
                     ServerBeltIdentifier.Properties.Resources.green_led_on :
                     ServerBeltIdentifier.Properties.Resources.green_led_off;
-                pPhotoSensor.BackgroundImage = BeltIdentifier.Module2.PhotoSensor ?
+                pPhotoSensor.BackgroundImage = BeltIdentifier.PhotoSensor ?
                     ServerBeltIdentifier.Properties.Resources.green_led_on :
                     ServerBeltIdentifier.Properties.Resources.green_led_off;
                 /* 
                  * Lógica abaixo diferente, devido os sensores capacitivos e 
                  * indutivos serem normalmente fechados (NF).
                 */
-                pCapacitive.BackgroundImage = BeltIdentifier.Module2.Capacitive ?
+                pCapacitive.BackgroundImage = BeltIdentifier.Capacitive ?
                     ServerBeltIdentifier.Properties.Resources.green_led_off :
                     ServerBeltIdentifier.Properties.Resources.green_led_on;
-                pInductive.BackgroundImage = BeltIdentifier.Module2.Inductive ?
+                pInductive.BackgroundImage = BeltIdentifier.Inductive ?
                     ServerBeltIdentifier.Properties.Resources.green_led_off :
                     ServerBeltIdentifier.Properties.Resources.green_led_on;
 
                 if (BeltIdentifier.IsAuto && !BeltIdentifier.IsModule1 && BeltIdentifier.MotorOn)
                 {
-                    switch (BeltIdentifier.Module2.PieceType)
+                    switch (BeltIdentifier.PieceType)
                     {
-                        case "Transparent":
+                        case EPieceType.Transparent:
                             rbTransparent.Checked = true;
                             break;
-                        case "Metallic":
+                        case EPieceType.Metallic:
                             rbMetallic.Checked = true;
                             break;
-                        case "NonMetallic":
+                        case EPieceType.NonMetallic:
                             rbNonMetallic.Checked = true;
                             break;
                         default:
@@ -371,21 +371,6 @@ namespace BeltIdentifierServer
                 BeltIdentifier.WriteOpc();
                 UpdateForm();
             }
-        }
-
-        private void gbOpcStatusModule1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void rbMetallic_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
