@@ -1,4 +1,3 @@
-using Opc.Ua.Client;
 using Opc.Ua.Configuration;
 using Opc.Ua;
 
@@ -12,20 +11,14 @@ namespace ClientBeltIdentifier
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
-            //ApplicationConfiguration.Initialize();
-            //Application.Run(new Form1());
-
-            Console.WriteLine("Configuring UA Client");
             var config = new ApplicationConfiguration()
             {
-                ApplicationName = "BatchPlantClient",
-                ApplicationUri = Utils.Format(@"urn:{0}:BatchPlantClient", System.Net.Dns.GetHostName()),
+                ApplicationName = "ClientBeltIdentifier",
+                ApplicationUri = Utils.Format(@"urn:{0}:ClientBeltIdentifier", System.Net.Dns.GetHostName()),
                 ApplicationType = ApplicationType.Client,
                 SecurityConfiguration = new SecurityConfiguration
                 {
-                    ApplicationCertificate = new CertificateIdentifier { StoreType = @"Directory", StorePath = @"%CommonApplicationData%\OPC Foundation\CertificateStores\MachineDefault", SubjectName = "BatchPlantClient" },
+                    ApplicationCertificate = new CertificateIdentifier { StoreType = @"Directory", StorePath = @"%CommonApplicationData%\OPC Foundation\CertificateStores\MachineDefault", SubjectName = "ClientBeltIdentifier" },
                     TrustedIssuerCertificates = new CertificateTrustList { StoreType = @"Directory", StorePath = @"%CommonApplicationData%\OPC Foundation\CertificateStores\UA Certificate Authorities" },
                     TrustedPeerCertificates = new CertificateTrustList { StoreType = @"Directory", StorePath = @"%CommonApplicationData%\OPC Foundation\CertificateStores\UA Applications" },
                     RejectedCertificateStore = new CertificateTrustList { StoreType = @"Directory", StorePath = @"%CommonApplicationData%\OPC Foundation\CertificateStores\RejectedCertificates" },
@@ -45,7 +38,7 @@ namespace ClientBeltIdentifier
 
             var application = new ApplicationInstance
             {
-                ApplicationName = "BatchPlantClient",
+                ApplicationName = "ClientBeltIdentifier",
                 ApplicationType = ApplicationType.Client,
                 ApplicationConfiguration = config
             };
@@ -53,7 +46,9 @@ namespace ClientBeltIdentifier
             application.CheckApplicationInstanceCertificate(false, 2048).GetAwaiter().GetResult();
 
             // Rodando o aplicativo.
-            Application.Run(new Form1(application));
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new ClientForm(application));
         }
     }
 }
