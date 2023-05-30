@@ -183,7 +183,7 @@
             {
                 Task tTransparent = new(() => {
                     Thread.Sleep((int)JourneyTime * 1000);
-                    if (IsError) return;
+                    if (IsError || StopClick) return;
                     Transparent = false;
                     IsBusy = false;
                     WriteOpc();
@@ -254,7 +254,7 @@
             {
                 Task tMetallic = new(() => {
                     Thread.Sleep((int)JourneyTime * 1000);
-                    if (IsError) return;
+                    if (IsError || StopClick) return;
                     Metallic = false;
                     IsBusy = false;
                     WriteOpc();
@@ -323,7 +323,7 @@
             {
                 Task tNonMetallic = new(() => {
                     Thread.Sleep((int)JourneyTime * 1000);
-                    if (IsError) return;
+                    if (IsError || StopClick) return;
                     NonMetallic = false;
                     IsBusy = false;
                     WriteOpc();
