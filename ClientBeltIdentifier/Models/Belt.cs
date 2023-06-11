@@ -1,27 +1,31 @@
 ﻿namespace ClientBeltIdentifier.Models
 {
-    internal abstract class Belt
+    public partial class Belt
     {
-        public uint Interval { get; set; }
-        public uint JourneyTime { get; set; }
-        public bool MotorOn { get; set; }
-        public bool IsBusy { get; set; }
-        public bool IsError { get; set; }
-        public bool IsModule1 { get; set; }
-        public bool IsAuto { get; set; }
-        // Módulo 1
-        public bool Transparent { get; set; }
-        public bool Metallic { get; set; }
-        public bool NonMetallic { get; set; }
-        public uint QuantityTransparent { get; set; }
-        public uint QuantityMetallic { get; set; }
-        public uint QuantityNonMetallic { get; set; }
-        // Módulo 2
-        public bool Barrier1 { get; set; }
-        public bool Barrier2 { get; set; }
-        public bool Barrier3 { get; set; }
-        public bool PhotoSensor { get; set; }
-        public bool Capacitive { get; set; }
-        public bool Inductive { get; set; }
+        public bool Started;
+        public bool Reseted;
+        public bool MotorOn;
+        public bool IsBusy;
+        public bool IsError;
+        public bool IsModule1;
+        public bool IsAuto;
+
+        #region Propriedades do Módulo 1
+        public bool Transparent;
+        public bool Metallic;
+        public bool NonMetallic;
+        public uint TransparentQuantity;
+        public uint MetallicQuantity;
+        public uint NonMetallicQuantity;
+        #endregion
+
+        #region Propriedades do Módulo 2
+        public bool Barrier1;
+        public bool Barrier2;
+        public bool Barrier3;
+        public bool PhotoSensor;
+        public bool Capacitive;
+        public bool Inductive;
+        #endregion
     }
 }

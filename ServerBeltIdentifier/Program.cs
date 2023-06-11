@@ -1,7 +1,6 @@
 using Opc.Ua;
 using Opc.Ua.Configuration;
 using BeltIdentifierServer.Models;
-using ServerBeltIdentifier;
 
 namespace BeltIdentifierServer
 {
@@ -28,7 +27,7 @@ namespace BeltIdentifierServer
                 }
 
                 // Carregar as configurações do aplicativo.
-                application.LoadApplicationConfiguration(Config.PathCOnfigXml, false).Wait();
+                application.LoadApplicationConfiguration("Models\\OpcComunication\\ServerBeltIdentifier.Config.xml", false).Wait();
 
                 // Checar o certificado do aplicativo.
                 application.CheckApplicationInstanceCertificate(false, 0).Wait();

@@ -10,118 +10,154 @@ TargetNamespace="http://opcfoundation.org/BeltIdentifier"
 >
 
 	<!--
-  Esse elemento define os mapeamentos entre os URIs usados para identificar namespaces e os símbolos usados no código.
-  Os arquivos de design definidos pelo usuário podem incluir outros arquivos de design definidos pelo usuário.
-  O local dos arquivos de design incluídos é especificado com o atributo FilePath (caminho absoluto ou relativo sem o sufixo .xml).
-  -->
+		Esse elemento define os mapeamentos entre os URIs usados para identificar namespaces e os símbolos usados no código.
+		Os arquivos de design definidos pelo usuário podem incluir outros arquivos de design definidos pelo usuário.
+		O local dos arquivos de design incluídos é especificado com o atributo FilePath (caminho absoluto ou relativo sem o sufixo .xml).
+	-->
 	<opc:Namespaces>
 		<opc:Namespace Name="OpcUa" Prefix="Opc.Ua" XmlNamespace="http://opcfoundation.org/UA/2008/02/Types.xsd">http://opcfoundation.org/UA/</opc:Namespace>
 		<opc:Namespace Name="BeltIdentifier" Prefix="BeltIdentifier">http://opcfoundation.org/BeltIdentifier</opc:Namespace>
 	</opc:Namespaces>
 
 	<!--
-  Defina tipos de base genéricos para os vários controladores, sensores e atuadores utilizados no modelo.
-  -->
-	<opc:ObjectType SymbolicName="GenericSensorType" BaseType="ua:BaseObjectType">
-		<opc:Description>A generic sensor that read a process value.</opc:Description>
+		Define os tipos de concreto para os vários controladores, sensores e atuadores utilizados no modelo.
+	-->
+	<opc:ObjectType SymbolicName="StartButtonType" BaseType="ua:BaseObjectType">
+		<opc:Description>Start Control Button</opc:Description>
 		<opc:Children>
-			<opc:Variable SymbolicName="Output" DataType="ua:Boolean" ValueRank="Scalar" TypeDefinition="ua:DiscreteItemType" AccessLevel="ReadWrite"/>
-		</opc:Children>
-	</opc:ObjectType>
-	
-	<opc:ObjectType SymbolicName="GenericActuatorType" BaseType="ua:BaseObjectType">
-		<opc:Description>Represents a piece of equipment that causes some action to occur.</opc:Description>
-		<opc:Children>
-			<opc:Variable SymbolicName="Input" DataType="ua:Boolean" ValueRank="Scalar" TypeDefinition="ua:DiscreteItemType" AccessLevel="ReadWrite"/>
-		</opc:Children>
-	</opc:ObjectType>
-	
-	<opc:ObjectType SymbolicName="GenericDisplayType" BaseType="ua:BaseObjectType">
-		<opc:Description>A generic display.</opc:Description>
-		<opc:Children>
-			<opc:Variable SymbolicName="Input" DataType="ua:UInt32" ValueRank="Scalar" TypeDefinition="ua:AnalogItemType" AccessLevel="ReadWrite"/>
-		</opc:Children>
-	</opc:ObjectType>
-	
-	<opc:ObjectType SymbolicName="GenericMotorType" BaseType="ua:BaseObjectType">
-		<opc:Description>A generic motor.</opc:Description>
-		<opc:Children>
-			<opc:Variable SymbolicName="JourneyTime" DataType="ua:UInt32" minOccurs="1"  ValueRank="Scalar" TypeDefinition="ua:AnalogItemType" AccessLevel="ReadWrite"/>
-			<opc:Variable SymbolicName="Interval" DataType="ua:UInt32" minOccurs="1"  ValueRank="Scalar" TypeDefinition="ua:AnalogItemType" AccessLevel="ReadWrite"/>
-			<opc:Variable SymbolicName="Status" DataType="ua:Boolean"  ValueRank="Scalar" TypeDefinition="ua:DiscreteItemType" AccessLevel="ReadWrite"/>
+			<opc:Variable SymbolicName="Started" DataType="ua:Boolean" ValueRank="Scalar" TypeDefinition="ua:DiscreteItemType" AccessLevel="ReadWrite"/>
 		</opc:Children>
 	</opc:ObjectType>
 
-	<!--
-  Define os tipos de concreto para os vários controladores, sensores e atuadores utilizados no modelo.
-  -->
+	<opc:ObjectType SymbolicName="ResetButtonType" BaseType="ua:BaseObjectType">
+		<opc:Description>Reset Control Button</opc:Description>
+		<opc:Children>
+			<opc:Variable SymbolicName="Reseted" DataType="ua:Boolean" ValueRank="Scalar" TypeDefinition="ua:DiscreteItemType" AccessLevel="ReadWrite"/>
+		</opc:Children>
+	</opc:ObjectType>
 
-	<opc:ObjectType SymbolicName="IsAutoIlumination" BaseType="GenericActuatorType">
+	<opc:ObjectType SymbolicName="IsAutoIlumination" BaseType="ua:BaseObjectType">
 		<opc:Description>Automatic indication light.</opc:Description>
+		<opc:Children>
+			<opc:Variable SymbolicName="IsAutoOn" DataType="ua:Boolean" ValueRank="Scalar" TypeDefinition="ua:DiscreteItemType" AccessLevel="Read"/>
+		</opc:Children>
 	</opc:ObjectType>
 
-	<opc:ObjectType SymbolicName="IsModule1Ilumination" BaseType="GenericActuatorType">
+	<opc:ObjectType SymbolicName="IsModule1Ilumination" BaseType="ua:BaseObjectType">
 		<opc:Description>Module 1 indication light.</opc:Description>
+		<opc:Children>
+			<opc:Variable SymbolicName="IsModule1On" DataType="ua:Boolean" ValueRank="Scalar" TypeDefinition="ua:DiscreteItemType" AccessLevel="Read"/>
+		</opc:Children>
 	</opc:ObjectType>
 
-	<opc:ObjectType SymbolicName="IsBusyIlumination" BaseType="GenericActuatorType">
+	<opc:ObjectType SymbolicName="IsBusyIlumination" BaseType="ua:BaseObjectType">
 		<opc:Description>Busy indication light.</opc:Description>
+		<opc:Children>
+			<opc:Variable SymbolicName="IsBusyOn" DataType="ua:Boolean" ValueRank="Scalar" TypeDefinition="ua:DiscreteItemType" AccessLevel="Read"/>
+		</opc:Children>
 	</opc:ObjectType>
 
-	<opc:ObjectType SymbolicName="IsErrorIlumination" BaseType="GenericActuatorType">
+	<opc:ObjectType SymbolicName="IsErrorIlumination" BaseType="ua:BaseObjectType">
 		<opc:Description>Error indication light.</opc:Description>
+		<opc:Children>
+			<opc:Variable SymbolicName="IsErrorOn" DataType="ua:Boolean" ValueRank="Scalar" TypeDefinition="ua:DiscreteItemType" AccessLevel="Read"/>
+		</opc:Children>
 	</opc:ObjectType>
 
-	<opc:ObjectType SymbolicName="MotorType" BaseType="GenericMotorType">
+	<opc:ObjectType SymbolicName="MotorType" BaseType="ua:BaseObjectType">
 		<opc:Description>An motor for moving object.</opc:Description>
+		<opc:Children>
+			<opc:Variable SymbolicName="MotorOn" DataType="ua:Boolean" ValueRank="Scalar" TypeDefinition="ua:DiscreteItemType" AccessLevel="Read"/>
+		</opc:Children>
 	</opc:ObjectType>
 
-	<opc:ObjectType SymbolicName="TransparentPiece" BaseType="GenericActuatorType">
+	<opc:ObjectType SymbolicName="TransparentPiece" BaseType="ua:BaseObjectType">
 		<opc:Description>Transparent piece indication.</opc:Description>
+		<opc:Children>
+			<opc:Variable SymbolicName="IsTransparent" DataType="ua:Boolean" ValueRank="Scalar" TypeDefinition="ua:DiscreteItemType" AccessLevel="Read"/>
+		</opc:Children>
 	</opc:ObjectType>
 
-	<opc:ObjectType SymbolicName="MetallicPiece" BaseType="GenericActuatorType">
+	<opc:ObjectType SymbolicName="MetallicPiece" BaseType="ua:BaseObjectType">
 		<opc:Description>Metallic piece indication.</opc:Description>
+		<opc:Children>
+			<opc:Variable SymbolicName="IsMetallic" DataType="ua:Boolean" ValueRank="Scalar" TypeDefinition="ua:DiscreteItemType" AccessLevel="Read"/>
+		</opc:Children>
 	</opc:ObjectType>
 
-	<opc:ObjectType SymbolicName="NonMetallicPiece" BaseType="GenericActuatorType">
+	<opc:ObjectType SymbolicName="NonMetallicPiece" BaseType="ua:BaseObjectType">
 		<opc:Description>Non-Metallic piece indication.</opc:Description>
+		<opc:Children>
+			<opc:Variable SymbolicName="IsNonMetallic" DataType="ua:Boolean" ValueRank="Scalar" TypeDefinition="ua:DiscreteItemType" AccessLevel="Read"/>
+		</opc:Children>
 	</opc:ObjectType>
 
-	<opc:ObjectType SymbolicName="QuantityTransparentPiece" BaseType="GenericDisplayType">
-		<opc:Description>Reports the number of objects.</opc:Description>
+	<opc:ObjectType SymbolicName="TransparentPieceQuantity" BaseType="ua:BaseObjectType">
+		<opc:Description>Reports the number of Transparent objects.</opc:Description>
+		<opc:Children>
+			<opc:Variable SymbolicName="TransparentQty" DataType="ua:UInt32" ValueRank="Scalar" TypeDefinition="ua:AnalogItemType" AccessLevel="ReadWrite"/>
+		</opc:Children>
 	</opc:ObjectType>
 
-	<opc:ObjectType SymbolicName="QuantityMetallicPiece" BaseType="GenericDisplayType">
-		<opc:Description>Reports the number of objects.</opc:Description>
+	<opc:ObjectType SymbolicName="MetallicPieceQuantity" BaseType="ua:BaseObjectType">
+		<opc:Description>Reports the number of Metallic objects.</opc:Description>
+		<opc:Children>
+			<opc:Variable SymbolicName="MetallicQty" DataType="ua:UInt32" ValueRank="Scalar" TypeDefinition="ua:AnalogItemType" AccessLevel="ReadWrite"/>
+		</opc:Children>
 	</opc:ObjectType>
 
-	<opc:ObjectType SymbolicName="QuantityNonMetallicPiece" BaseType="GenericDisplayType">
-		<opc:Description>Reports the number of objects.</opc:Description>
+	<opc:ObjectType SymbolicName="NonMetallicPieceQuantity" BaseType="ua:BaseObjectType">
+		<opc:Description>Reports the number of Non Metallic objects.</opc:Description>
+		<opc:Children>
+			<opc:Variable SymbolicName="NonMetallicQty" DataType="ua:UInt32" ValueRank="Scalar" TypeDefinition="ua:AnalogItemType" AccessLevel="ReadWrite"/>
+		</opc:Children>
 	</opc:ObjectType>
 	
-	<opc:ObjectType SymbolicName="OpticalBarrier" BaseType="GenericSensorType">
+	<opc:ObjectType SymbolicName="OpticalBarrier1" BaseType="ua:BaseObjectType">
 		<opc:Description>A sensor that reports the position of piece in a belt.</opc:Description>
+		<opc:Children>
+			<opc:Variable SymbolicName="Barrier1On" DataType="ua:Boolean" ValueRank="Scalar" TypeDefinition="ua:DiscreteItemType" AccessLevel="Read"/>
+		</opc:Children>
 	</opc:ObjectType>
 
-	<opc:ObjectType SymbolicName="ElectricPhotoSensor" BaseType="GenericSensorType">
+	<opc:ObjectType SymbolicName="OpticalBarrier2" BaseType="ua:BaseObjectType">
+		<opc:Description>A sensor that reports the position of piece in a belt.</opc:Description>
+		<opc:Children>
+			<opc:Variable SymbolicName="Barrier2On" DataType="ua:Boolean" ValueRank="Scalar" TypeDefinition="ua:DiscreteItemType" AccessLevel="Read"/>
+		</opc:Children>
+	</opc:ObjectType>
+
+	<opc:ObjectType SymbolicName="OpticalBarrier3" BaseType="ua:BaseObjectType">
+		<opc:Description>A sensor that reports the position of piece in a belt.</opc:Description>
+		<opc:Children>
+			<opc:Variable SymbolicName="Barrier3On" DataType="ua:Boolean" ValueRank="Scalar" TypeDefinition="ua:DiscreteItemType" AccessLevel="Read"/>
+		</opc:Children>
+	</opc:ObjectType>
+
+	<opc:ObjectType SymbolicName="ElectricPhotoSensor" BaseType="ua:BaseObjectType">
 		<opc:Description>A sensor that reports you if the piece is transparent.</opc:Description>
+		<opc:Children>
+			<opc:Variable SymbolicName="PhotoSensorOn" DataType="ua:Boolean" ValueRank="Scalar" TypeDefinition="ua:DiscreteItemType" AccessLevel="Read"/>
+		</opc:Children>
 	</opc:ObjectType>
 
-	<opc:ObjectType SymbolicName="CapacitiveSensor" BaseType="GenericSensorType">
+	<opc:ObjectType SymbolicName="CapacitiveSensor" BaseType="ua:BaseObjectType">
 		<opc:Description>A sensor that reports you if the piece is not metallic.</opc:Description>
+		<opc:Children>
+			<opc:Variable SymbolicName="CapacitiveOn" DataType="ua:Boolean" ValueRank="Scalar" TypeDefinition="ua:DiscreteItemType" AccessLevel="Read"/>
+		</opc:Children>
 	</opc:ObjectType>
 
-	<opc:ObjectType SymbolicName="InductiveSensor" BaseType="GenericSensorType">
+	<opc:ObjectType SymbolicName="InductiveSensor" BaseType="ua:BaseObjectType">
 		<opc:Description>A sensor that reports you if the piece is metallic.</opc:Description>
+		<opc:Children>
+			<opc:Variable SymbolicName="InductiveOn" DataType="ua:Boolean" ValueRank="Scalar" TypeDefinition="ua:DiscreteItemType" AccessLevel="Read"/>
+		</opc:Children>
 	</opc:ObjectType>
 
 	<!--
-	Definir tipos de concreto para os componentes contidos na Planta de Lotes.
-  Esses tipos de camada intermediária podem ser omitidos e declarados como pastas dentro do tipo de caldeira.
-  No entanto, isso não produziria uma classe fortemente tipada.
-  -->
-
+		Definir tipos de concreto para os componentes contidos na Planta para cada Módulo.
+	-->
 	<opc:ObjectType SymbolicName="Module1Type" BaseType="ua:FolderType">
 		<opc:Children>
 			<opc:Object SymbolicName="Transparent" TypeDefinition="TransparentPiece" SupportsEvents="true">
@@ -133,14 +169,14 @@ TargetNamespace="http://opcfoundation.org/BeltIdentifier"
 			<opc:Object SymbolicName="NonMetallic" TypeDefinition="NonMetallicPiece" SupportsEvents="true">
 				<opc:BrowseName>NonMetallic</opc:BrowseName>
 			</opc:Object>
-			<opc:Object SymbolicName="QuantityTransparent" TypeDefinition="QuantityTransparentPiece" SupportsEvents="true">
-				<opc:BrowseName>QuantityTransparent</opc:BrowseName>
+			<opc:Object SymbolicName="TransparentQuantity" TypeDefinition="TransparentPieceQuantity" SupportsEvents="true">
+				<opc:BrowseName>TransparentQuantity</opc:BrowseName>
 			</opc:Object>
-			<opc:Object SymbolicName="QuantityMetallic" TypeDefinition="QuantityMetallicPiece" SupportsEvents="true">
-				<opc:BrowseName>QuantityMetallic</opc:BrowseName>
+			<opc:Object SymbolicName="MetallicQuantity" TypeDefinition="MetallicPieceQuantity" SupportsEvents="true">
+				<opc:BrowseName>MetallicQuantity</opc:BrowseName>
 			</opc:Object>
-			<opc:Object SymbolicName="QuantityNonMetallic" TypeDefinition="QuantityNonMetallicPiece" SupportsEvents="true">
-				<opc:BrowseName>QuantityNonMetallic</opc:BrowseName>
+			<opc:Object SymbolicName="NonMetallicQuantity" TypeDefinition="NonMetallicPieceQuantity" SupportsEvents="true">
+				<opc:BrowseName>NonMetallicQuantity</opc:BrowseName>
 			</opc:Object>
 		</opc:Children>
 		<opc:References>
@@ -153,13 +189,13 @@ TargetNamespace="http://opcfoundation.org/BeltIdentifier"
 
 	<opc:ObjectType SymbolicName="Module2Type" BaseType="ua:FolderType">
 		<opc:Children>
-			<opc:Object SymbolicName="Barrier1" TypeDefinition="OpticalBarrier" SupportsEvents="true">
+			<opc:Object SymbolicName="Barrier1" TypeDefinition="OpticalBarrier1" SupportsEvents="true">
 				<opc:BrowseName>Barrier1</opc:BrowseName>
 			</opc:Object>
-			<opc:Object SymbolicName="Barrier2" TypeDefinition="OpticalBarrier" SupportsEvents="true">
+			<opc:Object SymbolicName="Barrier2" TypeDefinition="OpticalBarrier2" SupportsEvents="true">
 				<opc:BrowseName>Barrier2</opc:BrowseName>
 			</opc:Object>
-			<opc:Object SymbolicName="Barrier3" TypeDefinition="OpticalBarrier" SupportsEvents="true">
+			<opc:Object SymbolicName="Barrier3" TypeDefinition="OpticalBarrier3" SupportsEvents="true">
 				<opc:BrowseName>Barrier3</opc:BrowseName>
 			</opc:Object>
 			<opc:Object SymbolicName="PhotoSensor" TypeDefinition="ElectricPhotoSensor" SupportsEvents="true">
@@ -181,18 +217,18 @@ TargetNamespace="http://opcfoundation.org/BeltIdentifier"
 	</opc:ObjectType>
 
 	<!--
-  Declare o tipo de planta em lote junto com todas as referências entre os diferentes componentes.
-  Adicionar referências entre componentes requer que eles sejam substituídos. 
-  Os nós substituídos só precisam se importar com o NodeType correto e o SymbolicName; todos os outros
-  parâmetros são inicializados a partir da declaração original. Quaisquer parâmetros que sejam explicitamente
-  especificados substituem a declaração original e são utilizados mesmo que a declaração original
-  é alterado.
-  As referências são especificadas construindo os SymbolicIds para os componentes inserindo
-  um '_' entre cada SymbolicName. Isso significa que um '_' não pode fazer parte de um SymbolicName.
-  -->
+		Declaração da planta junto com todas as referências os seus componentes.
+	-->
 	<opc:ObjectType SymbolicName="BeltType" BaseType="ua:BaseObjectType" SupportsEvents="true">
 		<opc:Description>A production belt.</opc:Description>
 		<opc:Children>
+			<opc:Object SymbolicName="StartButton" TypeDefinition="StartButtonType" SupportsEvents="true">
+				<opc:BrowseName>StartButton</opc:BrowseName>
+			</opc:Object>
+
+			<opc:Object SymbolicName="ResetButton" TypeDefinition="ResetButtonType" SupportsEvents="true">
+				<opc:BrowseName>ResetButton</opc:BrowseName>
+			</opc:Object>
 
 			<opc:Object SymbolicName="IsAuto" TypeDefinition="IsAutoIlumination" SupportsEvents="true">
 				<opc:BrowseName>IsAuto</opc:BrowseName>
@@ -221,13 +257,6 @@ TargetNamespace="http://opcfoundation.org/BeltIdentifier"
 			<opc:Object SymbolicName="Module2" TypeDefinition="Module2Type" SupportsEvents="true">
 				<opc:BrowseName>Belt Module 2</opc:BrowseName>
 			</opc:Object>
-
-			<opc:Method SymbolicName="StartProcess" ModellingRule="Mandatory"></opc:Method>
-			<opc:Method SymbolicName="StopProcess" ModellingRule="Mandatory"></opc:Method>
-			<opc:Method SymbolicName="ResetProcess" ModellingRule="Mandatory"></opc:Method>
-			<opc:Method SymbolicName="AddTransparentPieceProcess" ModellingRule="Mandatory"></opc:Method>
-			<opc:Method SymbolicName="AddMetallicPieceProcess" ModellingRule="Mandatory"></opc:Method>
-			<opc:Method SymbolicName="AddNonMetallicPieceProcess" ModellingRule="Mandatory"></opc:Method>
 		</opc:Children>
 
 		<opc:References>
@@ -240,23 +269,20 @@ TargetNamespace="http://opcfoundation.org/BeltIdentifier"
 	</opc:ObjectType>
 
 	<!--
-  Normalmente, as instâncias são criadas pela lógica do programa em vez de fazer parte do modelo.
-  Isso é fornecido como um exemplo de como fazê-lo quando há necessidade de instâncias persistentes.
-  Observe que os DisplayNames são substituídos para os nós de nível básico.
-  -->
+		Instânciando a Planta, para que seja persistente.
+	-->
 	<opc:Object SymbolicName="BeltServer" TypeDefinition="BeltType" SupportsEvents="true">
 		<opc:BrowseName>Belt Server #1</opc:BrowseName>
+		
 		<!--
-   Vincular a instância de volta ao ObjectsFolder
-    -->
+			Criando o vinculo da instância ao ObjectsFolder
+		-->
 		<opc:References>
 			<opc:Reference IsInverse="true">
 				<opc:ReferenceType>ua:Organizes</opc:ReferenceType>
 				<opc:TargetId>ua:ObjectsFolder</opc:TargetId>
 			</opc:Reference>
 		</opc:References>
-
 	</opc:Object>
-
 </opc:ModelDesign>
 

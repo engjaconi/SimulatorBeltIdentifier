@@ -1,23 +1,37 @@
 ﻿namespace ServerBeltIdentifier.Models
 {
-    public class BeltIdentifierController : Belt
+    public partial class Belt
     {
-        public bool StopClick;
+        public uint JourneyTime;
+        public uint Interval;
         public EPieceType PieceType;
 
-        public BeltIdentifierController()
+        #region Instância da Esteira - Padrão de Projeto Singleton
+        private static Belt _instance;
+
+        private Belt()
         {
             JourneyTime = 1;
-            Interval = 1;
+            Interval = 2;
             ReadOpc();
         }
+
+        public static Belt GetInstance()
+        {
+            if(_instance == null)
+            {
+                _instance = new Belt();
+            }
+            return _instance;
+        }
+        #endregion
 
         public void Start()
         {
             if (IsError) return;
            
-            StopClick = false;
             MotorOn = true;
+            Started = true;
             WriteOpc();
         }
 
@@ -26,7 +40,7 @@
             if (IsError) return;
 
             MotorOn = false;
-            StopClick = true;
+            Started = false;
             WriteOpc();
         }
 
@@ -39,30 +53,30 @@
                 if (Transparent)
                 {
                     Transparent = false;
-                    QuantityTransparent--;
-                    if (!Metallic && !NonMetallic && (QuantityTransparent > 0))
+                    TransparentQuantity--;
+                    if (!Metallic && !NonMetallic && (TransparentQuantity > 0))
                     {
-                        QuantityTransparent--;
+                        TransparentQuantity--;
                     }
                 }
 
                 if (Metallic)
                 {
                     Metallic = false;
-                    QuantityMetallic--;
-                    if (!Transparent && !NonMetallic && (QuantityMetallic > 0))
+                    MetallicQuantity--;
+                    if (!Transparent && !NonMetallic && (MetallicQuantity > 0))
                     {
-                        QuantityMetallic--;
+                        MetallicQuantity--;
                     }
                 }
 
                 if (NonMetallic)
                 {
                     NonMetallic = false;
-                    QuantityNonMetallic--;
-                    if (!Transparent && !Metallic && (QuantityNonMetallic > 0))
+                    NonMetallicQuantity--;
+                    if (!Transparent && !Metallic && (NonMetallicQuantity > 0))
                     {
-                        QuantityNonMetallic--;
+                        NonMetallicQuantity--;
                     }
                 }
             } 
@@ -79,6 +93,7 @@
             IsError = false;
             IsBusy = false;
             MotorOn = false;
+            Reseted = false;
             WriteOpc();
         }
 
@@ -100,17 +115,17 @@
                 {
                     case EPieceType.Transparent:
                         Transparent = true;
-                        QuantityTransparent++;
+                        TransparentQuantity++;
                         TaskTransparent();
                         break;
                     case EPieceType.Metallic:
                         Metallic = true;
-                        QuantityMetallic++;
+                        MetallicQuantity++;
                         TaskMetallic();
                         break;
                     case EPieceType.NonMetallic:
                         NonMetallic = true;
-                        QuantityNonMetallic++;
+                        NonMetallicQuantity++;
                         TaskNonMetallic();
                         break;
                     default:
@@ -183,7 +198,7 @@
             {
                 Task tTransparent = new(() => {
                     Thread.Sleep((int)JourneyTime * 1000);
-                    if (IsError || StopClick) return;
+                    if (IsError || !Started) return;
                     Transparent = false;
                     IsBusy = false;
                     WriteOpc();
@@ -194,14 +209,14 @@
             {
                 Task tTransparent = new(() =>
                 {
-                    if (!IsError && !StopClick)
+                    if (!IsError && Started)
                     {
                         Barrier1 = true;
                         WriteOpc();
                         Thread.Sleep(((int)JourneyTime / 6) * 1000);
                     }
 
-                    if (!IsError && !StopClick)
+                    if (!IsError && Started)
                     {
                         Barrier1 = false;
                         Barrier2 = true;
@@ -209,35 +224,35 @@
                         Thread.Sleep(((int)JourneyTime / 6) * 1000);
                     }
 
-                    if (!IsError && !StopClick)
+                    if (!IsError && Started)
                     {
                         Barrier2 = false;
                         WriteOpc();
                         Thread.Sleep(((int)JourneyTime / 6) * 1000);
                     }
 
-                    if (!IsError && !StopClick)
+                    if (!IsError && Started)
                     {
                         Capacitive = false;
                         WriteOpc();
                         Thread.Sleep(((int)JourneyTime / 6) * 1000);
                     }
 
-                    if (!IsError && !StopClick)
+                    if (!IsError && Started)
                     {
                         Capacitive = true;
                         WriteOpc();
                         Thread.Sleep(((int)JourneyTime / 6) * 1000);
                     }
 
-                    if (!IsError && !StopClick)
+                    if (!IsError && Started)
                     {
                         Barrier3 = true;
                         WriteOpc();
                         Thread.Sleep(((int)JourneyTime / 6) * 1000);
                     }
 
-                    if (!IsError && !StopClick)
+                    if (!IsError && Started)
                     {
                         Barrier3 = false;
                         IsBusy = false;
@@ -254,7 +269,7 @@
             {
                 Task tMetallic = new(() => {
                     Thread.Sleep((int)JourneyTime * 1000);
-                    if (IsError || StopClick) return;
+                    if (IsError || !Started) return;
                     Metallic = false;
                     IsBusy = false;
                     WriteOpc();
@@ -265,48 +280,48 @@
             {
                 Task tMetallic = new(() =>
                 {
-                    if (!IsError && !StopClick)
+                    if (!IsError && Started)
                     {
                         Barrier1 = true;
                         WriteOpc();
                         Thread.Sleep(((int)JourneyTime / 6) * 1000);
                     }
-                    if (!IsError && !StopClick)
+                    if (!IsError && Started)
                     {
                         Barrier1 = false;
                         Barrier2 = true;
                         WriteOpc();
                         Thread.Sleep(((int)JourneyTime / 6) * 1000);
                     }
-                    if (!IsError && !StopClick)
+                    if (!IsError && Started)
                     {
                         Barrier2 = false;
                         PhotoSensor = true;
                         WriteOpc();
                         Thread.Sleep(((int)JourneyTime / 6) * 1000);
                     }
-                    if (!IsError && !StopClick)
+                    if (!IsError && Started)
                     {
                         PhotoSensor = false;
                         Capacitive = false;
                         WriteOpc();
                         Thread.Sleep(((int)JourneyTime / 6) * 1000);
                     }
-                    if (!IsError && !StopClick)
+                    if (!IsError && Started)
                     {
                         Capacitive = true;
                         Inductive = false;
                         WriteOpc();
                         Thread.Sleep(((int)JourneyTime / 6) * 1000);
                     }
-                    if (!IsError && !StopClick)
+                    if (!IsError && Started)
                     {
                         Inductive = true;
                         Barrier3 = true;
                         WriteOpc();
                         Thread.Sleep(((int)JourneyTime / 6) * 1000);
                     }
-                    if (!IsError && !StopClick)
+                    if (!IsError && Started)
                     {
                         Barrier3 = false;
                         IsBusy = false;
@@ -323,7 +338,7 @@
             {
                 Task tNonMetallic = new(() => {
                     Thread.Sleep((int)JourneyTime * 1000);
-                    if (IsError || StopClick) return;
+                    if (IsError || !Started) return;
                     NonMetallic = false;
                     IsBusy = false;
                     WriteOpc();
@@ -334,46 +349,46 @@
             {
                 Task tNonMetallic = new(() =>
                 {
-                    if (!IsError && !StopClick)
+                    if (!IsError && Started)
                     {
                         Barrier1 = true;
                         WriteOpc();
                         Thread.Sleep(((int)JourneyTime / 6) * 1000);
                     }
-                    if (!IsError && !StopClick)
+                    if (!IsError && Started)
                     {
                         Barrier1 = false;
                         Barrier2 = true;
                         WriteOpc();
                         Thread.Sleep(((int)JourneyTime / 6) * 1000);
                     }
-                    if (!IsError && !StopClick)
+                    if (!IsError && Started)
                     {
                         Barrier2 = false;
                         PhotoSensor = true;
                         WriteOpc();
                         Thread.Sleep(((int)JourneyTime / 6) * 1000);
                     }
-                    if (!IsError && !StopClick)
+                    if (!IsError && Started)
                     {
                         PhotoSensor = false;
                         Capacitive = false;
                         WriteOpc();
                         Thread.Sleep(((int)JourneyTime / 6) * 1000);
                     }
-                    if (!IsError && !StopClick)
+                    if (!IsError && Started)
                     {
                         Capacitive = true;
                         WriteOpc();
                         Thread.Sleep(((int)JourneyTime / 6) * 1000);
                     }
-                    if (!IsError && !StopClick)
+                    if (!IsError && Started)
                     {
                         Barrier3 = true;
                         WriteOpc();
                         Thread.Sleep(((int)JourneyTime / 6) * 1000);
                     }
-                    if (!IsError && !StopClick)
+                    if (!IsError && Started)
                     {
                         Barrier3 = false;
                         IsBusy = false;
@@ -386,62 +401,70 @@
                        
         public void ReadOpc()
         {
-            MotorOn = NodeManager.Belt.Motor.Status.Value;
-            JourneyTime = NodeManager.Belt.Motor.JourneyTime.Value >= 1 ? NodeManager.Belt.Motor.JourneyTime.Value : JourneyTime;
-            IsBusy = NodeManager.Belt.IsBusy.Input.Value;
-            IsError = NodeManager.Belt.IsError.Input.Value;
-            IsModule1 = NodeManager.Belt.IsModule1.Input.Value;
-            IsAuto = NodeManager.Belt.IsAuto.Input.Value;
+            Started = NodeManager.Belt.StartButton.Started.Value;
+            Reseted = NodeManager.Belt.ResetButton.Reseted.Value;
+            MotorOn = NodeManager.Belt.Motor.MotorOn.Value;
+            IsBusy = NodeManager.Belt.IsBusy.IsBusyOn.Value;
+            IsError = NodeManager.Belt.IsError.IsErrorOn.Value;
+            IsModule1 = NodeManager.Belt.IsModule1.IsModule1On.Value;
+            IsAuto = NodeManager.Belt.IsAuto.IsAutoOn.Value;
 
-            Transparent = NodeManager.Belt.Module1.Transparent.Input.Value;
-            Metallic = NodeManager.Belt.Module1.Metallic.Input.Value;
-            NonMetallic = NodeManager.Belt.Module1.NonMetallic.Input.Value;
-            QuantityTransparent = NodeManager.Belt.Module1.QuantityTransparent.Input.Value;
-            QuantityMetallic = NodeManager.Belt.Module1.QuantityMetallic.Input.Value;
-            QuantityNonMetallic = NodeManager.Belt.Module1.QuantityNonMetallic.Input.Value;
+            Transparent = NodeManager.Belt.Module1.Transparent.IsTransparent.Value;
+            Metallic = NodeManager.Belt.Module1.Metallic.IsMetallic.Value;
+            NonMetallic = NodeManager.Belt.Module1.NonMetallic.IsNonMetallic.Value;
+            TransparentQuantity = NodeManager.Belt.Module1.TransparentQuantity.TransparentQty.Value;
+            MetallicQuantity = NodeManager.Belt.Module1.MetallicQuantity.MetallicQty.Value;
+            NonMetallicQuantity = NodeManager.Belt.Module1.NonMetallicQuantity.NonMetallicQty.Value;
 
-            Barrier1 = NodeManager.Belt.Module2.Barrier1.Output.Value;
-            Barrier2 = NodeManager.Belt.Module2.Barrier2.Output.Value;
-            Barrier3 = NodeManager.Belt.Module2.Barrier3.Output.Value;
-            PhotoSensor = NodeManager.Belt.Module2.PhotoSensor.Output.Value;
-            Capacitive = NodeManager.Belt.Module2.Capacitive.Output.Value;
-            Inductive = NodeManager.Belt.Module2.Inductive.Output.Value;
-            if (IsAuto)
+            Barrier1 = NodeManager.Belt.Module2.Barrier1.Barrier1On.Value;
+            Barrier2 = NodeManager.Belt.Module2.Barrier2.Barrier2On.Value;
+            Barrier3 = NodeManager.Belt.Module2.Barrier3.Barrier3On.Value;
+            PhotoSensor = NodeManager.Belt.Module2.PhotoSensor.PhotoSensorOn.Value;
+            Capacitive = NodeManager.Belt.Module2.Capacitive.CapacitiveOn.Value;
+            Inductive = NodeManager.Belt.Module2.Inductive.InductiveOn.Value;
+
+            if (Started == true && MotorOn == false && !IsError)
             {
-                // Variável disponível apenas para controle Automático.
-                Interval = NodeManager.Belt.Motor.Interval.Value >= 1 ? NodeManager.Belt.Motor.Interval.Value : Interval;
-                WriteOpc();
+                Start();
+            } else if(Started == false && MotorOn == true && !IsError) { 
+                Stop();
+            } else if (Started == true && IsError)
+            {
+                Started = false;
             }
-            // Voltando ao valor antigo, caso o cliente OPC tente passar um valor inválido.
-            if (NodeManager.Belt.Motor.JourneyTime.Value >= 1 || NodeManager.Belt.Motor.Interval.Value >= 1)
+
+            if(Reseted == true && IsError == true)
             {
-                WriteOpc();
+                Reset();
+            } else if (Reseted == true && IsError == false)
+            {
+                Reseted = false;
             }
         }
 
         public void WriteOpc()
         {
-            NodeManager.Belt.Motor.Status.Value = MotorOn;
-            NodeManager.Belt.Motor.JourneyTime.Value = JourneyTime;
-            NodeManager.Belt.Motor.Interval.Value = Interval;
-            NodeManager.Belt.IsBusy.Input.Value = IsBusy;
-            NodeManager.Belt.IsError.Input.Value = IsError;
-            NodeManager.Belt.IsModule1.Input.Value = IsModule1;
-            NodeManager.Belt.IsAuto.Input.Value = IsAuto;
+            NodeManager.Belt.StartButton.Started.Value = Started;
+            NodeManager.Belt.ResetButton.Reseted.Value = Reseted;
+            NodeManager.Belt.Motor.MotorOn.Value = MotorOn;
+            NodeManager.Belt.IsBusy.IsBusyOn.Value = IsBusy;
+            NodeManager.Belt.IsError.IsErrorOn.Value = IsError;
+            NodeManager.Belt.IsModule1.IsModule1On.Value = IsModule1;
+            NodeManager.Belt.IsAuto.IsAutoOn.Value = IsAuto;
 
-            NodeManager.Belt.Module1.Transparent.Input.Value = Transparent;
-            NodeManager.Belt.Module1.Metallic.Input.Value = Metallic;
-            NodeManager.Belt.Module1.NonMetallic.Input.Value = NonMetallic;
-            NodeManager.Belt.Module1.QuantityTransparent.Input.Value = QuantityTransparent;
-            NodeManager.Belt.Module1.QuantityMetallic.Input.Value = QuantityMetallic;
-            NodeManager.Belt.Module1.QuantityNonMetallic.Input.Value = QuantityNonMetallic;
+            NodeManager.Belt.Module1.Transparent.IsTransparent.Value = Transparent;
+            NodeManager.Belt.Module1.Metallic.IsMetallic.Value = Metallic;
+            NodeManager.Belt.Module1.NonMetallic.IsNonMetallic.Value = NonMetallic;
+            NodeManager.Belt.Module1.TransparentQuantity.TransparentQty.Value = TransparentQuantity;
+            NodeManager.Belt.Module1.MetallicQuantity.MetallicQty.Value = MetallicQuantity;
+            NodeManager.Belt.Module1.NonMetallicQuantity.NonMetallicQty.Value = NonMetallicQuantity;
 
-            NodeManager.Belt.Module2.Barrier1.Output.Value = Barrier1;
-            NodeManager.Belt.Module2.Barrier2.Output.Value = Barrier2;
-            NodeManager.Belt.Module2.Barrier3.Output.Value = Barrier3;
-            NodeManager.Belt.Module2.PhotoSensor.Output.Value = PhotoSensor;
-            NodeManager.Belt.Module2.Capacitive.Output.Value = Capacitive;
-            NodeManager.Belt.Module2.Inductive.Output.Value = Inductive;
+            NodeManager.Belt.Module2.Barrier1.Barrier1On.Value = Barrier1;
+            NodeManager.Belt.Module2.Barrier2.Barrier2On.Value = Barrier2;
+            NodeManager.Belt.Module2.Barrier3.Barrier3On.Value = Barrier3;
+            NodeManager.Belt.Module2.PhotoSensor.PhotoSensorOn.Value = PhotoSensor;
+            NodeManager.Belt.Module2.Capacitive.CapacitiveOn.Value = Capacitive;
+            NodeManager.Belt.Module2.Inductive.InductiveOn.Value = Inductive;
             
             NodeManager.Belt.ClearChangeMasks(NodeManager.Context, true);
         }

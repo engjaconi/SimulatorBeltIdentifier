@@ -60,19 +60,9 @@
             lblBarrier1 = new Label();
             pBarrier2 = new Panel();
             pBarrier1 = new Panel();
-            btnAddPiece = new Button();
-            gbTypePiece = new GroupBox();
-            rbNonMetallic = new RadioButton();
-            rbMetallic = new RadioButton();
-            rbTransparent = new RadioButton();
             gbControlType = new GroupBox();
             rbAutomatic = new RadioButton();
             rbManual = new RadioButton();
-            gbBeltTimes = new GroupBox();
-            tbInterval = new TextBox();
-            lblInterval = new Label();
-            lblJourneyTime = new Label();
-            tbJourneyTime = new TextBox();
             gbBeltStatus = new GroupBox();
             lblErrorStatus = new Label();
             pErrorStatus = new Panel();
@@ -81,7 +71,6 @@
             pMotorStatus = new Panel();
             lblMotor = new Label();
             btnReset = new Button();
-            timerAuto = new System.Windows.Forms.Timer(components);
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
             lblTitle = new Label();
@@ -92,9 +81,7 @@
             gbOpcStatusModule1.SuspendLayout();
             tpModule2.SuspendLayout();
             gbOpcStatusModule2.SuspendLayout();
-            gbTypePiece.SuspendLayout();
             gbControlType.SuspendLayout();
-            gbBeltTimes.SuspendLayout();
             gbBeltStatus.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -104,7 +91,7 @@
             // 
             lblServerUrl.AutoSize = true;
             lblServerUrl.Font = new Font("Microsoft JhengHei", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            lblServerUrl.Location = new Point(12, 60);
+            lblServerUrl.Location = new Point(10, 71);
             lblServerUrl.Name = "lblServerUrl";
             lblServerUrl.Size = new Size(151, 23);
             lblServerUrl.TabIndex = 1;
@@ -118,9 +105,9 @@
             btnStart.FlatAppearance.MouseDownBackColor = Color.Red;
             btnStart.FlatAppearance.MouseOverBackColor = Color.Blue;
             btnStart.Font = new Font("Microsoft JhengHei", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            btnStart.Location = new Point(59, 258);
+            btnStart.Location = new Point(367, 125);
             btnStart.Name = "btnStart";
-            btnStart.Size = new Size(149, 60);
+            btnStart.Size = new Size(134, 60);
             btnStart.TabIndex = 2;
             btnStart.Text = "Start";
             btnStart.UseVisualStyleBackColor = true;
@@ -130,9 +117,9 @@
             // 
             btnStop.Enabled = false;
             btnStop.Font = new Font("Microsoft JhengHei", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            btnStop.Location = new Point(213, 258);
+            btnStop.Location = new Point(507, 125);
             btnStop.Name = "btnStop";
-            btnStop.Size = new Size(149, 60);
+            btnStop.Size = new Size(134, 60);
             btnStop.TabIndex = 3;
             btnStop.Text = "Stop";
             btnStop.UseVisualStyleBackColor = true;
@@ -147,8 +134,9 @@
             // 
             tbcModules.Controls.Add(tpModule1);
             tbcModules.Controls.Add(tpModule2);
+            tbcModules.Enabled = false;
             tbcModules.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            tbcModules.Location = new Point(369, 258);
+            tbcModules.Location = new Point(227, 191);
             tbcModules.Name = "tbcModules";
             tbcModules.SelectedIndex = 0;
             tbcModules.Size = new Size(559, 304);
@@ -187,7 +175,7 @@
             // 
             // tbQuantityNonMetallic
             // 
-            tbQuantityNonMetallic.Location = new Point(421, 164);
+            tbQuantityNonMetallic.Location = new Point(417, 164);
             tbQuantityNonMetallic.Name = "tbQuantityNonMetallic";
             tbQuantityNonMetallic.ReadOnly = true;
             tbQuantityNonMetallic.Size = new Size(86, 31);
@@ -196,7 +184,7 @@
             // lblNonMetallic
             // 
             lblNonMetallic.AutoSize = true;
-            lblNonMetallic.Location = new Point(409, 135);
+            lblNonMetallic.Location = new Point(398, 135);
             lblNonMetallic.Name = "lblNonMetallic";
             lblNonMetallic.Size = new Size(124, 23);
             lblNonMetallic.TabIndex = 7;
@@ -213,7 +201,7 @@
             // lblMetallic
             // 
             lblMetallic.AutoSize = true;
-            lblMetallic.Location = new Point(226, 135);
+            lblMetallic.Location = new Point(228, 135);
             lblMetallic.Name = "lblMetallic";
             lblMetallic.Size = new Size(83, 23);
             lblMetallic.TabIndex = 5;
@@ -221,7 +209,7 @@
             // 
             // tbQuantityTransparent
             // 
-            tbQuantityTransparent.Location = new Point(37, 164);
+            tbQuantityTransparent.Location = new Point(32, 164);
             tbQuantityTransparent.Name = "tbQuantityTransparent";
             tbQuantityTransparent.ReadOnly = true;
             tbQuantityTransparent.Size = new Size(86, 31);
@@ -230,7 +218,7 @@
             // lblTransparent
             // 
             lblTransparent.AutoSize = true;
-            lblTransparent.Location = new Point(21, 135);
+            lblTransparent.Location = new Point(14, 135);
             lblTransparent.Name = "lblTransparent";
             lblTransparent.Size = new Size(122, 23);
             lblTransparent.TabIndex = 3;
@@ -241,7 +229,7 @@
             pNonMetallic.BackColor = Color.Transparent;
             pNonMetallic.BackgroundImage = Properties.Resources.green_led_off;
             pNonMetallic.BackgroundImageLayout = ImageLayout.Stretch;
-            pNonMetallic.Location = new Point(439, 76);
+            pNonMetallic.Location = new Point(435, 76);
             pNonMetallic.Name = "pNonMetallic";
             pNonMetallic.Size = new Size(50, 51);
             pNonMetallic.TabIndex = 2;
@@ -302,7 +290,7 @@
             // lblBarrier3
             // 
             lblBarrier3.AutoSize = true;
-            lblBarrier3.Location = new Point(421, 208);
+            lblBarrier3.Location = new Point(418, 208);
             lblBarrier3.Name = "lblBarrier3";
             lblBarrier3.Size = new Size(92, 23);
             lblBarrier3.TabIndex = 11;
@@ -311,7 +299,7 @@
             // lblInductive
             // 
             lblInductive.AutoSize = true;
-            lblInductive.Location = new Point(230, 207);
+            lblInductive.Location = new Point(229, 208);
             lblInductive.Name = "lblInductive";
             lblInductive.Size = new Size(80, 23);
             lblInductive.TabIndex = 11;
@@ -339,7 +327,7 @@
             // lblPhotoSensor
             // 
             lblPhotoSensor.AutoSize = true;
-            lblPhotoSensor.Location = new Point(410, 93);
+            lblPhotoSensor.Location = new Point(408, 93);
             lblPhotoSensor.Name = "lblPhotoSensor";
             lblPhotoSensor.Size = new Size(112, 23);
             lblPhotoSensor.TabIndex = 9;
@@ -378,7 +366,7 @@
             // lblBarrier2
             // 
             lblBarrier2.AutoSize = true;
-            lblBarrier2.Location = new Point(226, 93);
+            lblBarrier2.Location = new Point(223, 93);
             lblBarrier2.Name = "lblBarrier2";
             lblBarrier2.Size = new Size(92, 23);
             lblBarrier2.TabIndex = 9;
@@ -387,7 +375,7 @@
             // lblBarrier1
             // 
             lblBarrier1.AutoSize = true;
-            lblBarrier1.Location = new Point(33, 93);
+            lblBarrier1.Location = new Point(29, 93);
             lblBarrier1.Name = "lblBarrier1";
             lblBarrier1.Size = new Size(92, 23);
             lblBarrier1.TabIndex = 5;
@@ -413,75 +401,18 @@
             pBarrier1.Size = new Size(50, 51);
             pBarrier1.TabIndex = 4;
             // 
-            // btnAddPiece
-            // 
-            btnAddPiece.Cursor = Cursors.Hand;
-            btnAddPiece.Enabled = false;
-            btnAddPiece.Font = new Font("Microsoft JhengHei", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            btnAddPiece.Location = new Point(59, 323);
-            btnAddPiece.Name = "btnAddPiece";
-            btnAddPiece.Size = new Size(149, 60);
-            btnAddPiece.TabIndex = 1;
-            btnAddPiece.Text = "Adicionar Peça";
-            btnAddPiece.UseVisualStyleBackColor = true;
-            btnAddPiece.Click += BtnAddPiece_Click;
-            // 
-            // gbTypePiece
-            // 
-            gbTypePiece.Controls.Add(rbNonMetallic);
-            gbTypePiece.Controls.Add(rbMetallic);
-            gbTypePiece.Controls.Add(rbTransparent);
-            gbTypePiece.Font = new Font("Microsoft JhengHei", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            gbTypePiece.Location = new Point(493, 114);
-            gbTypePiece.Name = "gbTypePiece";
-            gbTypePiece.Size = new Size(252, 138);
-            gbTypePiece.TabIndex = 0;
-            gbTypePiece.TabStop = false;
-            gbTypePiece.Text = "Selecione o tipo da peça";
-            // 
-            // rbNonMetallic
-            // 
-            rbNonMetallic.AutoSize = true;
-            rbNonMetallic.Location = new Point(9, 96);
-            rbNonMetallic.Name = "rbNonMetallic";
-            rbNonMetallic.Size = new Size(145, 27);
-            rbNonMetallic.TabIndex = 2;
-            rbNonMetallic.Text = "Não Metálica";
-            rbNonMetallic.UseVisualStyleBackColor = true;
-            // 
-            // rbMetallic
-            // 
-            rbMetallic.AutoSize = true;
-            rbMetallic.Location = new Point(9, 63);
-            rbMetallic.Name = "rbMetallic";
-            rbMetallic.Size = new Size(104, 27);
-            rbMetallic.TabIndex = 1;
-            rbMetallic.Text = "Metálica";
-            rbMetallic.UseVisualStyleBackColor = true;
-            // 
-            // rbTransparent
-            // 
-            rbTransparent.AutoSize = true;
-            rbTransparent.Checked = true;
-            rbTransparent.Location = new Point(9, 30);
-            rbTransparent.Name = "rbTransparent";
-            rbTransparent.Size = new Size(143, 27);
-            rbTransparent.TabIndex = 0;
-            rbTransparent.TabStop = true;
-            rbTransparent.Text = "Transparente";
-            rbTransparent.UseVisualStyleBackColor = true;
-            // 
             // gbControlType
             // 
             gbControlType.BackColor = SystemColors.ControlLightLight;
             gbControlType.Controls.Add(rbAutomatic);
             gbControlType.Controls.Add(rbManual);
+            gbControlType.Enabled = false;
             gbControlType.FlatStyle = FlatStyle.Flat;
             gbControlType.Font = new Font("Microsoft JhengHei", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             gbControlType.ForeColor = SystemColors.Desktop;
             gbControlType.Location = new Point(12, 112);
             gbControlType.Name = "gbControlType";
-            gbControlType.Size = new Size(196, 140);
+            gbControlType.Size = new Size(209, 103);
             gbControlType.TabIndex = 6;
             gbControlType.TabStop = false;
             gbControlType.Text = "Tipo de Controle";
@@ -489,7 +420,7 @@
             // rbAutomatic
             // 
             rbAutomatic.AutoSize = true;
-            rbAutomatic.Location = new Point(8, 65);
+            rbAutomatic.Location = new Point(8, 66);
             rbAutomatic.Name = "rbAutomatic";
             rbAutomatic.Size = new Size(131, 27);
             rbAutomatic.TabIndex = 1;
@@ -508,59 +439,6 @@
             rbManual.Text = "Manual";
             rbManual.UseVisualStyleBackColor = true;
             // 
-            // gbBeltTimes
-            // 
-            gbBeltTimes.BackColor = SystemColors.ControlLightLight;
-            gbBeltTimes.Controls.Add(tbInterval);
-            gbBeltTimes.Controls.Add(lblInterval);
-            gbBeltTimes.Controls.Add(lblJourneyTime);
-            gbBeltTimes.Controls.Add(tbJourneyTime);
-            gbBeltTimes.FlatStyle = FlatStyle.Flat;
-            gbBeltTimes.Font = new Font("Microsoft JhengHei", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            gbBeltTimes.ForeColor = SystemColors.Desktop;
-            gbBeltTimes.Location = new Point(214, 114);
-            gbBeltTimes.Name = "gbBeltTimes";
-            gbBeltTimes.Size = new Size(273, 138);
-            gbBeltTimes.TabIndex = 7;
-            gbBeltTimes.TabStop = false;
-            gbBeltTimes.Text = "Tempos da Esteira";
-            // 
-            // tbInterval
-            // 
-            tbInterval.CausesValidation = false;
-            tbInterval.Location = new Point(121, 69);
-            tbInterval.Name = "tbInterval";
-            tbInterval.Size = new Size(135, 31);
-            tbInterval.TabIndex = 3;
-            tbInterval.Text = "1";
-            // 
-            // lblInterval
-            // 
-            lblInterval.AutoSize = true;
-            lblInterval.Location = new Point(7, 72);
-            lblInterval.Name = "lblInterval";
-            lblInterval.Size = new Size(109, 23);
-            lblInterval.TabIndex = 2;
-            lblInterval.Text = "Intervalo(s):";
-            // 
-            // lblJourneyTime
-            // 
-            lblJourneyTime.AutoSize = true;
-            lblJourneyTime.Location = new Point(7, 30);
-            lblJourneyTime.Name = "lblJourneyTime";
-            lblJourneyTime.Size = new Size(108, 23);
-            lblJourneyTime.TabIndex = 1;
-            lblJourneyTime.Text = "Percurso(s):";
-            // 
-            // tbJourneyTime
-            // 
-            tbJourneyTime.CausesValidation = false;
-            tbJourneyTime.Location = new Point(121, 26);
-            tbJourneyTime.Name = "tbJourneyTime";
-            tbJourneyTime.Size = new Size(135, 31);
-            tbJourneyTime.TabIndex = 0;
-            tbJourneyTime.Text = "1";
-            // 
             // gbBeltStatus
             // 
             gbBeltStatus.BackColor = SystemColors.ControlLightLight;
@@ -573,9 +451,9 @@
             gbBeltStatus.FlatStyle = FlatStyle.Flat;
             gbBeltStatus.Font = new Font("Microsoft JhengHei", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             gbBeltStatus.ForeColor = SystemColors.Desktop;
-            gbBeltStatus.Location = new Point(751, 114);
+            gbBeltStatus.Location = new Point(12, 221);
             gbBeltStatus.Name = "gbBeltStatus";
-            gbBeltStatus.Size = new Size(177, 138);
+            gbBeltStatus.Size = new Size(209, 140);
             gbBeltStatus.TabIndex = 8;
             gbBeltStatus.TabStop = false;
             gbBeltStatus.Text = "Estado da Esteira";
@@ -583,7 +461,7 @@
             // lblErrorStatus
             // 
             lblErrorStatus.AutoSize = true;
-            lblErrorStatus.Location = new Point(46, 108);
+            lblErrorStatus.Location = new Point(46, 105);
             lblErrorStatus.Name = "lblErrorStatus";
             lblErrorStatus.Size = new Size(45, 23);
             lblErrorStatus.TabIndex = 5;
@@ -594,7 +472,7 @@
             pErrorStatus.BackColor = Color.Transparent;
             pErrorStatus.BackgroundImage = Properties.Resources.red_led_off;
             pErrorStatus.BackgroundImageLayout = ImageLayout.Stretch;
-            pErrorStatus.Location = new Point(9, 101);
+            pErrorStatus.Location = new Point(10, 101);
             pErrorStatus.Name = "pErrorStatus";
             pErrorStatus.Size = new Size(30, 30);
             pErrorStatus.TabIndex = 2;
@@ -602,7 +480,7 @@
             // lblBusyStatus
             // 
             lblBusyStatus.AutoSize = true;
-            lblBusyStatus.Location = new Point(45, 72);
+            lblBusyStatus.Location = new Point(45, 68);
             lblBusyStatus.Name = "lblBusyStatus";
             lblBusyStatus.Size = new Size(87, 23);
             lblBusyStatus.TabIndex = 4;
@@ -613,7 +491,7 @@
             pBusyStatus.BackColor = Color.Transparent;
             pBusyStatus.BackgroundImage = Properties.Resources.green_led_off;
             pBusyStatus.BackgroundImageLayout = ImageLayout.Stretch;
-            pBusyStatus.Location = new Point(9, 65);
+            pBusyStatus.Location = new Point(10, 64);
             pBusyStatus.Name = "pBusyStatus";
             pBusyStatus.Size = new Size(30, 30);
             pBusyStatus.TabIndex = 1;
@@ -623,7 +501,7 @@
             pMotorStatus.BackColor = Color.Transparent;
             pMotorStatus.BackgroundImage = Properties.Resources.green_led_off;
             pMotorStatus.BackgroundImageLayout = ImageLayout.Stretch;
-            pMotorStatus.Location = new Point(10, 29);
+            pMotorStatus.Location = new Point(10, 28);
             pMotorStatus.Name = "pMotorStatus";
             pMotorStatus.Size = new Size(30, 30);
             pMotorStatus.TabIndex = 0;
@@ -631,7 +509,7 @@
             // lblMotor
             // 
             lblMotor.AutoSize = true;
-            lblMotor.Location = new Point(46, 37);
+            lblMotor.Location = new Point(46, 32);
             lblMotor.Name = "lblMotor";
             lblMotor.Size = new Size(125, 23);
             lblMotor.TabIndex = 3;
@@ -641,26 +519,21 @@
             // 
             btnReset.Enabled = false;
             btnReset.Font = new Font("Microsoft JhengHei", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            btnReset.Location = new Point(214, 323);
+            btnReset.Location = new Point(647, 125);
             btnReset.Name = "btnReset";
-            btnReset.Size = new Size(149, 60);
+            btnReset.Size = new Size(134, 60);
             btnReset.TabIndex = 9;
             btnReset.Text = "Reset";
             btnReset.UseVisualStyleBackColor = true;
             btnReset.Click += BtnReset_Click;
             // 
-            // timerAuto
-            // 
-            timerAuto.Interval = 200;
-            timerAuto.Tick += TimerMotor_Tick;
-            // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.OPC_UA_Logo;
-            pictureBox1.Location = new Point(814, 58);
+            pictureBox1.Location = new Point(649, 68);
             pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(115, 31);
+            pictureBox1.Size = new Size(133, 31);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 10;
             pictureBox1.TabStop = false;
@@ -668,7 +541,7 @@
             // pictureBox2
             // 
             pictureBox2.Image = Properties.Resources.logo_ucl_blue;
-            pictureBox2.Location = new Point(12, 505);
+            pictureBox2.Location = new Point(12, 433);
             pictureBox2.Margin = new Padding(3, 4, 3, 4);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(122, 53);
@@ -681,7 +554,7 @@
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Georgia", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
             lblTitle.ForeColor = SystemColors.HotTrack;
-            lblTitle.Location = new Point(186, 9);
+            lblTitle.Location = new Point(110, 9);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(587, 39);
             lblTitle.TabIndex = 12;
@@ -690,21 +563,23 @@
             // 
             // btnConect
             // 
-            btnConect.Location = new Point(684, 58);
+            btnConect.BackColor = Color.LightGreen;
+            btnConect.Font = new Font("Microsoft JhengHei", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnConect.Location = new Point(227, 124);
             btnConect.Name = "btnConect";
-            btnConect.Size = new Size(123, 31);
+            btnConect.Size = new Size(134, 61);
             btnConect.TabIndex = 13;
             btnConect.Text = "Conectar";
-            btnConect.UseVisualStyleBackColor = true;
+            btnConect.UseVisualStyleBackColor = false;
             btnConect.Click += BtnConect_Click;
             // 
             // tbServerUrl
             // 
             tbServerUrl.Font = new Font("Microsoft JhengHei", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            tbServerUrl.Location = new Point(169, 58);
+            tbServerUrl.Location = new Point(167, 68);
             tbServerUrl.Name = "tbServerUrl";
             tbServerUrl.PlaceholderText = "Exemplo: opc.tcp://localhost:26543/ServerBeltIdentifier";
-            tbServerUrl.Size = new Size(504, 31);
+            tbServerUrl.Size = new Size(476, 31);
             tbServerUrl.TabIndex = 14;
             // 
             // ClientForm
@@ -713,17 +588,14 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             BackColor = SystemColors.ControlLightLight;
-            ClientSize = new Size(941, 573);
+            ClientSize = new Size(797, 503);
             Controls.Add(tbServerUrl);
             Controls.Add(btnConect);
             Controls.Add(lblTitle);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
             Controls.Add(btnStop);
-            Controls.Add(btnAddPiece);
             Controls.Add(btnReset);
-            Controls.Add(gbBeltTimes);
-            Controls.Add(gbTypePiece);
             Controls.Add(gbBeltStatus);
             Controls.Add(gbControlType);
             Controls.Add(btnStart);
@@ -733,8 +605,8 @@
             ImeMode = ImeMode.Off;
             Margin = new Padding(3, 4, 3, 4);
             MaximizeBox = false;
-            MaximumSize = new Size(959, 620);
-            MinimumSize = new Size(959, 620);
+            MaximumSize = new Size(815, 550);
+            MinimumSize = new Size(815, 550);
             Name = "ClientForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Client Belt Identifier";
@@ -745,12 +617,8 @@
             tpModule2.ResumeLayout(false);
             gbOpcStatusModule2.ResumeLayout(false);
             gbOpcStatusModule2.PerformLayout();
-            gbTypePiece.ResumeLayout(false);
-            gbTypePiece.PerformLayout();
             gbControlType.ResumeLayout(false);
             gbControlType.PerformLayout();
-            gbBeltTimes.ResumeLayout(false);
-            gbBeltTimes.PerformLayout();
             gbBeltStatus.ResumeLayout(false);
             gbBeltStatus.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -770,7 +638,6 @@
         private GroupBox gbControlType;
         private RadioButton rbAutomatic;
         private RadioButton rbManual;
-        private GroupBox gbBeltTimes;
         private GroupBox gbBeltStatus;
         private Button btnReset;
         private Label lblErrorStatus;
@@ -784,11 +651,6 @@
         private Panel pNonMetallic;
         private Panel pMetallic;
         private Panel pTransparent;
-        private Button btnAddPiece;
-        private GroupBox gbTypePiece;
-        private RadioButton rbNonMetallic;
-        private RadioButton rbMetallic;
-        private RadioButton rbTransparent;
         private TextBox tbQuantityNonMetallic;
         private Label lblNonMetallic;
         private TextBox tbQuantityMetallic;
@@ -808,10 +670,6 @@
         private Panel pBarrier2;
         private Panel pBarrier1;
         private System.Windows.Forms.Timer timerAuto;
-        private TextBox tbInterval;
-        private Label lblInterval;
-        private Label lblJourneyTime;
-        private TextBox tbJourneyTime;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private Label lblTitle;

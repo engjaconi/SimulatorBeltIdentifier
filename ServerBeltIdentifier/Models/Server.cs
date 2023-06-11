@@ -8,7 +8,6 @@ namespace BeltIdentifierServer.Models
     {
         protected override MasterNodeManager CreateMasterNodeManager(IServerInternal server, Opc.Ua.ApplicationConfiguration configuration)
         {
-            //Utils.Trace("Criando o Nó gerenciador");
             List<INodeManager> nodeManagers = new()
             {
                 // Criando meu nó customizado.

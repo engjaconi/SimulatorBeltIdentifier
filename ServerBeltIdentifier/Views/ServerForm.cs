@@ -7,7 +7,7 @@ namespace BeltIdentifierServer
 {
     public partial class ServerForm : Form
     {
-        public static BeltIdentifierController BeltIdentifier;
+        public static Belt BeltIdentifier;
 
         public ServerForm()
         {
@@ -36,7 +36,7 @@ namespace BeltIdentifierServer
                 cbServerUrl.SelectedIndex = 0;
             }
 
-            BeltIdentifier = new ServerBeltIdentifier.Models.BeltIdentifierController();
+            BeltIdentifier = Belt.GetInstance();
         }
 
         private void ServerForm_Load(object sender, EventArgs e)
@@ -214,9 +214,9 @@ namespace BeltIdentifierServer
                 pNonMetallic.BackgroundImage = BeltIdentifier.NonMetallic ?
                     ServerBeltIdentifier.Properties.Resources.green_led_on :
                     ServerBeltIdentifier.Properties.Resources.green_led_off;
-                tbQuantityTransparent.Text = BeltIdentifier.QuantityTransparent.ToString();
-                tbQuantityMetallic.Text = BeltIdentifier.QuantityMetallic.ToString();
-                tbQuantityNonMetallic.Text = BeltIdentifier.QuantityNonMetallic.ToString();
+                tbQuantityTransparent.Text = BeltIdentifier.TransparentQuantity.ToString();
+                tbQuantityMetallic.Text = BeltIdentifier.MetallicQuantity.ToString();
+                tbQuantityNonMetallic.Text = BeltIdentifier.NonMetallicQuantity.ToString();
             }
             else
             {
@@ -309,15 +309,27 @@ namespace BeltIdentifierServer
             try
             {
                 uint journey = Convert.ToUInt32(tbJourneyTime.Text);
-                if (journey <= 0) throw new Exception();
+                if (journey <= 0 && BeltIdentifier.IsModule1 || journey <= 5 && !BeltIdentifier.IsModule1) throw new Exception();
 
                 BeltIdentifier.JourneyTime = journey;
-                BeltIdentifier.WriteOpc();
             }
             catch (Exception)
             {
                 tbJourneyTime.Text = BeltIdentifier.JourneyTime.ToString();
-                MessageBox.Show("O valor informado é inválido, digite um número inteiro maior que 0! Valor antigo restaurado.");
+
+                if (BeltIdentifier.IsAuto)
+                {
+                    tbInterval.Text = (BeltIdentifier.JourneyTime + 1).ToString();
+                }
+
+                if (BeltIdentifier.IsModule1)
+                {
+                    MessageBox.Show("O valor informado é inválido, digite um número inteiro maior que 0! Valor antigo restaurado.");
+                }
+                else
+                {
+                    MessageBox.Show("O valor informado é inválido, digite um número inteiro maior que 5! Valor antigo restaurado.");
+                }
             }
             finally
             {
@@ -330,14 +342,14 @@ namespace BeltIdentifierServer
             try
             {
                 uint interval = Convert.ToUInt32(tbInterval.Text);
-                if (interval <= 0) throw new Exception();
+                if (interval <= BeltIdentifier.JourneyTime) throw new Exception();
+
                 BeltIdentifier.Interval = interval;
-                BeltIdentifier.WriteOpc();
             }
             catch
             {
-                tbInterval.Text = BeltIdentifier.Interval.ToString();
-                MessageBox.Show("O valor informado é inválido, digite um número inteiro! Valor antigo restaurado.");
+                tbInterval.Text = (BeltIdentifier.JourneyTime + 1).ToString();
+                MessageBox.Show("O valor informado é inválido, o valor deve ser maior que o tempo de percurso! Mínimo aceitável inserido.");
             }
             finally
             {
@@ -348,13 +360,13 @@ namespace BeltIdentifierServer
         private void RbManual_Enter(object sender, EventArgs e)
         {
             BeltIdentifier.IsAuto = false;
-            BeltIdentifier.WriteOpc();
+            JorneyTimeAndIntervalConfiguration();
         }
 
         private void RbAutomatic_Enter(object sender, EventArgs e)
         {
             BeltIdentifier.IsAuto = true;
-            BeltIdentifier.WriteOpc();
+            JorneyTimeAndIntervalConfiguration();
         }
 
         private void TbcModules_Selected(object sender, TabControlEventArgs e)
@@ -362,15 +374,29 @@ namespace BeltIdentifierServer
             if (tpModule1.CanFocus)
             {
                 BeltIdentifier.IsModule1 = false;
-                BeltIdentifier.WriteOpc();
-                UpdateForm();
             }
             else
             {
                 BeltIdentifier.IsModule1 = true;
-                BeltIdentifier.WriteOpc();
-                UpdateForm();
             }
+
+            JorneyTimeAndIntervalConfiguration();
+        }
+
+        private void JorneyTimeAndIntervalConfiguration()
+        {
+            if (BeltIdentifier.JourneyTime < 6 && !BeltIdentifier.IsModule1)
+            {
+                BeltIdentifier.JourneyTime = 6;
+            }
+
+            if (BeltIdentifier.Interval <= BeltIdentifier.JourneyTime && BeltIdentifier.IsAuto)
+            {
+                BeltIdentifier.Interval = BeltIdentifier.JourneyTime + 1;
+            }
+
+            BeltIdentifier.WriteOpc();
+            UpdateForm();
         }
     }
 }
