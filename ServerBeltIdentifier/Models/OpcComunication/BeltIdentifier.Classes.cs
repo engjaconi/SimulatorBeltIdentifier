@@ -36,23 +36,23 @@ using Opc.Ua;
 
 namespace BeltIdentifier
 {
-    #region GenericSensorState Class
-    #if (!OPCUA_EXCLUDE_GenericSensorState)
+    #region StartButtonState Class
+    #if (!OPCUA_EXCLUDE_StartButtonState)
     /// <remarks />
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    public partial class GenericSensorState : BaseObjectState
+    public partial class StartButtonState : BaseObjectState
     {
         #region Constructors
         /// <remarks />
-        public GenericSensorState(NodeState parent) : base(parent)
+        public StartButtonState(NodeState parent) : base(parent)
         {
         }
 
         /// <remarks />
         protected override NodeId GetDefaultTypeDefinitionId(NamespaceTable namespaceUris)
         {
-            return Opc.Ua.NodeId.Create(BeltIdentifier.ObjectTypes.GenericSensorType, BeltIdentifier.Namespaces.BeltIdentifier, namespaceUris);
+            return Opc.Ua.NodeId.Create(BeltIdentifier.ObjectTypes.StartButtonType, BeltIdentifier.Namespaces.BeltIdentifier, namespaceUris);
         }
 
         #if (!OPCUA_EXCLUDE_InitializationStrings)
@@ -80,30 +80,29 @@ namespace BeltIdentifier
         #region Initialization String
         private const string InitializationString =
            "AQAAACcAAABodHRwOi8vb3BjZm91bmRhdGlvbi5vcmcvQmVsdElkZW50aWZpZXL/////BGCAAgEAAAAB" +
-           "ABkAAABHZW5lcmljU2Vuc29yVHlwZUluc3RhbmNlAQEBAAEBAQABAAAA/////wEAAAAVYIkKAgAAAAEA" +
-           "BgAAAE91dHB1dAEBAgAALwEAQAkCAAAAAAH/////AwP/////AQAAABVgiQoCAAAAAAAHAAAARVVSYW5n" +
-           "ZQEBBgAALgBEBgAAAAEAdAP/////AQH/////AAAAAA==";
+           "ABcAAABTdGFydEJ1dHRvblR5cGVJbnN0YW5jZQEBAQABAQEAAQAAAP////8BAAAAFWCJCgIAAAABAAcA" +
+           "AABTdGFydGVkAQECAAAvAQBECQIAAAAAAf////8DA/////8AAAAA";
         #endregion
         #endif
         #endregion
 
         #region Public Properties
         /// <remarks />
-        public AnalogItemState<bool> Output
+        public DiscreteItemState<bool> Started
         {
             get
             {
-                return m_output;
+                return m_started;
             }
 
             set
             {
-                if (!Object.ReferenceEquals(m_output, value))
+                if (!Object.ReferenceEquals(m_started, value))
                 {
                     ChangeMasks |= NodeStateChangeMasks.Children;
                 }
 
-                m_output = value;
+                m_started = value;
             }
         }
         #endregion
@@ -114,9 +113,9 @@ namespace BeltIdentifier
             ISystemContext context,
             IList<BaseInstanceState> children)
         {
-            if (m_output != null)
+            if (m_started != null)
             {
-                children.Add(m_output);
+                children.Add(m_started);
             }
 
             base.GetChildren(context, children);
@@ -138,24 +137,24 @@ namespace BeltIdentifier
 
             switch (browseName.Name)
             {
-                case BeltIdentifier.BrowseNames.Output:
+                case BeltIdentifier.BrowseNames.Started:
                 {
                     if (createOrReplace)
                     {
-                        if (Output == null)
+                        if (Started == null)
                         {
                             if (replacement == null)
                             {
-                                Output = new AnalogItemState<bool>(this);
+                                Started = new DiscreteItemState<bool>(this);
                             }
                             else
                             {
-                                Output = (AnalogItemState<bool>)replacement;
+                                Started = (DiscreteItemState<bool>)replacement;
                             }
                         }
                     }
 
-                    instance = Output;
+                    instance = Started;
                     break;
                 }
             }
@@ -170,29 +169,29 @@ namespace BeltIdentifier
         #endregion
 
         #region Private Fields
-        private AnalogItemState<bool> m_output;
+        private DiscreteItemState<bool> m_started;
         #endregion
     }
     #endif
     #endregion
 
-    #region GenericActuatorState Class
-    #if (!OPCUA_EXCLUDE_GenericActuatorState)
+    #region ResetButtonState Class
+    #if (!OPCUA_EXCLUDE_ResetButtonState)
     /// <remarks />
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    public partial class GenericActuatorState : BaseObjectState
+    public partial class ResetButtonState : BaseObjectState
     {
         #region Constructors
         /// <remarks />
-        public GenericActuatorState(NodeState parent) : base(parent)
+        public ResetButtonState(NodeState parent) : base(parent)
         {
         }
 
         /// <remarks />
         protected override NodeId GetDefaultTypeDefinitionId(NamespaceTable namespaceUris)
         {
-            return Opc.Ua.NodeId.Create(BeltIdentifier.ObjectTypes.GenericActuatorType, BeltIdentifier.Namespaces.BeltIdentifier, namespaceUris);
+            return Opc.Ua.NodeId.Create(BeltIdentifier.ObjectTypes.ResetButtonType, BeltIdentifier.Namespaces.BeltIdentifier, namespaceUris);
         }
 
         #if (!OPCUA_EXCLUDE_InitializationStrings)
@@ -220,30 +219,29 @@ namespace BeltIdentifier
         #region Initialization String
         private const string InitializationString =
            "AQAAACcAAABodHRwOi8vb3BjZm91bmRhdGlvbi5vcmcvQmVsdElkZW50aWZpZXL/////BGCAAgEAAAAB" +
-           "ABsAAABHZW5lcmljQWN0dWF0b3JUeXBlSW5zdGFuY2UBAQgAAQEIAAgAAAD/////AQAAABVgiQoCAAAA" +
-           "AQAFAAAASW5wdXQBAQkAAC8BAEAJCQAAAAAB/////wMD/////wEAAAAVYIkKAgAAAAAABwAAAEVVUmFu" +
-           "Z2UBAQ0AAC4ARA0AAAABAHQD/////wEB/////wAAAAA=";
+           "ABcAAABSZXNldEJ1dHRvblR5cGVJbnN0YW5jZQEBBQABAQUABQAAAP////8BAAAAFWCJCgIAAAABAAcA" +
+           "AABSZXNldGVkAQEGAAAvAQBECQYAAAAAAf////8DA/////8AAAAA";
         #endregion
         #endif
         #endregion
 
         #region Public Properties
         /// <remarks />
-        public AnalogItemState<bool> Input
+        public DiscreteItemState<bool> Reseted
         {
             get
             {
-                return m_input;
+                return m_reseted;
             }
 
             set
             {
-                if (!Object.ReferenceEquals(m_input, value))
+                if (!Object.ReferenceEquals(m_reseted, value))
                 {
                     ChangeMasks |= NodeStateChangeMasks.Children;
                 }
 
-                m_input = value;
+                m_reseted = value;
             }
         }
         #endregion
@@ -254,9 +252,9 @@ namespace BeltIdentifier
             ISystemContext context,
             IList<BaseInstanceState> children)
         {
-            if (m_input != null)
+            if (m_reseted != null)
             {
-                children.Add(m_input);
+                children.Add(m_reseted);
             }
 
             base.GetChildren(context, children);
@@ -278,24 +276,24 @@ namespace BeltIdentifier
 
             switch (browseName.Name)
             {
-                case BeltIdentifier.BrowseNames.Input:
+                case BeltIdentifier.BrowseNames.Reseted:
                 {
                     if (createOrReplace)
                     {
-                        if (Input == null)
+                        if (Reseted == null)
                         {
                             if (replacement == null)
                             {
-                                Input = new AnalogItemState<bool>(this);
+                                Reseted = new DiscreteItemState<bool>(this);
                             }
                             else
                             {
-                                Input = (AnalogItemState<bool>)replacement;
+                                Reseted = (DiscreteItemState<bool>)replacement;
                             }
                         }
                     }
 
-                    instance = Input;
+                    instance = Reseted;
                     break;
                 }
             }
@@ -310,29 +308,29 @@ namespace BeltIdentifier
         #endregion
 
         #region Private Fields
-        private AnalogItemState<bool> m_input;
+        private DiscreteItemState<bool> m_reseted;
         #endregion
     }
     #endif
     #endregion
 
-    #region GenericDisplayState Class
-    #if (!OPCUA_EXCLUDE_GenericDisplayState)
+    #region IsAutoIluminationState Class
+    #if (!OPCUA_EXCLUDE_IsAutoIluminationState)
     /// <remarks />
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    public partial class GenericDisplayState : BaseObjectState
+    public partial class IsAutoIluminationState : BaseObjectState
     {
         #region Constructors
         /// <remarks />
-        public GenericDisplayState(NodeState parent) : base(parent)
+        public IsAutoIluminationState(NodeState parent) : base(parent)
         {
         }
 
         /// <remarks />
         protected override NodeId GetDefaultTypeDefinitionId(NamespaceTable namespaceUris)
         {
-            return Opc.Ua.NodeId.Create(BeltIdentifier.ObjectTypes.GenericDisplayType, BeltIdentifier.Namespaces.BeltIdentifier, namespaceUris);
+            return Opc.Ua.NodeId.Create(BeltIdentifier.ObjectTypes.IsAutoIlumination, BeltIdentifier.Namespaces.BeltIdentifier, namespaceUris);
         }
 
         #if (!OPCUA_EXCLUDE_InitializationStrings)
@@ -360,30 +358,29 @@ namespace BeltIdentifier
         #region Initialization String
         private const string InitializationString =
            "AQAAACcAAABodHRwOi8vb3BjZm91bmRhdGlvbi5vcmcvQmVsdElkZW50aWZpZXL/////BGCAAgEAAAAB" +
-           "ABoAAABHZW5lcmljRGlzcGxheVR5cGVJbnN0YW5jZQEBDwABAQ8ADwAAAP////8BAAAAFWCJCgIAAAAB" +
-           "AAUAAABJbnB1dAEBEAAALwEAQAkQAAAAAAb/////AwP/////AQAAABVgiQoCAAAAAAAHAAAARVVSYW5n" +
-           "ZQEBFAAALgBEFAAAAAEAdAP/////AQH/////AAAAAA==";
+           "ABkAAABJc0F1dG9JbHVtaW5hdGlvbkluc3RhbmNlAQEJAAEBCQAJAAAA/////wEAAAAVYIkKAgAAAAEA" +
+           "CAAAAElzQXV0b09uAQEKAAAvAQBECQoAAAAAAf////8BAf////8AAAAA";
         #endregion
         #endif
         #endregion
 
         #region Public Properties
         /// <remarks />
-        public AnalogItemState<int> Input
+        public DiscreteItemState<bool> IsAutoOn
         {
             get
             {
-                return m_input;
+                return m_isAutoOn;
             }
 
             set
             {
-                if (!Object.ReferenceEquals(m_input, value))
+                if (!Object.ReferenceEquals(m_isAutoOn, value))
                 {
                     ChangeMasks |= NodeStateChangeMasks.Children;
                 }
 
-                m_input = value;
+                m_isAutoOn = value;
             }
         }
         #endregion
@@ -394,9 +391,9 @@ namespace BeltIdentifier
             ISystemContext context,
             IList<BaseInstanceState> children)
         {
-            if (m_input != null)
+            if (m_isAutoOn != null)
             {
-                children.Add(m_input);
+                children.Add(m_isAutoOn);
             }
 
             base.GetChildren(context, children);
@@ -418,24 +415,24 @@ namespace BeltIdentifier
 
             switch (browseName.Name)
             {
-                case BeltIdentifier.BrowseNames.Input:
+                case BeltIdentifier.BrowseNames.IsAutoOn:
                 {
                     if (createOrReplace)
                     {
-                        if (Input == null)
+                        if (IsAutoOn == null)
                         {
                             if (replacement == null)
                             {
-                                Input = new AnalogItemState<int>(this);
+                                IsAutoOn = new DiscreteItemState<bool>(this);
                             }
                             else
                             {
-                                Input = (AnalogItemState<int>)replacement;
+                                IsAutoOn = (DiscreteItemState<bool>)replacement;
                             }
                         }
                     }
 
-                    instance = Input;
+                    instance = IsAutoOn;
                     break;
                 }
             }
@@ -450,29 +447,29 @@ namespace BeltIdentifier
         #endregion
 
         #region Private Fields
-        private AnalogItemState<int> m_input;
+        private DiscreteItemState<bool> m_isAutoOn;
         #endregion
     }
     #endif
     #endregion
 
-    #region GenericMotorState Class
-    #if (!OPCUA_EXCLUDE_GenericMotorState)
+    #region IsModule1IluminationState Class
+    #if (!OPCUA_EXCLUDE_IsModule1IluminationState)
     /// <remarks />
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    public partial class GenericMotorState : BaseObjectState
+    public partial class IsModule1IluminationState : BaseObjectState
     {
         #region Constructors
         /// <remarks />
-        public GenericMotorState(NodeState parent) : base(parent)
+        public IsModule1IluminationState(NodeState parent) : base(parent)
         {
         }
 
         /// <remarks />
         protected override NodeId GetDefaultTypeDefinitionId(NamespaceTable namespaceUris)
         {
-            return Opc.Ua.NodeId.Create(BeltIdentifier.ObjectTypes.GenericMotorType, BeltIdentifier.Namespaces.BeltIdentifier, namespaceUris);
+            return Opc.Ua.NodeId.Create(BeltIdentifier.ObjectTypes.IsModule1Ilumination, BeltIdentifier.Namespaces.BeltIdentifier, namespaceUris);
         }
 
         #if (!OPCUA_EXCLUDE_InitializationStrings)
@@ -500,51 +497,29 @@ namespace BeltIdentifier
         #region Initialization String
         private const string InitializationString =
            "AQAAACcAAABodHRwOi8vb3BjZm91bmRhdGlvbi5vcmcvQmVsdElkZW50aWZpZXL/////BGCAAgEAAAAB" +
-           "ABgAAABHZW5lcmljTW90b3JUeXBlSW5zdGFuY2UBARYAAQEWABYAAAD/////AgAAABVgiQoCAAAAAQAL" +
-           "AAAASm91cm5leVRpbWUBAcsDAC8BAEAJywMAAAAG/////wMD/////wEAAAAVYIkKAgAAAAAABwAAAEVV" +
-           "UmFuZ2UBAc8DAC4ARM8DAAABAHQD/////wEB/////wAAAAAVYIkKAgAAAAEABgAAAFN0YXR1cwEBVwMA" +
-           "LwEAQAlXAwAAAAH/////AwP/////AQAAABVgiQoCAAAAAAAHAAAARVVSYW5nZQEBWwMALgBEWwMAAAEA" +
-           "dAP/////AQH/////AAAAAA==";
+           "ABwAAABJc01vZHVsZTFJbHVtaW5hdGlvbkluc3RhbmNlAQENAAEBDQANAAAA/////wEAAAAVYIkKAgAA" +
+           "AAEACwAAAElzTW9kdWxlMU9uAQEOAAAvAQBECQ4AAAAAAf////8BAf////8AAAAA";
         #endregion
         #endif
         #endregion
 
         #region Public Properties
         /// <remarks />
-        public AnalogItemState<int> JourneyTime
+        public DiscreteItemState<bool> IsModule1On
         {
             get
             {
-                return m_journeyTime;
+                return m_isModule1On;
             }
 
             set
             {
-                if (!Object.ReferenceEquals(m_journeyTime, value))
+                if (!Object.ReferenceEquals(m_isModule1On, value))
                 {
                     ChangeMasks |= NodeStateChangeMasks.Children;
                 }
 
-                m_journeyTime = value;
-            }
-        }
-
-        /// <remarks />
-        public AnalogItemState<bool> Status
-        {
-            get
-            {
-                return m_status;
-            }
-
-            set
-            {
-                if (!Object.ReferenceEquals(m_status, value))
-                {
-                    ChangeMasks |= NodeStateChangeMasks.Children;
-                }
-
-                m_status = value;
+                m_isModule1On = value;
             }
         }
         #endregion
@@ -555,14 +530,9 @@ namespace BeltIdentifier
             ISystemContext context,
             IList<BaseInstanceState> children)
         {
-            if (m_journeyTime != null)
+            if (m_isModule1On != null)
             {
-                children.Add(m_journeyTime);
-            }
-
-            if (m_status != null)
-            {
-                children.Add(m_status);
+                children.Add(m_isModule1On);
             }
 
             base.GetChildren(context, children);
@@ -584,45 +554,24 @@ namespace BeltIdentifier
 
             switch (browseName.Name)
             {
-                case BeltIdentifier.BrowseNames.JourneyTime:
+                case BeltIdentifier.BrowseNames.IsModule1On:
                 {
                     if (createOrReplace)
                     {
-                        if (JourneyTime == null)
+                        if (IsModule1On == null)
                         {
                             if (replacement == null)
                             {
-                                JourneyTime = new AnalogItemState<int>(this);
+                                IsModule1On = new DiscreteItemState<bool>(this);
                             }
                             else
                             {
-                                JourneyTime = (AnalogItemState<int>)replacement;
+                                IsModule1On = (DiscreteItemState<bool>)replacement;
                             }
                         }
                     }
 
-                    instance = JourneyTime;
-                    break;
-                }
-
-                case BeltIdentifier.BrowseNames.Status:
-                {
-                    if (createOrReplace)
-                    {
-                        if (Status == null)
-                        {
-                            if (replacement == null)
-                            {
-                                Status = new AnalogItemState<bool>(this);
-                            }
-                            else
-                            {
-                                Status = (AnalogItemState<bool>)replacement;
-                            }
-                        }
-                    }
-
-                    instance = Status;
+                    instance = IsModule1On;
                     break;
                 }
             }
@@ -637,30 +586,29 @@ namespace BeltIdentifier
         #endregion
 
         #region Private Fields
-        private AnalogItemState<int> m_journeyTime;
-        private AnalogItemState<bool> m_status;
+        private DiscreteItemState<bool> m_isModule1On;
         #endregion
     }
     #endif
     #endregion
 
-    #region OpticalBarrierState Class
-    #if (!OPCUA_EXCLUDE_OpticalBarrierState)
+    #region IsBusyIluminationState Class
+    #if (!OPCUA_EXCLUDE_IsBusyIluminationState)
     /// <remarks />
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    public partial class OpticalBarrierState : GenericSensorState
+    public partial class IsBusyIluminationState : BaseObjectState
     {
         #region Constructors
         /// <remarks />
-        public OpticalBarrierState(NodeState parent) : base(parent)
+        public IsBusyIluminationState(NodeState parent) : base(parent)
         {
         }
 
         /// <remarks />
         protected override NodeId GetDefaultTypeDefinitionId(NamespaceTable namespaceUris)
         {
-            return Opc.Ua.NodeId.Create(BeltIdentifier.ObjectTypes.OpticalBarrier, BeltIdentifier.Namespaces.BeltIdentifier, namespaceUris);
+            return Opc.Ua.NodeId.Create(BeltIdentifier.ObjectTypes.IsBusyIlumination, BeltIdentifier.Namespaces.BeltIdentifier, namespaceUris);
         }
 
         #if (!OPCUA_EXCLUDE_InitializationStrings)
@@ -688,42 +636,118 @@ namespace BeltIdentifier
         #region Initialization String
         private const string InitializationString =
            "AQAAACcAAABodHRwOi8vb3BjZm91bmRhdGlvbi5vcmcvQmVsdElkZW50aWZpZXL/////BGCAAgEAAAAB" +
-           "ABYAAABPcHRpY2FsQmFycmllckluc3RhbmNlAQEdAAEBHQAdAAAA/////wEAAAAVYIkKAgAAAAEABgAA" +
-           "AE91dHB1dAEBHgAALwEAQAkeAAAAAAH/////AwP/////AQAAABVgiQoCAAAAAAAHAAAARVVSYW5nZQEB" +
-           "IgAALgBEIgAAAAEAdAP/////AQH/////AAAAAA==";
+           "ABkAAABJc0J1c3lJbHVtaW5hdGlvbkluc3RhbmNlAQERAAEBEQARAAAA/////wEAAAAVYIkKAgAAAAEA" +
+           "CAAAAElzQnVzeU9uAQESAAAvAQBECRIAAAAAAf////8BAf////8AAAAA";
         #endregion
         #endif
         #endregion
 
         #region Public Properties
+        /// <remarks />
+        public DiscreteItemState<bool> IsBusyOn
+        {
+            get
+            {
+                return m_isBusyOn;
+            }
+
+            set
+            {
+                if (!Object.ReferenceEquals(m_isBusyOn, value))
+                {
+                    ChangeMasks |= NodeStateChangeMasks.Children;
+                }
+
+                m_isBusyOn = value;
+            }
+        }
         #endregion
 
         #region Overridden Methods
+        /// <remarks />
+        public override void GetChildren(
+            ISystemContext context,
+            IList<BaseInstanceState> children)
+        {
+            if (m_isBusyOn != null)
+            {
+                children.Add(m_isBusyOn);
+            }
+
+            base.GetChildren(context, children);
+        }
+            
+        /// <remarks />
+        protected override BaseInstanceState FindChild(
+            ISystemContext context,
+            QualifiedName browseName,
+            bool createOrReplace,
+            BaseInstanceState replacement)
+        {
+            if (QualifiedName.IsNull(browseName))
+            {
+                return null;
+            }
+
+            BaseInstanceState instance = null;
+
+            switch (browseName.Name)
+            {
+                case BeltIdentifier.BrowseNames.IsBusyOn:
+                {
+                    if (createOrReplace)
+                    {
+                        if (IsBusyOn == null)
+                        {
+                            if (replacement == null)
+                            {
+                                IsBusyOn = new DiscreteItemState<bool>(this);
+                            }
+                            else
+                            {
+                                IsBusyOn = (DiscreteItemState<bool>)replacement;
+                            }
+                        }
+                    }
+
+                    instance = IsBusyOn;
+                    break;
+                }
+            }
+
+            if (instance != null)
+            {
+                return instance;
+            }
+
+            return base.FindChild(context, browseName, createOrReplace, replacement);
+        }
         #endregion
 
         #region Private Fields
+        private DiscreteItemState<bool> m_isBusyOn;
         #endregion
     }
     #endif
     #endregion
 
-    #region ElectricPhotoSensorState Class
-    #if (!OPCUA_EXCLUDE_ElectricPhotoSensorState)
+    #region IsErrorIluminationState Class
+    #if (!OPCUA_EXCLUDE_IsErrorIluminationState)
     /// <remarks />
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    public partial class ElectricPhotoSensorState : GenericSensorState
+    public partial class IsErrorIluminationState : BaseObjectState
     {
         #region Constructors
         /// <remarks />
-        public ElectricPhotoSensorState(NodeState parent) : base(parent)
+        public IsErrorIluminationState(NodeState parent) : base(parent)
         {
         }
 
         /// <remarks />
         protected override NodeId GetDefaultTypeDefinitionId(NamespaceTable namespaceUris)
         {
-            return Opc.Ua.NodeId.Create(BeltIdentifier.ObjectTypes.ElectricPhotoSensor, BeltIdentifier.Namespaces.BeltIdentifier, namespaceUris);
+            return Opc.Ua.NodeId.Create(BeltIdentifier.ObjectTypes.IsErrorIlumination, BeltIdentifier.Namespaces.BeltIdentifier, namespaceUris);
         }
 
         #if (!OPCUA_EXCLUDE_InitializationStrings)
@@ -751,650 +775,96 @@ namespace BeltIdentifier
         #region Initialization String
         private const string InitializationString =
            "AQAAACcAAABodHRwOi8vb3BjZm91bmRhdGlvbi5vcmcvQmVsdElkZW50aWZpZXL/////BGCAAgEAAAAB" +
-           "ABsAAABFbGVjdHJpY1Bob3RvU2Vuc29ySW5zdGFuY2UBASQAAQEkACQAAAD/////AQAAABVgiQoCAAAA" +
-           "AQAGAAAAT3V0cHV0AQElAAAvAQBACSUAAAAAAf////8DA/////8BAAAAFWCJCgIAAAAAAAcAAABFVVJh" +
-           "bmdlAQEpAAAuAEQpAAAAAQB0A/////8BAf////8AAAAA";
+           "ABoAAABJc0Vycm9ySWx1bWluYXRpb25JbnN0YW5jZQEBFQABARUAFQAAAP////8BAAAAFWCJCgIAAAAB" +
+           "AAkAAABJc0Vycm9yT24BARYAAC8BAEQJFgAAAAAB/////wEB/////wAAAAA=";
         #endregion
         #endif
         #endregion
 
         #region Public Properties
+        /// <remarks />
+        public DiscreteItemState<bool> IsErrorOn
+        {
+            get
+            {
+                return m_isErrorOn;
+            }
+
+            set
+            {
+                if (!Object.ReferenceEquals(m_isErrorOn, value))
+                {
+                    ChangeMasks |= NodeStateChangeMasks.Children;
+                }
+
+                m_isErrorOn = value;
+            }
+        }
         #endregion
 
         #region Overridden Methods
+        /// <remarks />
+        public override void GetChildren(
+            ISystemContext context,
+            IList<BaseInstanceState> children)
+        {
+            if (m_isErrorOn != null)
+            {
+                children.Add(m_isErrorOn);
+            }
+
+            base.GetChildren(context, children);
+        }
+            
+        /// <remarks />
+        protected override BaseInstanceState FindChild(
+            ISystemContext context,
+            QualifiedName browseName,
+            bool createOrReplace,
+            BaseInstanceState replacement)
+        {
+            if (QualifiedName.IsNull(browseName))
+            {
+                return null;
+            }
+
+            BaseInstanceState instance = null;
+
+            switch (browseName.Name)
+            {
+                case BeltIdentifier.BrowseNames.IsErrorOn:
+                {
+                    if (createOrReplace)
+                    {
+                        if (IsErrorOn == null)
+                        {
+                            if (replacement == null)
+                            {
+                                IsErrorOn = new DiscreteItemState<bool>(this);
+                            }
+                            else
+                            {
+                                IsErrorOn = (DiscreteItemState<bool>)replacement;
+                            }
+                        }
+                    }
+
+                    instance = IsErrorOn;
+                    break;
+                }
+            }
+
+            if (instance != null)
+            {
+                return instance;
+            }
+
+            return base.FindChild(context, browseName, createOrReplace, replacement);
+        }
         #endregion
 
         #region Private Fields
-        #endregion
-    }
-    #endif
-    #endregion
-
-    #region CapacitiveSensorState Class
-    #if (!OPCUA_EXCLUDE_CapacitiveSensorState)
-    /// <remarks />
-    /// <exclude />
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    public partial class CapacitiveSensorState : GenericSensorState
-    {
-        #region Constructors
-        /// <remarks />
-        public CapacitiveSensorState(NodeState parent) : base(parent)
-        {
-        }
-
-        /// <remarks />
-        protected override NodeId GetDefaultTypeDefinitionId(NamespaceTable namespaceUris)
-        {
-            return Opc.Ua.NodeId.Create(BeltIdentifier.ObjectTypes.CapacitiveSensor, BeltIdentifier.Namespaces.BeltIdentifier, namespaceUris);
-        }
-
-        #if (!OPCUA_EXCLUDE_InitializationStrings)
-        /// <remarks />
-        protected override void Initialize(ISystemContext context)
-        {
-            base.Initialize(context);
-            Initialize(context, InitializationString);
-            InitializeOptionalChildren(context);
-        }
-
-        /// <remarks />
-        protected override void Initialize(ISystemContext context, NodeState source)
-        {
-            InitializeOptionalChildren(context);
-            base.Initialize(context, source);
-        }
-
-        /// <remarks />
-        protected override void InitializeOptionalChildren(ISystemContext context)
-        {
-            base.InitializeOptionalChildren(context);
-        }
-
-        #region Initialization String
-        private const string InitializationString =
-           "AQAAACcAAABodHRwOi8vb3BjZm91bmRhdGlvbi5vcmcvQmVsdElkZW50aWZpZXL/////BGCAAgEAAAAB" +
-           "ABgAAABDYXBhY2l0aXZlU2Vuc29ySW5zdGFuY2UBASsAAQErACsAAAD/////AQAAABVgiQoCAAAAAQAG" +
-           "AAAAT3V0cHV0AQEsAAAvAQBACSwAAAAAAf////8DA/////8BAAAAFWCJCgIAAAAAAAcAAABFVVJhbmdl" +
-           "AQEwAAAuAEQwAAAAAQB0A/////8BAf////8AAAAA";
-        #endregion
-        #endif
-        #endregion
-
-        #region Public Properties
-        #endregion
-
-        #region Overridden Methods
-        #endregion
-
-        #region Private Fields
-        #endregion
-    }
-    #endif
-    #endregion
-
-    #region InductiveSensorState Class
-    #if (!OPCUA_EXCLUDE_InductiveSensorState)
-    /// <remarks />
-    /// <exclude />
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    public partial class InductiveSensorState : GenericSensorState
-    {
-        #region Constructors
-        /// <remarks />
-        public InductiveSensorState(NodeState parent) : base(parent)
-        {
-        }
-
-        /// <remarks />
-        protected override NodeId GetDefaultTypeDefinitionId(NamespaceTable namespaceUris)
-        {
-            return Opc.Ua.NodeId.Create(BeltIdentifier.ObjectTypes.InductiveSensor, BeltIdentifier.Namespaces.BeltIdentifier, namespaceUris);
-        }
-
-        #if (!OPCUA_EXCLUDE_InitializationStrings)
-        /// <remarks />
-        protected override void Initialize(ISystemContext context)
-        {
-            base.Initialize(context);
-            Initialize(context, InitializationString);
-            InitializeOptionalChildren(context);
-        }
-
-        /// <remarks />
-        protected override void Initialize(ISystemContext context, NodeState source)
-        {
-            InitializeOptionalChildren(context);
-            base.Initialize(context, source);
-        }
-
-        /// <remarks />
-        protected override void InitializeOptionalChildren(ISystemContext context)
-        {
-            base.InitializeOptionalChildren(context);
-        }
-
-        #region Initialization String
-        private const string InitializationString =
-           "AQAAACcAAABodHRwOi8vb3BjZm91bmRhdGlvbi5vcmcvQmVsdElkZW50aWZpZXL/////BGCAAgEAAAAB" +
-           "ABcAAABJbmR1Y3RpdmVTZW5zb3JJbnN0YW5jZQEBMgABATIAMgAAAP////8BAAAAFWCJCgIAAAABAAYA" +
-           "AABPdXRwdXQBATMAAC8BAEAJMwAAAAAB/////wMD/////wEAAAAVYIkKAgAAAAAABwAAAEVVUmFuZ2UB" +
-           "ATcAAC4ARDcAAAABAHQD/////wEB/////wAAAAA=";
-        #endregion
-        #endif
-        #endregion
-
-        #region Public Properties
-        #endregion
-
-        #region Overridden Methods
-        #endregion
-
-        #region Private Fields
-        #endregion
-    }
-    #endif
-    #endregion
-
-    #region TransparentPieceState Class
-    #if (!OPCUA_EXCLUDE_TransparentPieceState)
-    /// <remarks />
-    /// <exclude />
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    public partial class TransparentPieceState : GenericActuatorState
-    {
-        #region Constructors
-        /// <remarks />
-        public TransparentPieceState(NodeState parent) : base(parent)
-        {
-        }
-
-        /// <remarks />
-        protected override NodeId GetDefaultTypeDefinitionId(NamespaceTable namespaceUris)
-        {
-            return Opc.Ua.NodeId.Create(BeltIdentifier.ObjectTypes.TransparentPiece, BeltIdentifier.Namespaces.BeltIdentifier, namespaceUris);
-        }
-
-        #if (!OPCUA_EXCLUDE_InitializationStrings)
-        /// <remarks />
-        protected override void Initialize(ISystemContext context)
-        {
-            base.Initialize(context);
-            Initialize(context, InitializationString);
-            InitializeOptionalChildren(context);
-        }
-
-        /// <remarks />
-        protected override void Initialize(ISystemContext context, NodeState source)
-        {
-            InitializeOptionalChildren(context);
-            base.Initialize(context, source);
-        }
-
-        /// <remarks />
-        protected override void InitializeOptionalChildren(ISystemContext context)
-        {
-            base.InitializeOptionalChildren(context);
-        }
-
-        #region Initialization String
-        private const string InitializationString =
-           "AQAAACcAAABodHRwOi8vb3BjZm91bmRhdGlvbi5vcmcvQmVsdElkZW50aWZpZXL/////BGCAAgEAAAAB" +
-           "ABgAAABUcmFuc3BhcmVudFBpZWNlSW5zdGFuY2UBAZMDAQGTA5MDAAD/////AQAAABVgiQoCAAAAAQAF" +
-           "AAAASW5wdXQBAZQDAC8BAEAJlAMAAAAB/////wMD/////wEAAAAVYIkKAgAAAAAABwAAAEVVUmFuZ2UB" +
-           "AZgDAC4ARJgDAAABAHQD/////wEB/////wAAAAA=";
-        #endregion
-        #endif
-        #endregion
-
-        #region Public Properties
-        #endregion
-
-        #region Overridden Methods
-        #endregion
-
-        #region Private Fields
-        #endregion
-    }
-    #endif
-    #endregion
-
-    #region MetallicPieceState Class
-    #if (!OPCUA_EXCLUDE_MetallicPieceState)
-    /// <remarks />
-    /// <exclude />
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    public partial class MetallicPieceState : GenericActuatorState
-    {
-        #region Constructors
-        /// <remarks />
-        public MetallicPieceState(NodeState parent) : base(parent)
-        {
-        }
-
-        /// <remarks />
-        protected override NodeId GetDefaultTypeDefinitionId(NamespaceTable namespaceUris)
-        {
-            return Opc.Ua.NodeId.Create(BeltIdentifier.ObjectTypes.MetallicPiece, BeltIdentifier.Namespaces.BeltIdentifier, namespaceUris);
-        }
-
-        #if (!OPCUA_EXCLUDE_InitializationStrings)
-        /// <remarks />
-        protected override void Initialize(ISystemContext context)
-        {
-            base.Initialize(context);
-            Initialize(context, InitializationString);
-            InitializeOptionalChildren(context);
-        }
-
-        /// <remarks />
-        protected override void Initialize(ISystemContext context, NodeState source)
-        {
-            InitializeOptionalChildren(context);
-            base.Initialize(context, source);
-        }
-
-        /// <remarks />
-        protected override void InitializeOptionalChildren(ISystemContext context)
-        {
-            base.InitializeOptionalChildren(context);
-        }
-
-        #region Initialization String
-        private const string InitializationString =
-           "AQAAACcAAABodHRwOi8vb3BjZm91bmRhdGlvbi5vcmcvQmVsdElkZW50aWZpZXL/////BGCAAgEAAAAB" +
-           "ABUAAABNZXRhbGxpY1BpZWNlSW5zdGFuY2UBAUAAAQFAAEAAAAD/////AQAAABVgiQoCAAAAAQAFAAAA" +
-           "SW5wdXQBAUEAAC8BAEAJQQAAAAAB/////wMD/////wEAAAAVYIkKAgAAAAAABwAAAEVVUmFuZ2UBAUUA" +
-           "AC4AREUAAAABAHQD/////wEB/////wAAAAA=";
-        #endregion
-        #endif
-        #endregion
-
-        #region Public Properties
-        #endregion
-
-        #region Overridden Methods
-        #endregion
-
-        #region Private Fields
-        #endregion
-    }
-    #endif
-    #endregion
-
-    #region NonMetallicPieceState Class
-    #if (!OPCUA_EXCLUDE_NonMetallicPieceState)
-    /// <remarks />
-    /// <exclude />
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    public partial class NonMetallicPieceState : GenericActuatorState
-    {
-        #region Constructors
-        /// <remarks />
-        public NonMetallicPieceState(NodeState parent) : base(parent)
-        {
-        }
-
-        /// <remarks />
-        protected override NodeId GetDefaultTypeDefinitionId(NamespaceTable namespaceUris)
-        {
-            return Opc.Ua.NodeId.Create(BeltIdentifier.ObjectTypes.NonMetallicPiece, BeltIdentifier.Namespaces.BeltIdentifier, namespaceUris);
-        }
-
-        #if (!OPCUA_EXCLUDE_InitializationStrings)
-        /// <remarks />
-        protected override void Initialize(ISystemContext context)
-        {
-            base.Initialize(context);
-            Initialize(context, InitializationString);
-            InitializeOptionalChildren(context);
-        }
-
-        /// <remarks />
-        protected override void Initialize(ISystemContext context, NodeState source)
-        {
-            InitializeOptionalChildren(context);
-            base.Initialize(context, source);
-        }
-
-        /// <remarks />
-        protected override void InitializeOptionalChildren(ISystemContext context)
-        {
-            base.InitializeOptionalChildren(context);
-        }
-
-        #region Initialization String
-        private const string InitializationString =
-           "AQAAACcAAABodHRwOi8vb3BjZm91bmRhdGlvbi5vcmcvQmVsdElkZW50aWZpZXL/////BGCAAgEAAAAB" +
-           "ABgAAABOb25NZXRhbGxpY1BpZWNlSW5zdGFuY2UBAUcAAQFHAEcAAAD/////AQAAABVgiQoCAAAAAQAF" +
-           "AAAASW5wdXQBAUgAAC8BAEAJSAAAAAAB/////wMD/////wEAAAAVYIkKAgAAAAAABwAAAEVVUmFuZ2UB" +
-           "AUwAAC4AREwAAAABAHQD/////wEB/////wAAAAA=";
-        #endregion
-        #endif
-        #endregion
-
-        #region Public Properties
-        #endregion
-
-        #region Overridden Methods
-        #endregion
-
-        #region Private Fields
-        #endregion
-    }
-    #endif
-    #endregion
-
-    #region ErrorIluminationState Class
-    #if (!OPCUA_EXCLUDE_ErrorIluminationState)
-    /// <remarks />
-    /// <exclude />
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    public partial class ErrorIluminationState : GenericActuatorState
-    {
-        #region Constructors
-        /// <remarks />
-        public ErrorIluminationState(NodeState parent) : base(parent)
-        {
-        }
-
-        /// <remarks />
-        protected override NodeId GetDefaultTypeDefinitionId(NamespaceTable namespaceUris)
-        {
-            return Opc.Ua.NodeId.Create(BeltIdentifier.ObjectTypes.ErrorIlumination, BeltIdentifier.Namespaces.BeltIdentifier, namespaceUris);
-        }
-
-        #if (!OPCUA_EXCLUDE_InitializationStrings)
-        /// <remarks />
-        protected override void Initialize(ISystemContext context)
-        {
-            base.Initialize(context);
-            Initialize(context, InitializationString);
-            InitializeOptionalChildren(context);
-        }
-
-        /// <remarks />
-        protected override void Initialize(ISystemContext context, NodeState source)
-        {
-            InitializeOptionalChildren(context);
-            base.Initialize(context, source);
-        }
-
-        /// <remarks />
-        protected override void InitializeOptionalChildren(ISystemContext context)
-        {
-            base.InitializeOptionalChildren(context);
-        }
-
-        #region Initialization String
-        private const string InitializationString =
-           "AQAAACcAAABodHRwOi8vb3BjZm91bmRhdGlvbi5vcmcvQmVsdElkZW50aWZpZXL/////BGCAAgEAAAAB" +
-           "ABgAAABFcnJvcklsdW1pbmF0aW9uSW5zdGFuY2UBAU4AAQFOAE4AAAD/////AQAAABVgiQoCAAAAAQAF" +
-           "AAAASW5wdXQBAU8AAC8BAEAJTwAAAAAB/////wMD/////wEAAAAVYIkKAgAAAAAABwAAAEVVUmFuZ2UB" +
-           "AVMAAC4ARFMAAAABAHQD/////wEB/////wAAAAA=";
-        #endregion
-        #endif
-        #endregion
-
-        #region Public Properties
-        #endregion
-
-        #region Overridden Methods
-        #endregion
-
-        #region Private Fields
-        #endregion
-    }
-    #endif
-    #endregion
-
-    #region BusyIluminationState Class
-    #if (!OPCUA_EXCLUDE_BusyIluminationState)
-    /// <remarks />
-    /// <exclude />
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    public partial class BusyIluminationState : GenericActuatorState
-    {
-        #region Constructors
-        /// <remarks />
-        public BusyIluminationState(NodeState parent) : base(parent)
-        {
-        }
-
-        /// <remarks />
-        protected override NodeId GetDefaultTypeDefinitionId(NamespaceTable namespaceUris)
-        {
-            return Opc.Ua.NodeId.Create(BeltIdentifier.ObjectTypes.BusyIlumination, BeltIdentifier.Namespaces.BeltIdentifier, namespaceUris);
-        }
-
-        #if (!OPCUA_EXCLUDE_InitializationStrings)
-        /// <remarks />
-        protected override void Initialize(ISystemContext context)
-        {
-            base.Initialize(context);
-            Initialize(context, InitializationString);
-            InitializeOptionalChildren(context);
-        }
-
-        /// <remarks />
-        protected override void Initialize(ISystemContext context, NodeState source)
-        {
-            InitializeOptionalChildren(context);
-            base.Initialize(context, source);
-        }
-
-        /// <remarks />
-        protected override void InitializeOptionalChildren(ISystemContext context)
-        {
-            base.InitializeOptionalChildren(context);
-        }
-
-        #region Initialization String
-        private const string InitializationString =
-           "AQAAACcAAABodHRwOi8vb3BjZm91bmRhdGlvbi5vcmcvQmVsdElkZW50aWZpZXL/////BGCAAgEAAAAB" +
-           "ABcAAABCdXN5SWx1bWluYXRpb25JbnN0YW5jZQEBJgMBASYDJgMAAP////8BAAAAFWCJCgIAAAABAAUA" +
-           "AABJbnB1dAEBJwMALwEAQAknAwAAAAH/////AwP/////AQAAABVgiQoCAAAAAAAHAAAARVVSYW5nZQEB" +
-           "KwMALgBEKwMAAAEAdAP/////AQH/////AAAAAA==";
-        #endregion
-        #endif
-        #endregion
-
-        #region Public Properties
-        #endregion
-
-        #region Overridden Methods
-        #endregion
-
-        #region Private Fields
-        #endregion
-    }
-    #endif
-    #endregion
-
-    #region QuantityTransparentPieceState Class
-    #if (!OPCUA_EXCLUDE_QuantityTransparentPieceState)
-    /// <remarks />
-    /// <exclude />
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    public partial class QuantityTransparentPieceState : GenericDisplayState
-    {
-        #region Constructors
-        /// <remarks />
-        public QuantityTransparentPieceState(NodeState parent) : base(parent)
-        {
-        }
-
-        /// <remarks />
-        protected override NodeId GetDefaultTypeDefinitionId(NamespaceTable namespaceUris)
-        {
-            return Opc.Ua.NodeId.Create(BeltIdentifier.ObjectTypes.QuantityTransparentPiece, BeltIdentifier.Namespaces.BeltIdentifier, namespaceUris);
-        }
-
-        #if (!OPCUA_EXCLUDE_InitializationStrings)
-        /// <remarks />
-        protected override void Initialize(ISystemContext context)
-        {
-            base.Initialize(context);
-            Initialize(context, InitializationString);
-            InitializeOptionalChildren(context);
-        }
-
-        /// <remarks />
-        protected override void Initialize(ISystemContext context, NodeState source)
-        {
-            InitializeOptionalChildren(context);
-            base.Initialize(context, source);
-        }
-
-        /// <remarks />
-        protected override void InitializeOptionalChildren(ISystemContext context)
-        {
-            base.InitializeOptionalChildren(context);
-        }
-
-        #region Initialization String
-        private const string InitializationString =
-           "AQAAACcAAABodHRwOi8vb3BjZm91bmRhdGlvbi5vcmcvQmVsdElkZW50aWZpZXL/////BGCAAgEAAAAB" +
-           "ACAAAABRdWFudGl0eVRyYW5zcGFyZW50UGllY2VJbnN0YW5jZQEBmgMBAZoDmgMAAP////8BAAAAFWCJ" +
-           "CgIAAAABAAUAAABJbnB1dAEBmwMALwEAQAmbAwAAAAb/////AwP/////AQAAABVgiQoCAAAAAAAHAAAA" +
-           "RVVSYW5nZQEBnwMALgBEnwMAAAEAdAP/////AQH/////AAAAAA==";
-        #endregion
-        #endif
-        #endregion
-
-        #region Public Properties
-        #endregion
-
-        #region Overridden Methods
-        #endregion
-
-        #region Private Fields
-        #endregion
-    }
-    #endif
-    #endregion
-
-    #region QuantityMetallicPieceState Class
-    #if (!OPCUA_EXCLUDE_QuantityMetallicPieceState)
-    /// <remarks />
-    /// <exclude />
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    public partial class QuantityMetallicPieceState : GenericDisplayState
-    {
-        #region Constructors
-        /// <remarks />
-        public QuantityMetallicPieceState(NodeState parent) : base(parent)
-        {
-        }
-
-        /// <remarks />
-        protected override NodeId GetDefaultTypeDefinitionId(NamespaceTable namespaceUris)
-        {
-            return Opc.Ua.NodeId.Create(BeltIdentifier.ObjectTypes.QuantityMetallicPiece, BeltIdentifier.Namespaces.BeltIdentifier, namespaceUris);
-        }
-
-        #if (!OPCUA_EXCLUDE_InitializationStrings)
-        /// <remarks />
-        protected override void Initialize(ISystemContext context)
-        {
-            base.Initialize(context);
-            Initialize(context, InitializationString);
-            InitializeOptionalChildren(context);
-        }
-
-        /// <remarks />
-        protected override void Initialize(ISystemContext context, NodeState source)
-        {
-            InitializeOptionalChildren(context);
-            base.Initialize(context, source);
-        }
-
-        /// <remarks />
-        protected override void InitializeOptionalChildren(ISystemContext context)
-        {
-            base.InitializeOptionalChildren(context);
-        }
-
-        #region Initialization String
-        private const string InitializationString =
-           "AQAAACcAAABodHRwOi8vb3BjZm91bmRhdGlvbi5vcmcvQmVsdElkZW50aWZpZXL/////BGCAAgEAAAAB" +
-           "AB0AAABRdWFudGl0eU1ldGFsbGljUGllY2VJbnN0YW5jZQEBXAABAVwAXAAAAP////8BAAAAFWCJCgIA" +
-           "AAABAAUAAABJbnB1dAEBXQAALwEAQAldAAAAAAb/////AwP/////AQAAABVgiQoCAAAAAAAHAAAARVVS" +
-           "YW5nZQEBYQAALgBEYQAAAAEAdAP/////AQH/////AAAAAA==";
-        #endregion
-        #endif
-        #endregion
-
-        #region Public Properties
-        #endregion
-
-        #region Overridden Methods
-        #endregion
-
-        #region Private Fields
-        #endregion
-    }
-    #endif
-    #endregion
-
-    #region QuantityNonMetallicPieceState Class
-    #if (!OPCUA_EXCLUDE_QuantityNonMetallicPieceState)
-    /// <remarks />
-    /// <exclude />
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    public partial class QuantityNonMetallicPieceState : GenericDisplayState
-    {
-        #region Constructors
-        /// <remarks />
-        public QuantityNonMetallicPieceState(NodeState parent) : base(parent)
-        {
-        }
-
-        /// <remarks />
-        protected override NodeId GetDefaultTypeDefinitionId(NamespaceTable namespaceUris)
-        {
-            return Opc.Ua.NodeId.Create(BeltIdentifier.ObjectTypes.QuantityNonMetallicPiece, BeltIdentifier.Namespaces.BeltIdentifier, namespaceUris);
-        }
-
-        #if (!OPCUA_EXCLUDE_InitializationStrings)
-        /// <remarks />
-        protected override void Initialize(ISystemContext context)
-        {
-            base.Initialize(context);
-            Initialize(context, InitializationString);
-            InitializeOptionalChildren(context);
-        }
-
-        /// <remarks />
-        protected override void Initialize(ISystemContext context, NodeState source)
-        {
-            InitializeOptionalChildren(context);
-            base.Initialize(context, source);
-        }
-
-        /// <remarks />
-        protected override void InitializeOptionalChildren(ISystemContext context)
-        {
-            base.InitializeOptionalChildren(context);
-        }
-
-        #region Initialization String
-        private const string InitializationString =
-           "AQAAACcAAABodHRwOi8vb3BjZm91bmRhdGlvbi5vcmcvQmVsdElkZW50aWZpZXL/////BGCAAgEAAAAB" +
-           "ACAAAABRdWFudGl0eU5vbk1ldGFsbGljUGllY2VJbnN0YW5jZQEBYwABAWMAYwAAAP////8BAAAAFWCJ" +
-           "CgIAAAABAAUAAABJbnB1dAEBZAAALwEAQAlkAAAAAAb/////AwP/////AQAAABVgiQoCAAAAAAAHAAAA" +
-           "RVVSYW5nZQEBaAAALgBEaAAAAAEAdAP/////AQH/////AAAAAA==";
-        #endregion
-        #endif
-        #endregion
-
-        #region Public Properties
-        #endregion
-
-        #region Overridden Methods
-        #endregion
-
-        #region Private Fields
+        private DiscreteItemState<bool> m_isErrorOn;
         #endregion
     }
     #endif
@@ -1405,7 +875,7 @@ namespace BeltIdentifier
     /// <remarks />
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    public partial class MotorState : GenericMotorState
+    public partial class MotorState : BaseObjectState
     {
         #region Constructors
         /// <remarks />
@@ -1444,22 +914,1767 @@ namespace BeltIdentifier
         #region Initialization String
         private const string InitializationString =
            "AQAAACcAAABodHRwOi8vb3BjZm91bmRhdGlvbi5vcmcvQmVsdElkZW50aWZpZXL/////BGCAAgEAAAAB" +
-           "ABEAAABNb3RvclR5cGVJbnN0YW5jZQEBHwMBAR8DHwMAAP////8CAAAAFWCJCgIAAAABAAsAAABKb3Vy" +
-           "bmV5VGltZQEB0QMALwEAQAnRAwAAAAb/////AwP/////AQAAABVgiQoCAAAAAAAHAAAARVVSYW5nZQEB" +
-           "1QMALgBE1QMAAAEAdAP/////AQH/////AAAAABVgiQoCAAAAAQAGAAAAU3RhdHVzAQFdAwAvAQBACV0D" +
-           "AAAAAf////8DA/////8BAAAAFWCJCgIAAAAAAAcAAABFVVJhbmdlAQFhAwAuAERhAwAAAQB0A/////8B" +
-           "Af////8AAAAA";
+           "ABEAAABNb3RvclR5cGVJbnN0YW5jZQEBGQABARkAGQAAAP////8BAAAAFWCJCgIAAAABAAcAAABNb3Rv" +
+           "ck9uAQEaAAAvAQBECRoAAAAAAf////8BAf////8AAAAA";
         #endregion
         #endif
         #endregion
 
         #region Public Properties
+        /// <remarks />
+        public DiscreteItemState<bool> MotorOn
+        {
+            get
+            {
+                return m_motorOn;
+            }
+
+            set
+            {
+                if (!Object.ReferenceEquals(m_motorOn, value))
+                {
+                    ChangeMasks |= NodeStateChangeMasks.Children;
+                }
+
+                m_motorOn = value;
+            }
+        }
         #endregion
 
         #region Overridden Methods
+        /// <remarks />
+        public override void GetChildren(
+            ISystemContext context,
+            IList<BaseInstanceState> children)
+        {
+            if (m_motorOn != null)
+            {
+                children.Add(m_motorOn);
+            }
+
+            base.GetChildren(context, children);
+        }
+            
+        /// <remarks />
+        protected override BaseInstanceState FindChild(
+            ISystemContext context,
+            QualifiedName browseName,
+            bool createOrReplace,
+            BaseInstanceState replacement)
+        {
+            if (QualifiedName.IsNull(browseName))
+            {
+                return null;
+            }
+
+            BaseInstanceState instance = null;
+
+            switch (browseName.Name)
+            {
+                case BeltIdentifier.BrowseNames.MotorOn:
+                {
+                    if (createOrReplace)
+                    {
+                        if (MotorOn == null)
+                        {
+                            if (replacement == null)
+                            {
+                                MotorOn = new DiscreteItemState<bool>(this);
+                            }
+                            else
+                            {
+                                MotorOn = (DiscreteItemState<bool>)replacement;
+                            }
+                        }
+                    }
+
+                    instance = MotorOn;
+                    break;
+                }
+            }
+
+            if (instance != null)
+            {
+                return instance;
+            }
+
+            return base.FindChild(context, browseName, createOrReplace, replacement);
+        }
         #endregion
 
         #region Private Fields
+        private DiscreteItemState<bool> m_motorOn;
+        #endregion
+    }
+    #endif
+    #endregion
+
+    #region TransparentPieceState Class
+    #if (!OPCUA_EXCLUDE_TransparentPieceState)
+    /// <remarks />
+    /// <exclude />
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
+    public partial class TransparentPieceState : BaseObjectState
+    {
+        #region Constructors
+        /// <remarks />
+        public TransparentPieceState(NodeState parent) : base(parent)
+        {
+        }
+
+        /// <remarks />
+        protected override NodeId GetDefaultTypeDefinitionId(NamespaceTable namespaceUris)
+        {
+            return Opc.Ua.NodeId.Create(BeltIdentifier.ObjectTypes.TransparentPiece, BeltIdentifier.Namespaces.BeltIdentifier, namespaceUris);
+        }
+
+        #if (!OPCUA_EXCLUDE_InitializationStrings)
+        /// <remarks />
+        protected override void Initialize(ISystemContext context)
+        {
+            base.Initialize(context);
+            Initialize(context, InitializationString);
+            InitializeOptionalChildren(context);
+        }
+
+        /// <remarks />
+        protected override void Initialize(ISystemContext context, NodeState source)
+        {
+            InitializeOptionalChildren(context);
+            base.Initialize(context, source);
+        }
+
+        /// <remarks />
+        protected override void InitializeOptionalChildren(ISystemContext context)
+        {
+            base.InitializeOptionalChildren(context);
+        }
+
+        #region Initialization String
+        private const string InitializationString =
+           "AQAAACcAAABodHRwOi8vb3BjZm91bmRhdGlvbi5vcmcvQmVsdElkZW50aWZpZXL/////BGCAAgEAAAAB" +
+           "ABgAAABUcmFuc3BhcmVudFBpZWNlSW5zdGFuY2UBAR0AAQEdAB0AAAD/////AQAAABVgiQoCAAAAAQAN" +
+           "AAAASXNUcmFuc3BhcmVudAEBHgAALwEARAkeAAAAAAH/////AQH/////AAAAAA==";
+        #endregion
+        #endif
+        #endregion
+
+        #region Public Properties
+        /// <remarks />
+        public DiscreteItemState<bool> IsTransparent
+        {
+            get
+            {
+                return m_isTransparent;
+            }
+
+            set
+            {
+                if (!Object.ReferenceEquals(m_isTransparent, value))
+                {
+                    ChangeMasks |= NodeStateChangeMasks.Children;
+                }
+
+                m_isTransparent = value;
+            }
+        }
+        #endregion
+
+        #region Overridden Methods
+        /// <remarks />
+        public override void GetChildren(
+            ISystemContext context,
+            IList<BaseInstanceState> children)
+        {
+            if (m_isTransparent != null)
+            {
+                children.Add(m_isTransparent);
+            }
+
+            base.GetChildren(context, children);
+        }
+            
+        /// <remarks />
+        protected override BaseInstanceState FindChild(
+            ISystemContext context,
+            QualifiedName browseName,
+            bool createOrReplace,
+            BaseInstanceState replacement)
+        {
+            if (QualifiedName.IsNull(browseName))
+            {
+                return null;
+            }
+
+            BaseInstanceState instance = null;
+
+            switch (browseName.Name)
+            {
+                case BeltIdentifier.BrowseNames.IsTransparent:
+                {
+                    if (createOrReplace)
+                    {
+                        if (IsTransparent == null)
+                        {
+                            if (replacement == null)
+                            {
+                                IsTransparent = new DiscreteItemState<bool>(this);
+                            }
+                            else
+                            {
+                                IsTransparent = (DiscreteItemState<bool>)replacement;
+                            }
+                        }
+                    }
+
+                    instance = IsTransparent;
+                    break;
+                }
+            }
+
+            if (instance != null)
+            {
+                return instance;
+            }
+
+            return base.FindChild(context, browseName, createOrReplace, replacement);
+        }
+        #endregion
+
+        #region Private Fields
+        private DiscreteItemState<bool> m_isTransparent;
+        #endregion
+    }
+    #endif
+    #endregion
+
+    #region MetallicPieceState Class
+    #if (!OPCUA_EXCLUDE_MetallicPieceState)
+    /// <remarks />
+    /// <exclude />
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
+    public partial class MetallicPieceState : BaseObjectState
+    {
+        #region Constructors
+        /// <remarks />
+        public MetallicPieceState(NodeState parent) : base(parent)
+        {
+        }
+
+        /// <remarks />
+        protected override NodeId GetDefaultTypeDefinitionId(NamespaceTable namespaceUris)
+        {
+            return Opc.Ua.NodeId.Create(BeltIdentifier.ObjectTypes.MetallicPiece, BeltIdentifier.Namespaces.BeltIdentifier, namespaceUris);
+        }
+
+        #if (!OPCUA_EXCLUDE_InitializationStrings)
+        /// <remarks />
+        protected override void Initialize(ISystemContext context)
+        {
+            base.Initialize(context);
+            Initialize(context, InitializationString);
+            InitializeOptionalChildren(context);
+        }
+
+        /// <remarks />
+        protected override void Initialize(ISystemContext context, NodeState source)
+        {
+            InitializeOptionalChildren(context);
+            base.Initialize(context, source);
+        }
+
+        /// <remarks />
+        protected override void InitializeOptionalChildren(ISystemContext context)
+        {
+            base.InitializeOptionalChildren(context);
+        }
+
+        #region Initialization String
+        private const string InitializationString =
+           "AQAAACcAAABodHRwOi8vb3BjZm91bmRhdGlvbi5vcmcvQmVsdElkZW50aWZpZXL/////BGCAAgEAAAAB" +
+           "ABUAAABNZXRhbGxpY1BpZWNlSW5zdGFuY2UBASEAAQEhACEAAAD/////AQAAABVgiQoCAAAAAQAKAAAA" +
+           "SXNNZXRhbGxpYwEBIgAALwEARAkiAAAAAAH/////AQH/////AAAAAA==";
+        #endregion
+        #endif
+        #endregion
+
+        #region Public Properties
+        /// <remarks />
+        public DiscreteItemState<bool> IsMetallic
+        {
+            get
+            {
+                return m_isMetallic;
+            }
+
+            set
+            {
+                if (!Object.ReferenceEquals(m_isMetallic, value))
+                {
+                    ChangeMasks |= NodeStateChangeMasks.Children;
+                }
+
+                m_isMetallic = value;
+            }
+        }
+        #endregion
+
+        #region Overridden Methods
+        /// <remarks />
+        public override void GetChildren(
+            ISystemContext context,
+            IList<BaseInstanceState> children)
+        {
+            if (m_isMetallic != null)
+            {
+                children.Add(m_isMetallic);
+            }
+
+            base.GetChildren(context, children);
+        }
+            
+        /// <remarks />
+        protected override BaseInstanceState FindChild(
+            ISystemContext context,
+            QualifiedName browseName,
+            bool createOrReplace,
+            BaseInstanceState replacement)
+        {
+            if (QualifiedName.IsNull(browseName))
+            {
+                return null;
+            }
+
+            BaseInstanceState instance = null;
+
+            switch (browseName.Name)
+            {
+                case BeltIdentifier.BrowseNames.IsMetallic:
+                {
+                    if (createOrReplace)
+                    {
+                        if (IsMetallic == null)
+                        {
+                            if (replacement == null)
+                            {
+                                IsMetallic = new DiscreteItemState<bool>(this);
+                            }
+                            else
+                            {
+                                IsMetallic = (DiscreteItemState<bool>)replacement;
+                            }
+                        }
+                    }
+
+                    instance = IsMetallic;
+                    break;
+                }
+            }
+
+            if (instance != null)
+            {
+                return instance;
+            }
+
+            return base.FindChild(context, browseName, createOrReplace, replacement);
+        }
+        #endregion
+
+        #region Private Fields
+        private DiscreteItemState<bool> m_isMetallic;
+        #endregion
+    }
+    #endif
+    #endregion
+
+    #region NonMetallicPieceState Class
+    #if (!OPCUA_EXCLUDE_NonMetallicPieceState)
+    /// <remarks />
+    /// <exclude />
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
+    public partial class NonMetallicPieceState : BaseObjectState
+    {
+        #region Constructors
+        /// <remarks />
+        public NonMetallicPieceState(NodeState parent) : base(parent)
+        {
+        }
+
+        /// <remarks />
+        protected override NodeId GetDefaultTypeDefinitionId(NamespaceTable namespaceUris)
+        {
+            return Opc.Ua.NodeId.Create(BeltIdentifier.ObjectTypes.NonMetallicPiece, BeltIdentifier.Namespaces.BeltIdentifier, namespaceUris);
+        }
+
+        #if (!OPCUA_EXCLUDE_InitializationStrings)
+        /// <remarks />
+        protected override void Initialize(ISystemContext context)
+        {
+            base.Initialize(context);
+            Initialize(context, InitializationString);
+            InitializeOptionalChildren(context);
+        }
+
+        /// <remarks />
+        protected override void Initialize(ISystemContext context, NodeState source)
+        {
+            InitializeOptionalChildren(context);
+            base.Initialize(context, source);
+        }
+
+        /// <remarks />
+        protected override void InitializeOptionalChildren(ISystemContext context)
+        {
+            base.InitializeOptionalChildren(context);
+        }
+
+        #region Initialization String
+        private const string InitializationString =
+           "AQAAACcAAABodHRwOi8vb3BjZm91bmRhdGlvbi5vcmcvQmVsdElkZW50aWZpZXL/////BGCAAgEAAAAB" +
+           "ABgAAABOb25NZXRhbGxpY1BpZWNlSW5zdGFuY2UBASUAAQElACUAAAD/////AQAAABVgiQoCAAAAAQAN" +
+           "AAAASXNOb25NZXRhbGxpYwEBJgAALwEARAkmAAAAAAH/////AQH/////AAAAAA==";
+        #endregion
+        #endif
+        #endregion
+
+        #region Public Properties
+        /// <remarks />
+        public DiscreteItemState<bool> IsNonMetallic
+        {
+            get
+            {
+                return m_isNonMetallic;
+            }
+
+            set
+            {
+                if (!Object.ReferenceEquals(m_isNonMetallic, value))
+                {
+                    ChangeMasks |= NodeStateChangeMasks.Children;
+                }
+
+                m_isNonMetallic = value;
+            }
+        }
+        #endregion
+
+        #region Overridden Methods
+        /// <remarks />
+        public override void GetChildren(
+            ISystemContext context,
+            IList<BaseInstanceState> children)
+        {
+            if (m_isNonMetallic != null)
+            {
+                children.Add(m_isNonMetallic);
+            }
+
+            base.GetChildren(context, children);
+        }
+            
+        /// <remarks />
+        protected override BaseInstanceState FindChild(
+            ISystemContext context,
+            QualifiedName browseName,
+            bool createOrReplace,
+            BaseInstanceState replacement)
+        {
+            if (QualifiedName.IsNull(browseName))
+            {
+                return null;
+            }
+
+            BaseInstanceState instance = null;
+
+            switch (browseName.Name)
+            {
+                case BeltIdentifier.BrowseNames.IsNonMetallic:
+                {
+                    if (createOrReplace)
+                    {
+                        if (IsNonMetallic == null)
+                        {
+                            if (replacement == null)
+                            {
+                                IsNonMetallic = new DiscreteItemState<bool>(this);
+                            }
+                            else
+                            {
+                                IsNonMetallic = (DiscreteItemState<bool>)replacement;
+                            }
+                        }
+                    }
+
+                    instance = IsNonMetallic;
+                    break;
+                }
+            }
+
+            if (instance != null)
+            {
+                return instance;
+            }
+
+            return base.FindChild(context, browseName, createOrReplace, replacement);
+        }
+        #endregion
+
+        #region Private Fields
+        private DiscreteItemState<bool> m_isNonMetallic;
+        #endregion
+    }
+    #endif
+    #endregion
+
+    #region TransparentPieceQuantityState Class
+    #if (!OPCUA_EXCLUDE_TransparentPieceQuantityState)
+    /// <remarks />
+    /// <exclude />
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
+    public partial class TransparentPieceQuantityState : BaseObjectState
+    {
+        #region Constructors
+        /// <remarks />
+        public TransparentPieceQuantityState(NodeState parent) : base(parent)
+        {
+        }
+
+        /// <remarks />
+        protected override NodeId GetDefaultTypeDefinitionId(NamespaceTable namespaceUris)
+        {
+            return Opc.Ua.NodeId.Create(BeltIdentifier.ObjectTypes.TransparentPieceQuantity, BeltIdentifier.Namespaces.BeltIdentifier, namespaceUris);
+        }
+
+        #if (!OPCUA_EXCLUDE_InitializationStrings)
+        /// <remarks />
+        protected override void Initialize(ISystemContext context)
+        {
+            base.Initialize(context);
+            Initialize(context, InitializationString);
+            InitializeOptionalChildren(context);
+        }
+
+        /// <remarks />
+        protected override void Initialize(ISystemContext context, NodeState source)
+        {
+            InitializeOptionalChildren(context);
+            base.Initialize(context, source);
+        }
+
+        /// <remarks />
+        protected override void InitializeOptionalChildren(ISystemContext context)
+        {
+            base.InitializeOptionalChildren(context);
+        }
+
+        #region Initialization String
+        private const string InitializationString =
+           "AQAAACcAAABodHRwOi8vb3BjZm91bmRhdGlvbi5vcmcvQmVsdElkZW50aWZpZXL/////BGCAAgEAAAAB" +
+           "ACAAAABUcmFuc3BhcmVudFBpZWNlUXVhbnRpdHlJbnN0YW5jZQEBKQABASkAKQAAAP////8BAAAAFWCJ" +
+           "CgIAAAABAA4AAABUcmFuc3BhcmVudFF0eQEBQQEALwEAQAlBAQAAAAf/////AwP/////AQAAABVgiQoC" +
+           "AAAAAAAHAAAARVVSYW5nZQEBRQEALgBERQEAAAEAdAP/////AQH/////AAAAAA==";
+        #endregion
+        #endif
+        #endregion
+
+        #region Public Properties
+        /// <remarks />
+        public AnalogItemState<uint> TransparentQty
+        {
+            get
+            {
+                return m_transparentQty;
+            }
+
+            set
+            {
+                if (!Object.ReferenceEquals(m_transparentQty, value))
+                {
+                    ChangeMasks |= NodeStateChangeMasks.Children;
+                }
+
+                m_transparentQty = value;
+            }
+        }
+        #endregion
+
+        #region Overridden Methods
+        /// <remarks />
+        public override void GetChildren(
+            ISystemContext context,
+            IList<BaseInstanceState> children)
+        {
+            if (m_transparentQty != null)
+            {
+                children.Add(m_transparentQty);
+            }
+
+            base.GetChildren(context, children);
+        }
+            
+        /// <remarks />
+        protected override BaseInstanceState FindChild(
+            ISystemContext context,
+            QualifiedName browseName,
+            bool createOrReplace,
+            BaseInstanceState replacement)
+        {
+            if (QualifiedName.IsNull(browseName))
+            {
+                return null;
+            }
+
+            BaseInstanceState instance = null;
+
+            switch (browseName.Name)
+            {
+                case BeltIdentifier.BrowseNames.TransparentQty:
+                {
+                    if (createOrReplace)
+                    {
+                        if (TransparentQty == null)
+                        {
+                            if (replacement == null)
+                            {
+                                TransparentQty = new AnalogItemState<uint>(this);
+                            }
+                            else
+                            {
+                                TransparentQty = (AnalogItemState<uint>)replacement;
+                            }
+                        }
+                    }
+
+                    instance = TransparentQty;
+                    break;
+                }
+            }
+
+            if (instance != null)
+            {
+                return instance;
+            }
+
+            return base.FindChild(context, browseName, createOrReplace, replacement);
+        }
+        #endregion
+
+        #region Private Fields
+        private AnalogItemState<uint> m_transparentQty;
+        #endregion
+    }
+    #endif
+    #endregion
+
+    #region MetallicPieceQuantityState Class
+    #if (!OPCUA_EXCLUDE_MetallicPieceQuantityState)
+    /// <remarks />
+    /// <exclude />
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
+    public partial class MetallicPieceQuantityState : BaseObjectState
+    {
+        #region Constructors
+        /// <remarks />
+        public MetallicPieceQuantityState(NodeState parent) : base(parent)
+        {
+        }
+
+        /// <remarks />
+        protected override NodeId GetDefaultTypeDefinitionId(NamespaceTable namespaceUris)
+        {
+            return Opc.Ua.NodeId.Create(BeltIdentifier.ObjectTypes.MetallicPieceQuantity, BeltIdentifier.Namespaces.BeltIdentifier, namespaceUris);
+        }
+
+        #if (!OPCUA_EXCLUDE_InitializationStrings)
+        /// <remarks />
+        protected override void Initialize(ISystemContext context)
+        {
+            base.Initialize(context);
+            Initialize(context, InitializationString);
+            InitializeOptionalChildren(context);
+        }
+
+        /// <remarks />
+        protected override void Initialize(ISystemContext context, NodeState source)
+        {
+            InitializeOptionalChildren(context);
+            base.Initialize(context, source);
+        }
+
+        /// <remarks />
+        protected override void InitializeOptionalChildren(ISystemContext context)
+        {
+            base.InitializeOptionalChildren(context);
+        }
+
+        #region Initialization String
+        private const string InitializationString =
+           "AQAAACcAAABodHRwOi8vb3BjZm91bmRhdGlvbi5vcmcvQmVsdElkZW50aWZpZXL/////BGCAAgEAAAAB" +
+           "AB0AAABNZXRhbGxpY1BpZWNlUXVhbnRpdHlJbnN0YW5jZQEBMAABATAAMAAAAP////8BAAAAFWCJCgIA" +
+           "AAABAAsAAABNZXRhbGxpY1F0eQEBRwEALwEAQAlHAQAAAAf/////AwP/////AQAAABVgiQoCAAAAAAAH" +
+           "AAAARVVSYW5nZQEBSwEALgBESwEAAAEAdAP/////AQH/////AAAAAA==";
+        #endregion
+        #endif
+        #endregion
+
+        #region Public Properties
+        /// <remarks />
+        public AnalogItemState<uint> MetallicQty
+        {
+            get
+            {
+                return m_metallicQty;
+            }
+
+            set
+            {
+                if (!Object.ReferenceEquals(m_metallicQty, value))
+                {
+                    ChangeMasks |= NodeStateChangeMasks.Children;
+                }
+
+                m_metallicQty = value;
+            }
+        }
+        #endregion
+
+        #region Overridden Methods
+        /// <remarks />
+        public override void GetChildren(
+            ISystemContext context,
+            IList<BaseInstanceState> children)
+        {
+            if (m_metallicQty != null)
+            {
+                children.Add(m_metallicQty);
+            }
+
+            base.GetChildren(context, children);
+        }
+            
+        /// <remarks />
+        protected override BaseInstanceState FindChild(
+            ISystemContext context,
+            QualifiedName browseName,
+            bool createOrReplace,
+            BaseInstanceState replacement)
+        {
+            if (QualifiedName.IsNull(browseName))
+            {
+                return null;
+            }
+
+            BaseInstanceState instance = null;
+
+            switch (browseName.Name)
+            {
+                case BeltIdentifier.BrowseNames.MetallicQty:
+                {
+                    if (createOrReplace)
+                    {
+                        if (MetallicQty == null)
+                        {
+                            if (replacement == null)
+                            {
+                                MetallicQty = new AnalogItemState<uint>(this);
+                            }
+                            else
+                            {
+                                MetallicQty = (AnalogItemState<uint>)replacement;
+                            }
+                        }
+                    }
+
+                    instance = MetallicQty;
+                    break;
+                }
+            }
+
+            if (instance != null)
+            {
+                return instance;
+            }
+
+            return base.FindChild(context, browseName, createOrReplace, replacement);
+        }
+        #endregion
+
+        #region Private Fields
+        private AnalogItemState<uint> m_metallicQty;
+        #endregion
+    }
+    #endif
+    #endregion
+
+    #region NonMetallicPieceQuantityState Class
+    #if (!OPCUA_EXCLUDE_NonMetallicPieceQuantityState)
+    /// <remarks />
+    /// <exclude />
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
+    public partial class NonMetallicPieceQuantityState : BaseObjectState
+    {
+        #region Constructors
+        /// <remarks />
+        public NonMetallicPieceQuantityState(NodeState parent) : base(parent)
+        {
+        }
+
+        /// <remarks />
+        protected override NodeId GetDefaultTypeDefinitionId(NamespaceTable namespaceUris)
+        {
+            return Opc.Ua.NodeId.Create(BeltIdentifier.ObjectTypes.NonMetallicPieceQuantity, BeltIdentifier.Namespaces.BeltIdentifier, namespaceUris);
+        }
+
+        #if (!OPCUA_EXCLUDE_InitializationStrings)
+        /// <remarks />
+        protected override void Initialize(ISystemContext context)
+        {
+            base.Initialize(context);
+            Initialize(context, InitializationString);
+            InitializeOptionalChildren(context);
+        }
+
+        /// <remarks />
+        protected override void Initialize(ISystemContext context, NodeState source)
+        {
+            InitializeOptionalChildren(context);
+            base.Initialize(context, source);
+        }
+
+        /// <remarks />
+        protected override void InitializeOptionalChildren(ISystemContext context)
+        {
+            base.InitializeOptionalChildren(context);
+        }
+
+        #region Initialization String
+        private const string InitializationString =
+           "AQAAACcAAABodHRwOi8vb3BjZm91bmRhdGlvbi5vcmcvQmVsdElkZW50aWZpZXL/////BGCAAgEAAAAB" +
+           "ACAAAABOb25NZXRhbGxpY1BpZWNlUXVhbnRpdHlJbnN0YW5jZQEBNwABATcANwAAAP////8BAAAAFWCJ" +
+           "CgIAAAABAA4AAABOb25NZXRhbGxpY1F0eQEBTQEALwEAQAlNAQAAAAf/////AwP/////AQAAABVgiQoC" +
+           "AAAAAAAHAAAARVVSYW5nZQEBUQEALgBEUQEAAAEAdAP/////AQH/////AAAAAA==";
+        #endregion
+        #endif
+        #endregion
+
+        #region Public Properties
+        /// <remarks />
+        public AnalogItemState<uint> NonMetallicQty
+        {
+            get
+            {
+                return m_nonMetallicQty;
+            }
+
+            set
+            {
+                if (!Object.ReferenceEquals(m_nonMetallicQty, value))
+                {
+                    ChangeMasks |= NodeStateChangeMasks.Children;
+                }
+
+                m_nonMetallicQty = value;
+            }
+        }
+        #endregion
+
+        #region Overridden Methods
+        /// <remarks />
+        public override void GetChildren(
+            ISystemContext context,
+            IList<BaseInstanceState> children)
+        {
+            if (m_nonMetallicQty != null)
+            {
+                children.Add(m_nonMetallicQty);
+            }
+
+            base.GetChildren(context, children);
+        }
+            
+        /// <remarks />
+        protected override BaseInstanceState FindChild(
+            ISystemContext context,
+            QualifiedName browseName,
+            bool createOrReplace,
+            BaseInstanceState replacement)
+        {
+            if (QualifiedName.IsNull(browseName))
+            {
+                return null;
+            }
+
+            BaseInstanceState instance = null;
+
+            switch (browseName.Name)
+            {
+                case BeltIdentifier.BrowseNames.NonMetallicQty:
+                {
+                    if (createOrReplace)
+                    {
+                        if (NonMetallicQty == null)
+                        {
+                            if (replacement == null)
+                            {
+                                NonMetallicQty = new AnalogItemState<uint>(this);
+                            }
+                            else
+                            {
+                                NonMetallicQty = (AnalogItemState<uint>)replacement;
+                            }
+                        }
+                    }
+
+                    instance = NonMetallicQty;
+                    break;
+                }
+            }
+
+            if (instance != null)
+            {
+                return instance;
+            }
+
+            return base.FindChild(context, browseName, createOrReplace, replacement);
+        }
+        #endregion
+
+        #region Private Fields
+        private AnalogItemState<uint> m_nonMetallicQty;
+        #endregion
+    }
+    #endif
+    #endregion
+
+    #region OpticalBarrier1State Class
+    #if (!OPCUA_EXCLUDE_OpticalBarrier1State)
+    /// <remarks />
+    /// <exclude />
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
+    public partial class OpticalBarrier1State : BaseObjectState
+    {
+        #region Constructors
+        /// <remarks />
+        public OpticalBarrier1State(NodeState parent) : base(parent)
+        {
+        }
+
+        /// <remarks />
+        protected override NodeId GetDefaultTypeDefinitionId(NamespaceTable namespaceUris)
+        {
+            return Opc.Ua.NodeId.Create(BeltIdentifier.ObjectTypes.OpticalBarrier1, BeltIdentifier.Namespaces.BeltIdentifier, namespaceUris);
+        }
+
+        #if (!OPCUA_EXCLUDE_InitializationStrings)
+        /// <remarks />
+        protected override void Initialize(ISystemContext context)
+        {
+            base.Initialize(context);
+            Initialize(context, InitializationString);
+            InitializeOptionalChildren(context);
+        }
+
+        /// <remarks />
+        protected override void Initialize(ISystemContext context, NodeState source)
+        {
+            InitializeOptionalChildren(context);
+            base.Initialize(context, source);
+        }
+
+        /// <remarks />
+        protected override void InitializeOptionalChildren(ISystemContext context)
+        {
+            base.InitializeOptionalChildren(context);
+        }
+
+        #region Initialization String
+        private const string InitializationString =
+           "AQAAACcAAABodHRwOi8vb3BjZm91bmRhdGlvbi5vcmcvQmVsdElkZW50aWZpZXL/////BGCAAgEAAAAB" +
+           "ABcAAABPcHRpY2FsQmFycmllcjFJbnN0YW5jZQEBPgABAT4APgAAAP////8BAAAAFWCJCgIAAAABAAoA" +
+           "AABCYXJyaWVyMU9uAQE/AAAvAQBECT8AAAAAAf////8BAf////8AAAAA";
+        #endregion
+        #endif
+        #endregion
+
+        #region Public Properties
+        /// <remarks />
+        public DiscreteItemState<bool> Barrier1On
+        {
+            get
+            {
+                return m_barrier1On;
+            }
+
+            set
+            {
+                if (!Object.ReferenceEquals(m_barrier1On, value))
+                {
+                    ChangeMasks |= NodeStateChangeMasks.Children;
+                }
+
+                m_barrier1On = value;
+            }
+        }
+        #endregion
+
+        #region Overridden Methods
+        /// <remarks />
+        public override void GetChildren(
+            ISystemContext context,
+            IList<BaseInstanceState> children)
+        {
+            if (m_barrier1On != null)
+            {
+                children.Add(m_barrier1On);
+            }
+
+            base.GetChildren(context, children);
+        }
+            
+        /// <remarks />
+        protected override BaseInstanceState FindChild(
+            ISystemContext context,
+            QualifiedName browseName,
+            bool createOrReplace,
+            BaseInstanceState replacement)
+        {
+            if (QualifiedName.IsNull(browseName))
+            {
+                return null;
+            }
+
+            BaseInstanceState instance = null;
+
+            switch (browseName.Name)
+            {
+                case BeltIdentifier.BrowseNames.Barrier1On:
+                {
+                    if (createOrReplace)
+                    {
+                        if (Barrier1On == null)
+                        {
+                            if (replacement == null)
+                            {
+                                Barrier1On = new DiscreteItemState<bool>(this);
+                            }
+                            else
+                            {
+                                Barrier1On = (DiscreteItemState<bool>)replacement;
+                            }
+                        }
+                    }
+
+                    instance = Barrier1On;
+                    break;
+                }
+            }
+
+            if (instance != null)
+            {
+                return instance;
+            }
+
+            return base.FindChild(context, browseName, createOrReplace, replacement);
+        }
+        #endregion
+
+        #region Private Fields
+        private DiscreteItemState<bool> m_barrier1On;
+        #endregion
+    }
+    #endif
+    #endregion
+
+    #region OpticalBarrier2State Class
+    #if (!OPCUA_EXCLUDE_OpticalBarrier2State)
+    /// <remarks />
+    /// <exclude />
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
+    public partial class OpticalBarrier2State : BaseObjectState
+    {
+        #region Constructors
+        /// <remarks />
+        public OpticalBarrier2State(NodeState parent) : base(parent)
+        {
+        }
+
+        /// <remarks />
+        protected override NodeId GetDefaultTypeDefinitionId(NamespaceTable namespaceUris)
+        {
+            return Opc.Ua.NodeId.Create(BeltIdentifier.ObjectTypes.OpticalBarrier2, BeltIdentifier.Namespaces.BeltIdentifier, namespaceUris);
+        }
+
+        #if (!OPCUA_EXCLUDE_InitializationStrings)
+        /// <remarks />
+        protected override void Initialize(ISystemContext context)
+        {
+            base.Initialize(context);
+            Initialize(context, InitializationString);
+            InitializeOptionalChildren(context);
+        }
+
+        /// <remarks />
+        protected override void Initialize(ISystemContext context, NodeState source)
+        {
+            InitializeOptionalChildren(context);
+            base.Initialize(context, source);
+        }
+
+        /// <remarks />
+        protected override void InitializeOptionalChildren(ISystemContext context)
+        {
+            base.InitializeOptionalChildren(context);
+        }
+
+        #region Initialization String
+        private const string InitializationString =
+           "AQAAACcAAABodHRwOi8vb3BjZm91bmRhdGlvbi5vcmcvQmVsdElkZW50aWZpZXL/////BGCAAgEAAAAB" +
+           "ABcAAABPcHRpY2FsQmFycmllcjJJbnN0YW5jZQEBQgABAUIAQgAAAP////8BAAAAFWCJCgIAAAABAAoA" +
+           "AABCYXJyaWVyMk9uAQFDAAAvAQBECUMAAAAAAf////8BAf////8AAAAA";
+        #endregion
+        #endif
+        #endregion
+
+        #region Public Properties
+        /// <remarks />
+        public DiscreteItemState<bool> Barrier2On
+        {
+            get
+            {
+                return m_barrier2On;
+            }
+
+            set
+            {
+                if (!Object.ReferenceEquals(m_barrier2On, value))
+                {
+                    ChangeMasks |= NodeStateChangeMasks.Children;
+                }
+
+                m_barrier2On = value;
+            }
+        }
+        #endregion
+
+        #region Overridden Methods
+        /// <remarks />
+        public override void GetChildren(
+            ISystemContext context,
+            IList<BaseInstanceState> children)
+        {
+            if (m_barrier2On != null)
+            {
+                children.Add(m_barrier2On);
+            }
+
+            base.GetChildren(context, children);
+        }
+            
+        /// <remarks />
+        protected override BaseInstanceState FindChild(
+            ISystemContext context,
+            QualifiedName browseName,
+            bool createOrReplace,
+            BaseInstanceState replacement)
+        {
+            if (QualifiedName.IsNull(browseName))
+            {
+                return null;
+            }
+
+            BaseInstanceState instance = null;
+
+            switch (browseName.Name)
+            {
+                case BeltIdentifier.BrowseNames.Barrier2On:
+                {
+                    if (createOrReplace)
+                    {
+                        if (Barrier2On == null)
+                        {
+                            if (replacement == null)
+                            {
+                                Barrier2On = new DiscreteItemState<bool>(this);
+                            }
+                            else
+                            {
+                                Barrier2On = (DiscreteItemState<bool>)replacement;
+                            }
+                        }
+                    }
+
+                    instance = Barrier2On;
+                    break;
+                }
+            }
+
+            if (instance != null)
+            {
+                return instance;
+            }
+
+            return base.FindChild(context, browseName, createOrReplace, replacement);
+        }
+        #endregion
+
+        #region Private Fields
+        private DiscreteItemState<bool> m_barrier2On;
+        #endregion
+    }
+    #endif
+    #endregion
+
+    #region OpticalBarrier3State Class
+    #if (!OPCUA_EXCLUDE_OpticalBarrier3State)
+    /// <remarks />
+    /// <exclude />
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
+    public partial class OpticalBarrier3State : BaseObjectState
+    {
+        #region Constructors
+        /// <remarks />
+        public OpticalBarrier3State(NodeState parent) : base(parent)
+        {
+        }
+
+        /// <remarks />
+        protected override NodeId GetDefaultTypeDefinitionId(NamespaceTable namespaceUris)
+        {
+            return Opc.Ua.NodeId.Create(BeltIdentifier.ObjectTypes.OpticalBarrier3, BeltIdentifier.Namespaces.BeltIdentifier, namespaceUris);
+        }
+
+        #if (!OPCUA_EXCLUDE_InitializationStrings)
+        /// <remarks />
+        protected override void Initialize(ISystemContext context)
+        {
+            base.Initialize(context);
+            Initialize(context, InitializationString);
+            InitializeOptionalChildren(context);
+        }
+
+        /// <remarks />
+        protected override void Initialize(ISystemContext context, NodeState source)
+        {
+            InitializeOptionalChildren(context);
+            base.Initialize(context, source);
+        }
+
+        /// <remarks />
+        protected override void InitializeOptionalChildren(ISystemContext context)
+        {
+            base.InitializeOptionalChildren(context);
+        }
+
+        #region Initialization String
+        private const string InitializationString =
+           "AQAAACcAAABodHRwOi8vb3BjZm91bmRhdGlvbi5vcmcvQmVsdElkZW50aWZpZXL/////BGCAAgEAAAAB" +
+           "ABcAAABPcHRpY2FsQmFycmllcjNJbnN0YW5jZQEBRgABAUYARgAAAP////8BAAAAFWCJCgIAAAABAAoA" +
+           "AABCYXJyaWVyM09uAQFHAAAvAQBECUcAAAAAAf////8BAf////8AAAAA";
+        #endregion
+        #endif
+        #endregion
+
+        #region Public Properties
+        /// <remarks />
+        public DiscreteItemState<bool> Barrier3On
+        {
+            get
+            {
+                return m_barrier3On;
+            }
+
+            set
+            {
+                if (!Object.ReferenceEquals(m_barrier3On, value))
+                {
+                    ChangeMasks |= NodeStateChangeMasks.Children;
+                }
+
+                m_barrier3On = value;
+            }
+        }
+        #endregion
+
+        #region Overridden Methods
+        /// <remarks />
+        public override void GetChildren(
+            ISystemContext context,
+            IList<BaseInstanceState> children)
+        {
+            if (m_barrier3On != null)
+            {
+                children.Add(m_barrier3On);
+            }
+
+            base.GetChildren(context, children);
+        }
+            
+        /// <remarks />
+        protected override BaseInstanceState FindChild(
+            ISystemContext context,
+            QualifiedName browseName,
+            bool createOrReplace,
+            BaseInstanceState replacement)
+        {
+            if (QualifiedName.IsNull(browseName))
+            {
+                return null;
+            }
+
+            BaseInstanceState instance = null;
+
+            switch (browseName.Name)
+            {
+                case BeltIdentifier.BrowseNames.Barrier3On:
+                {
+                    if (createOrReplace)
+                    {
+                        if (Barrier3On == null)
+                        {
+                            if (replacement == null)
+                            {
+                                Barrier3On = new DiscreteItemState<bool>(this);
+                            }
+                            else
+                            {
+                                Barrier3On = (DiscreteItemState<bool>)replacement;
+                            }
+                        }
+                    }
+
+                    instance = Barrier3On;
+                    break;
+                }
+            }
+
+            if (instance != null)
+            {
+                return instance;
+            }
+
+            return base.FindChild(context, browseName, createOrReplace, replacement);
+        }
+        #endregion
+
+        #region Private Fields
+        private DiscreteItemState<bool> m_barrier3On;
+        #endregion
+    }
+    #endif
+    #endregion
+
+    #region ElectricPhotoSensorState Class
+    #if (!OPCUA_EXCLUDE_ElectricPhotoSensorState)
+    /// <remarks />
+    /// <exclude />
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
+    public partial class ElectricPhotoSensorState : BaseObjectState
+    {
+        #region Constructors
+        /// <remarks />
+        public ElectricPhotoSensorState(NodeState parent) : base(parent)
+        {
+        }
+
+        /// <remarks />
+        protected override NodeId GetDefaultTypeDefinitionId(NamespaceTable namespaceUris)
+        {
+            return Opc.Ua.NodeId.Create(BeltIdentifier.ObjectTypes.ElectricPhotoSensor, BeltIdentifier.Namespaces.BeltIdentifier, namespaceUris);
+        }
+
+        #if (!OPCUA_EXCLUDE_InitializationStrings)
+        /// <remarks />
+        protected override void Initialize(ISystemContext context)
+        {
+            base.Initialize(context);
+            Initialize(context, InitializationString);
+            InitializeOptionalChildren(context);
+        }
+
+        /// <remarks />
+        protected override void Initialize(ISystemContext context, NodeState source)
+        {
+            InitializeOptionalChildren(context);
+            base.Initialize(context, source);
+        }
+
+        /// <remarks />
+        protected override void InitializeOptionalChildren(ISystemContext context)
+        {
+            base.InitializeOptionalChildren(context);
+        }
+
+        #region Initialization String
+        private const string InitializationString =
+           "AQAAACcAAABodHRwOi8vb3BjZm91bmRhdGlvbi5vcmcvQmVsdElkZW50aWZpZXL/////BGCAAgEAAAAB" +
+           "ABsAAABFbGVjdHJpY1Bob3RvU2Vuc29ySW5zdGFuY2UBAUoAAQFKAEoAAAD/////AQAAABVgiQoCAAAA" +
+           "AQANAAAAUGhvdG9TZW5zb3JPbgEBSwAALwEARAlLAAAAAAH/////AQH/////AAAAAA==";
+        #endregion
+        #endif
+        #endregion
+
+        #region Public Properties
+        /// <remarks />
+        public DiscreteItemState<bool> PhotoSensorOn
+        {
+            get
+            {
+                return m_photoSensorOn;
+            }
+
+            set
+            {
+                if (!Object.ReferenceEquals(m_photoSensorOn, value))
+                {
+                    ChangeMasks |= NodeStateChangeMasks.Children;
+                }
+
+                m_photoSensorOn = value;
+            }
+        }
+        #endregion
+
+        #region Overridden Methods
+        /// <remarks />
+        public override void GetChildren(
+            ISystemContext context,
+            IList<BaseInstanceState> children)
+        {
+            if (m_photoSensorOn != null)
+            {
+                children.Add(m_photoSensorOn);
+            }
+
+            base.GetChildren(context, children);
+        }
+            
+        /// <remarks />
+        protected override BaseInstanceState FindChild(
+            ISystemContext context,
+            QualifiedName browseName,
+            bool createOrReplace,
+            BaseInstanceState replacement)
+        {
+            if (QualifiedName.IsNull(browseName))
+            {
+                return null;
+            }
+
+            BaseInstanceState instance = null;
+
+            switch (browseName.Name)
+            {
+                case BeltIdentifier.BrowseNames.PhotoSensorOn:
+                {
+                    if (createOrReplace)
+                    {
+                        if (PhotoSensorOn == null)
+                        {
+                            if (replacement == null)
+                            {
+                                PhotoSensorOn = new DiscreteItemState<bool>(this);
+                            }
+                            else
+                            {
+                                PhotoSensorOn = (DiscreteItemState<bool>)replacement;
+                            }
+                        }
+                    }
+
+                    instance = PhotoSensorOn;
+                    break;
+                }
+            }
+
+            if (instance != null)
+            {
+                return instance;
+            }
+
+            return base.FindChild(context, browseName, createOrReplace, replacement);
+        }
+        #endregion
+
+        #region Private Fields
+        private DiscreteItemState<bool> m_photoSensorOn;
+        #endregion
+    }
+    #endif
+    #endregion
+
+    #region CapacitiveSensorState Class
+    #if (!OPCUA_EXCLUDE_CapacitiveSensorState)
+    /// <remarks />
+    /// <exclude />
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
+    public partial class CapacitiveSensorState : BaseObjectState
+    {
+        #region Constructors
+        /// <remarks />
+        public CapacitiveSensorState(NodeState parent) : base(parent)
+        {
+        }
+
+        /// <remarks />
+        protected override NodeId GetDefaultTypeDefinitionId(NamespaceTable namespaceUris)
+        {
+            return Opc.Ua.NodeId.Create(BeltIdentifier.ObjectTypes.CapacitiveSensor, BeltIdentifier.Namespaces.BeltIdentifier, namespaceUris);
+        }
+
+        #if (!OPCUA_EXCLUDE_InitializationStrings)
+        /// <remarks />
+        protected override void Initialize(ISystemContext context)
+        {
+            base.Initialize(context);
+            Initialize(context, InitializationString);
+            InitializeOptionalChildren(context);
+        }
+
+        /// <remarks />
+        protected override void Initialize(ISystemContext context, NodeState source)
+        {
+            InitializeOptionalChildren(context);
+            base.Initialize(context, source);
+        }
+
+        /// <remarks />
+        protected override void InitializeOptionalChildren(ISystemContext context)
+        {
+            base.InitializeOptionalChildren(context);
+        }
+
+        #region Initialization String
+        private const string InitializationString =
+           "AQAAACcAAABodHRwOi8vb3BjZm91bmRhdGlvbi5vcmcvQmVsdElkZW50aWZpZXL/////BGCAAgEAAAAB" +
+           "ABgAAABDYXBhY2l0aXZlU2Vuc29ySW5zdGFuY2UBAU4AAQFOAE4AAAD/////AQAAABVgiQoCAAAAAQAM" +
+           "AAAAQ2FwYWNpdGl2ZU9uAQFPAAAvAQBECU8AAAAAAf////8BAf////8AAAAA";
+        #endregion
+        #endif
+        #endregion
+
+        #region Public Properties
+        /// <remarks />
+        public DiscreteItemState<bool> CapacitiveOn
+        {
+            get
+            {
+                return m_capacitiveOn;
+            }
+
+            set
+            {
+                if (!Object.ReferenceEquals(m_capacitiveOn, value))
+                {
+                    ChangeMasks |= NodeStateChangeMasks.Children;
+                }
+
+                m_capacitiveOn = value;
+            }
+        }
+        #endregion
+
+        #region Overridden Methods
+        /// <remarks />
+        public override void GetChildren(
+            ISystemContext context,
+            IList<BaseInstanceState> children)
+        {
+            if (m_capacitiveOn != null)
+            {
+                children.Add(m_capacitiveOn);
+            }
+
+            base.GetChildren(context, children);
+        }
+            
+        /// <remarks />
+        protected override BaseInstanceState FindChild(
+            ISystemContext context,
+            QualifiedName browseName,
+            bool createOrReplace,
+            BaseInstanceState replacement)
+        {
+            if (QualifiedName.IsNull(browseName))
+            {
+                return null;
+            }
+
+            BaseInstanceState instance = null;
+
+            switch (browseName.Name)
+            {
+                case BeltIdentifier.BrowseNames.CapacitiveOn:
+                {
+                    if (createOrReplace)
+                    {
+                        if (CapacitiveOn == null)
+                        {
+                            if (replacement == null)
+                            {
+                                CapacitiveOn = new DiscreteItemState<bool>(this);
+                            }
+                            else
+                            {
+                                CapacitiveOn = (DiscreteItemState<bool>)replacement;
+                            }
+                        }
+                    }
+
+                    instance = CapacitiveOn;
+                    break;
+                }
+            }
+
+            if (instance != null)
+            {
+                return instance;
+            }
+
+            return base.FindChild(context, browseName, createOrReplace, replacement);
+        }
+        #endregion
+
+        #region Private Fields
+        private DiscreteItemState<bool> m_capacitiveOn;
+        #endregion
+    }
+    #endif
+    #endregion
+
+    #region InductiveSensorState Class
+    #if (!OPCUA_EXCLUDE_InductiveSensorState)
+    /// <remarks />
+    /// <exclude />
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
+    public partial class InductiveSensorState : BaseObjectState
+    {
+        #region Constructors
+        /// <remarks />
+        public InductiveSensorState(NodeState parent) : base(parent)
+        {
+        }
+
+        /// <remarks />
+        protected override NodeId GetDefaultTypeDefinitionId(NamespaceTable namespaceUris)
+        {
+            return Opc.Ua.NodeId.Create(BeltIdentifier.ObjectTypes.InductiveSensor, BeltIdentifier.Namespaces.BeltIdentifier, namespaceUris);
+        }
+
+        #if (!OPCUA_EXCLUDE_InitializationStrings)
+        /// <remarks />
+        protected override void Initialize(ISystemContext context)
+        {
+            base.Initialize(context);
+            Initialize(context, InitializationString);
+            InitializeOptionalChildren(context);
+        }
+
+        /// <remarks />
+        protected override void Initialize(ISystemContext context, NodeState source)
+        {
+            InitializeOptionalChildren(context);
+            base.Initialize(context, source);
+        }
+
+        /// <remarks />
+        protected override void InitializeOptionalChildren(ISystemContext context)
+        {
+            base.InitializeOptionalChildren(context);
+        }
+
+        #region Initialization String
+        private const string InitializationString =
+           "AQAAACcAAABodHRwOi8vb3BjZm91bmRhdGlvbi5vcmcvQmVsdElkZW50aWZpZXL/////BGCAAgEAAAAB" +
+           "ABcAAABJbmR1Y3RpdmVTZW5zb3JJbnN0YW5jZQEBUgABAVIAUgAAAP////8BAAAAFWCJCgIAAAABAAsA" +
+           "AABJbmR1Y3RpdmVPbgEBUwAALwEARAlTAAAAAAH/////AQH/////AAAAAA==";
+        #endregion
+        #endif
+        #endregion
+
+        #region Public Properties
+        /// <remarks />
+        public DiscreteItemState<bool> InductiveOn
+        {
+            get
+            {
+                return m_inductiveOn;
+            }
+
+            set
+            {
+                if (!Object.ReferenceEquals(m_inductiveOn, value))
+                {
+                    ChangeMasks |= NodeStateChangeMasks.Children;
+                }
+
+                m_inductiveOn = value;
+            }
+        }
+        #endregion
+
+        #region Overridden Methods
+        /// <remarks />
+        public override void GetChildren(
+            ISystemContext context,
+            IList<BaseInstanceState> children)
+        {
+            if (m_inductiveOn != null)
+            {
+                children.Add(m_inductiveOn);
+            }
+
+            base.GetChildren(context, children);
+        }
+            
+        /// <remarks />
+        protected override BaseInstanceState FindChild(
+            ISystemContext context,
+            QualifiedName browseName,
+            bool createOrReplace,
+            BaseInstanceState replacement)
+        {
+            if (QualifiedName.IsNull(browseName))
+            {
+                return null;
+            }
+
+            BaseInstanceState instance = null;
+
+            switch (browseName.Name)
+            {
+                case BeltIdentifier.BrowseNames.InductiveOn:
+                {
+                    if (createOrReplace)
+                    {
+                        if (InductiveOn == null)
+                        {
+                            if (replacement == null)
+                            {
+                                InductiveOn = new DiscreteItemState<bool>(this);
+                            }
+                            else
+                            {
+                                InductiveOn = (DiscreteItemState<bool>)replacement;
+                            }
+                        }
+                    }
+
+                    instance = InductiveOn;
+                    break;
+                }
+            }
+
+            if (instance != null)
+            {
+                return instance;
+            }
+
+            return base.FindChild(context, browseName, createOrReplace, replacement);
+        }
+        #endregion
+
+        #region Private Fields
+        private DiscreteItemState<bool> m_inductiveOn;
         #endregion
     }
     #endif
@@ -1509,74 +2724,26 @@ namespace BeltIdentifier
         #region Initialization String
         private const string InitializationString =
            "AQAAACcAAABodHRwOi8vb3BjZm91bmRhdGlvbi5vcmcvQmVsdElkZW50aWZpZXL/////BGCAAgEAAAAB" +
-           "ABMAAABNb2R1bGUxVHlwZUluc3RhbmNlAQFxAAEBcQBxAAAAAQAAAAAwAAEBcgAJAAAAhGCACgEAAAAB" +
-           "AAUAAABFcnJvcgEBcgAALwEBTgByAAAAAQEAAAAAMAEBAXEAAQAAABVgiQoCAAAAAQAFAAAASW5wdXQB" +
-           "AXMAAC8BAEAJcwAAAAAB/////wMD/////wEAAAAVYIkKAgAAAAAABwAAAEVVUmFuZ2UBAXcAAC4ARHcA" +
-           "AAABAHQD/////wEB/////wAAAACEYIAKAQAAAAEABAAAAEJ1c3kBAS0DAC8BASYDLQMAAAH/////AQAA" +
-           "ABVgiQoCAAAAAQAFAAAASW5wdXQBAS4DAC8BAEAJLgMAAAAB/////wMD/////wEAAAAVYIkKAgAAAAAA" +
-           "BwAAAEVVUmFuZ2UBATIDAC4ARDIDAAABAHQD/////wEB/////wAAAACEYIAKAQAAAAEACwAAAFRyYW5z" +
-           "cGFyZW50AQGhAwAvAQGTA6EDAAAB/////wEAAAAVYIkKAgAAAAEABQAAAElucHV0AQGiAwAvAQBACaID" +
-           "AAAAAf////8DA/////8BAAAAFWCJCgIAAAAAAAcAAABFVVJhbmdlAQGmAwAuAESmAwAAAQB0A/////8B" +
-           "Af////8AAAAAhGCACgEAAAABAAgAAABNZXRhbGxpYwEBgAAALwEBQACAAAAAAf////8BAAAAFWCJCgIA" +
-           "AAABAAUAAABJbnB1dAEBgQAALwEAQAmBAAAAAAH/////AwP/////AQAAABVgiQoCAAAAAAAHAAAARVVS" +
-           "YW5nZQEBhQAALgBEhQAAAAEAdAP/////AQH/////AAAAAIRggAoBAAAAAQALAAAATm9uTWV0YWxsaWMB" +
-           "AYcAAC8BAUcAhwAAAAH/////AQAAABVgiQoCAAAAAQAFAAAASW5wdXQBAYgAAC8BAEAJiAAAAAAB////" +
-           "/wMD/////wEAAAAVYIkKAgAAAAAABwAAAEVVUmFuZ2UBAYwAAC4ARIwAAAABAHQD/////wEB/////wAA" +
-           "AACEYIAKAQAAAAEAEwAAAFF1YW50aXR5VHJhbnNwYXJlbnQBAagDAC8BAZoDqAMAAAH/////AQAAABVg" +
-           "iQoCAAAAAQAFAAAASW5wdXQBAakDAC8BAEAJqQMAAAAG/////wMD/////wEAAAAVYIkKAgAAAAAABwAA" +
-           "AEVVUmFuZ2UBAa0DAC4ARK0DAAABAHQD/////wEB/////wAAAACEYIAKAQAAAAEAEAAAAFF1YW50aXR5" +
-           "TWV0YWxsaWMBAZUAAC8BAVwAlQAAAAH/////AQAAABVgiQoCAAAAAQAFAAAASW5wdXQBAZYAAC8BAEAJ" +
-           "lgAAAAAG/////wMD/////wEAAAAVYIkKAgAAAAAABwAAAEVVUmFuZ2UBAZoAAC4ARJoAAAABAHQD////" +
-           "/wEB/////wAAAACEYIAKAQAAAAEAEwAAAFF1YW50aXR5Tm9uTWV0YWxsaWMBAZwAAC8BAWMAnAAAAAH/" +
-           "////AQAAABVgiQoCAAAAAQAFAAAASW5wdXQBAZ0AAC8BAEAJnQAAAAAG/////wMD/////wEAAAAVYIkK" +
-           "AgAAAAAABwAAAEVVUmFuZ2UBAaEAAC4ARKEAAAABAHQD/////wEB/////wAAAACEYIAKAQAAAAEABQAA" +
-           "AE1vdG9yAQGjAAAvAQEfA6MAAAAB/////wIAAAAVYIkKAgAAAAEACwAAAEpvdXJuZXlUaW1lAQHXAwAv" +
-           "AQBACdcDAAAABv////8DA/////8BAAAAFWCJCgIAAAAAAAcAAABFVVJhbmdlAQHbAwAuAETbAwAAAQB0" +
-           "A/////8BAf////8AAAAAFWCJCgIAAAABAAYAAABTdGF0dXMBAWMDAC8BAEAJYwMAAAAB/////wMD////" +
-           "/wEAAAAVYIkKAgAAAAAABwAAAEVVUmFuZ2UBAWcDAC4ARGcDAAABAHQD/////wEB/////wAAAAA=";
+           "ABMAAABNb2R1bGUxVHlwZUluc3RhbmNlAQFWAAEBVgBWAAAAAQAAAAAwAAEBVwAGAAAAhGCACgEAAAAB" +
+           "AAsAAABUcmFuc3BhcmVudAEBVwAALwEBHQBXAAAAAQEAAAAAMAEBAVYAAQAAABVgiQoCAAAAAQANAAAA" +
+           "SXNUcmFuc3BhcmVudAEBWAAALwEARAlYAAAAAAH/////AQH/////AAAAAIRggAoBAAAAAQAIAAAATWV0" +
+           "YWxsaWMBAVsAAC8BASEAWwAAAAH/////AQAAABVgiQoCAAAAAQAKAAAASXNNZXRhbGxpYwEBXAAALwEA" +
+           "RAlcAAAAAAH/////AQH/////AAAAAIRggAoBAAAAAQALAAAATm9uTWV0YWxsaWMBAV8AAC8BASUAXwAA" +
+           "AAH/////AQAAABVgiQoCAAAAAQANAAAASXNOb25NZXRhbGxpYwEBYAAALwEARAlgAAAAAAH/////AQH/" +
+           "////AAAAAIRggAoBAAAAAQATAAAAVHJhbnNwYXJlbnRRdWFudGl0eQEBUwEALwEBKQBTAQAAAf////8B" +
+           "AAAAFWCJCgIAAAABAA4AAABUcmFuc3BhcmVudFF0eQEBVAEALwEAQAlUAQAAAAf/////AwP/////AQAA" +
+           "ABVgiQoCAAAAAAAHAAAARVVSYW5nZQEBWAEALgBEWAEAAAEAdAP/////AQH/////AAAAAIRggAoBAAAA" +
+           "AQAQAAAATWV0YWxsaWNRdWFudGl0eQEBWgEALwEBMABaAQAAAf////8BAAAAFWCJCgIAAAABAAsAAABN" +
+           "ZXRhbGxpY1F0eQEBWwEALwEAQAlbAQAAAAf/////AwP/////AQAAABVgiQoCAAAAAAAHAAAARVVSYW5n" +
+           "ZQEBXwEALgBEXwEAAAEAdAP/////AQH/////AAAAAIRggAoBAAAAAQATAAAATm9uTWV0YWxsaWNRdWFu" +
+           "dGl0eQEBYQEALwEBNwBhAQAAAf////8BAAAAFWCJCgIAAAABAA4AAABOb25NZXRhbGxpY1F0eQEBYgEA" +
+           "LwEAQAliAQAAAAf/////AwP/////AQAAABVgiQoCAAAAAAAHAAAARVVSYW5nZQEBZgEALgBEZgEAAAEA" +
+           "dAP/////AQH/////AAAAAA==";
         #endregion
         #endif
         #endregion
 
         #region Public Properties
-        /// <remarks />
-        public ErrorIluminationState Error
-        {
-            get
-            {
-                return m_error;
-            }
-
-            set
-            {
-                if (!Object.ReferenceEquals(m_error, value))
-                {
-                    ChangeMasks |= NodeStateChangeMasks.Children;
-                }
-
-                m_error = value;
-            }
-        }
-
-        /// <remarks />
-        public BusyIluminationState Busy
-        {
-            get
-            {
-                return m_busy;
-            }
-
-            set
-            {
-                if (!Object.ReferenceEquals(m_busy, value))
-                {
-                    ChangeMasks |= NodeStateChangeMasks.Children;
-                }
-
-                m_busy = value;
-            }
-        }
-
         /// <remarks />
         public TransparentPieceState Transparent
         {
@@ -1635,78 +2802,59 @@ namespace BeltIdentifier
         }
 
         /// <remarks />
-        public QuantityTransparentPieceState QuantityTransparent
+        public TransparentPieceQuantityState TransparentQuantity
         {
             get
             {
-                return m_quantityTransparent;
+                return m_transparentQuantity;
             }
 
             set
             {
-                if (!Object.ReferenceEquals(m_quantityTransparent, value))
+                if (!Object.ReferenceEquals(m_transparentQuantity, value))
                 {
                     ChangeMasks |= NodeStateChangeMasks.Children;
                 }
 
-                m_quantityTransparent = value;
+                m_transparentQuantity = value;
             }
         }
 
         /// <remarks />
-        public QuantityMetallicPieceState QuantityMetallic
+        public MetallicPieceQuantityState MetallicQuantity
         {
             get
             {
-                return m_quantityMetallic;
+                return m_metallicQuantity;
             }
 
             set
             {
-                if (!Object.ReferenceEquals(m_quantityMetallic, value))
+                if (!Object.ReferenceEquals(m_metallicQuantity, value))
                 {
                     ChangeMasks |= NodeStateChangeMasks.Children;
                 }
 
-                m_quantityMetallic = value;
+                m_metallicQuantity = value;
             }
         }
 
         /// <remarks />
-        public QuantityNonMetallicPieceState QuantityNonMetallic
+        public NonMetallicPieceQuantityState NonMetallicQuantity
         {
             get
             {
-                return m_quantityNonMetallic;
+                return m_nonMetallicQuantity;
             }
 
             set
             {
-                if (!Object.ReferenceEquals(m_quantityNonMetallic, value))
+                if (!Object.ReferenceEquals(m_nonMetallicQuantity, value))
                 {
                     ChangeMasks |= NodeStateChangeMasks.Children;
                 }
 
-                m_quantityNonMetallic = value;
-            }
-        }
-
-        /// <remarks />
-        public MotorState Motor
-        {
-            get
-            {
-                return m_motor;
-            }
-
-            set
-            {
-                if (!Object.ReferenceEquals(m_motor, value))
-                {
-                    ChangeMasks |= NodeStateChangeMasks.Children;
-                }
-
-                m_motor = value;
+                m_nonMetallicQuantity = value;
             }
         }
         #endregion
@@ -1717,16 +2865,6 @@ namespace BeltIdentifier
             ISystemContext context,
             IList<BaseInstanceState> children)
         {
-            if (m_error != null)
-            {
-                children.Add(m_error);
-            }
-
-            if (m_busy != null)
-            {
-                children.Add(m_busy);
-            }
-
             if (m_transparent != null)
             {
                 children.Add(m_transparent);
@@ -1742,24 +2880,19 @@ namespace BeltIdentifier
                 children.Add(m_nonMetallic);
             }
 
-            if (m_quantityTransparent != null)
+            if (m_transparentQuantity != null)
             {
-                children.Add(m_quantityTransparent);
+                children.Add(m_transparentQuantity);
             }
 
-            if (m_quantityMetallic != null)
+            if (m_metallicQuantity != null)
             {
-                children.Add(m_quantityMetallic);
+                children.Add(m_metallicQuantity);
             }
 
-            if (m_quantityNonMetallic != null)
+            if (m_nonMetallicQuantity != null)
             {
-                children.Add(m_quantityNonMetallic);
-            }
-
-            if (m_motor != null)
-            {
-                children.Add(m_motor);
+                children.Add(m_nonMetallicQuantity);
             }
 
             base.GetChildren(context, children);
@@ -1781,48 +2914,6 @@ namespace BeltIdentifier
 
             switch (browseName.Name)
             {
-                case BeltIdentifier.BrowseNames.Error:
-                {
-                    if (createOrReplace)
-                    {
-                        if (Error == null)
-                        {
-                            if (replacement == null)
-                            {
-                                Error = new ErrorIluminationState(this);
-                            }
-                            else
-                            {
-                                Error = (ErrorIluminationState)replacement;
-                            }
-                        }
-                    }
-
-                    instance = Error;
-                    break;
-                }
-
-                case BeltIdentifier.BrowseNames.Busy:
-                {
-                    if (createOrReplace)
-                    {
-                        if (Busy == null)
-                        {
-                            if (replacement == null)
-                            {
-                                Busy = new BusyIluminationState(this);
-                            }
-                            else
-                            {
-                                Busy = (BusyIluminationState)replacement;
-                            }
-                        }
-                    }
-
-                    instance = Busy;
-                    break;
-                }
-
                 case BeltIdentifier.BrowseNames.Transparent:
                 {
                     if (createOrReplace)
@@ -1886,87 +2977,66 @@ namespace BeltIdentifier
                     break;
                 }
 
-                case BeltIdentifier.BrowseNames.QuantityTransparent:
+                case BeltIdentifier.BrowseNames.TransparentQuantity:
                 {
                     if (createOrReplace)
                     {
-                        if (QuantityTransparent == null)
+                        if (TransparentQuantity == null)
                         {
                             if (replacement == null)
                             {
-                                QuantityTransparent = new QuantityTransparentPieceState(this);
+                                TransparentQuantity = new TransparentPieceQuantityState(this);
                             }
                             else
                             {
-                                QuantityTransparent = (QuantityTransparentPieceState)replacement;
+                                TransparentQuantity = (TransparentPieceQuantityState)replacement;
                             }
                         }
                     }
 
-                    instance = QuantityTransparent;
+                    instance = TransparentQuantity;
                     break;
                 }
 
-                case BeltIdentifier.BrowseNames.QuantityMetallic:
+                case BeltIdentifier.BrowseNames.MetallicQuantity:
                 {
                     if (createOrReplace)
                     {
-                        if (QuantityMetallic == null)
+                        if (MetallicQuantity == null)
                         {
                             if (replacement == null)
                             {
-                                QuantityMetallic = new QuantityMetallicPieceState(this);
+                                MetallicQuantity = new MetallicPieceQuantityState(this);
                             }
                             else
                             {
-                                QuantityMetallic = (QuantityMetallicPieceState)replacement;
+                                MetallicQuantity = (MetallicPieceQuantityState)replacement;
                             }
                         }
                     }
 
-                    instance = QuantityMetallic;
+                    instance = MetallicQuantity;
                     break;
                 }
 
-                case BeltIdentifier.BrowseNames.QuantityNonMetallic:
+                case BeltIdentifier.BrowseNames.NonMetallicQuantity:
                 {
                     if (createOrReplace)
                     {
-                        if (QuantityNonMetallic == null)
+                        if (NonMetallicQuantity == null)
                         {
                             if (replacement == null)
                             {
-                                QuantityNonMetallic = new QuantityNonMetallicPieceState(this);
+                                NonMetallicQuantity = new NonMetallicPieceQuantityState(this);
                             }
                             else
                             {
-                                QuantityNonMetallic = (QuantityNonMetallicPieceState)replacement;
+                                NonMetallicQuantity = (NonMetallicPieceQuantityState)replacement;
                             }
                         }
                     }
 
-                    instance = QuantityNonMetallic;
-                    break;
-                }
-
-                case BeltIdentifier.BrowseNames.Motor:
-                {
-                    if (createOrReplace)
-                    {
-                        if (Motor == null)
-                        {
-                            if (replacement == null)
-                            {
-                                Motor = new MotorState(this);
-                            }
-                            else
-                            {
-                                Motor = (MotorState)replacement;
-                            }
-                        }
-                    }
-
-                    instance = Motor;
+                    instance = NonMetallicQuantity;
                     break;
                 }
             }
@@ -1981,15 +3051,12 @@ namespace BeltIdentifier
         #endregion
 
         #region Private Fields
-        private ErrorIluminationState m_error;
-        private BusyIluminationState m_busy;
         private TransparentPieceState m_transparent;
         private MetallicPieceState m_metallic;
         private NonMetallicPieceState m_nonMetallic;
-        private QuantityTransparentPieceState m_quantityTransparent;
-        private QuantityMetallicPieceState m_quantityMetallic;
-        private QuantityNonMetallicPieceState m_quantityNonMetallic;
-        private MotorState m_motor;
+        private TransparentPieceQuantityState m_transparentQuantity;
+        private MetallicPieceQuantityState m_metallicQuantity;
+        private NonMetallicPieceQuantityState m_nonMetallicQuantity;
         #endregion
     }
     #endif
@@ -2039,38 +3106,25 @@ namespace BeltIdentifier
         #region Initialization String
         private const string InitializationString =
            "AQAAACcAAABodHRwOi8vb3BjZm91bmRhdGlvbi5vcmcvQmVsdElkZW50aWZpZXL/////BGCAAgEAAAAB" +
-           "ABMAAABNb2R1bGUyVHlwZUluc3RhbmNlAQGqAAEBqgCqAAAAAQAAAAAwAAEBqwAJAAAAhGCACgEAAAAB" +
-           "AAgAAABCYXJyaWVyMQEBqwAALwEBHQCrAAAAAQEAAAAAMAEBAaoAAQAAABVgiQoCAAAAAQAGAAAAT3V0" +
-           "cHV0AQGsAAAvAQBACawAAAAAAf////8DA/////8BAAAAFWCJCgIAAAAAAAcAAABFVVJhbmdlAQGwAAAu" +
-           "AESwAAAAAQB0A/////8BAf////8AAAAAhGCACgEAAAABAAgAAABCYXJyaWVyMgEBsgAALwEBHQCyAAAA" +
-           "Af////8BAAAAFWCJCgIAAAABAAYAAABPdXRwdXQBAbMAAC8BAEAJswAAAAAB/////wMD/////wEAAAAV" +
-           "YIkKAgAAAAAABwAAAEVVUmFuZ2UBAbcAAC4ARLcAAAABAHQD/////wEB/////wAAAACEYIAKAQAAAAEA" +
-           "CAAAAEJhcnJpZXIzAQG5AAAvAQEdALkAAAAB/////wEAAAAVYIkKAgAAAAEABgAAAE91dHB1dAEBugAA" +
-           "LwEAQAm6AAAAAAH/////AwP/////AQAAABVgiQoCAAAAAAAHAAAARVVSYW5nZQEBvgAALgBEvgAAAAEA" +
-           "dAP/////AQH/////AAAAAIRggAoBAAAAAQALAAAAUGhvdG9TZW5zb3IBAcAAAC8BASQAwAAAAAH/////" +
-           "AQAAABVgiQoCAAAAAQAGAAAAT3V0cHV0AQHBAAAvAQBACcEAAAAAAf////8DA/////8BAAAAFWCJCgIA" +
-           "AAAAAAcAAABFVVJhbmdlAQHFAAAuAETFAAAAAQB0A/////8BAf////8AAAAAhGCACgEAAAABAAoAAABD" +
-           "YXBhY2l0aXZlAQHHAAAvAQErAMcAAAAB/////wEAAAAVYIkKAgAAAAEABgAAAE91dHB1dAEByAAALwEA" +
-           "QAnIAAAAAAH/////AwP/////AQAAABVgiQoCAAAAAAAHAAAARVVSYW5nZQEBzAAALgBEzAAAAAEAdAP/" +
-           "////AQH/////AAAAAIRggAoBAAAAAQAJAAAASW5kdWN0aXZlAQHOAAAvAQEyAM4AAAAB/////wEAAAAV" +
-           "YIkKAgAAAAEABgAAAE91dHB1dAEBzwAALwEAQAnPAAAAAAH/////AwP/////AQAAABVgiQoCAAAAAAAH" +
-           "AAAARVVSYW5nZQEB0wAALgBE0wAAAAEAdAP/////AQH/////AAAAAIRggAoBAAAAAQAFAAAARXJyb3IB" +
-           "AdUAAC8BAU4A1QAAAAH/////AQAAABVgiQoCAAAAAQAFAAAASW5wdXQBAdYAAC8BAEAJ1gAAAAAB////" +
-           "/wMD/////wEAAAAVYIkKAgAAAAAABwAAAEVVUmFuZ2UBAdoAAC4ARNoAAAABAHQD/////wEB/////wAA" +
-           "AACEYIAKAQAAAAEABAAAAEJ1c3kBATQDAC8BASYDNAMAAAH/////AQAAABVgiQoCAAAAAQAFAAAASW5w" +
-           "dXQBATUDAC8BAEAJNQMAAAAB/////wMD/////wEAAAAVYIkKAgAAAAAABwAAAEVVUmFuZ2UBATkDAC4A" +
-           "RDkDAAABAHQD/////wEB/////wAAAACEYIAKAQAAAAEABQAAAE1vdG9yAQHcAAAvAQEfA9wAAAAB////" +
-           "/wIAAAAVYIkKAgAAAAEACwAAAEpvdXJuZXlUaW1lAQHdAwAvAQBACd0DAAAABv////8DA/////8BAAAA" +
-           "FWCJCgIAAAAAAAcAAABFVVJhbmdlAQHhAwAuAEThAwAAAQB0A/////8BAf////8AAAAAFWCJCgIAAAAB" +
-           "AAYAAABTdGF0dXMBAWkDAC8BAEAJaQMAAAAB/////wMD/////wEAAAAVYIkKAgAAAAAABwAAAEVVUmFu" +
-           "Z2UBAW0DAC4ARG0DAAABAHQD/////wEB/////wAAAAA=";
+           "ABMAAABNb2R1bGUyVHlwZUluc3RhbmNlAQF4AAEBeAB4AAAAAQAAAAAwAAEBeQAGAAAAhGCACgEAAAAB" +
+           "AAgAAABCYXJyaWVyMQEBeQAALwEBPgB5AAAAAQEAAAAAMAEBAXgAAQAAABVgiQoCAAAAAQAKAAAAQmFy" +
+           "cmllcjFPbgEBegAALwEARAl6AAAAAAH/////AQH/////AAAAAIRggAoBAAAAAQAIAAAAQmFycmllcjIB" +
+           "AX0AAC8BAUIAfQAAAAH/////AQAAABVgiQoCAAAAAQAKAAAAQmFycmllcjJPbgEBfgAALwEARAl+AAAA" +
+           "AAH/////AQH/////AAAAAIRggAoBAAAAAQAIAAAAQmFycmllcjMBAYEAAC8BAUYAgQAAAAH/////AQAA" +
+           "ABVgiQoCAAAAAQAKAAAAQmFycmllcjNPbgEBggAALwEARAmCAAAAAAH/////AQH/////AAAAAIRggAoB" +
+           "AAAAAQALAAAAUGhvdG9TZW5zb3IBAYUAAC8BAUoAhQAAAAH/////AQAAABVgiQoCAAAAAQANAAAAUGhv" +
+           "dG9TZW5zb3JPbgEBhgAALwEARAmGAAAAAAH/////AQH/////AAAAAIRggAoBAAAAAQAKAAAAQ2FwYWNp" +
+           "dGl2ZQEBiQAALwEBTgCJAAAAAf////8BAAAAFWCJCgIAAAABAAwAAABDYXBhY2l0aXZlT24BAYoAAC8B" +
+           "AEQJigAAAAAB/////wEB/////wAAAACEYIAKAQAAAAEACQAAAEluZHVjdGl2ZQEBjQAALwEBUgCNAAAA" +
+           "Af////8BAAAAFWCJCgIAAAABAAsAAABJbmR1Y3RpdmVPbgEBjgAALwEARAmOAAAAAAH/////AQH/////" +
+           "AAAAAA==";
         #endregion
         #endif
         #endregion
 
         #region Public Properties
         /// <remarks />
-        public OpticalBarrierState Barrier1
+        public OpticalBarrier1State Barrier1
         {
             get
             {
@@ -2089,7 +3143,7 @@ namespace BeltIdentifier
         }
 
         /// <remarks />
-        public OpticalBarrierState Barrier2
+        public OpticalBarrier2State Barrier2
         {
             get
             {
@@ -2108,7 +3162,7 @@ namespace BeltIdentifier
         }
 
         /// <remarks />
-        public OpticalBarrierState Barrier3
+        public OpticalBarrier3State Barrier3
         {
             get
             {
@@ -2182,63 +3236,6 @@ namespace BeltIdentifier
                 m_inductive = value;
             }
         }
-
-        /// <remarks />
-        public ErrorIluminationState Error
-        {
-            get
-            {
-                return m_error;
-            }
-
-            set
-            {
-                if (!Object.ReferenceEquals(m_error, value))
-                {
-                    ChangeMasks |= NodeStateChangeMasks.Children;
-                }
-
-                m_error = value;
-            }
-        }
-
-        /// <remarks />
-        public BusyIluminationState Busy
-        {
-            get
-            {
-                return m_busy;
-            }
-
-            set
-            {
-                if (!Object.ReferenceEquals(m_busy, value))
-                {
-                    ChangeMasks |= NodeStateChangeMasks.Children;
-                }
-
-                m_busy = value;
-            }
-        }
-
-        /// <remarks />
-        public MotorState Motor
-        {
-            get
-            {
-                return m_motor;
-            }
-
-            set
-            {
-                if (!Object.ReferenceEquals(m_motor, value))
-                {
-                    ChangeMasks |= NodeStateChangeMasks.Children;
-                }
-
-                m_motor = value;
-            }
-        }
         #endregion
 
         #region Overridden Methods
@@ -2277,21 +3274,6 @@ namespace BeltIdentifier
                 children.Add(m_inductive);
             }
 
-            if (m_error != null)
-            {
-                children.Add(m_error);
-            }
-
-            if (m_busy != null)
-            {
-                children.Add(m_busy);
-            }
-
-            if (m_motor != null)
-            {
-                children.Add(m_motor);
-            }
-
             base.GetChildren(context, children);
         }
             
@@ -2319,11 +3301,11 @@ namespace BeltIdentifier
                         {
                             if (replacement == null)
                             {
-                                Barrier1 = new OpticalBarrierState(this);
+                                Barrier1 = new OpticalBarrier1State(this);
                             }
                             else
                             {
-                                Barrier1 = (OpticalBarrierState)replacement;
+                                Barrier1 = (OpticalBarrier1State)replacement;
                             }
                         }
                     }
@@ -2340,11 +3322,11 @@ namespace BeltIdentifier
                         {
                             if (replacement == null)
                             {
-                                Barrier2 = new OpticalBarrierState(this);
+                                Barrier2 = new OpticalBarrier2State(this);
                             }
                             else
                             {
-                                Barrier2 = (OpticalBarrierState)replacement;
+                                Barrier2 = (OpticalBarrier2State)replacement;
                             }
                         }
                     }
@@ -2361,11 +3343,11 @@ namespace BeltIdentifier
                         {
                             if (replacement == null)
                             {
-                                Barrier3 = new OpticalBarrierState(this);
+                                Barrier3 = new OpticalBarrier3State(this);
                             }
                             else
                             {
-                                Barrier3 = (OpticalBarrierState)replacement;
+                                Barrier3 = (OpticalBarrier3State)replacement;
                             }
                         }
                     }
@@ -2436,69 +3418,6 @@ namespace BeltIdentifier
                     instance = Inductive;
                     break;
                 }
-
-                case BeltIdentifier.BrowseNames.Error:
-                {
-                    if (createOrReplace)
-                    {
-                        if (Error == null)
-                        {
-                            if (replacement == null)
-                            {
-                                Error = new ErrorIluminationState(this);
-                            }
-                            else
-                            {
-                                Error = (ErrorIluminationState)replacement;
-                            }
-                        }
-                    }
-
-                    instance = Error;
-                    break;
-                }
-
-                case BeltIdentifier.BrowseNames.Busy:
-                {
-                    if (createOrReplace)
-                    {
-                        if (Busy == null)
-                        {
-                            if (replacement == null)
-                            {
-                                Busy = new BusyIluminationState(this);
-                            }
-                            else
-                            {
-                                Busy = (BusyIluminationState)replacement;
-                            }
-                        }
-                    }
-
-                    instance = Busy;
-                    break;
-                }
-
-                case BeltIdentifier.BrowseNames.Motor:
-                {
-                    if (createOrReplace)
-                    {
-                        if (Motor == null)
-                        {
-                            if (replacement == null)
-                            {
-                                Motor = new MotorState(this);
-                            }
-                            else
-                            {
-                                Motor = (MotorState)replacement;
-                            }
-                        }
-                    }
-
-                    instance = Motor;
-                    break;
-                }
             }
 
             if (instance != null)
@@ -2511,15 +3430,12 @@ namespace BeltIdentifier
         #endregion
 
         #region Private Fields
-        private OpticalBarrierState m_barrier1;
-        private OpticalBarrierState m_barrier2;
-        private OpticalBarrierState m_barrier3;
+        private OpticalBarrier1State m_barrier1;
+        private OpticalBarrier2State m_barrier2;
+        private OpticalBarrier3State m_barrier3;
         private ElectricPhotoSensorState m_photoSensor;
         private CapacitiveSensorState m_capacitive;
         private InductiveSensorState m_inductive;
-        private ErrorIluminationState m_error;
-        private BusyIluminationState m_busy;
-        private MotorState m_motor;
         #endregion
     }
     #endif
@@ -2569,68 +3485,183 @@ namespace BeltIdentifier
         #region Initialization String
         private const string InitializationString =
            "AQAAACcAAABodHRwOi8vb3BjZm91bmRhdGlvbi5vcmcvQmVsdElkZW50aWZpZXL/////hGCAAgEAAAAB" +
-           "ABAAAABCZWx0VHlwZUluc3RhbmNlAQHjAAEB4wDjAAAAAQEAAAAAMAABAeQACAAAAIRgwAoBAAAABwAA" +
-           "AE1vZHVsZTEBAA0AAABCZWx0IE1vZHVsZSAxAQHkAAAvAQFxAOQAAAABAgAAAAAwAQEB4wAAMAABAeUA" +
-           "CQAAAIRggAoBAAAAAQAFAAAARXJyb3IBAeUAAC8BAU4A5QAAAAEBAAAAADABAQHkAAEAAAAVYIkKAgAA" +
-           "AAEABQAAAElucHV0AQHmAAAvAQBACeYAAAAAAf////8DA/////8BAAAAFWCJCgIAAAAAAAcAAABFVVJh" +
-           "bmdlAQHqAAAuAETqAAAAAQB0A/////8BAf////8AAAAAhGCACgEAAAABAAQAAABCdXN5AQE7AwAvAQEm" +
-           "AzsDAAAB/////wEAAAAVYIkKAgAAAAEABQAAAElucHV0AQE8AwAvAQBACTwDAAAAAf////8DA/////8B" +
-           "AAAAFWCJCgIAAAAAAAcAAABFVVJhbmdlAQFAAwAuAERAAwAAAQB0A/////8BAf////8AAAAAhGCACgEA" +
-           "AAABAAsAAABUcmFuc3BhcmVudAEBrwMALwEBkwOvAwAAAf////8BAAAAFWCJCgIAAAABAAUAAABJbnB1" +
-           "dAEBsAMALwEAQAmwAwAAAAH/////AwP/////AQAAABVgiQoCAAAAAAAHAAAARVVSYW5nZQEBtAMALgBE" +
-           "tAMAAAEAdAP/////AQH/////AAAAAIRggAoBAAAAAQAIAAAATWV0YWxsaWMBAfMAAC8BAUAA8wAAAAH/" +
-           "////AQAAABVgiQoCAAAAAQAFAAAASW5wdXQBAfQAAC8BAEAJ9AAAAAAB/////wMD/////wEAAAAVYIkK" +
-           "AgAAAAAABwAAAEVVUmFuZ2UBAfgAAC4ARPgAAAABAHQD/////wEB/////wAAAACEYIAKAQAAAAEACwAA" +
-           "AE5vbk1ldGFsbGljAQH6AAAvAQFHAPoAAAAB/////wEAAAAVYIkKAgAAAAEABQAAAElucHV0AQH7AAAv" +
-           "AQBACfsAAAAAAf////8DA/////8BAAAAFWCJCgIAAAAAAAcAAABFVVJhbmdlAQH/AAAuAET/AAAAAQB0" +
-           "A/////8BAf////8AAAAAhGCACgEAAAABABMAAABRdWFudGl0eVRyYW5zcGFyZW50AQG2AwAvAQGaA7YD" +
-           "AAAB/////wEAAAAVYIkKAgAAAAEABQAAAElucHV0AQG3AwAvAQBACbcDAAAABv////8DA/////8BAAAA" +
-           "FWCJCgIAAAAAAAcAAABFVVJhbmdlAQG7AwAuAES7AwAAAQB0A/////8BAf////8AAAAAhGCACgEAAAAB" +
-           "ABAAAABRdWFudGl0eU1ldGFsbGljAQEIAQAvAQFcAAgBAAAB/////wEAAAAVYIkKAgAAAAEABQAAAElu" +
-           "cHV0AQEJAQAvAQBACQkBAAAABv////8DA/////8BAAAAFWCJCgIAAAAAAAcAAABFVVJhbmdlAQENAQAu" +
-           "AEQNAQAAAQB0A/////8BAf////8AAAAAhGCACgEAAAABABMAAABRdWFudGl0eU5vbk1ldGFsbGljAQEP" +
-           "AQAvAQFjAA8BAAAB/////wEAAAAVYIkKAgAAAAEABQAAAElucHV0AQEQAQAvAQBACRABAAAABv////8D" +
-           "A/////8BAAAAFWCJCgIAAAAAAAcAAABFVVJhbmdlAQEUAQAuAEQUAQAAAQB0A/////8BAf////8AAAAA" +
-           "hGCACgEAAAABAAUAAABNb3RvcgEBFgEALwEBHwMWAQAAAf////8CAAAAFWCJCgIAAAABAAsAAABKb3Vy" +
-           "bmV5VGltZQEB4wMALwEAQAnjAwAAAAb/////AwP/////AQAAABVgiQoCAAAAAAAHAAAARVVSYW5nZQEB" +
-           "5wMALgBE5wMAAAEAdAP/////AQH/////AAAAABVgiQoCAAAAAQAGAAAAU3RhdHVzAQFvAwAvAQBACW8D" +
-           "AAAAAf////8DA/////8BAAAAFWCJCgIAAAAAAAcAAABFVVJhbmdlAQFzAwAuAERzAwAAAQB0A/////8B" +
-           "Af////8AAAAAhGDACgEAAAAHAAAATW9kdWxlMgEADQAAAEJlbHQgTW9kdWxlIDIBAR0BAC8BAaoAHQEA" +
-           "AAEBAAAAADAAAQEeAQkAAACEYIAKAQAAAAEACAAAAEJhcnJpZXIxAQEeAQAvAQEdAB4BAAABAQAAAAAw" +
-           "AQEBHQEBAAAAFWCJCgIAAAABAAYAAABPdXRwdXQBAR8BAC8BAEAJHwEAAAAB/////wMD/////wEAAAAV" +
-           "YIkKAgAAAAAABwAAAEVVUmFuZ2UBASMBAC4ARCMBAAABAHQD/////wEB/////wAAAACEYIAKAQAAAAEA" +
-           "CAAAAEJhcnJpZXIyAQElAQAvAQEdACUBAAAB/////wEAAAAVYIkKAgAAAAEABgAAAE91dHB1dAEBJgEA" +
-           "LwEAQAkmAQAAAAH/////AwP/////AQAAABVgiQoCAAAAAAAHAAAARVVSYW5nZQEBKgEALgBEKgEAAAEA" +
-           "dAP/////AQH/////AAAAAIRggAoBAAAAAQAIAAAAQmFycmllcjMBASwBAC8BAR0ALAEAAAH/////AQAA" +
-           "ABVgiQoCAAAAAQAGAAAAT3V0cHV0AQEtAQAvAQBACS0BAAAAAf////8DA/////8BAAAAFWCJCgIAAAAA" +
-           "AAcAAABFVVJhbmdlAQExAQAuAEQxAQAAAQB0A/////8BAf////8AAAAAhGCACgEAAAABAAsAAABQaG90" +
-           "b1NlbnNvcgEBMwEALwEBJAAzAQAAAf////8BAAAAFWCJCgIAAAABAAYAAABPdXRwdXQBATQBAC8BAEAJ" +
-           "NAEAAAAB/////wMD/////wEAAAAVYIkKAgAAAAAABwAAAEVVUmFuZ2UBATgBAC4ARDgBAAABAHQD////" +
-           "/wEB/////wAAAACEYIAKAQAAAAEACgAAAENhcGFjaXRpdmUBAToBAC8BASsAOgEAAAH/////AQAAABVg" +
-           "iQoCAAAAAQAGAAAAT3V0cHV0AQE7AQAvAQBACTsBAAAAAf////8DA/////8BAAAAFWCJCgIAAAAAAAcA" +
-           "AABFVVJhbmdlAQE/AQAuAEQ/AQAAAQB0A/////8BAf////8AAAAAhGCACgEAAAABAAkAAABJbmR1Y3Rp" +
-           "dmUBAUEBAC8BATIAQQEAAAH/////AQAAABVgiQoCAAAAAQAGAAAAT3V0cHV0AQFCAQAvAQBACUIBAAAA" +
-           "Af////8DA/////8BAAAAFWCJCgIAAAAAAAcAAABFVVJhbmdlAQFGAQAuAERGAQAAAQB0A/////8BAf//" +
-           "//8AAAAAhGCACgEAAAABAAUAAABFcnJvcgEBSAEALwEBTgBIAQAAAf////8BAAAAFWCJCgIAAAABAAUA" +
-           "AABJbnB1dAEBSQEALwEAQAlJAQAAAAH/////AwP/////AQAAABVgiQoCAAAAAAAHAAAARVVSYW5nZQEB" +
-           "TQEALgBETQEAAAEAdAP/////AQH/////AAAAAIRggAoBAAAAAQAEAAAAQnVzeQEBQgMALwEBJgNCAwAA" +
-           "Af////8BAAAAFWCJCgIAAAABAAUAAABJbnB1dAEBQwMALwEAQAlDAwAAAAH/////AwP/////AQAAABVg" +
-           "iQoCAAAAAAAHAAAARVVSYW5nZQEBRwMALgBERwMAAAEAdAP/////AQH/////AAAAAIRggAoBAAAAAQAF" +
-           "AAAATW90b3IBAU8BAC8BAR8DTwEAAAH/////AgAAABVgiQoCAAAAAQALAAAASm91cm5leVRpbWUBAekD" +
-           "AC8BAEAJ6QMAAAAG/////wMD/////wEAAAAVYIkKAgAAAAAABwAAAEVVUmFuZ2UBAe0DAC4ARO0DAAAB" +
-           "AHQD/////wEB/////wAAAAAVYIkKAgAAAAEABgAAAFN0YXR1cwEBdQMALwEAQAl1AwAAAAH/////AwP/" +
-           "////AQAAABVgiQoCAAAAAAAHAAAARVVSYW5nZQEBeQMALgBEeQMAAAEAdAP/////AQH/////AAAAAARh" +
-           "ggoEAAAAAQATAAAAU3RhcnRNb2R1bGUxUHJvY2VzcwEBhwMALwEBhwOHAwAAAQH/////AAAAAARhggoE" +
-           "AAAAAQASAAAAU3RvcE1vZHVsZTFQcm9jZXNzAQGIAwAvAQGIA4gDAAABAf////8AAAAABGGCCgQAAAAB" +
-           "ABMAAABSZXNldE1vZHVsZTFQcm9jZXNzAQGJAwAvAQGJA4kDAAABAf////8AAAAABGGCCgQAAAABABMA" +
-           "AABTdGFydE1vZHVsZTJQcm9jZXNzAQGKAwAvAQGKA4oDAAABAf////8AAAAABGGCCgQAAAABABIAAABT" +
-           "dG9wTW9kdWxlMlByb2Nlc3MBAYsDAC8BAYsDiwMAAAEB/////wAAAAAEYYIKBAAAAAEAEwAAAFJlc2V0" +
-           "TW9kdWxlMlByb2Nlc3MBAYwDAC8BAYwDjAMAAAEB/////wAAAAA=";
+           "ABAAAABCZWx0VHlwZUluc3RhbmNlAQGRAAEBkQCRAAAAAQEAAAAAMAABAZoACQAAAIRggAoBAAAAAQAL" +
+           "AAAAU3RhcnRCdXR0b24BAZIAAC8BAQEAkgAAAAH/////AQAAABVgiQoCAAAAAQAHAAAAU3RhcnRlZAEB" +
+           "kwAALwEARAmTAAAAAAH/////AwP/////AAAAAIRggAoBAAAAAQALAAAAUmVzZXRCdXR0b24BAZYAAC8B" +
+           "AQUAlgAAAAH/////AQAAABVgiQoCAAAAAQAHAAAAUmVzZXRlZAEBlwAALwEARAmXAAAAAAH/////AwP/" +
+           "////AAAAAIRggAoBAAAAAQAGAAAASXNBdXRvAQGaAAAvAQEJAJoAAAABAQAAAAAwAQEBkQABAAAAFWCJ" +
+           "CgIAAAABAAgAAABJc0F1dG9PbgEBmwAALwEARAmbAAAAAAH/////AQH/////AAAAAIRggAoBAAAAAQAJ" +
+           "AAAASXNNb2R1bGUxAQGeAAAvAQENAJ4AAAAB/////wEAAAAVYIkKAgAAAAEACwAAAElzTW9kdWxlMU9u" +
+           "AQGfAAAvAQBECZ8AAAAAAf////8BAf////8AAAAAhGDACgEAAAAHAAAASXNFcnJvcgEABQAAAEVycm9y" +
+           "AQGiAAAvAQEVAKIAAAAB/////wEAAAAVYIkKAgAAAAEACQAAAElzRXJyb3JPbgEBowAALwEARAmjAAAA" +
+           "AAH/////AQH/////AAAAAIRgwAoBAAAABgAAAElzQnVzeQEABAAAAEJ1c3kBAaYAAC8BAREApgAAAAH/" +
+           "////AQAAABVgiQoCAAAAAQAIAAAASXNCdXN5T24BAacAAC8BAEQJpwAAAAAB/////wEB/////wAAAACE" +
+           "YIAKAQAAAAEABQAAAE1vdG9yAQGqAAAvAQEZAKoAAAAB/////wEAAAAVYIkKAgAAAAEABwAAAE1vdG9y" +
+           "T24BAasAAC8BAEQJqwAAAAAB/////wEB/////wAAAACEYMAKAQAAAAcAAABNb2R1bGUxAQANAAAAQmVs" +
+           "dCBNb2R1bGUgMQEBrgAALwEBVgCuAAAAAQEAAAAAMAABAa8ABgAAAIRggAoBAAAAAQALAAAAVHJhbnNw" +
+           "YXJlbnQBAa8AAC8BAR0ArwAAAAEBAAAAADABAQGuAAEAAAAVYIkKAgAAAAEADQAAAElzVHJhbnNwYXJl" +
+           "bnQBAbAAAC8BAEQJsAAAAAAB/////wEB/////wAAAACEYIAKAQAAAAEACAAAAE1ldGFsbGljAQGzAAAv" +
+           "AQEhALMAAAAB/////wEAAAAVYIkKAgAAAAEACgAAAElzTWV0YWxsaWMBAbQAAC8BAEQJtAAAAAAB////" +
+           "/wEB/////wAAAACEYIAKAQAAAAEACwAAAE5vbk1ldGFsbGljAQG3AAAvAQElALcAAAAB/////wEAAAAV" +
+           "YIkKAgAAAAEADQAAAElzTm9uTWV0YWxsaWMBAbgAAC8BAEQJuAAAAAAB/////wEB/////wAAAACEYIAK" +
+           "AQAAAAEAEwAAAFRyYW5zcGFyZW50UXVhbnRpdHkBAWgBAC8BASkAaAEAAAH/////AQAAABVgiQoCAAAA" +
+           "AQAOAAAAVHJhbnNwYXJlbnRRdHkBAWkBAC8BAEAJaQEAAAAH/////wMD/////wEAAAAVYIkKAgAAAAAA" +
+           "BwAAAEVVUmFuZ2UBAW0BAC4ARG0BAAABAHQD/////wEB/////wAAAACEYIAKAQAAAAEAEAAAAE1ldGFs" +
+           "bGljUXVhbnRpdHkBAW8BAC8BATAAbwEAAAH/////AQAAABVgiQoCAAAAAQALAAAATWV0YWxsaWNRdHkB" +
+           "AXABAC8BAEAJcAEAAAAH/////wMD/////wEAAAAVYIkKAgAAAAAABwAAAEVVUmFuZ2UBAXQBAC4ARHQB" +
+           "AAABAHQD/////wEB/////wAAAACEYIAKAQAAAAEAEwAAAE5vbk1ldGFsbGljUXVhbnRpdHkBAXYBAC8B" +
+           "ATcAdgEAAAH/////AQAAABVgiQoCAAAAAQAOAAAATm9uTWV0YWxsaWNRdHkBAXcBAC8BAEAJdwEAAAAH" +
+           "/////wMD/////wEAAAAVYIkKAgAAAAAABwAAAEVVUmFuZ2UBAXsBAC4ARHsBAAABAHQD/////wEB////" +
+           "/wAAAACEYMAKAQAAAAcAAABNb2R1bGUyAQANAAAAQmVsdCBNb2R1bGUgMgEB0AAALwEBeADQAAAAAQEA" +
+           "AAAAMAABAdEABgAAAIRggAoBAAAAAQAIAAAAQmFycmllcjEBAdEAAC8BAT4A0QAAAAEBAAAAADABAQHQ" +
+           "AAEAAAAVYIkKAgAAAAEACgAAAEJhcnJpZXIxT24BAdIAAC8BAEQJ0gAAAAAB/////wEB/////wAAAACE" +
+           "YIAKAQAAAAEACAAAAEJhcnJpZXIyAQHVAAAvAQFCANUAAAAB/////wEAAAAVYIkKAgAAAAEACgAAAEJh" +
+           "cnJpZXIyT24BAdYAAC8BAEQJ1gAAAAAB/////wEB/////wAAAACEYIAKAQAAAAEACAAAAEJhcnJpZXIz" +
+           "AQHZAAAvAQFGANkAAAAB/////wEAAAAVYIkKAgAAAAEACgAAAEJhcnJpZXIzT24BAdoAAC8BAEQJ2gAA" +
+           "AAAB/////wEB/////wAAAACEYIAKAQAAAAEACwAAAFBob3RvU2Vuc29yAQHdAAAvAQFKAN0AAAAB////" +
+           "/wEAAAAVYIkKAgAAAAEADQAAAFBob3RvU2Vuc29yT24BAd4AAC8BAEQJ3gAAAAAB/////wEB/////wAA" +
+           "AACEYIAKAQAAAAEACgAAAENhcGFjaXRpdmUBAeEAAC8BAU4A4QAAAAH/////AQAAABVgiQoCAAAAAQAM" +
+           "AAAAQ2FwYWNpdGl2ZU9uAQHiAAAvAQBECeIAAAAAAf////8BAf////8AAAAAhGCACgEAAAABAAkAAABJ" +
+           "bmR1Y3RpdmUBAeUAAC8BAVIA5QAAAAH/////AQAAABVgiQoCAAAAAQALAAAASW5kdWN0aXZlT24BAeYA" +
+           "AC8BAEQJ5gAAAAAB/////wEB/////wAAAAA=";
         #endregion
         #endif
         #endregion
 
         #region Public Properties
+        /// <remarks />
+        public StartButtonState StartButton
+        {
+            get
+            {
+                return m_startButton;
+            }
+
+            set
+            {
+                if (!Object.ReferenceEquals(m_startButton, value))
+                {
+                    ChangeMasks |= NodeStateChangeMasks.Children;
+                }
+
+                m_startButton = value;
+            }
+        }
+
+        /// <remarks />
+        public ResetButtonState ResetButton
+        {
+            get
+            {
+                return m_resetButton;
+            }
+
+            set
+            {
+                if (!Object.ReferenceEquals(m_resetButton, value))
+                {
+                    ChangeMasks |= NodeStateChangeMasks.Children;
+                }
+
+                m_resetButton = value;
+            }
+        }
+
+        /// <remarks />
+        public IsAutoIluminationState IsAuto
+        {
+            get
+            {
+                return m_isAuto;
+            }
+
+            set
+            {
+                if (!Object.ReferenceEquals(m_isAuto, value))
+                {
+                    ChangeMasks |= NodeStateChangeMasks.Children;
+                }
+
+                m_isAuto = value;
+            }
+        }
+
+        /// <remarks />
+        public IsModule1IluminationState IsModule1
+        {
+            get
+            {
+                return m_isModule1;
+            }
+
+            set
+            {
+                if (!Object.ReferenceEquals(m_isModule1, value))
+                {
+                    ChangeMasks |= NodeStateChangeMasks.Children;
+                }
+
+                m_isModule1 = value;
+            }
+        }
+
+        /// <remarks />
+        public IsErrorIluminationState IsError
+        {
+            get
+            {
+                return m_isError;
+            }
+
+            set
+            {
+                if (!Object.ReferenceEquals(m_isError, value))
+                {
+                    ChangeMasks |= NodeStateChangeMasks.Children;
+                }
+
+                m_isError = value;
+            }
+        }
+
+        /// <remarks />
+        public IsBusyIluminationState IsBusy
+        {
+            get
+            {
+                return m_isBusy;
+            }
+
+            set
+            {
+                if (!Object.ReferenceEquals(m_isBusy, value))
+                {
+                    ChangeMasks |= NodeStateChangeMasks.Children;
+                }
+
+                m_isBusy = value;
+            }
+        }
+
+        /// <remarks />
+        public MotorState Motor
+        {
+            get
+            {
+                return m_motor;
+            }
+
+            set
+            {
+                if (!Object.ReferenceEquals(m_motor, value))
+                {
+                    ChangeMasks |= NodeStateChangeMasks.Children;
+                }
+
+                m_motor = value;
+            }
+        }
+
         /// <remarks />
         public Module1State Module1
         {
@@ -2668,120 +3699,6 @@ namespace BeltIdentifier
                 m_module2 = value;
             }
         }
-
-        /// <remarks />
-        public MethodState StartModule1Process
-        {
-            get
-            {
-                return m_startModule1ProcessMethod;
-            }
-
-            set
-            {
-                if (!Object.ReferenceEquals(m_startModule1ProcessMethod, value))
-                {
-                    ChangeMasks |= NodeStateChangeMasks.Children;
-                }
-
-                m_startModule1ProcessMethod = value;
-            }
-        }
-
-        /// <remarks />
-        public MethodState StopModule1Process
-        {
-            get
-            {
-                return m_stopModule1ProcessMethod;
-            }
-
-            set
-            {
-                if (!Object.ReferenceEquals(m_stopModule1ProcessMethod, value))
-                {
-                    ChangeMasks |= NodeStateChangeMasks.Children;
-                }
-
-                m_stopModule1ProcessMethod = value;
-            }
-        }
-
-        /// <remarks />
-        public MethodState ResetModule1Process
-        {
-            get
-            {
-                return m_resetModule1ProcessMethod;
-            }
-
-            set
-            {
-                if (!Object.ReferenceEquals(m_resetModule1ProcessMethod, value))
-                {
-                    ChangeMasks |= NodeStateChangeMasks.Children;
-                }
-
-                m_resetModule1ProcessMethod = value;
-            }
-        }
-
-        /// <remarks />
-        public MethodState StartModule2Process
-        {
-            get
-            {
-                return m_startModule2ProcessMethod;
-            }
-
-            set
-            {
-                if (!Object.ReferenceEquals(m_startModule2ProcessMethod, value))
-                {
-                    ChangeMasks |= NodeStateChangeMasks.Children;
-                }
-
-                m_startModule2ProcessMethod = value;
-            }
-        }
-
-        /// <remarks />
-        public MethodState StopModule2Process
-        {
-            get
-            {
-                return m_stopModule2ProcessMethod;
-            }
-
-            set
-            {
-                if (!Object.ReferenceEquals(m_stopModule2ProcessMethod, value))
-                {
-                    ChangeMasks |= NodeStateChangeMasks.Children;
-                }
-
-                m_stopModule2ProcessMethod = value;
-            }
-        }
-
-        /// <remarks />
-        public MethodState ResetModule2Process
-        {
-            get
-            {
-                return m_resetModule2ProcessMethod;
-            }
-
-            set
-            {
-                if (!Object.ReferenceEquals(m_resetModule2ProcessMethod, value))
-                {
-                    ChangeMasks |= NodeStateChangeMasks.Children;
-                }
-
-                m_resetModule2ProcessMethod = value;
-            }
-        }
         #endregion
 
         #region Overridden Methods
@@ -2790,6 +3707,41 @@ namespace BeltIdentifier
             ISystemContext context,
             IList<BaseInstanceState> children)
         {
+            if (m_startButton != null)
+            {
+                children.Add(m_startButton);
+            }
+
+            if (m_resetButton != null)
+            {
+                children.Add(m_resetButton);
+            }
+
+            if (m_isAuto != null)
+            {
+                children.Add(m_isAuto);
+            }
+
+            if (m_isModule1 != null)
+            {
+                children.Add(m_isModule1);
+            }
+
+            if (m_isError != null)
+            {
+                children.Add(m_isError);
+            }
+
+            if (m_isBusy != null)
+            {
+                children.Add(m_isBusy);
+            }
+
+            if (m_motor != null)
+            {
+                children.Add(m_motor);
+            }
+
             if (m_module1 != null)
             {
                 children.Add(m_module1);
@@ -2798,36 +3750,6 @@ namespace BeltIdentifier
             if (m_module2 != null)
             {
                 children.Add(m_module2);
-            }
-
-            if (m_startModule1ProcessMethod != null)
-            {
-                children.Add(m_startModule1ProcessMethod);
-            }
-
-            if (m_stopModule1ProcessMethod != null)
-            {
-                children.Add(m_stopModule1ProcessMethod);
-            }
-
-            if (m_resetModule1ProcessMethod != null)
-            {
-                children.Add(m_resetModule1ProcessMethod);
-            }
-
-            if (m_startModule2ProcessMethod != null)
-            {
-                children.Add(m_startModule2ProcessMethod);
-            }
-
-            if (m_stopModule2ProcessMethod != null)
-            {
-                children.Add(m_stopModule2ProcessMethod);
-            }
-
-            if (m_resetModule2ProcessMethod != null)
-            {
-                children.Add(m_resetModule2ProcessMethod);
             }
 
             base.GetChildren(context, children);
@@ -2849,6 +3771,153 @@ namespace BeltIdentifier
 
             switch (browseName.Name)
             {
+                case BeltIdentifier.BrowseNames.StartButton:
+                {
+                    if (createOrReplace)
+                    {
+                        if (StartButton == null)
+                        {
+                            if (replacement == null)
+                            {
+                                StartButton = new StartButtonState(this);
+                            }
+                            else
+                            {
+                                StartButton = (StartButtonState)replacement;
+                            }
+                        }
+                    }
+
+                    instance = StartButton;
+                    break;
+                }
+
+                case BeltIdentifier.BrowseNames.ResetButton:
+                {
+                    if (createOrReplace)
+                    {
+                        if (ResetButton == null)
+                        {
+                            if (replacement == null)
+                            {
+                                ResetButton = new ResetButtonState(this);
+                            }
+                            else
+                            {
+                                ResetButton = (ResetButtonState)replacement;
+                            }
+                        }
+                    }
+
+                    instance = ResetButton;
+                    break;
+                }
+
+                case BeltIdentifier.BrowseNames.IsAuto:
+                {
+                    if (createOrReplace)
+                    {
+                        if (IsAuto == null)
+                        {
+                            if (replacement == null)
+                            {
+                                IsAuto = new IsAutoIluminationState(this);
+                            }
+                            else
+                            {
+                                IsAuto = (IsAutoIluminationState)replacement;
+                            }
+                        }
+                    }
+
+                    instance = IsAuto;
+                    break;
+                }
+
+                case BeltIdentifier.BrowseNames.IsModule1:
+                {
+                    if (createOrReplace)
+                    {
+                        if (IsModule1 == null)
+                        {
+                            if (replacement == null)
+                            {
+                                IsModule1 = new IsModule1IluminationState(this);
+                            }
+                            else
+                            {
+                                IsModule1 = (IsModule1IluminationState)replacement;
+                            }
+                        }
+                    }
+
+                    instance = IsModule1;
+                    break;
+                }
+
+                case BeltIdentifier.BrowseNames.IsError:
+                {
+                    if (createOrReplace)
+                    {
+                        if (IsError == null)
+                        {
+                            if (replacement == null)
+                            {
+                                IsError = new IsErrorIluminationState(this);
+                            }
+                            else
+                            {
+                                IsError = (IsErrorIluminationState)replacement;
+                            }
+                        }
+                    }
+
+                    instance = IsError;
+                    break;
+                }
+
+                case BeltIdentifier.BrowseNames.IsBusy:
+                {
+                    if (createOrReplace)
+                    {
+                        if (IsBusy == null)
+                        {
+                            if (replacement == null)
+                            {
+                                IsBusy = new IsBusyIluminationState(this);
+                            }
+                            else
+                            {
+                                IsBusy = (IsBusyIluminationState)replacement;
+                            }
+                        }
+                    }
+
+                    instance = IsBusy;
+                    break;
+                }
+
+                case BeltIdentifier.BrowseNames.Motor:
+                {
+                    if (createOrReplace)
+                    {
+                        if (Motor == null)
+                        {
+                            if (replacement == null)
+                            {
+                                Motor = new MotorState(this);
+                            }
+                            else
+                            {
+                                Motor = (MotorState)replacement;
+                            }
+                        }
+                    }
+
+                    instance = Motor;
+                    break;
+                }
+
                 case BeltIdentifier.BrowseNames.Module1:
                 {
                     if (createOrReplace)
@@ -2890,132 +3959,6 @@ namespace BeltIdentifier
                     instance = Module2;
                     break;
                 }
-
-                case BeltIdentifier.BrowseNames.StartModule1Process:
-                {
-                    if (createOrReplace)
-                    {
-                        if (StartModule1Process == null)
-                        {
-                            if (replacement == null)
-                            {
-                                StartModule1Process = new MethodState(this);
-                            }
-                            else
-                            {
-                                StartModule1Process = (MethodState)replacement;
-                            }
-                        }
-                    }
-
-                    instance = StartModule1Process;
-                    break;
-                }
-
-                case BeltIdentifier.BrowseNames.StopModule1Process:
-                {
-                    if (createOrReplace)
-                    {
-                        if (StopModule1Process == null)
-                        {
-                            if (replacement == null)
-                            {
-                                StopModule1Process = new MethodState(this);
-                            }
-                            else
-                            {
-                                StopModule1Process = (MethodState)replacement;
-                            }
-                        }
-                    }
-
-                    instance = StopModule1Process;
-                    break;
-                }
-
-                case BeltIdentifier.BrowseNames.ResetModule1Process:
-                {
-                    if (createOrReplace)
-                    {
-                        if (ResetModule1Process == null)
-                        {
-                            if (replacement == null)
-                            {
-                                ResetModule1Process = new MethodState(this);
-                            }
-                            else
-                            {
-                                ResetModule1Process = (MethodState)replacement;
-                            }
-                        }
-                    }
-
-                    instance = ResetModule1Process;
-                    break;
-                }
-
-                case BeltIdentifier.BrowseNames.StartModule2Process:
-                {
-                    if (createOrReplace)
-                    {
-                        if (StartModule2Process == null)
-                        {
-                            if (replacement == null)
-                            {
-                                StartModule2Process = new MethodState(this);
-                            }
-                            else
-                            {
-                                StartModule2Process = (MethodState)replacement;
-                            }
-                        }
-                    }
-
-                    instance = StartModule2Process;
-                    break;
-                }
-
-                case BeltIdentifier.BrowseNames.StopModule2Process:
-                {
-                    if (createOrReplace)
-                    {
-                        if (StopModule2Process == null)
-                        {
-                            if (replacement == null)
-                            {
-                                StopModule2Process = new MethodState(this);
-                            }
-                            else
-                            {
-                                StopModule2Process = (MethodState)replacement;
-                            }
-                        }
-                    }
-
-                    instance = StopModule2Process;
-                    break;
-                }
-
-                case BeltIdentifier.BrowseNames.ResetModule2Process:
-                {
-                    if (createOrReplace)
-                    {
-                        if (ResetModule2Process == null)
-                        {
-                            if (replacement == null)
-                            {
-                                ResetModule2Process = new MethodState(this);
-                            }
-                            else
-                            {
-                                ResetModule2Process = (MethodState)replacement;
-                            }
-                        }
-                    }
-
-                    instance = ResetModule2Process;
-                    break;
-                }
             }
 
             if (instance != null)
@@ -3028,14 +3971,15 @@ namespace BeltIdentifier
         #endregion
 
         #region Private Fields
+        private StartButtonState m_startButton;
+        private ResetButtonState m_resetButton;
+        private IsAutoIluminationState m_isAuto;
+        private IsModule1IluminationState m_isModule1;
+        private IsErrorIluminationState m_isError;
+        private IsBusyIluminationState m_isBusy;
+        private MotorState m_motor;
         private Module1State m_module1;
         private Module2State m_module2;
-        private MethodState m_startModule1ProcessMethod;
-        private MethodState m_stopModule1ProcessMethod;
-        private MethodState m_resetModule1ProcessMethod;
-        private MethodState m_startModule2ProcessMethod;
-        private MethodState m_stopModule2ProcessMethod;
-        private MethodState m_resetModule2ProcessMethod;
         #endregion
     }
     #endif

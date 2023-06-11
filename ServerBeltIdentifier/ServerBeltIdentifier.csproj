@@ -6,29 +6,28 @@
     <Nullable>disable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <Platforms>AnyCPU</Platforms>
+    <Title>ServerBeltIdentifier</Title>
+    <PackageIcon>server.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Models\OpcComunication\BeltIdentifier.PredefinedNodes.uanodes" />
-    <None Remove="Models\OpcComunication\BeltIdentifier.PredefinedNodes.xml" />
-    <None Remove="Models\OpcComunication\ServerBeltIdentifier.Config.xml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="OPCFoundation.NetStandard.Opc.Ua.Server" Version="1.4.371.60" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="Models\OpcComunication\BeltIdentifier.PredefinedNodes.uanodes">
+    <EmbeddedResource Include="Models\OpcComunication\ServerBeltIdentifier.Config.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Models\OpcComunication\BeltIdentifier.PredefinedNodes.xml" />
-    <Resource Include="Models\OpcComunication\ServerBeltIdentifier.Config.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    </EmbeddedResource>
   </ItemGroup>
 
+    <ItemGroup>
+	    <EmbeddedResource Include="Models\OpcComunication\BeltIdentifier.PredefinedNodes.uanodes">
+		    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	    </EmbeddedResource>
+    </ItemGroup>
+
   <ItemGroup>
+    <PackageReference Include="OPCFoundation.NetStandard.Opc.Ua.Server" Version="1.4.371.91" />
+  </ItemGroup>
+
+  <ItemGroup> 
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -41,6 +40,13 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Resources\server.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

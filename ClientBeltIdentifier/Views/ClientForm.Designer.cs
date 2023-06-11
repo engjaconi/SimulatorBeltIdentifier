@@ -1,8 +1,6 @@
-﻿using ServerBeltIdentifier.Models;
-
-namespace BeltIdentifierServer
+﻿namespace ClientBeltIdentifier
 {
-    partial class ServerForm
+    partial class ClientForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -31,8 +29,7 @@ namespace BeltIdentifierServer
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ServerForm));
-            cbServerUrl = new ComboBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientForm));
             lblServerUrl = new Label();
             btnStart = new Button();
             btnStop = new Button();
@@ -63,19 +60,9 @@ namespace BeltIdentifierServer
             lblBarrier1 = new Label();
             pBarrier2 = new Panel();
             pBarrier1 = new Panel();
-            btnAddPiece = new Button();
-            gbTypePiece = new GroupBox();
-            rbNonMetallic = new RadioButton();
-            rbMetallic = new RadioButton();
-            rbTransparent = new RadioButton();
             gbControlType = new GroupBox();
             rbAutomatic = new RadioButton();
             rbManual = new RadioButton();
-            gbBeltTimes = new GroupBox();
-            tbInterval = new TextBox();
-            lblInterval = new Label();
-            lblJourneyTime = new Label();
-            tbJourneyTime = new TextBox();
             gbBeltStatus = new GroupBox();
             lblErrorStatus = new Label();
             pErrorStatus = new Panel();
@@ -84,39 +71,27 @@ namespace BeltIdentifierServer
             pMotorStatus = new Panel();
             lblMotor = new Label();
             btnReset = new Button();
-            timerAuto = new System.Windows.Forms.Timer(components);
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
             lblTitle = new Label();
+            btnConect = new Button();
+            tbServerUrl = new TextBox();
             tbcModules.SuspendLayout();
             tpModule1.SuspendLayout();
             gbOpcStatusModule1.SuspendLayout();
             tpModule2.SuspendLayout();
             gbOpcStatusModule2.SuspendLayout();
-            gbTypePiece.SuspendLayout();
             gbControlType.SuspendLayout();
-            gbBeltTimes.SuspendLayout();
             gbBeltStatus.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
-            // cbServerUrl
-            // 
-            cbServerUrl.DropDownStyle = ComboBoxStyle.Simple;
-            cbServerUrl.Font = new Font("Microsoft JhengHei", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            cbServerUrl.FormattingEnabled = true;
-            cbServerUrl.Location = new Point(169, 55);
-            cbServerUrl.Margin = new Padding(3, 4, 3, 4);
-            cbServerUrl.Name = "cbServerUrl";
-            cbServerUrl.Size = new Size(638, 32);
-            cbServerUrl.TabIndex = 0;
-            // 
             // lblServerUrl
             // 
             lblServerUrl.AutoSize = true;
             lblServerUrl.Font = new Font("Microsoft JhengHei", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            lblServerUrl.Location = new Point(11, 60);
+            lblServerUrl.Location = new Point(10, 71);
             lblServerUrl.Name = "lblServerUrl";
             lblServerUrl.Size = new Size(151, 23);
             lblServerUrl.TabIndex = 1;
@@ -126,12 +101,13 @@ namespace BeltIdentifierServer
             // btnStart
             // 
             btnStart.Cursor = Cursors.Hand;
+            btnStart.Enabled = false;
             btnStart.FlatAppearance.MouseDownBackColor = Color.Red;
             btnStart.FlatAppearance.MouseOverBackColor = Color.Blue;
             btnStart.Font = new Font("Microsoft JhengHei", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            btnStart.Location = new Point(59, 259);
+            btnStart.Location = new Point(367, 125);
             btnStart.Name = "btnStart";
-            btnStart.Size = new Size(149, 60);
+            btnStart.Size = new Size(134, 60);
             btnStart.TabIndex = 2;
             btnStart.Text = "Start";
             btnStart.UseVisualStyleBackColor = true;
@@ -141,9 +117,9 @@ namespace BeltIdentifierServer
             // 
             btnStop.Enabled = false;
             btnStop.Font = new Font("Microsoft JhengHei", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            btnStop.Location = new Point(213, 259);
+            btnStop.Location = new Point(507, 125);
             btnStop.Name = "btnStop";
-            btnStop.Size = new Size(149, 60);
+            btnStop.Size = new Size(134, 60);
             btnStop.TabIndex = 3;
             btnStop.Text = "Stop";
             btnStop.UseVisualStyleBackColor = true;
@@ -151,21 +127,20 @@ namespace BeltIdentifierServer
             // 
             // timerUpdateForm
             // 
-            timerUpdateForm.Enabled = true;
-            timerUpdateForm.Interval = 500;
+            timerUpdateForm.Interval = 200;
             timerUpdateForm.Tick += TimerUpdateForm_Tick;
             // 
             // tbcModules
             // 
             tbcModules.Controls.Add(tpModule1);
             tbcModules.Controls.Add(tpModule2);
+            tbcModules.Enabled = false;
             tbcModules.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            tbcModules.Location = new Point(369, 259);
+            tbcModules.Location = new Point(227, 191);
             tbcModules.Name = "tbcModules";
             tbcModules.SelectedIndex = 0;
             tbcModules.Size = new Size(559, 304);
             tbcModules.TabIndex = 5;
-            tbcModules.Selected += TbcModules_Selected;
             // 
             // tpModule1
             // 
@@ -200,7 +175,7 @@ namespace BeltIdentifierServer
             // 
             // tbQuantityNonMetallic
             // 
-            tbQuantityNonMetallic.Location = new Point(421, 164);
+            tbQuantityNonMetallic.Location = new Point(417, 164);
             tbQuantityNonMetallic.Name = "tbQuantityNonMetallic";
             tbQuantityNonMetallic.ReadOnly = true;
             tbQuantityNonMetallic.Size = new Size(86, 31);
@@ -209,7 +184,7 @@ namespace BeltIdentifierServer
             // lblNonMetallic
             // 
             lblNonMetallic.AutoSize = true;
-            lblNonMetallic.Location = new Point(402, 135);
+            lblNonMetallic.Location = new Point(398, 135);
             lblNonMetallic.Name = "lblNonMetallic";
             lblNonMetallic.Size = new Size(124, 23);
             lblNonMetallic.TabIndex = 7;
@@ -217,7 +192,7 @@ namespace BeltIdentifierServer
             // 
             // tbQuantityMetallic
             // 
-            tbQuantityMetallic.Location = new Point(227, 164);
+            tbQuantityMetallic.Location = new Point(226, 164);
             tbQuantityMetallic.Name = "tbQuantityMetallic";
             tbQuantityMetallic.ReadOnly = true;
             tbQuantityMetallic.Size = new Size(86, 31);
@@ -226,7 +201,7 @@ namespace BeltIdentifierServer
             // lblMetallic
             // 
             lblMetallic.AutoSize = true;
-            lblMetallic.Location = new Point(229, 135);
+            lblMetallic.Location = new Point(228, 135);
             lblMetallic.Name = "lblMetallic";
             lblMetallic.Size = new Size(83, 23);
             lblMetallic.TabIndex = 5;
@@ -252,9 +227,9 @@ namespace BeltIdentifierServer
             // pNonMetallic
             // 
             pNonMetallic.BackColor = Color.Transparent;
-            pNonMetallic.BackgroundImage = ServerBeltIdentifier.Properties.Resources.green_led_off;
+            pNonMetallic.BackgroundImage = Properties.Resources.green_led_off;
             pNonMetallic.BackgroundImageLayout = ImageLayout.Stretch;
-            pNonMetallic.Location = new Point(439, 76);
+            pNonMetallic.Location = new Point(435, 76);
             pNonMetallic.Name = "pNonMetallic";
             pNonMetallic.Size = new Size(50, 51);
             pNonMetallic.TabIndex = 2;
@@ -262,9 +237,9 @@ namespace BeltIdentifierServer
             // pMetallic
             // 
             pMetallic.BackColor = Color.Transparent;
-            pMetallic.BackgroundImage = ServerBeltIdentifier.Properties.Resources.green_led_off;
+            pMetallic.BackgroundImage = Properties.Resources.green_led_off;
             pMetallic.BackgroundImageLayout = ImageLayout.Stretch;
-            pMetallic.Location = new Point(245, 76);
+            pMetallic.Location = new Point(244, 76);
             pMetallic.Name = "pMetallic";
             pMetallic.Size = new Size(50, 51);
             pMetallic.TabIndex = 2;
@@ -272,7 +247,7 @@ namespace BeltIdentifierServer
             // pTransparent
             // 
             pTransparent.BackColor = Color.Transparent;
-            pTransparent.BackgroundImage = ServerBeltIdentifier.Properties.Resources.green_led_off;
+            pTransparent.BackgroundImage = Properties.Resources.green_led_off;
             pTransparent.BackgroundImageLayout = ImageLayout.Stretch;
             pTransparent.Location = new Point(50, 76);
             pTransparent.Name = "pTransparent";
@@ -324,7 +299,7 @@ namespace BeltIdentifierServer
             // lblInductive
             // 
             lblInductive.AutoSize = true;
-            lblInductive.Location = new Point(230, 207);
+            lblInductive.Location = new Point(229, 208);
             lblInductive.Name = "lblInductive";
             lblInductive.Size = new Size(80, 23);
             lblInductive.TabIndex = 11;
@@ -333,7 +308,7 @@ namespace BeltIdentifierServer
             // pBarrier3
             // 
             pBarrier3.BackColor = Color.Transparent;
-            pBarrier3.BackgroundImage = ServerBeltIdentifier.Properties.Resources.green_led_off;
+            pBarrier3.BackgroundImage = Properties.Resources.green_led_off;
             pBarrier3.BackgroundImageLayout = ImageLayout.Stretch;
             pBarrier3.Location = new Point(439, 149);
             pBarrier3.Name = "pBarrier3";
@@ -343,7 +318,7 @@ namespace BeltIdentifierServer
             // lblCapacitive
             // 
             lblCapacitive.AutoSize = true;
-            lblCapacitive.Location = new Point(30, 208);
+            lblCapacitive.Location = new Point(26, 208);
             lblCapacitive.Name = "lblCapacitive";
             lblCapacitive.Size = new Size(99, 23);
             lblCapacitive.TabIndex = 7;
@@ -361,9 +336,9 @@ namespace BeltIdentifierServer
             // pInductive
             // 
             pInductive.BackColor = Color.Transparent;
-            pInductive.BackgroundImage = ServerBeltIdentifier.Properties.Resources.green_led_off;
+            pInductive.BackgroundImage = Properties.Resources.green_led_off;
             pInductive.BackgroundImageLayout = ImageLayout.Stretch;
-            pInductive.Location = new Point(245, 149);
+            pInductive.Location = new Point(244, 149);
             pInductive.Name = "pInductive";
             pInductive.Size = new Size(50, 51);
             pInductive.TabIndex = 10;
@@ -371,7 +346,7 @@ namespace BeltIdentifierServer
             // pPhotoSensor
             // 
             pPhotoSensor.BackColor = Color.Transparent;
-            pPhotoSensor.BackgroundImage = ServerBeltIdentifier.Properties.Resources.green_led_off;
+            pPhotoSensor.BackgroundImage = Properties.Resources.green_led_off;
             pPhotoSensor.BackgroundImageLayout = ImageLayout.Stretch;
             pPhotoSensor.Location = new Point(439, 35);
             pPhotoSensor.Name = "pPhotoSensor";
@@ -381,9 +356,9 @@ namespace BeltIdentifierServer
             // pCapacitive
             // 
             pCapacitive.BackColor = Color.Transparent;
-            pCapacitive.BackgroundImage = ServerBeltIdentifier.Properties.Resources.green_led_off;
+            pCapacitive.BackgroundImage = Properties.Resources.green_led_off;
             pCapacitive.BackgroundImageLayout = ImageLayout.Stretch;
-            pCapacitive.Location = new Point(54, 149);
+            pCapacitive.Location = new Point(50, 149);
             pCapacitive.Name = "pCapacitive";
             pCapacitive.Size = new Size(50, 51);
             pCapacitive.TabIndex = 6;
@@ -391,7 +366,7 @@ namespace BeltIdentifierServer
             // lblBarrier2
             // 
             lblBarrier2.AutoSize = true;
-            lblBarrier2.Location = new Point(224, 93);
+            lblBarrier2.Location = new Point(223, 93);
             lblBarrier2.Name = "lblBarrier2";
             lblBarrier2.Size = new Size(92, 23);
             lblBarrier2.TabIndex = 9;
@@ -400,7 +375,7 @@ namespace BeltIdentifierServer
             // lblBarrier1
             // 
             lblBarrier1.AutoSize = true;
-            lblBarrier1.Location = new Point(33, 93);
+            lblBarrier1.Location = new Point(29, 93);
             lblBarrier1.Name = "lblBarrier1";
             lblBarrier1.Size = new Size(92, 23);
             lblBarrier1.TabIndex = 5;
@@ -409,9 +384,9 @@ namespace BeltIdentifierServer
             // pBarrier2
             // 
             pBarrier2.BackColor = Color.Transparent;
-            pBarrier2.BackgroundImage = ServerBeltIdentifier.Properties.Resources.green_led_off;
+            pBarrier2.BackgroundImage = Properties.Resources.green_led_off;
             pBarrier2.BackgroundImageLayout = ImageLayout.Stretch;
-            pBarrier2.Location = new Point(245, 35);
+            pBarrier2.Location = new Point(244, 35);
             pBarrier2.Name = "pBarrier2";
             pBarrier2.Size = new Size(50, 51);
             pBarrier2.TabIndex = 8;
@@ -419,82 +394,25 @@ namespace BeltIdentifierServer
             // pBarrier1
             // 
             pBarrier1.BackColor = Color.Transparent;
-            pBarrier1.BackgroundImage = ServerBeltIdentifier.Properties.Resources.green_led_off;
+            pBarrier1.BackgroundImage = Properties.Resources.green_led_off;
             pBarrier1.BackgroundImageLayout = ImageLayout.Stretch;
-            pBarrier1.Location = new Point(54, 35);
+            pBarrier1.Location = new Point(50, 35);
             pBarrier1.Name = "pBarrier1";
             pBarrier1.Size = new Size(50, 51);
             pBarrier1.TabIndex = 4;
-            // 
-            // btnAddPiece
-            // 
-            btnAddPiece.Cursor = Cursors.Hand;
-            btnAddPiece.Enabled = false;
-            btnAddPiece.Font = new Font("Microsoft JhengHei", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            btnAddPiece.Location = new Point(59, 323);
-            btnAddPiece.Name = "btnAddPiece";
-            btnAddPiece.Size = new Size(149, 60);
-            btnAddPiece.TabIndex = 1;
-            btnAddPiece.Text = "Adicionar Peça";
-            btnAddPiece.UseVisualStyleBackColor = true;
-            btnAddPiece.Click += BtnAddPiece_Click;
-            // 
-            // gbTypePiece
-            // 
-            gbTypePiece.Controls.Add(rbNonMetallic);
-            gbTypePiece.Controls.Add(rbMetallic);
-            gbTypePiece.Controls.Add(rbTransparent);
-            gbTypePiece.Font = new Font("Microsoft JhengHei", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            gbTypePiece.Location = new Point(493, 112);
-            gbTypePiece.Name = "gbTypePiece";
-            gbTypePiece.Size = new Size(251, 142);
-            gbTypePiece.TabIndex = 0;
-            gbTypePiece.TabStop = false;
-            gbTypePiece.Text = "Selecione o tipo da peça";
-            // 
-            // rbNonMetallic
-            // 
-            rbNonMetallic.AutoSize = true;
-            rbNonMetallic.Location = new Point(9, 65);
-            rbNonMetallic.Name = "rbNonMetallic";
-            rbNonMetallic.Size = new Size(145, 27);
-            rbNonMetallic.TabIndex = 2;
-            rbNonMetallic.Text = "Não Metálica";
-            rbNonMetallic.UseVisualStyleBackColor = true;
-            // 
-            // rbMetallic
-            // 
-            rbMetallic.AutoSize = true;
-            rbMetallic.Location = new Point(9, 100);
-            rbMetallic.Name = "rbMetallic";
-            rbMetallic.Size = new Size(104, 27);
-            rbMetallic.TabIndex = 1;
-            rbMetallic.Text = "Metálica";
-            rbMetallic.UseVisualStyleBackColor = true;
-            // 
-            // rbTransparent
-            // 
-            rbTransparent.AutoSize = true;
-            rbTransparent.Checked = true;
-            rbTransparent.Location = new Point(9, 30);
-            rbTransparent.Name = "rbTransparent";
-            rbTransparent.Size = new Size(143, 27);
-            rbTransparent.TabIndex = 0;
-            rbTransparent.TabStop = true;
-            rbTransparent.Text = "Transparente";
-            rbTransparent.UseVisualStyleBackColor = true;
             // 
             // gbControlType
             // 
             gbControlType.BackColor = SystemColors.ControlLightLight;
             gbControlType.Controls.Add(rbAutomatic);
             gbControlType.Controls.Add(rbManual);
+            gbControlType.Enabled = false;
             gbControlType.FlatStyle = FlatStyle.Flat;
             gbControlType.Font = new Font("Microsoft JhengHei", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             gbControlType.ForeColor = SystemColors.Desktop;
-            gbControlType.Location = new Point(11, 112);
+            gbControlType.Location = new Point(12, 112);
             gbControlType.Name = "gbControlType";
-            gbControlType.Size = new Size(197, 142);
+            gbControlType.Size = new Size(209, 103);
             gbControlType.TabIndex = 6;
             gbControlType.TabStop = false;
             gbControlType.Text = "Tipo de Controle";
@@ -502,13 +420,12 @@ namespace BeltIdentifierServer
             // rbAutomatic
             // 
             rbAutomatic.AutoSize = true;
-            rbAutomatic.Location = new Point(8, 65);
+            rbAutomatic.Location = new Point(8, 66);
             rbAutomatic.Name = "rbAutomatic";
             rbAutomatic.Size = new Size(131, 27);
             rbAutomatic.TabIndex = 1;
             rbAutomatic.Text = "Automatico";
             rbAutomatic.UseVisualStyleBackColor = true;
-            rbAutomatic.Enter += RbAutomatic_Enter;
             // 
             // rbManual
             // 
@@ -521,64 +438,6 @@ namespace BeltIdentifierServer
             rbManual.TabStop = true;
             rbManual.Text = "Manual";
             rbManual.UseVisualStyleBackColor = true;
-            rbManual.Enter += RbManual_Enter;
-            // 
-            // gbBeltTimes
-            // 
-            gbBeltTimes.BackColor = SystemColors.ControlLightLight;
-            gbBeltTimes.Controls.Add(tbInterval);
-            gbBeltTimes.Controls.Add(lblInterval);
-            gbBeltTimes.Controls.Add(lblJourneyTime);
-            gbBeltTimes.Controls.Add(tbJourneyTime);
-            gbBeltTimes.FlatStyle = FlatStyle.Flat;
-            gbBeltTimes.Font = new Font("Microsoft JhengHei", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            gbBeltTimes.ForeColor = SystemColors.Desktop;
-            gbBeltTimes.Location = new Point(214, 112);
-            gbBeltTimes.Name = "gbBeltTimes";
-            gbBeltTimes.Size = new Size(273, 142);
-            gbBeltTimes.TabIndex = 7;
-            gbBeltTimes.TabStop = false;
-            gbBeltTimes.Text = "Tempos da Esteira";
-            // 
-            // tbInterval
-            // 
-            tbInterval.CausesValidation = false;
-            tbInterval.Location = new Point(121, 63);
-            tbInterval.Name = "tbInterval";
-            tbInterval.Size = new Size(135, 31);
-            tbInterval.TabIndex = 3;
-            tbInterval.Text = "1";
-            tbInterval.Enter += TbInterval_Enter;
-            tbInterval.Leave += TbInterval_Leave;
-            // 
-            // lblInterval
-            // 
-            lblInterval.AutoSize = true;
-            lblInterval.Location = new Point(7, 67);
-            lblInterval.Name = "lblInterval";
-            lblInterval.Size = new Size(109, 23);
-            lblInterval.TabIndex = 2;
-            lblInterval.Text = "Intervalo(s):";
-            // 
-            // lblJourneyTime
-            // 
-            lblJourneyTime.AutoSize = true;
-            lblJourneyTime.Location = new Point(7, 32);
-            lblJourneyTime.Name = "lblJourneyTime";
-            lblJourneyTime.Size = new Size(108, 23);
-            lblJourneyTime.TabIndex = 1;
-            lblJourneyTime.Text = "Percurso(s):";
-            // 
-            // tbJourneyTime
-            // 
-            tbJourneyTime.CausesValidation = false;
-            tbJourneyTime.Location = new Point(121, 28);
-            tbJourneyTime.Name = "tbJourneyTime";
-            tbJourneyTime.Size = new Size(135, 31);
-            tbJourneyTime.TabIndex = 0;
-            tbJourneyTime.Text = "1";
-            tbJourneyTime.Enter += TbJourneyTime_Enter;
-            tbJourneyTime.Leave += TbJourneyTime_Leave;
             // 
             // gbBeltStatus
             // 
@@ -592,9 +451,9 @@ namespace BeltIdentifierServer
             gbBeltStatus.FlatStyle = FlatStyle.Flat;
             gbBeltStatus.Font = new Font("Microsoft JhengHei", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             gbBeltStatus.ForeColor = SystemColors.Desktop;
-            gbBeltStatus.Location = new Point(750, 112);
+            gbBeltStatus.Location = new Point(12, 221);
             gbBeltStatus.Name = "gbBeltStatus";
-            gbBeltStatus.Size = new Size(178, 142);
+            gbBeltStatus.Size = new Size(209, 140);
             gbBeltStatus.TabIndex = 8;
             gbBeltStatus.TabStop = false;
             gbBeltStatus.Text = "Estado da Esteira";
@@ -602,7 +461,7 @@ namespace BeltIdentifierServer
             // lblErrorStatus
             // 
             lblErrorStatus.AutoSize = true;
-            lblErrorStatus.Location = new Point(46, 102);
+            lblErrorStatus.Location = new Point(46, 105);
             lblErrorStatus.Name = "lblErrorStatus";
             lblErrorStatus.Size = new Size(45, 23);
             lblErrorStatus.TabIndex = 5;
@@ -611,17 +470,17 @@ namespace BeltIdentifierServer
             // pErrorStatus
             // 
             pErrorStatus.BackColor = Color.Transparent;
-            pErrorStatus.BackgroundImage = ServerBeltIdentifier.Properties.Resources.red_led_off;
+            pErrorStatus.BackgroundImage = Properties.Resources.red_led_off;
             pErrorStatus.BackgroundImageLayout = ImageLayout.Stretch;
-            pErrorStatus.Location = new Point(9, 99);
+            pErrorStatus.Location = new Point(10, 101);
             pErrorStatus.Name = "pErrorStatus";
-            pErrorStatus.Size = new Size(30, 29);
+            pErrorStatus.Size = new Size(30, 30);
             pErrorStatus.TabIndex = 2;
             // 
             // lblBusyStatus
             // 
             lblBusyStatus.AutoSize = true;
-            lblBusyStatus.Location = new Point(45, 67);
+            lblBusyStatus.Location = new Point(45, 68);
             lblBusyStatus.Name = "lblBusyStatus";
             lblBusyStatus.Size = new Size(87, 23);
             lblBusyStatus.TabIndex = 4;
@@ -630,27 +489,27 @@ namespace BeltIdentifierServer
             // pBusyStatus
             // 
             pBusyStatus.BackColor = Color.Transparent;
-            pBusyStatus.BackgroundImage = ServerBeltIdentifier.Properties.Resources.green_led_off;
+            pBusyStatus.BackgroundImage = Properties.Resources.green_led_off;
             pBusyStatus.BackgroundImageLayout = ImageLayout.Stretch;
-            pBusyStatus.Location = new Point(9, 64);
+            pBusyStatus.Location = new Point(10, 64);
             pBusyStatus.Name = "pBusyStatus";
-            pBusyStatus.Size = new Size(30, 29);
+            pBusyStatus.Size = new Size(30, 30);
             pBusyStatus.TabIndex = 1;
             // 
             // pMotorStatus
             // 
             pMotorStatus.BackColor = Color.Transparent;
-            pMotorStatus.BackgroundImage = ServerBeltIdentifier.Properties.Resources.green_led_off;
+            pMotorStatus.BackgroundImage = Properties.Resources.green_led_off;
             pMotorStatus.BackgroundImageLayout = ImageLayout.Stretch;
-            pMotorStatus.Location = new Point(10, 29);
+            pMotorStatus.Location = new Point(10, 28);
             pMotorStatus.Name = "pMotorStatus";
-            pMotorStatus.Size = new Size(30, 29);
+            pMotorStatus.Size = new Size(30, 30);
             pMotorStatus.TabIndex = 0;
             // 
             // lblMotor
             // 
             lblMotor.AutoSize = true;
-            lblMotor.Location = new Point(46, 35);
+            lblMotor.Location = new Point(46, 32);
             lblMotor.Name = "lblMotor";
             lblMotor.Size = new Size(125, 23);
             lblMotor.TabIndex = 3;
@@ -660,35 +519,29 @@ namespace BeltIdentifierServer
             // 
             btnReset.Enabled = false;
             btnReset.Font = new Font("Microsoft JhengHei", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            btnReset.Location = new Point(214, 323);
+            btnReset.Location = new Point(647, 125);
             btnReset.Name = "btnReset";
-            btnReset.Size = new Size(149, 60);
+            btnReset.Size = new Size(134, 60);
             btnReset.TabIndex = 9;
             btnReset.Text = "Reset";
             btnReset.UseVisualStyleBackColor = true;
             btnReset.Click += BtnReset_Click;
             // 
-            // timerAuto
-            // 
-            timerAuto.Enabled = true;
-            timerAuto.Interval = 200;
-            timerAuto.Tick += TimerMotor_Tick;
-            // 
             // pictureBox1
             // 
-            pictureBox1.Image = ServerBeltIdentifier.Properties.Resources.OPC_UA_Logo;
-            pictureBox1.Location = new Point(813, 55);
+            pictureBox1.Image = Properties.Resources.OPC_UA_Logo;
+            pictureBox1.Location = new Point(649, 68);
             pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(115, 32);
+            pictureBox1.Size = new Size(133, 31);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 10;
             pictureBox1.TabStop = false;
             // 
             // pictureBox2
             // 
-            pictureBox2.Image = ServerBeltIdentifier.Properties.Resources.logo_ucl_blue;
-            pictureBox2.Location = new Point(11, 506);
+            pictureBox2.Image = Properties.Resources.logo_ucl_blue;
+            pictureBox2.Location = new Point(12, 433);
             pictureBox2.Margin = new Padding(3, 4, 3, 4);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(122, 53);
@@ -701,44 +554,62 @@ namespace BeltIdentifierServer
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Georgia", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
             lblTitle.ForeColor = SystemColors.HotTrack;
-            lblTitle.Location = new Point(171, 9);
+            lblTitle.Location = new Point(110, 9);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(617, 39);
+            lblTitle.Size = new Size(587, 39);
             lblTitle.TabIndex = 12;
-            lblTitle.Text = "Servidor da Esteira Identificadora";
+            lblTitle.Text = "Cliente da Esteira Identificadora";
             lblTitle.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // ServerForm
+            // btnConect
+            // 
+            btnConect.BackColor = Color.LightGreen;
+            btnConect.Font = new Font("Microsoft JhengHei", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnConect.Location = new Point(227, 124);
+            btnConect.Name = "btnConect";
+            btnConect.Size = new Size(134, 61);
+            btnConect.TabIndex = 13;
+            btnConect.Text = "Conectar";
+            btnConect.UseVisualStyleBackColor = false;
+            btnConect.Click += BtnConect_Click;
+            // 
+            // tbServerUrl
+            // 
+            tbServerUrl.Font = new Font("Microsoft JhengHei", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            tbServerUrl.Location = new Point(167, 68);
+            tbServerUrl.Name = "tbServerUrl";
+            tbServerUrl.PlaceholderText = "Exemplo: opc.tcp://localhost:26543/ServerBeltIdentifier";
+            tbServerUrl.Size = new Size(476, 31);
+            tbServerUrl.TabIndex = 14;
+            // 
+            // ClientForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             BackColor = SystemColors.ControlLightLight;
-            ClientSize = new Size(941, 571);
+            ClientSize = new Size(797, 503);
+            Controls.Add(tbServerUrl);
+            Controls.Add(btnConect);
             Controls.Add(lblTitle);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
             Controls.Add(btnStop);
-            Controls.Add(btnAddPiece);
             Controls.Add(btnReset);
-            Controls.Add(gbBeltTimes);
-            Controls.Add(gbTypePiece);
             Controls.Add(gbBeltStatus);
             Controls.Add(gbControlType);
             Controls.Add(btnStart);
             Controls.Add(lblServerUrl);
-            Controls.Add(cbServerUrl);
             Controls.Add(tbcModules);
             Icon = (Icon)resources.GetObject("$this.Icon");
             ImeMode = ImeMode.Off;
             Margin = new Padding(3, 4, 3, 4);
             MaximizeBox = false;
-            MaximumSize = new Size(959, 618);
-            MinimumSize = new Size(959, 618);
-            Name = "ServerForm";
+            MaximumSize = new Size(815, 550);
+            MinimumSize = new Size(815, 550);
+            Name = "ClientForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Server Belt Identifier";
-            Load += ServerForm_Load;
+            Text = "Client Belt Identifier";
             tbcModules.ResumeLayout(false);
             tpModule1.ResumeLayout(false);
             gbOpcStatusModule1.ResumeLayout(false);
@@ -746,12 +617,8 @@ namespace BeltIdentifierServer
             tpModule2.ResumeLayout(false);
             gbOpcStatusModule2.ResumeLayout(false);
             gbOpcStatusModule2.PerformLayout();
-            gbTypePiece.ResumeLayout(false);
-            gbTypePiece.PerformLayout();
             gbControlType.ResumeLayout(false);
             gbControlType.PerformLayout();
-            gbBeltTimes.ResumeLayout(false);
-            gbBeltTimes.PerformLayout();
             gbBeltStatus.ResumeLayout(false);
             gbBeltStatus.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -761,8 +628,6 @@ namespace BeltIdentifierServer
         }
 
         #endregion
-
-        private ComboBox cbServerUrl;
         private Label lblServerUrl;
         private Button btnStart;
         private Button btnStop;
@@ -773,7 +638,6 @@ namespace BeltIdentifierServer
         private GroupBox gbControlType;
         private RadioButton rbAutomatic;
         private RadioButton rbManual;
-        private GroupBox gbBeltTimes;
         private GroupBox gbBeltStatus;
         private Button btnReset;
         private Label lblErrorStatus;
@@ -787,11 +651,6 @@ namespace BeltIdentifierServer
         private Panel pNonMetallic;
         private Panel pMetallic;
         private Panel pTransparent;
-        private Button btnAddPiece;
-        private GroupBox gbTypePiece;
-        private RadioButton rbNonMetallic;
-        private RadioButton rbMetallic;
-        private RadioButton rbTransparent;
         private TextBox tbQuantityNonMetallic;
         private Label lblNonMetallic;
         private TextBox tbQuantityMetallic;
@@ -811,12 +670,10 @@ namespace BeltIdentifierServer
         private Panel pBarrier2;
         private Panel pBarrier1;
         private System.Windows.Forms.Timer timerAuto;
-        private TextBox tbInterval;
-        private Label lblInterval;
-        private Label lblJourneyTime;
-        private TextBox tbJourneyTime;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private Label lblTitle;
+        private Button btnConect;
+        private TextBox tbServerUrl;
     }
 }

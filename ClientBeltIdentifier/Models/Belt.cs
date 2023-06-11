@@ -1,4 +1,4 @@
-﻿namespace ServerBeltIdentifier.Models
+﻿namespace ClientBeltIdentifier.Models
 {
     public partial class Belt
     {

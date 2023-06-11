@@ -7,8 +7,7 @@ namespace BeltIdentifierServer
 {
     public partial class ServerForm : Form
     {
-        public static BeltModule1 BeltModule1 = new();
-        public static BeltModule2 BeltModule2 = new();
+        public static Belt BeltIdentifier;
 
         public ServerForm()
         {
@@ -36,6 +35,8 @@ namespace BeltIdentifierServer
             {
                 cbServerUrl.SelectedIndex = 0;
             }
+
+            BeltIdentifier = Belt.GetInstance();
         }
 
         private void ServerForm_Load(object sender, EventArgs e)
@@ -47,63 +48,62 @@ namespace BeltIdentifierServer
         {
             if (tpModule1.CanFocus)
             {
-                BeltModule1.Start();
+                BeltIdentifier.IsModule1 = true;
             }
             else
             {
-                BeltModule2.Start();
+                BeltIdentifier.IsModule1 = false;
             }
+            BeltIdentifier.Start();
         }
 
         private void BtnStop_Click(object sender, EventArgs e)
         {
             if (tpModule1.CanFocus)
             {
-                BeltModule1.Stop();
+                BeltIdentifier.IsModule1 = true;
             }
             else
             {
-                BeltModule2.Stop();
+                BeltIdentifier.IsModule1 = false;
             }
+            BeltIdentifier.Stop();
         }
 
         private void BtnReset_Click(object sender, EventArgs e)
         {
-            if (tpModule1.CanFocus && BeltModule1.Error)
+            if (tpModule1.CanFocus && BeltIdentifier.IsError)
             {
-                BeltModule1.Reset();
+                BeltIdentifier.IsModule1 = true;
+                BeltIdentifier.Reset();
             }
-            else if (tpModule2.CanFocus && BeltModule2.Error)
+            else if (tpModule2.CanFocus && BeltIdentifier.IsError)
             {
-                BeltModule2.Reset();
+                BeltIdentifier.IsModule1 = false;
+                BeltIdentifier.Reset();
             }
         }
 
         private void BtnAddPiece_Click(object sender, EventArgs e)
         {
-            string pieceType = rbTransparent.Checked ? "Transparent" : rbMetallic.Checked ? "Metallic" : "NonMetallic";
+            EPieceType pieceType = rbTransparent.Checked ? EPieceType.Transparent : rbMetallic.Checked ? EPieceType.Metallic : EPieceType.NonMetallic;
 
             if (tpModule1.CanFocus)
             {
-                if (rbManual.Checked)
-                {
-                    BeltModule1.AddPieceManual(pieceType);
-                }
-                else
-                {
-                    BeltModule1.AddPieceAuto();
-                }
+                BeltIdentifier.IsModule1 = true;
             }
             else
             {
-                if (rbManual.Checked)
-                {
-                    BeltModule2.AddPieceManual(pieceType);
-                }
-                else
-                {
-                    BeltModule2.AddPieceAuto();
-                }
+                BeltIdentifier.IsModule1 = false;
+            }
+
+            if (rbManual.Checked)
+            {
+                BeltIdentifier.AddPieceManual(pieceType);
+            }
+            else
+            {
+                BeltIdentifier.AddPieceAuto();
             }
         }
 
@@ -116,7 +116,7 @@ namespace BeltIdentifierServer
 
         private void UpdateButtons()
         {
-            if (BeltModule1.MotorOn || BeltModule2.MotorOn)
+            if (BeltIdentifier.MotorOn)
             {
                 btnStop.Enabled = true;
                 btnStart.Enabled = false;
@@ -127,7 +127,7 @@ namespace BeltIdentifierServer
                 btnStart.Enabled = true;
             }
 
-            if (BeltModule1.Error || BeltModule2.Error)
+            if (BeltIdentifier.IsError)
             {
                 btnReset.Enabled = true;
                 btnStart.Enabled = false;
@@ -137,9 +137,18 @@ namespace BeltIdentifierServer
                 btnReset.Enabled = false;
             }
 
+            if (BeltIdentifier.IsAuto)
+            {
+                rbAutomatic.Checked = true;
+            }
+            else
+            {
+                rbManual.Checked = true;
+            }
+
             if (rbManual.Checked
-                && !(BeltModule1.Error || BeltModule2.Error)
-                && (BeltModule1.MotorOn || BeltModule2.MotorOn))
+                && !(BeltIdentifier.IsError)
+                && (BeltIdentifier.MotorOn))
             {
                 btnAddPiece.Enabled = true;
             }
@@ -157,6 +166,7 @@ namespace BeltIdentifierServer
                 rbMetallic.Checked = false;
                 rbNonMetallic.Checked = false;
                 tbInterval.Enabled = true;
+                BeltIdentifier.IsAuto = true;
             }
             else
             {
@@ -168,80 +178,82 @@ namespace BeltIdentifierServer
                 {
                     rbTransparent.Checked = true;
                 }
+                BeltIdentifier.IsAuto = false;
+            }
+
+            if (BeltIdentifier.IsModule1)
+            {
+                tbcModules.SelectedIndex = 0;
+            }
+            else
+            {
+                tbcModules.SelectedIndex = 1;
             }
         }
 
         private void UpdateIndicators()
         {
+            pMotorStatus.BackgroundImage = BeltIdentifier.MotorOn ?
+                ServerBeltIdentifier.Properties.Resources.green_led_on :
+                ServerBeltIdentifier.Properties.Resources.green_led_off;
+            pBusyStatus.BackgroundImage = BeltIdentifier.IsBusy ?
+                ServerBeltIdentifier.Properties.Resources.green_led_on :
+                ServerBeltIdentifier.Properties.Resources.green_led_off;
+            pErrorStatus.BackgroundImage = BeltIdentifier.IsError ?
+                ServerBeltIdentifier.Properties.Resources.red_led_on :
+                ServerBeltIdentifier.Properties.Resources.red_led_off;
+
             if (tpModule1.CanFocus)
             {
-                pMotorStatus.BackgroundImage = BeltModule1.MotorOn ?
+                pTransparent.BackgroundImage = BeltIdentifier.Transparent ?
                     ServerBeltIdentifier.Properties.Resources.green_led_on :
                     ServerBeltIdentifier.Properties.Resources.green_led_off;
-                pBusyStatus.BackgroundImage = BeltModule1.Busy ?
+                pMetallic.BackgroundImage = BeltIdentifier.Metallic ?
                     ServerBeltIdentifier.Properties.Resources.green_led_on :
                     ServerBeltIdentifier.Properties.Resources.green_led_off;
-                pErrorStatus.BackgroundImage = BeltModule1.Error ?
-                    ServerBeltIdentifier.Properties.Resources.red_led_on :
-                    ServerBeltIdentifier.Properties.Resources.red_led_off;
-                pTransparent.BackgroundImage = BeltModule1.Transparent ?
+                pNonMetallic.BackgroundImage = BeltIdentifier.NonMetallic ?
                     ServerBeltIdentifier.Properties.Resources.green_led_on :
                     ServerBeltIdentifier.Properties.Resources.green_led_off;
-                pMetallic.BackgroundImage = BeltModule1.Metallic ?
-                    ServerBeltIdentifier.Properties.Resources.green_led_on :
-                    ServerBeltIdentifier.Properties.Resources.green_led_off;
-                pNonMetallic.BackgroundImage = BeltModule1.NonMetallic ?
-                    ServerBeltIdentifier.Properties.Resources.green_led_on :
-                    ServerBeltIdentifier.Properties.Resources.green_led_off;
-                tbQuantityTransparent.Text = BeltModule1.QuantityTransparent.ToString();
-                tbQuantityMetallic.Text = BeltModule1.QuantityMetallic.ToString();
-                tbQuantityNonMetallic.Text = BeltModule1.QuantityNonMetallic.ToString();
+                tbQuantityTransparent.Text = BeltIdentifier.TransparentQuantity.ToString();
+                tbQuantityMetallic.Text = BeltIdentifier.MetallicQuantity.ToString();
+                tbQuantityNonMetallic.Text = BeltIdentifier.NonMetallicQuantity.ToString();
             }
             else
             {
-                pMotorStatus.BackgroundImage = BeltModule2.MotorOn ?
+                pBarrier1.BackgroundImage = BeltIdentifier.Barrier1 ?
                     ServerBeltIdentifier.Properties.Resources.green_led_on :
                     ServerBeltIdentifier.Properties.Resources.green_led_off;
-                pBusyStatus.BackgroundImage = BeltModule2.Busy ?
+                pBarrier2.BackgroundImage = BeltIdentifier.Barrier2 ?
                     ServerBeltIdentifier.Properties.Resources.green_led_on :
                     ServerBeltIdentifier.Properties.Resources.green_led_off;
-                pErrorStatus.BackgroundImage = BeltModule2.Error ?
-                    ServerBeltIdentifier.Properties.Resources.red_led_on :
-                    ServerBeltIdentifier.Properties.Resources.red_led_off;
-                pBarrier1.BackgroundImage = BeltModule2.Barrier1 ?
+                pBarrier3.BackgroundImage = BeltIdentifier.Barrier3 ?
                     ServerBeltIdentifier.Properties.Resources.green_led_on :
                     ServerBeltIdentifier.Properties.Resources.green_led_off;
-                pBarrier2.BackgroundImage = BeltModule2.Barrier2 ?
-                    ServerBeltIdentifier.Properties.Resources.green_led_on :
-                    ServerBeltIdentifier.Properties.Resources.green_led_off;
-                pBarrier3.BackgroundImage = BeltModule2.Barrier3 ?
-                    ServerBeltIdentifier.Properties.Resources.green_led_on :
-                    ServerBeltIdentifier.Properties.Resources.green_led_off;
-                pPhotoSensor.BackgroundImage = BeltModule2.PhotoSensor ?
+                pPhotoSensor.BackgroundImage = BeltIdentifier.PhotoSensor ?
                     ServerBeltIdentifier.Properties.Resources.green_led_on :
                     ServerBeltIdentifier.Properties.Resources.green_led_off;
                 /* 
                  * Lógica abaixo diferente, devido os sensores capacitivos e 
                  * indutivos serem normalmente fechados (NF).
                 */
-                pCapacitive.BackgroundImage = BeltModule2.Capacitive ?
+                pCapacitive.BackgroundImage = BeltIdentifier.Capacitive ?
                     ServerBeltIdentifier.Properties.Resources.green_led_off :
                     ServerBeltIdentifier.Properties.Resources.green_led_on;
-                pInductive.BackgroundImage = BeltModule2.Inductive ?
+                pInductive.BackgroundImage = BeltIdentifier.Inductive ?
                     ServerBeltIdentifier.Properties.Resources.green_led_off :
                     ServerBeltIdentifier.Properties.Resources.green_led_on;
 
-                if (rbAutomatic.Checked && tpModule2.CanFocus)
+                if (BeltIdentifier.IsAuto && !BeltIdentifier.IsModule1 && BeltIdentifier.MotorOn)
                 {
-                    switch (BeltModule2.PieceType)
+                    switch (BeltIdentifier.PieceType)
                     {
-                        case "Transparent":
+                        case EPieceType.Transparent:
                             rbTransparent.Checked = true;
                             break;
-                        case "Metallic":
+                        case EPieceType.Metallic:
                             rbMetallic.Checked = true;
                             break;
-                        case "NonMetallic":
+                        case EPieceType.NonMetallic:
                             rbNonMetallic.Checked = true;
                             break;
                         default:
@@ -251,51 +263,34 @@ namespace BeltIdentifierServer
                             break;
                     }
                 }
+                else if (BeltIdentifier.IsAuto && !BeltIdentifier.IsModule1)
+                {
+                    rbTransparent.Checked = false;
+                    rbMetallic.Checked = false;
+                    rbNonMetallic.Checked = false;
+                }
             }
         }
 
         private void UpadateControls()
         {
-            if (tpModule1.CanFocus)
-            {
-                tbInterval.Text = BeltModule1.Interval.ToString();
-                tbJourneyTime.Text = BeltModule1.JourneyTime.ToString();
-            }
-            else
-            {
-                tbInterval.Text = BeltModule2.Interval.ToString();
-                tbJourneyTime.Text = BeltModule2.JourneyTime.ToString();
-            }
+            tbInterval.Text = BeltIdentifier.Interval.ToString();
+            tbJourneyTime.Text = BeltIdentifier.JourneyTime.ToString();
         }
 
         private void TimerUpdateForm_Tick(object sender, EventArgs e)
         {
-            if (tpModule1.CanFocus)
-            {
-                BeltModule1.ReadOpc();
-            }
-            else
-            {
-                BeltModule2.ReadOpc();
-            }
+            BeltIdentifier.ReadOpc();
             UpdateForm();
+            BeltIdentifier.WriteOpc();
         }
 
-        private void TimerModule1_Tick(object sender, EventArgs e)
+        private void TimerMotor_Tick(object sender, EventArgs e)
         {
-            if (rbAutomatic.Checked && BeltModule1.MotorOn && !BeltModule1.Error && tpModule1.CanFocus)
+            if (rbAutomatic.Checked && BeltIdentifier.MotorOn && !BeltIdentifier.IsError)
             {
-                timerAutoModule1.Interval = BeltModule1.Interval * 1000; // Para segundos.
-                BeltModule1.AddPieceAuto();
-            }
-        }
-
-        private void TimerAutoModule2_Tick(object sender, EventArgs e)
-        {
-            if (rbAutomatic.Checked && BeltModule2.MotorOn && !BeltModule2.Error && tpModule2.CanFocus)
-            {
-                timerAutoModule2.Interval = (BeltModule2.Interval * 1000) + 1000;
-                BeltModule2.AddPieceAuto();
+                timerAuto.Interval = (int)BeltIdentifier.Interval * 1000; // Para segundos.
+                BeltIdentifier.AddPieceAuto();
             }
         }
 
@@ -313,18 +308,28 @@ namespace BeltIdentifierServer
         {
             try
             {
-                int journey = Convert.ToInt16(tbJourneyTime.Text);
-                if (journey <= 0) throw new Exception();
+                uint journey = Convert.ToUInt32(tbJourneyTime.Text);
+                if (journey <= 0 && BeltIdentifier.IsModule1 || journey <= 5 && !BeltIdentifier.IsModule1) throw new Exception();
 
-                BeltModule1.JourneyTime = journey;
-                BeltModule2.JourneyTime = journey;
-                BeltModule1.WriteOpc();
-                BeltModule2.WriteOpc();
+                BeltIdentifier.JourneyTime = journey;
             }
             catch (Exception)
             {
-                tbJourneyTime.Text = BeltModule1.JourneyTime.ToString();
-                MessageBox.Show("O valor informado é inválido, digite um número inteiro maior que 0! Valor antigo restaurado.");
+                tbJourneyTime.Text = BeltIdentifier.JourneyTime.ToString();
+
+                if (BeltIdentifier.IsAuto)
+                {
+                    tbInterval.Text = (BeltIdentifier.JourneyTime + 1).ToString();
+                }
+
+                if (BeltIdentifier.IsModule1)
+                {
+                    MessageBox.Show("O valor informado é inválido, digite um número inteiro maior que 0! Valor antigo restaurado.");
+                }
+                else
+                {
+                    MessageBox.Show("O valor informado é inválido, digite um número inteiro maior que 5! Valor antigo restaurado.");
+                }
             }
             finally
             {
@@ -336,20 +341,62 @@ namespace BeltIdentifierServer
         {
             try
             {
-                int interval = Convert.ToInt16(tbInterval.Text);
-                if (interval <= 0) throw new Exception();
-                BeltModule1.Interval = interval;
-                BeltModule2.Interval = interval;
+                uint interval = Convert.ToUInt32(tbInterval.Text);
+                if (interval <= BeltIdentifier.JourneyTime) throw new Exception();
+
+                BeltIdentifier.Interval = interval;
             }
             catch
             {
-                tbInterval.Text = BeltModule1.Interval.ToString();
-                MessageBox.Show("O valor informado é inválido, digite um número inteiro! Valor antigo restaurado.");
+                tbInterval.Text = (BeltIdentifier.JourneyTime + 1).ToString();
+                MessageBox.Show("O valor informado é inválido, o valor deve ser maior que o tempo de percurso! Mínimo aceitável inserido.");
             }
             finally
             {
                 timerUpdateForm.Enabled = true;
             }
+        }
+
+        private void RbManual_Enter(object sender, EventArgs e)
+        {
+            BeltIdentifier.IsAuto = false;
+            JorneyTimeAndIntervalConfiguration();
+        }
+
+        private void RbAutomatic_Enter(object sender, EventArgs e)
+        {
+            BeltIdentifier.IsAuto = true;
+            JorneyTimeAndIntervalConfiguration();
+        }
+
+        private void TbcModules_Selected(object sender, TabControlEventArgs e)
+        {
+            if (tpModule1.CanFocus)
+            {
+                BeltIdentifier.IsModule1 = false;
+            }
+            else
+            {
+                BeltIdentifier.IsModule1 = true;
+            }
+
+            JorneyTimeAndIntervalConfiguration();
+        }
+
+        private void JorneyTimeAndIntervalConfiguration()
+        {
+            if (BeltIdentifier.JourneyTime < 6 && !BeltIdentifier.IsModule1)
+            {
+                BeltIdentifier.JourneyTime = 6;
+            }
+
+            if (BeltIdentifier.Interval <= BeltIdentifier.JourneyTime && BeltIdentifier.IsAuto)
+            {
+                BeltIdentifier.Interval = BeltIdentifier.JourneyTime + 1;
+            }
+
+            BeltIdentifier.WriteOpc();
+            UpdateForm();
         }
     }
 }
