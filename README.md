@@ -8,14 +8,14 @@ O projeto trouxe um novo recurso para ser utilizado em sala de aula,
 possibilitando que os alunos tenham uma experiência similar ao uso da planta ainda que estejam fora do laboratório 
 e do espaço físico da faculdade, facilitando assim o processo de aprendizagem.
 
-> Assista o vídeo explicando o funcionamento do projeto pelo link: <a target="_blank" href="https://youtu.be/0ivpttu2yVM">https://youtu.be/0ivpttu2yVM</a>
+> Assista o vídeo explicando o funcionamento do projeto pelo link: <a href="https://youtu.be/0ivpttu2yVM" target="_blank">https://youtu.be/0ivpttu2yVM</a>
 
 ## Autores
-<a target="_blank" href="https://www.linkedin.com/in/tiagojaconi/">Tiago Jaconi Amorim Pereira</a><br>
-<a target="_blank" href="https://www.linkedin.com/in/wynnebrito/">Wynne Brito Gomes</a>
+<a href="https://www.linkedin.com/in/tiagojaconi/" target="_blank">Tiago Jaconi Amorim Pereira</a><br>
+<a href="https://www.linkedin.com/in/wynnebrito/" target="_blank">Wynne Brito Gomes</a>
 
 ## Orientador
-<a target="_blank" href="https://www.linkedin.com/in/anderson-sachetto-rosa-bba1a0153/">Anderson Sachetto Rosa</a>
+<a href="https://www.linkedin.com/in/anderson-sachetto-rosa-bba1a0153/" target="_blank">Anderson Sachetto Rosa</a>
 
 ## Ferramentas de Desenvolvimento
 - C#
