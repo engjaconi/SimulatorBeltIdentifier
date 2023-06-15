@@ -506,7 +506,7 @@ namespace BeltIdentifierServer
             rbAutomatic.Name = "rbAutomatic";
             rbAutomatic.Size = new Size(131, 27);
             rbAutomatic.TabIndex = 1;
-            rbAutomatic.Text = "Automatico";
+            rbAutomatic.Text = "Automático";
             rbAutomatic.UseVisualStyleBackColor = true;
             rbAutomatic.Enter += RbAutomatic_Enter;
             // 
