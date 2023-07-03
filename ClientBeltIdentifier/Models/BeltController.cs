@@ -11,7 +11,7 @@ namespace ClientBeltIdentifier.Models
         #region Instância da Esteira - Padrão de Projeto Singleton
         private static Belt _instance;
 
-        private Belt(Session session)
+        private Belt(ref Session session)
         {
             this.Session = session;
             ReadOpc();
@@ -21,7 +21,7 @@ namespace ClientBeltIdentifier.Models
         {
             if (_instance == null)
             {
-                _instance = new Belt(session);
+                _instance = new Belt(ref session);
             }
 
             _instance.Session = session;
@@ -48,32 +48,41 @@ namespace ClientBeltIdentifier.Models
 
         public void ReadOpc()
         {
-            if (!Session.Connected) { return; }
-            Started = Convert.ToBoolean(Session.ReadValue("ns=2;i=235").ToString());
-            Reseted = Convert.ToBoolean(Session.ReadValue("ns=2;i=239").ToString());
-            MotorOn = Convert.ToBoolean(Session.ReadValue("ns=2;i=259").ToString());
-            IsBusy = Convert.ToBoolean(Session.ReadValue("ns=2;i=255").ToString());
-            IsError = Convert.ToBoolean(Session.ReadValue("ns=2;i=251").ToString());
-            IsModule1 = Convert.ToBoolean(Session.ReadValue("ns=2;i=247").ToString());
-            IsAuto = Convert.ToBoolean(Session.ReadValue("ns=2;i=243").ToString());
+            try
+            {
+                Started = Convert.ToBoolean(Session.ReadValue("ns=2;i=235").ToString());
+                Reseted = Convert.ToBoolean(Session.ReadValue("ns=2;i=239").ToString());
+                MotorOn = Convert.ToBoolean(Session.ReadValue("ns=2;i=259").ToString());
+                IsBusy = Convert.ToBoolean(Session.ReadValue("ns=2;i=255").ToString());
+                IsError = Convert.ToBoolean(Session.ReadValue("ns=2;i=251").ToString());
+                IsModule1 = Convert.ToBoolean(Session.ReadValue("ns=2;i=247").ToString());
+                IsAuto = Convert.ToBoolean(Session.ReadValue("ns=2;i=243").ToString());
 
-            Transparent = Convert.ToBoolean(Session.ReadValue("ns=2;i=264").ToString());
-            Metallic = Convert.ToBoolean(Session.ReadValue("ns=2;i=268").ToString());
-            NonMetallic = Convert.ToBoolean(Session.ReadValue("ns=2;i=272").ToString());
-            TransparentQuantity = Convert.ToUInt32(Session.ReadValue("ns=2;i=382").ToString());
-            MetallicQuantity = Convert.ToUInt32(Session.ReadValue("ns=2;i=389").ToString());
-            NonMetallicQuantity = Convert.ToUInt32(Session.ReadValue("ns=2;i=396").ToString());
+                Transparent = Convert.ToBoolean(Session.ReadValue("ns=2;i=264").ToString());
+                Metallic = Convert.ToBoolean(Session.ReadValue("ns=2;i=268").ToString());
+                NonMetallic = Convert.ToBoolean(Session.ReadValue("ns=2;i=272").ToString());
+                TransparentQuantity = Convert.ToUInt32(Session.ReadValue("ns=2;i=382").ToString());
+                MetallicQuantity = Convert.ToUInt32(Session.ReadValue("ns=2;i=389").ToString());
+                NonMetallicQuantity = Convert.ToUInt32(Session.ReadValue("ns=2;i=396").ToString());
         
-            Barrier1 = Convert.ToBoolean(Session.ReadValue("ns=2;i=298").ToString());
-            Barrier2 = Convert.ToBoolean(Session.ReadValue("ns=2;i=302").ToString());
-            Barrier3 = Convert.ToBoolean(Session.ReadValue("ns=2;i=306").ToString());
-            PhotoSensor = Convert.ToBoolean(Session.ReadValue("ns=2;i=310").ToString());
-            Capacitive = Convert.ToBoolean(Session.ReadValue("ns=2;i=314").ToString());
-            Inductive = Convert.ToBoolean(Session.ReadValue("ns=2;i=318").ToString());
+                Barrier1 = Convert.ToBoolean(Session.ReadValue("ns=2;i=298").ToString());
+                Barrier2 = Convert.ToBoolean(Session.ReadValue("ns=2;i=302").ToString());
+                Barrier3 = Convert.ToBoolean(Session.ReadValue("ns=2;i=306").ToString());
+                PhotoSensor = Convert.ToBoolean(Session.ReadValue("ns=2;i=310").ToString());
+                Capacitive = Convert.ToBoolean(Session.ReadValue("ns=2;i=314").ToString());
+                Inductive = Convert.ToBoolean(Session.ReadValue("ns=2;i=318").ToString());
+            } catch
+            {
+                Session.Close();
+            }
         }
 
         private void WriteOpc(string node, bool value)
         {
+            if (!Session.Connected)
+            {
+                return;
+            }
             try
             {
                 WriteValue valueToWrite = new WriteValue();

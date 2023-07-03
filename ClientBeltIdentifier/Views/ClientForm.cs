@@ -85,7 +85,7 @@ namespace ClientBeltIdentifier
                 btnStop.Enabled = true;
                 btnStart.Enabled = false;
             }
-            else
+            else if (Session.Connected)
             {
                 btnStop.Enabled = false;
                 btnStart.Enabled = true;
@@ -185,7 +185,30 @@ namespace ClientBeltIdentifier
 
         private void TimerUpdateForm_Tick(object sender, EventArgs e)
         {
-            BeltIdentifier.ReadOpc();
+            if (!Session.Connected)
+            {
+                btnConect.Text = "Conectar";
+                btnConect.BackColor = Color.LightGreen;
+                btnStart.Enabled = false;
+                btnStop.Enabled = false;
+                btnReset.Enabled = false;
+                BeltIdentifier.MotorOn = false;
+                BeltIdentifier.IsBusy = false;
+                BeltIdentifier.IsError = false;
+                BeltIdentifier.Transparent = false;
+                BeltIdentifier.Metallic = false;
+                BeltIdentifier.NonMetallic = false;
+                BeltIdentifier.Barrier1 = false;
+                BeltIdentifier.Barrier2 = false;
+                BeltIdentifier.Barrier3 = false;
+                BeltIdentifier.PhotoSensor = false;
+                BeltIdentifier.Capacitive = true;
+                BeltIdentifier.Inductive = true;
+                Session.Close();
+            } else
+            {
+                BeltIdentifier.ReadOpc();
+            }
             UpdateForm();
         }
     }
